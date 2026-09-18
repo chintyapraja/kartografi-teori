@@ -1,29 +1,36 @@
-<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Minggu 5 — Pengantar proyeksi peta | Kartografi (Teori)</title><meta name="description" content="Bahan ajar Kartografi (Teori): fungsi dan konsep dasar proyeksi peta, distorsi, jenis proyeksi, pemilihan proyeksi, dan pengantar UTM."><link rel="stylesheet" href="style.css?v=20260918h"><link rel="stylesheet" href="visual-enhance.css?v=20260918h"><style>
-/* Week 5 content helpers only. Base layout, typography, sidebar, TOC, figures,
-   tables, and section spacing follow the shared Week 4 stylesheets. */
-.grid2,.grid3,.grid4{display:grid;gap:1rem;margin:1rem 0}
+<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Minggu 5 — Pengantar proyeksi peta | Kartografi (Teori)</title><meta name="description" content="Bahan ajar Kartografi (Teori): fungsi dan konsep dasar proyeksi peta, distorsi, jenis proyeksi, pemilihan proyeksi, dan pengantar UTM."><link rel="stylesheet" href="style.css?v=20260906g"><link rel="stylesheet" href="visual-enhance.css?v=20260906b"><style>
+/* Week 5 additions. Visual language intentionally matches Week 4:
+   flat editorial blocks, the same blue, gray, spacing, and borders. */
+.grid2,.grid3,.grid4{display:grid;gap:0 28px;max-width:800px;margin:20px 0 38px;border-top:1px solid var(--line)}
 .grid2{grid-template-columns:repeat(2,minmax(0,1fr))}
 .grid3{grid-template-columns:repeat(3,minmax(0,1fr))}
-.grid4{grid-template-columns:repeat(4,minmax(0,1fr))}
-.card,.case,.source-card{border:1px solid #d9e2ec;border-radius:14px;padding:1rem;background:#fff}
-.step{display:grid;grid-template-columns:42px 1fr;gap:.75rem;align-items:start;margin:1rem 0}
-.num{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:#e7f0f7;color:#234f73;font-weight:800}
-.note,.answer,.warning,.callout{padding:1rem 1.1rem;border-radius:12px;margin:1rem 0}
-.note{background:#f3f7fb;border:1px solid #d7e3ee}
-.answer{background:#f4faf5;border:1px solid #cfe2d2}
-.warning{background:#fff9eb;border:1px solid #ead7aa}
-.callout{background:#f8fafc;border:1px solid #d9e2ec;font-weight:700}
-.flow{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;justify-content:center;margin:1rem 0}
-.flow span{padding:.65rem .9rem;border:1px solid #d9e2ec;border-radius:999px;background:#fff;font-weight:700}
-.flow b{color:#6b7f90}
-.pill{display:inline-block;background:#eef5fb;color:#285679;border-radius:999px;padding:.25rem .55rem;font-size:.86rem;font-weight:700}
-.credit,.mini{font-size:.9rem;color:#5d6975}
-.svgbox{overflow:auto;border:1px solid #d9e2ec;border-radius:14px;background:#fff;padding:.6rem;margin:1rem 0}
-.svgbox svg{display:block;max-width:100%;height:auto;margin:auto}
-.tablewrap{overflow:auto}
-.links a{display:inline-block;margin:.3rem .4rem .3rem 0}
-.choice{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-@media(max-width:900px){.grid2,.grid3,.grid4,.choice{grid-template-columns:1fr}}
+.grid4{grid-template-columns:repeat(2,minmax(0,1fr))}
+.card,.case,.source-card{padding:20px 0;margin:0;border:0;border-bottom:1px solid var(--line);border-radius:0;background:transparent}
+.card h3,.case h3,.source-card h3{font-size:20px;margin:4px 0 8px}
+.card p,.case p,.source-card p{font-size:16px;line-height:1.55;color:#56646e;margin:5px 0}
+.step{display:grid;grid-template-columns:38px 1fr;gap:14px;align-items:start;max-width:800px;padding:16px 0;margin:0;border-bottom:1px solid var(--line)}
+.step:first-of-type{border-top:1px solid var(--line)}
+.num{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;border:1.5px solid #0b607c;background:white;color:#0b607c;font-size:15px;font-weight:750}
+.note,.answer,.warning{max-width:800px;margin:28px 0;padding:18px 0;border-radius:0;background:transparent}
+.note{border-top:2px solid #0b607c;border-bottom:1px solid var(--line)}
+.answer{border-left:4px solid var(--blue);padding:17px 20px;background:#f2f7f9}
+.warning{border-top:2px solid #8a6b1f;border-bottom:1px solid var(--line)}
+.callout{max-width:800px;margin:30px 0;padding:22px 24px;border:0;border-radius:0;background:#083f59;color:white;font-size:19px;line-height:1.5}
+.callout strong{color:white}
+.flow{display:flex;align-items:center;gap:12px;max-width:800px;margin:28px 0 38px;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.flow span{padding:0;background:transparent;border:0;border-radius:0;font-size:16px;line-height:1.35;font-weight:650}
+.flow b{color:#8d989f;font-weight:400}
+.pill{display:block;width:max-content;margin-bottom:7px;padding:0;border:0;border-radius:0;background:transparent;color:#0a6a87;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.credit,.mini{max-width:800px;font-size:14px;line-height:1.55;color:#66737c}
+.svgbox{max-width:900px;margin:26px 0 42px;padding:10px;background:#f5f6f6;border:0;border-radius:0;overflow:auto}
+.svgbox svg{display:block;width:100%;height:auto;margin:auto;background:white}
+.table-wrap{overflow-x:auto}
+.links{max-width:800px;margin:18px 0 32px;border-top:1px solid var(--line)}
+.links a{display:block;padding:11px 0;margin:0;border-bottom:1px solid var(--line);text-decoration:none}
+.choice{display:grid;grid-template-columns:1fr 1fr;gap:0 28px;max-width:800px;border-top:1px solid var(--line)}
+.source-card strong{display:block;color:#26323e;font-size:18px;margin-bottom:4px}
+.case{max-width:800px;padding:20px 0}
+@media(max-width:760px){.grid2,.grid3,.grid4,.choice{grid-template-columns:1fr}.flow{align-items:flex-start;flex-direction:column}.flow b{display:none}}
 </style></head><body>
 <a class="skip" href="#materi">Langsung ke materi</a><aside class="sidebar"><a class="brand" href="index.html">Kartografi<br>(Teori)</a><div class="meta">Bahan perkuliahan</div><nav aria-label="Navigasi buku"><a href="index.html">Pengantar</a><a href="index.html#pengajar">Profil pengajar</a><a href="silabus.html">Silabus lengkap</a><a href="minggu-4.html#review">Kilas balik minggu 1–3</a><a href="silabus.html#minggu-1">1 · Pengertian dan konsep kartografi</a><a href="silabus.html#minggu-2">2 · Klasifikasi peta dan lingkup kartografi</a><a href="silabus.html#minggu-3">3 · Komunikasi kartografis</a><a href="minggu-4.html">4 · Komponen dan kelengkapan peta</a><a href="minggu-5.html" aria-current="page">5 · Pengantar proyeksi peta</a><a href="silabus.html#minggu-6">6 · Jenis dan pembacaan peta</a><a href="silabus.html#minggu-7">7 · Skala dan generalisasi</a><a href="silabus.html#minggu-8">8 · Ujian Tengah Semester</a><a href="silabus.html#minggu-9">9 · Penyajian relief</a><a href="silabus.html#minggu-10">10 · Tampilan peta 3D</a><a href="silabus.html#minggu-11">11 · Variabel tampak dan simbol</a><a href="silabus.html#minggu-12">12 · Pemetaan data kualitatif dan kuantitatif</a><a href="silabus.html#minggu-13">13 · Toponimi</a><a href="silabus.html#minggu-14">14 · Tata letak dan keseimbangan peta</a><a href="silabus.html#minggu-15">15 · Evaluasi peta terpadu</a><a href="silabus.html#minggu-16">16 · Ujian Akhir Semester</a><a href="minggu-5.html#practice">Latihan</a><a href="minggu-5.html#links">Referensi & link belajar</a></nav></aside><div class="layout"><main id="materi" class="presentation-notes"><div class="eyebrow">Pertemuan 5 · Daring · 100 menit</div><h1>Pengantar proyeksi peta</h1><p class="lead">Memahami mengapa proyeksi peta diperlukan, bagaimana distorsi muncul, serta bagaimana memilih proyeksi sesuai tujuan peta.</p><p class="discussion"><strong>Pertanyaan utama:</strong> bagaimana permukaan bumi yang melengkung dapat digambarkan pada bidang datar?</p>
 
