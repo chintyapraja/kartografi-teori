@@ -22,8 +22,7 @@
 .concept-flow .arr{font-size:24px;color:#637581}
 .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:940px;margin:20px 0 34px}
 .compare-grid figure{margin:0}.compare-grid img{width:100%;height:auto;background:#fff;border:1px solid var(--line)}
-.official-figure{max-width:900px;margin:20px 0 34px}.official-figure img{width:100%;height:auto;background:#fff;border:1px solid var(--line)}
-.official-figure figcaption,.compare-grid figcaption{font-size:14px;line-height:1.5;color:#667580;margin-top:8px}
+.official-figure{max-width:900px;margin:20px 0 34px;text-align:center}.official-figure img{display:block;width:auto;max-width:min(100%,760px);height:auto;margin:0 auto;background:#fff;border:1px solid var(--line);image-rendering:auto}.official-figure figcaption,.compare-grid figcaption{font-size:14px;line-height:1.5;color:#667580;margin-top:8px;text-align:left}.projection-visual{max-width:900px;margin:18px 0 24px;padding:18px;background:#f6f8fa;border:1px solid var(--line)}.projection-visual svg{display:block;width:100%;height:auto;background:#fff}.projection-visual .visual-note{font-size:14px;color:#667580;margin:10px 0 0}.source-actions{margin-top:9px;font-size:14px}.source-actions a{font-weight:700}
 .key-bullets{max-width:900px}.key-bullets li{margin:9px 0}
 .level-label{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#075175;margin-bottom:6px}
 .profile{max-width:900px;margin:18px 0 30px;border-top:1px solid var(--line)}
@@ -236,10 +235,21 @@ Mollweide = <strong>pseudocylindrical</strong> + <strong>equal-area</strong>.</d
 </section>
 
 <section class="lesson-section" id="mercator">
-<h2>5. Contoh cylindrical: Mercator</h2>
+<h2>5. Contoh cylindrical: Mercator</h2><div class="projection-visual"><svg viewBox="0 0 900 360" role="img" aria-label="Ilustrasi konsep Mercator">
+<rect x="25" y="25" width="850" height="310" fill="#fff"/>
+<circle cx="225" cy="178" r="112" fill="#eef6fa" stroke="#075175" stroke-width="3"/>
+<ellipse cx="225" cy="178" rx="112" ry="35" fill="none" stroke="#8aa7b8" stroke-width="2"/>
+<path d="M113 178 H337 M225 66 V290 M146 98 Q225 138 304 98 M146 258 Q225 218 304 258" fill="none" stroke="#8aa7b8" stroke-width="2"/>
+<rect x="85" y="45" width="280" height="265" rx="4" fill="none" stroke="#075175" stroke-width="4"/>
+<text x="225" y="330" text-anchor="middle" font-size="20" fill="#26323e">Globe di dalam silinder</text>
+<path d="M390 178 H500" stroke="#596774" stroke-width="3"/><polygon points="500,178 482,168 482,188" fill="#596774"/>
+<rect x="545" y="55" width="300" height="245" fill="#f8fbfc" stroke="#075175" stroke-width="3"/>
+<g stroke="#a9becb" stroke-width="1.4"><path d="M595 55 V300 M645 55 V300 M695 55 V300 M745 55 V300 M795 55 V300"/><path d="M545 105 H845 M545 155 H845 M545 205 H845 M545 255 H845"/></g>
+<text x="695" y="330" text-anchor="middle" font-size="20" fill="#26323e">Hasil: bidang persegi panjang</text>
+</svg><p class="visual-note"><strong>Ilustrasi konsep.</strong> Silinder adalah cara konseptual untuk memahami keluarga cylindrical. Mercator modern didefinisikan secara matematis, bukan dengan benar-benar menyorot globe menggunakan cahaya.</p></div>
 <figure class="official-figure">
 <img src="https://pro.arcgis.com/en/pro-app/3.3/help/mapping/properties/GUID-72DC6DC6-12CA-470B-852B-2EA825991711-web.png" alt="Contoh Mercator projection dari ArcGIS Pro">
-<figcaption>Contoh Mercator projection. Sumber: Esri ArcGIS Pro Documentation.</figcaption>
+<figcaption>Contoh resmi Mercator. Ditampilkan pada ukuran yang tidak melebihi resolusi aslinya agar tidak pecah.</figcaption><p class="source-actions"><a href="https://desktop.arcgis.com/en/arcmap/latest/map/projections/mercator.htm" target="_blank" rel="noopener">Buka contoh dan penjelasan resmi Esri →</a></p>
 </figure>
 <div class="profile">
 <div class="r"><strong>Keluarga</strong><span>Cylindrical.</span></div>
@@ -260,10 +270,21 @@ Mollweide = <strong>pseudocylindrical</strong> + <strong>equal-area</strong>.</d
 </section>
 
 <section class="lesson-section" id="lcc">
-<h2>6. Contoh conic: Lambert Conformal Conic</h2>
+<h2>6. Contoh conic: Lambert Conformal Conic</h2><div class="projection-visual"><svg viewBox="0 0 900 380" role="img" aria-label="Ilustrasi konsep Lambert Conformal Conic">
+<rect width="900" height="380" fill="#fff"/>
+<circle cx="220" cy="205" r="105" fill="#eef6fa" stroke="#075175" stroke-width="3"/>
+<path d="M95 305 L220 35 L345 305 Z" fill="none" stroke="#075175" stroke-width="4"/>
+<path d="M132 225 Q220 260 308 225 M150 180 Q220 205 290 180" fill="none" stroke="#b36b35" stroke-width="4"/>
+<text x="220" y="355" text-anchor="middle" font-size="19" fill="#26323e">Kerucut memotong globe → standard parallels</text>
+<path d="M390 205 H500" stroke="#596774" stroke-width="3"/><polygon points="500,205 482,195 482,215" fill="#596774"/>
+<path d="M555 305 Q690 55 825 305" fill="#f8fbfc" stroke="#075175" stroke-width="3"/>
+<path d="M585 270 Q690 120 795 270 M610 235 Q690 165 770 235 M635 205 Q690 190 745 205" fill="none" stroke="#a9becb" stroke-width="2"/>
+<path d="M690 55 L580 305 M690 55 L635 305 M690 55 L745 305 M690 55 L800 305" fill="none" stroke="#a9becb" stroke-width="2"/>
+<text x="690" y="355" text-anchor="middle" font-size="19" fill="#26323e">Hasil: pola kipas / busur</text>
+</svg><p class="visual-note"><strong>Yang harus dilihat:</strong> parallels menjadi busur dan meridians menuju satu arah pusat. Pada bentuk secant, dua standard parallels digunakan untuk mengendalikan distorsi.</p></div>
 <figure class="official-figure">
 <img src="https://pro.arcgis.com/en/pro-app/3.3/help/mapping/properties/GUID-D4058B0A-F9B1-42CA-A534-49608436AD75-web.png" alt="Contoh Lambert Conformal Conic dari ArcGIS Pro">
-<figcaption>Contoh Lambert Conformal Conic. Sumber: Esri ArcGIS Pro Documentation.</figcaption>
+<figcaption>Contoh resmi Lambert Conformal Conic. Perhatikan bentuk kipas dan lengkungan parallels.</figcaption><p class="source-actions"><a href="https://desktop.arcgis.com/en/arcmap/latest/map/projections/lambert-conformal-conic.htm" target="_blank" rel="noopener">Buka contoh dan penjelasan resmi Esri →</a></p>
 </figure>
 <div class="profile">
 <div class="r"><strong>Keluarga</strong><span>Conic.</span></div>
@@ -283,10 +304,23 @@ Mollweide = <strong>pseudocylindrical</strong> + <strong>equal-area</strong>.</d
 </section>
 
 <section class="lesson-section" id="azimuthal">
-<h2>7. Contoh azimuthal: Azimuthal Equidistant</h2>
+<h2>7. Contoh azimuthal: Azimuthal Equidistant</h2><div class="projection-visual"><svg viewBox="0 0 900 380" role="img" aria-label="Ilustrasi konsep Azimuthal Equidistant">
+<rect width="900" height="380" fill="#fff"/>
+<circle cx="220" cy="190" r="108" fill="#eef6fa" stroke="#075175" stroke-width="3"/>
+<line x1="90" y1="80" x2="350" y2="80" stroke="#075175" stroke-width="4"/>
+<line x1="220" y1="80" x2="220" y2="118" stroke="#b36b35" stroke-width="4"/>
+<text x="220" y="335" text-anchor="middle" font-size="19" fill="#26323e">Bidang menyentuh globe pada pusat</text>
+<path d="M390 190 H500" stroke="#596774" stroke-width="3"/><polygon points="500,190 482,180 482,200" fill="#596774"/>
+<circle cx="690" cy="190" r="125" fill="#f8fbfc" stroke="#075175" stroke-width="3"/>
+<circle cx="690" cy="190" r="85" fill="none" stroke="#a9becb" stroke-width="2"/>
+<circle cx="690" cy="190" r="45" fill="none" stroke="#a9becb" stroke-width="2"/>
+<g stroke="#a9becb" stroke-width="2"><line x1="565" y1="190" x2="815" y2="190"/><line x1="690" y1="65" x2="690" y2="315"/><line x1="602" y1="102" x2="778" y2="278"/><line x1="602" y1="278" x2="778" y2="102"/></g>
+<circle cx="690" cy="190" r="6" fill="#b36b35"/>
+<text x="690" y="345" text-anchor="middle" font-size="19" fill="#26323e">Jarak dari pusat menjadi fokus</text>
+</svg><p class="visual-note"><strong>Yang harus dilihat:</strong> pusat peta adalah referensi utama. Pada Azimuthal Equidistant, jarak dari pusat ke lokasi lain dipertahankan, bukan semua jarak antarsemua titik.</p></div>
 <figure class="official-figure">
 <img src="https://pro.arcgis.com/en/pro-app/3.3/help/mapping/properties/GUID-0F291F29-28D8-47B2-AEBB-D143199381D6-web.png" alt="Contoh Azimuthal Equidistant dari ArcGIS Pro">
-<figcaption>Contoh Azimuthal Equidistant. Sumber: Esri ArcGIS Pro Documentation.</figcaption>
+<figcaption>Contoh resmi Azimuthal Equidistant dengan pusat proyeksi sebagai referensi.</figcaption><p class="source-actions"><a href="https://desktop.arcgis.com/en/arcmap/latest/map/projections/azimuthal-equidistant.htm" target="_blank" rel="noopener">Buka contoh dan penjelasan resmi Esri →</a></p>
 </figure>
 <div class="profile">
 <div class="r"><strong>Keluarga</strong><span>Azimuthal / planar.</span></div>
@@ -305,10 +339,18 @@ Mollweide = <strong>pseudocylindrical</strong> + <strong>equal-area</strong>.</d
 </section>
 
 <section class="lesson-section" id="mollweide">
-<h2>8. Contoh pseudocylindrical: Mollweide</h2>
+<h2>8. Contoh pseudocylindrical: Mollweide</h2><div class="projection-visual"><svg viewBox="0 0 900 390" role="img" aria-label="Ilustrasi konsep Mollweide">
+<rect width="900" height="390" fill="#fff"/>
+<ellipse cx="450" cy="190" rx="360" ry="170" fill="#f8fbfc" stroke="#075175" stroke-width="3"/>
+<line x1="90" y1="190" x2="810" y2="190" stroke="#a9becb" stroke-width="2"/>
+<line x1="450" y1="20" x2="450" y2="360" stroke="#a9becb" stroke-width="2"/>
+<path d="M270 36 Q330 190 270 344 M345 24 Q385 190 345 356 M555 24 Q515 190 555 356 M630 36 Q570 190 630 344" fill="none" stroke="#a9becb" stroke-width="2"/>
+<path d="M115 115 Q450 145 785 115 M95 155 Q450 175 805 155 M95 225 Q450 205 805 225 M115 265 Q450 235 785 265" fill="none" stroke="#a9becb" stroke-width="2"/>
+<text x="450" y="382" text-anchor="middle" font-size="19" fill="#26323e">Bentuk elips, equal-area: luas diprioritaskan</text>
+</svg><p class="visual-note"><strong>Yang harus dilihat:</strong> bentuk dunia menjadi elips. Mollweide mempertahankan luas relatif, tetapi bentuk dan sudut dapat berubah.</p></div>
 <figure class="official-figure">
 <img src="https://pro.arcgis.com/en/pro-app/3.3/help/mapping/properties/GUID-13682318-9038-47F7-B83F-4EFFA9A1BCC4-web.png" alt="Contoh Mollweide projection dari ArcGIS Pro">
-<figcaption>Contoh Mollweide projection. Sumber: Esri ArcGIS Pro Documentation.</figcaption>
+<figcaption>Contoh resmi Mollweide, sebuah pseudocylindrical equal-area projection.</figcaption><p class="source-actions"><a href="https://desktop.arcgis.com/en/arcmap/latest/map/projections/mollweide.htm" target="_blank" rel="noopener">Buka contoh dan penjelasan resmi Esri →</a></p>
 </figure>
 <div class="profile">
 <div class="r"><strong>Keluarga</strong><span>Pseudocylindrical.</span></div>
