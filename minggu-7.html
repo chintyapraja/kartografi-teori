@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Minggu 7 — Skala dan Generalisasi | Kartografi (Teori)</title>
+<meta name="description" content="Materi Kartografi Minggu 7: skala peta, extent, tingkat detail, perhitungan skala, generalisasi kartografis, operasi generalisasi, contoh multi-skala, dan tugas.">
+<link rel="stylesheet" href="style.css?v=20260906g"><link rel="stylesheet" href="visual-enhance.css?v=20260906b">
+<style>
+.concept-flow{display:flex;flex-wrap:wrap;gap:9px;align-items:center;max-width:920px;margin:20px 0 36px}.concept-flow span{padding:11px 14px;background:#f4f7f9;border:1px solid var(--line);font-weight:650}.concept-flow b{color:#6c7d88}
+.scale-pair,.general-grid,.two-col,.three-col{display:grid;gap:18px;max-width:920px;margin:20px 0 34px}.scale-pair,.two-col{grid-template-columns:1fr 1fr}.three-col{grid-template-columns:repeat(3,1fr)}.general-grid{grid-template-columns:repeat(2,1fr)}
+.card-lite{padding:16px;border-top:3px solid #075175;background:#f8fafb}.card-lite h3{margin-top:0}.card-lite li{margin:7px 0}
+.math-example{max-width:860px;margin:18px 0 30px;padding:18px;background:#f5f7f9;border-left:4px solid #075175}.math-example strong{color:#26323e}
+.scale-line{font-size:30px;font-weight:800;color:#075175;margin:8px 0}
+.svg-box{max-width:900px;margin:18px 0 34px;padding:14px;border:1px solid var(--line);background:#fff}.svg-box svg{display:block;width:100%;height:auto}
+.operation{border-top:1px solid var(--line);padding:20px 0;max-width:900px}.operation h3{margin:0 0 8px}.operation p{margin:7px 0}.tag{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#075175}
+.map-figure{max-width:900px;margin:20px 0 34px}.map-figure img{max-width:100%;height:auto;border:1px solid var(--line)}.map-figure figcaption{font-size:14px;color:#667681;margin-top:8px}
+.answer{max-width:900px;padding:20px;background:#f5f7f9;border-left:4px solid #075175;margin:20px 0}.key li{margin:9px 0}
+@media(max-width:900px){.scale-pair,.general-grid,.two-col,.three-col{grid-template-columns:1fr}.concept-flow{display:grid}.concept-flow b{text-align:center;transform:rotate(90deg)}}
+</style>
+</head>
+<body>
+<a class="skip" href="#materi">Langsung ke materi</a>
+<aside class="sidebar"><a class="brand" href="index.html">Kartografi<br>(Teori)</a><div class="meta">Bahan perkuliahan</div><nav aria-label="Navigasi buku">
+<a href="index.html">Pengantar</a><a href="silabus.html">Silabus lengkap</a>
+<a href="minggu-1.html">1 · Pengertian dan konsep kartografi</a><a href="minggu-2.html">2 · Klasifikasi peta dan lingkup kartografi</a><a href="minggu-3.html">3 · Komunikasi kartografis</a><a href="minggu-4.html">4 · Komponen dan kelengkapan peta</a><a href="minggu-5.html">5 · Pengantar proyeksi peta</a><a href="minggu-5-1.html">5.1 · Sistem dan jenis proyeksi</a><a href="minggu-6.html">6 · Jenis dan pembacaan peta</a><a href="minggu-7.html" aria-current="page">7 · Skala dan generalisasi</a><a href="silabus.html#minggu-8">8 · Ujian Tengah Semester</a>
+</nav></aside>
+<div class="layout"><main id="materi" class="presentation-notes">
+<div class="eyebrow">Pertemuan 7 · CPMK2 · Daring</div>
+<h1>Skala dan generalisasi</h1>
+<p class="lead">Setelah belajar membaca detail pada peta, sekarang kita mempelajari mengapa tingkat detail tersebut berubah ketika skala berubah. Materi dimulai dari pengertian dan perhitungan skala, lalu berlanjut ke generalisasi kartografis sebagai proses menyesuaikan isi dan bentuk peta agar tetap terbaca.</p>
+
+<section class="lesson-section" id="tujuan"><h2>1. Tujuan pembelajaran</h2>
+<p>Setelah mengikuti materi ini, mahasiswa diharapkan mampu:</p>
+<ul class="key"><li>menjelaskan pengertian skala peta dan tiga bentuk penyajiannya;</li><li>membedakan skala lebih besar dan lebih kecil;</li><li>menjelaskan hubungan skala, extent, dan level of detail;</li><li>menghitung jarak peta, jarak sebenarnya, dan skala;</li><li>menjelaskan mengapa generalisasi dibutuhkan;</li><li>mengenali operasi selection, simplification, aggregation, collapse, exaggeration, displacement, classification, dan typification;</li><li>menentukan keputusan generalisasi berdasarkan skala dan tujuan peta.</li></ul></section>
+
+<section class="lesson-section" id="jembatan"><h2>2. Dari membaca peta ke skala</h2>
+<div class="concept-flow"><span>Minggu 6: membaca detail</span><b>→</b><span>jalan, bangunan, sungai, kontur, label</span><b>→</b><span>apakah semua selalu bisa ditampilkan?</span><b>→</b><span>tergantung skala</span><b>→</b><span>detail disesuaikan</span><b>→</b><span>generalisasi</span></div>
+<p class="plain-note"><strong>Ide utama:</strong> semakin banyak wilayah yang harus dimasukkan ke ruang peta yang sama, semakin terbatas ruang untuk menampilkan setiap detail.</p></section>
+
+<section class="lesson-section" id="definisi"><h2>3. Apa itu skala peta?</h2>
+<p><strong>Skala peta</strong> adalah perbandingan antara jarak pada peta dan jarak sebenarnya di permukaan bumi, dengan satuan yang sama.</p>
+<div class="math-example"><div class="scale-line">1 : 25.000</div><p>Artinya <strong>1 satuan pada peta = 25.000 satuan yang sama di lapangan.</strong></p><p>Jika satuannya sentimeter: 1 cm pada peta = 25.000 cm = 250 m di lapangan.</p></div>
+<p>Angka di sebelah kanan disebut <strong>penyebut skala</strong> atau scale denominator. Angka itu menunjukkan seberapa besar dunia nyata diperkecil untuk masuk ke peta.</p></section>
+
+<section class="lesson-section" id="bentuk-skala"><h2>4. Tiga bentuk penyajian skala</h2>
+<div class="three-col"><article class="card-lite"><h3>Skala numerik</h3><div class="scale-line">1 : 25.000</div><p>Disebut juga representative fraction. Kedua angka harus dipahami dalam satuan yang sama.</p></article>
+<article class="card-lite"><h3>Skala verbal</h3><p><strong>1 cm mewakili 250 m.</strong></p><p>Mudah dipahami karena hubungan jarak ditulis dengan kata dan satuan.</p></article>
+<article class="card-lite"><h3>Skala grafis</h3><svg viewBox="0 0 300 100" aria-label="Contoh bar scale"><line x1="30" y1="45" x2="270" y2="45" stroke="#075175" stroke-width="8"/><g stroke="#26323e" stroke-width="2"><line x1="30" y1="30" x2="30" y2="62"/><line x1="110" y1="30" x2="110" y2="62"/><line x1="190" y1="30" x2="190" y2="62"/><line x1="270" y1="30" x2="270" y2="62"/></g><g fill="#26323e" font-size="15"><text x="25" y="82">0</text><text x="95" y="82">250</text><text x="173" y="82">500</text><text x="247" y="82">750 m</text></g></svg><p>Bar scale ikut berubah ukuran bila peta diperbesar atau diperkecil secara proporsional.</p></article></div></section>
+
+<section class="lesson-section" id="besar-kecil"><h2>5. Mengapa 1:5.000 disebut skala lebih besar?</h2>
+<p>Istilah ini sering membingungkan. Jangan melihat besar-kecilnya angka penyebut saja. Lihat pecahannya:</p>
+<div class="math-example"><p><strong>1/5.000 lebih besar daripada 1/50.000.</strong></p><p>Karena itu 1:5.000 disebut skala lebih besar daripada 1:50.000.</p></div>
+<div class="table-wrap"><table><thead><tr><th>Karakteristik</th><th>Skala lebih besar</th><th>Skala lebih kecil</th></tr></thead><tbody>
+<tr><td>Contoh</td><td>1:5.000</td><td>1:1.000.000</td></tr><tr><td>Cakupan wilayah</td><td>lebih kecil</td><td>lebih luas</td></tr><tr><td>Detail</td><td>lebih banyak</td><td>lebih sedikit</td></tr><tr><td>Bangunan individual</td><td>lebih mungkin ditampilkan</td><td>umumnya tidak ditampilkan satu per satu</td></tr><tr><td>Generalisasi</td><td>relatif lebih sedikit</td><td>lebih banyak</td></tr>
+</tbody></table></div>
+<p class="plain-note"><strong>Ingat:</strong> “large scale” bukan berarti wilayah yang digambar lebih luas. Justru peta skala besar biasanya menunjukkan wilayah lebih kecil dengan detail lebih tinggi.</p></section>
+
+<section class="lesson-section" id="extent"><h2>6. Scale, extent, dan level of detail</h2>
+<p><strong>Extent</strong> adalah cakupan wilayah yang terlihat pada peta. <strong>Level of detail</strong> adalah tingkat kerincian informasi yang dipilih untuk ditampilkan.</p>
+<div class="scale-pair"><article class="card-lite"><h3>Skala lebih besar</h3><ul><li>extent lebih kecil;</li><li>detail lebih banyak;</li><li>lebih banyak jalan lokal, bangunan, dan bentuk geometri yang dapat ditampilkan;</li><li>generalisasi relatif lebih sedikit.</li></ul></article><article class="card-lite"><h3>Skala lebih kecil</h3><ul><li>extent lebih luas;</li><li>detail lebih sedikit;</li><li>hanya fitur yang penting untuk tujuan peta dipertahankan;</li><li>generalisasi lebih kuat.</li></ul></article></div>
+<div class="concept-flow"><span>Skala lebih besar</span><b>→</b><span>extent lebih kecil</span><b>→</b><span>detail lebih banyak</span><b>→</b><span>generalisasi lebih sedikit</span></div>
+<div class="concept-flow"><span>Skala lebih kecil</span><b>→</b><span>extent lebih luas</span><b>→</b><span>detail lebih sedikit</span><b>→</b><span>generalisasi lebih banyak</span></div>
+<p class="source-note">USGS menjelaskan bahwa peta topografi pada skala yang lebih besar menampilkan area lebih detail, sedangkan skala yang lebih kecil mencakup area lebih luas dengan detail lebih sedikit. <a href="https://pubs.usgs.gov/gip/usgsmaps/usgsmaps.html" target="_blank" rel="noopener">USGS Maps Booklet</a>.</p></section>
+
+<section class="lesson-section" id="multiskala"><h2>7. Satu wilayah pada beberapa skala</h2>
+<p>Bayangkan area yang sama harus disajikan pada 1:10.000, 1:50.000, dan 1:250.000. Data dasarnya mungkin sama, tetapi tampilan kartografisnya tidak boleh sama persis.</p>
+<div class="three-col"><article class="card-lite"><h3>1:10.000</h3><ul><li>bangunan individual;</li><li>jalan lokal;</li><li>detail lekukan sungai;</li><li>banyak label lokal.</li></ul></article><article class="card-lite"><h3>1:50.000</h3><ul><li>sebagian jalan lokal dikurangi;</li><li>bangunan mulai dikelompokkan;</li><li>bentuk garis mulai disederhanakan;</li><li>label diseleksi.</li></ul></article><article class="card-lite"><h3>1:250.000</h3><ul><li>jalan utama diprioritaskan;</li><li>permukiman dapat berubah menjadi area/point;</li><li>sungai utama dipertahankan;</li><li>detail kecil banyak dihilangkan.</li></ul></article></div>
+<div class="svg-box"><svg viewBox="0 0 900 290" aria-label="Ilustrasi detail berkurang ketika skala mengecil">
+<rect width="900" height="290" fill="#fff"/><g stroke="#075175" fill="none"><rect x="40" y="40" width="220" height="170" stroke-width="2"/><rect x="340" y="40" width="220" height="170" stroke-width="2"/><rect x="640" y="40" width="220" height="170" stroke-width="2"/></g>
+<g fill="#dceaf1" stroke="#075175"><rect x="60" y="60" width="30" height="22"/><rect x="105" y="78" width="25" height="20"/><rect x="150" y="58" width="28" height="20"/><rect x="195" y="90" width="32" height="24"/><rect x="75" y="130" width="25" height="20"/><rect x="130" y="145" width="30" height="22"/><rect x="185" y="145" width="25" height="20"/><rect x="360" y="75" width="70" height="48"/><rect x="455" y="125" width="70" height="50"/><circle cx="730" cy="110" r="16"/><circle cx="785" cy="150" r="16"/></g>
+<g stroke="#b06b36" stroke-width="5" fill="none"><path d="M45 185 Q120 120 255 190"/><path d="M345 185 Q430 125 555 185"/><path d="M645 185 Q735 130 855 180"/></g>
+<g fill="#26323e" font-size="18"><text x="150" y="250" text-anchor="middle">detail individual</text><text x="450" y="250" text-anchor="middle">aggregation + simplification</text><text x="750" y="250" text-anchor="middle">selection + collapse</text></g></svg></div></section>
+
+<section class="lesson-section" id="hitung"><h2>8. Perhitungan dasar skala</h2>
+<h3>8.1 Mencari jarak sebenarnya</h3><div class="math-example"><p><strong>Rumus:</strong> jarak sebenarnya = jarak pada peta × penyebut skala.</p><p>Contoh: 4 cm pada peta 1:25.000.</p><p>4 × 25.000 = 100.000 cm = 1.000 m = <strong>1 km</strong>.</p></div>
+<h3>8.2 Mencari jarak pada peta</h3><div class="math-example"><p><strong>Rumus:</strong> jarak peta = jarak sebenarnya ÷ penyebut skala.</p><p>Contoh: jarak lapangan 2 km pada skala 1:50.000.</p><p>2 km = 200.000 cm. 200.000 ÷ 50.000 = <strong>4 cm</strong>.</p></div>
+<h3>8.3 Mencari skala</h3><div class="math-example"><p>Jarak pada peta = 5 cm. Jarak sebenarnya = 1 km = 100.000 cm.</p><p>5 : 100.000 → bagi keduanya dengan 5 → <strong>1 : 20.000</strong>.</p></div></section>
+
+<section class="lesson-section" id="resize"><h2>9. Apa yang terjadi jika peta diperbesar atau diperkecil?</h2>
+<p>Jika peta 1:50.000 diperbesar menjadi dua kali ukuran linear aslinya, secara geometris skala tampilannya menjadi 1:25.000. Jika ukurannya diperkecil menjadi setengah, tampilannya menjadi 1:100.000.</p>
+<p class="plain-note"><strong>Tetapi:</strong> memperbesar gambar tidak menciptakan detail atau ketelitian baru. Mengecilkan gambar juga tidak otomatis membuat peta menjadi kartografis baik. Isi dan simbol harus disesuaikan melalui generalisasi.</p></section>
+
+<section class="lesson-section" id="generalisasi"><h2>10. Apa itu generalisasi kartografis?</h2>
+<p><strong>Generalisasi kartografis</strong> adalah proses menyesuaikan jumlah, bentuk, posisi, atau representasi objek agar peta tetap jelas dan sesuai dengan skala serta tujuan penggunaannya.</p>
+<ul class="key"><li>Generalisasi bukan menghapus data secara sembarangan.</li><li>Generalisasi bukan sekadar resize.</li><li>Tujuannya menjaga informasi penting dan pola geografis sambil mengurangi detail yang tidak lagi dapat ditampilkan dengan jelas.</li><li>Semakin kecil skala peta, kebutuhan generalisasi biasanya semakin besar.</li></ul>
+<p class="source-note">Esri mendefinisikan cartographic generalization sebagai penyederhanaan data kompleks agar peta lebih mudah dipahami pada skala lebih kecil, termasuk selective omission, simplification, aggregation, dan displacement. <a href="https://support.esri.com/en-us/gis-dictionary/cartographic-generalization" target="_blank" rel="noopener">Esri GIS Dictionary</a>.</p></section>
+
+<section class="lesson-section" id="kenapa"><h2>11. Mengapa generalisasi diperlukan?</h2>
+<p>Ruang pada peta terbatas. Pada 1:5.000, seratus bangunan mungkin masih dapat digambar secara individual. Jika wilayah yang sama harus ditampilkan pada 1:1.000.000, simbol bangunan akan saling bertumpuk dan menutupi informasi lain.</p>
+<div class="two-col"><article class="card-lite"><h3>Hanya resize</h3><ul><li>semua fitur dipertahankan;</li><li>simbol dan label bertumpuk;</li><li>peta menjadi padat;</li><li>hierarki informasi hilang.</li></ul></article><article class="card-lite"><h3>Generalisasi</h3><ul><li>fitur penting dipilih;</li><li>bentuk disederhanakan;</li><li>fitur berdekatan dapat digabung;</li><li>hubungan spasial utama tetap terbaca.</li></ul></article></div>
+<p class="source-note">Dokumentasi ArcGIS Pro menekankan bahwa generalisasi diperlukan agar karakter bentuk dan hubungan spasial tetap terbaca ketika data ditampilkan pada skala yang lebih kecil. <a href="https://doc.esri.com/en/arcgis-pro/latest/tool-reference/cartography/understanding-conflict-resolution-and-generalization.html" target="_blank" rel="noopener">ArcGIS Pro — Generalization</a>.</p></section>
+
+<section class="lesson-section" id="operasi"><h2>12. Operasi generalisasi</h2>
+<p>Tidak ada satu operasi yang cocok untuk semua fitur. Beberapa teknik berikut sering digunakan bersama.</p>
+<div class="operation"><span class="tag">1 · Selection</span><h3>Memilih fitur yang tetap ditampilkan</h3><p>Contoh: jalan nasional dipertahankan, tetapi sebagian jalan lokal dihilangkan pada peta skala lebih kecil.</p></div>
+<div class="operation"><span class="tag">2 · Simplification</span><h3>Mengurangi detail geometri</h3><p>Contoh: garis pantai atau sungai yang sangat berlekuk disederhanakan dengan lebih sedikit detail, sambil mempertahankan bentuk umumnya.</p></div>
+<div class="operation"><span class="tag">3 · Aggregation</span><h3>Menggabungkan beberapa objek</h3><p>Contoh: sejumlah bangunan individual digabung menjadi satu area permukiman.</p></div>
+<div class="operation"><span class="tag">4 · Collapse</span><h3>Mengubah representasi ke dimensi yang lebih sederhana</h3><p>Contoh: sungai yang pada skala besar digambar sebagai polygon dapat menjadi garis; area kota kecil dapat menjadi simbol titik.</p></div>
+<div class="operation"><span class="tag">5 · Exaggeration</span><h3>Membesarkan representasi agar tetap terlihat</h3><p>Contoh: lebar simbol jalan pada peta sering lebih besar daripada lebar jalan sebenarnya menurut skala.</p></div>
+<div class="operation"><span class="tag">6 · Displacement</span><h3>Menggeser simbol sedikit untuk mencegah tumpang tindih</h3><p>Contoh: jalan dan rel yang berjalan sangat berdekatan dapat digeser sedikit secara kartografis agar keduanya terbaca.</p></div>
+<div class="operation"><span class="tag">7 · Classification</span><h3>Mengurangi atau mengelompokkan kategori</h3><p>Contoh: sepuluh kelas jalan disederhanakan menjadi empat kelas utama pada peta regional.</p></div>
+<div class="operation"><span class="tag">8 · Typification</span><h3>Mengurangi jumlah objek sambil mempertahankan pola</h3><p>Contoh: tidak semua rumah digambar, tetapi sebagian simbol dipertahankan sedemikian rupa sehingga pola permukiman masih terlihat.</p></div></section>
+
+<section class="lesson-section" id="jenis-general"><h2>13. Generalisasi isi dan generalisasi geometri</h2>
+<div class="two-col"><article class="card-lite"><h3>Content generalization</h3><p>Menjawab: <strong>fitur apa yang masih perlu ditampilkan?</strong></p><p>Contoh: selection dan pengurangan kelas informasi.</p></article><article class="card-lite"><h3>Geometric/cartographic generalization</h3><p>Menjawab: <strong>bagaimana bentuk atau posisi fitur perlu disesuaikan?</strong></p><p>Contoh: simplification, collapse, exaggeration, dan displacement.</p></article></div>
+<p>Pemisahan ini membantu memahami bahwa generalisasi dapat mengubah <strong>isi</strong>, <strong>bentuk grafis</strong>, atau keduanya.</p></section>
+
+<section class="lesson-section" id="tujuan-peta"><h2>14. Generalisasi bergantung pada tujuan peta</h2>
+<p>Dataset yang sama dapat digeneralisasi secara berbeda jika tujuan petanya berbeda.</p>
+<div class="three-col"><article class="card-lite"><h3>Peta transportasi</h3><p>Jalan utama, simpang penting, terminal, dan rel menjadi prioritas.</p></article><article class="card-lite"><h3>Peta hidrologi</h3><p>Sungai, danau, DAS, serta hubungan aliran lebih penting daripada jalan lokal.</p></article><article class="card-lite"><h3>Peta penduduk</h3><p>Batas administrasi dan area permukiman mungkin lebih penting sebagai konteks bagi data penduduk.</p></article></div>
+<p class="plain-note"><strong>Kesimpulan:</strong> generalisasi bukan hanya persoalan ukuran. Pertanyaan pertama tetap: <strong>apa tujuan peta dan informasi apa yang harus dibaca?</strong></p></section>
+
+<section class="lesson-section" id="rbi-example"><h2>15. Contoh generalisasi dari RBI</h2>
+<figure class="map-figure"><img src="assets/rbi/yoso-symbols.webp" alt="Cuplikan RBI Yosowilangun yang detail"><figcaption>Cuplikan RBI Yosowilangun 1:25.000. Pada skala ini banyak jalan lokal, area penggunaan lahan, batas, dan permukiman dapat ditampilkan.</figcaption></figure>
+<p>Jika area yang sama harus ditampilkan pada skala jauh lebih kecil, kita tidak sekadar mengecilkan gambar. Contoh keputusan yang mungkin diperlukan:</p>
+<div class="table-wrap"><table><thead><tr><th>Objek</th><th>Keputusan pada skala lebih kecil</th><th>Operasi</th></tr></thead><tbody>
+<tr><td>jalan lokal</td><td>sebagian dihilangkan, jalan utama dipertahankan</td><td>selection</td></tr>
+<tr><td>bangunan/permukiman kecil</td><td>digabung menjadi area atau direpresentasikan lebih sederhana</td><td>aggregation / collapse</td></tr>
+<tr><td>sungai berkelok</td><td>detail lekukan dikurangi tetapi alur utama dipertahankan</td><td>simplification</td></tr>
+<tr><td>simbol yang terlalu berdekatan</td><td>posisi grafis dapat sedikit digeser agar tidak bertabrakan</td><td>displacement</td></tr>
+</tbody></table></div>
+<p class="plain-note">Ini adalah ilustrasi keputusan kartografis. Keputusan sebenarnya harus mengikuti tujuan peta, spesifikasi produk, dan fitur yang dianggap penting.</p></section>
+
+<section class="lesson-section" id="digital"><h2>16. Skala pada peta digital</h2>
+<p>Pada web map atau GIS, zoom bukan selalu sekadar memperbesar gambar. Sistem dapat mengubah isi dan simbol pada tingkat zoom tertentu.</p>
+<h3>Scale-dependent display</h3><p><strong>Scale-dependent display</strong> berarti layer, label, atau simbol hanya ditampilkan pada rentang skala tertentu.</p>
+<ul class="key"><li>saat zoom jauh, hanya kota dan jalan utama muncul;</li><li>saat zoom mendekat, jalan lokal dan bangunan mulai tampil;</li><li>ukuran simbol dan label dapat berubah agar tetap terbaca;</li><li>dataset yang sama dapat memiliki beberapa representasi kartografis.</li></ul></section>
+
+<section class="lesson-section" id="beda-istilah"><h2>17. Scale, spatial resolution, dan level of detail bukan hal yang sama</h2>
+<div class="table-wrap"><table><thead><tr><th>Istilah</th><th>Pengertian</th><th>Contoh</th></tr></thead><tbody>
+<tr><td>Map scale</td><td>Hubungan jarak peta dengan jarak sebenarnya.</td><td>1:25.000</td></tr>
+<tr><td>Spatial resolution</td><td>Ukuran detail spasial terkecil yang dapat direkam/dibedakan oleh data tertentu.</td><td>pixel citra 10 m</td></tr>
+<tr><td>Level of detail</td><td>Seberapa rinci informasi dipilih dan ditampilkan pada peta.</td><td>bangunan individual vs area permukiman</td></tr>
+</tbody></table></div>
+<p class="plain-note">Citra beresolusi 10 m tidak berarti “skalanya 1:10.000”. Resolution dan map scale berhubungan dengan detail, tetapi konsepnya berbeda.</p></section>
+
+<section class="lesson-section" id="kesalahan"><h2>18. Kesalahan umum</h2>
+<ul class="key"><li>menganggap skala besar berarti wilayah yang lebih luas;</li><li>membandingkan penyebut tanpa memahami nilai pecahan;</li><li>mencampur unit ketika menghitung skala;</li><li>menganggap resize sama dengan generalisasi;</li><li>mempertahankan semua detail pada skala kecil;</li><li>menghapus fitur tanpa mempertimbangkan tujuan peta;</li><li>menganggap zoom lebih dekat otomatis membuat data lebih akurat;</li><li>menyamakan map scale dengan spatial resolution.</li></ul></section>
+
+<section class="lesson-section" id="latihan"><h2>19. Latihan skala</h2>
+<ol><li>Jarak 3 cm pada peta 1:25.000 sama dengan berapa meter di lapangan?</li><li>Jarak sebenarnya 2 km akan digambar berapa cm pada skala 1:50.000?</li><li>Jika 5 cm pada peta mewakili 1 km di lapangan, berapa skalanya?</li><li>Peta 1:100.000 diperbesar dua kali secara linear. Berapa skala tampilannya?</li><li>Mana yang merupakan skala lebih besar: 1:10.000 atau 1:100.000? Jelaskan dengan konsep pecahan dan detail.</li></ol></section>
+
+<section class="lesson-section" id="tugas"><h2>20. Tugas 1 — Skala dan generalisasi</h2>
+<h3>Bagian A — Perhitungan skala</h3><p>Kerjakan lima soal perhitungan yang diberikan pada bagian latihan. Tunjukkan konversi satuan dan langkah hitung.</p>
+<h3>Bagian B — Perbandingan dua skala</h3><p>Bandingkan dua tampilan wilayah yang sama pada skala berbeda. Identifikasi fitur yang tetap, hilang, disederhanakan, atau berubah simbol.</p>
+<h3>Bagian C — Generalisasi praktis</h3><p>Gunakan satu crop RBI yang disediakan. Bayangkan peta tersebut harus disajikan pada skala yang jauh lebih kecil. Tentukan:</p>
+<ul><li>fitur yang dipertahankan;</li><li>fitur yang dapat dihilangkan;</li><li>fitur yang perlu disederhanakan;</li><li>fitur yang perlu digabung atau diubah representasinya;</li><li>alasan setiap keputusan.</li></ul>
+<h3>Bagian D — Justifikasi</h3><p>Tuliskan alasan kartografis. Jawaban “karena terlalu banyak” belum cukup. Hubungkan keputusan dengan <strong>tujuan peta, skala, keterbacaan, dan pentingnya fitur</strong>.</p></section>
+
+<section class="lesson-section" id="contoh-jawab"><h2>21. Contoh cara menjawab tugas</h2>
+<div class="answer"><h3>Kasus</h3><p>Peta kota 1:10.000 akan dibuat menjadi peta regional 1:100.000. Tujuannya menunjukkan jaringan transportasi utama dan pola permukiman.</p>
+<p><strong>Jalan lokal</strong><br>Keputusan: sebagian dihilangkan.<br>Operasi: <strong>selection</strong>.<br>Alasan: pada skala 1:100.000, seluruh jalan lokal akan membuat peta terlalu padat, sedangkan tujuan peta adalah jaringan transportasi utama.</p>
+<p><strong>Sungai utama</strong><br>Keputusan: dipertahankan tetapi bentuknya disederhanakan.<br>Operasi: <strong>simplification</strong>.<br>Alasan: sungai tetap penting sebagai referensi geografis, tetapi detail lekukan kecil tidak perlu dipertahankan.</p>
+<p><strong>Bangunan individual</strong><br>Keputusan: digabung menjadi area permukiman.<br>Operasi: <strong>aggregation</strong>.<br>Alasan: bangunan individual tidak lagi terbaca pada skala lebih kecil, tetapi pola kawasan permukiman masih penting.</p>
+<p><strong>Kota kecil</strong><br>Keputusan: jika area terlalu kecil untuk digambar sebagai polygon, dapat direpresentasikan dengan simbol titik.<br>Operasi: <strong>collapse</strong>.<br>Alasan: lokasi kota perlu dipertahankan meskipun bentuk areanya tidak dapat ditampilkan dengan jelas.</p></div>
+<p class="plain-note"><strong>Pola jawaban:</strong> objek → keputusan → operasi generalisasi → alasan berdasarkan tujuan dan skala.</p></section>
+
+<section class="lesson-section" id="ringkasan"><h2>22. Ringkasan</h2>
+<ul class="key"><li>Skala adalah perbandingan jarak pada peta dan jarak sebenarnya.</li><li>Skala lebih besar memiliki penyebut lebih kecil, cakupan lebih sempit, dan umumnya detail lebih tinggi.</li><li>Skala lebih kecil mencakup wilayah lebih luas sehingga detail perlu dikurangi.</li><li>Generalisasi adalah proses memilih dan menyesuaikan representasi agar peta tetap jelas pada skala dan tujuan tertentu.</li><li>Generalisasi dapat melibatkan selection, simplification, aggregation, collapse, exaggeration, displacement, classification, dan typification.</li><li>Generalisasi yang baik mempertahankan informasi dan pola yang penting, bukan sekadar menghapus detail.</li></ul></section>
+
+<section class="lesson-section" id="referensi"><h2>23. Referensi</h2><ol class="reference">
+<li><a href="https://pubs.usgs.gov/gip/usgsmaps/usgsmaps.html" target="_blank" rel="noopener">U.S. Geological Survey — USGS Maps Booklet</a>.</li>
+<li><a href="https://support.esri.com/en-us/gis-dictionary/cartographic-generalization" target="_blank" rel="noopener">Esri GIS Dictionary — Cartographic Generalization</a>.</li>
+<li><a href="https://doc.esri.com/en/arcgis-pro/latest/tool-reference/cartography/understanding-conflict-resolution-and-generalization.html" target="_blank" rel="noopener">ArcGIS Pro — Understanding Conflict Resolution and Generalization</a>.</li>
+<li><a href="https://doc.esri.com/en/arcgis-pro/latest/tool-reference/cartography/an-overview-of-the-generalization-toolset.html" target="_blank" rel="noopener">ArcGIS Pro — Generalization Toolset</a>.</li>
+<li><a href="https://www.esri.com/about/newsroom/arcnews/how-cartographers-generalize-data" target="_blank" rel="noopener">Esri ArcNews — How Cartographers Generalize Data</a>.</li>
+</ol></section>
+<footer>Kartografi (Teori) · Ni Putu Praja Chintya<br>Pertemuan 7: skala dan generalisasi. Contoh RBI digunakan sebagai konteks untuk memahami perubahan detail dan keputusan kartografis.</footer>
+</main><aside class="toc" aria-label="Pada halaman ini"><strong>Pada halaman ini</strong>
+<a href="#tujuan">Tujuan</a><a href="#jembatan">Dari Minggu 6</a><a href="#definisi">Definisi skala</a><a href="#bentuk-skala">Bentuk skala</a><a href="#besar-kecil">Besar vs kecil</a><a href="#extent">Extent & detail</a><a href="#multiskala">Multi-skala</a><a href="#hitung">Perhitungan</a><a href="#resize">Perubahan skala</a><a href="#generalisasi">Generalisasi</a><a href="#operasi">Operasi</a><a href="#rbi-example">Contoh RBI</a><a href="#digital">Peta digital</a><a href="#beda-istilah">Scale vs resolution</a><a href="#latihan">Latihan</a><a href="#tugas">Tugas</a><a href="#contoh-jawab">Contoh jawaban</a><a href="#referensi">Referensi</a>
+</aside></div></body></html>
