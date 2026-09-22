@@ -1,67 +1,70 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 620">
-<rect width="1400" height="620" fill="#ffffff"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 500">
+<rect width="1440" height="500" fill="#ffffff"/>
 <defs>
-  <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
-    <path d="M0,0 L0,6 L9,3 z" fill="#6d7f8a"/>
+  <marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,6 L9,3 z" fill="#788c98"/>
+  </marker>
+  <marker id="arrOrange" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,6 L9,3 z" fill="#b56a2f"/>
   </marker>
 </defs>
 
-<text x="700" y="48" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#173548">Dari Bumi Nyata ke Koordinat pada Peta</text>
+<text x="720" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="29" font-weight="700" fill="#173548">Hubungan Model Bumi, Sistem Referensi, dan Proyeksi Peta</text>
 
-<!-- Earth -->
-<circle cx="130" cy="235" r="82" fill="#eaf3f7" stroke="#075175" stroke-width="4"/>
-<path d="M48 235 Q130 270 212 235 M130 153 V317 M70 190 Q130 214 190 190 M70 280 Q130 256 190 280" fill="none" stroke="#8da4b0" stroke-width="2"/>
-<text x="130" y="360" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#26323e">Bumi nyata</text>
-<text x="130" y="387" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#667681">bentuk fisik bumi</text>
+<!-- arrows -->
+<g stroke="#788c98" stroke-width="4" fill="none" marker-end="url(#arr)">
+  <line x1="205" y1="205" x2="275" y2="205"/>
+  <line x1="445" y1="205" x2="515" y2="205"/>
+  <line x1="685" y1="205" x2="755" y2="205"/>
+</g>
+<line x1="925" y1="205" x2="1010" y2="205" stroke="#b56a2f" stroke-width="5" marker-end="url(#arrOrange)"/>
+<line x1="1180" y1="205" x2="1250" y2="205" stroke="#788c98" stroke-width="4" marker-end="url(#arr)"/>
 
-<!-- arrow1 -->
-<line x1="230" y1="235" x2="315" y2="235" stroke="#6d7f8a" stroke-width="4" marker-end="url(#arrow)"/>
+<!-- Node 1 Earth -->
+<circle cx="125" cy="205" r="75" fill="#eaf3f7" stroke="#075175" stroke-width="4"/>
+<path d="M50 205 Q125 235 200 205 M125 130 V280 M70 165 Q125 188 180 165 M70 245 Q125 222 180 245" fill="none" stroke="#8da4b0" stroke-width="2"/>
+<text x="125" y="315" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#26323e">Bumi nyata</text>
+<text x="125" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#667681">permukaan fisik bumi</text>
 
-<!-- Ellipsoid -->
-<ellipse cx="410" cy="235" rx="88" ry="68" fill="#f8fafb" stroke="#075175" stroke-width="4"/>
-<text x="410" y="360" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#26323e">Ellipsoid</text>
-<text x="410" y="387" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#667681">model matematis bumi</text>
+<!-- Node 2 Ellipsoid -->
+<ellipse cx="365" cy="205" rx="78" ry="62" fill="#f8fafb" stroke="#075175" stroke-width="4"/>
+<text x="365" y="315" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#26323e">Ellipsoid</text>
+<text x="365" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#667681">model matematis bumi</text>
 
-<!-- Datum halo -->
-<rect x="305" y="115" width="210" height="245" rx="18" fill="none" stroke="#b06b36" stroke-width="3" stroke-dasharray="10 7"/>
-<text x="410" y="97" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#9a5b2e">Datum geodetik</text>
-<text x="410" y="78" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#6d6259">kerangka acuan posisi</text>
+<!-- Node 3 Datum -->
+<rect x="525" y="145" width="150" height="120" rx="10" fill="#fff7ef" stroke="#b56a2f" stroke-width="3"/>
+<text x="600" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#9a5b2e">Datum</text>
+<text x="600" y="218" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#6d6259">kerangka acuan</text>
+<text x="600" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#6d6259">geodetik</text>
+<text x="600" y="315" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#26323e">Datum geodetik</text>
+<text x="600" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#667681">mengikat model ke acuan posisi</text>
 
-<!-- arrow2 -->
-<line x1="530" y1="235" x2="615" y2="235" stroke="#6d7f8a" stroke-width="4" marker-end="url(#arrow)"/>
+<!-- Node 4 Geographic CRS -->
+<circle cx="845" cy="205" r="75" fill="#eef5f8" stroke="#075175" stroke-width="4"/>
+<ellipse cx="845" cy="205" rx="75" ry="24" fill="none" stroke="#b56a2f" stroke-width="2"/>
+<line x1="845" y1="130" x2="845" y2="280" stroke="#8da4b0" stroke-width="2"/>
+<path d="M783 165 Q845 190 907 165 M783 245 Q845 220 907 245" fill="none" stroke="#8da4b0" stroke-width="2"/>
+<text x="845" y="315" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#26323e">Geographic CRS</text>
+<text x="845" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#667681">latitude + longitude</text>
+<text x="845" y="362" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#667681">unit: derajat</text>
 
-<!-- Geographic CRS -->
-<circle cx="710" cy="235" r="82" fill="#eef5f8" stroke="#075175" stroke-width="4"/>
-<ellipse cx="710" cy="235" rx="82" ry="27" fill="none" stroke="#b06b36" stroke-width="2"/>
-<line x1="710" y1="153" x2="710" y2="317" stroke="#8da4b0" stroke-width="2"/>
-<path d="M642 185 Q710 215 778 185 M642 285 Q710 255 778 285" fill="none" stroke="#8da4b0" stroke-width="2"/>
-<text x="710" y="360" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#26323e">Geographic CRS</text>
-<text x="710" y="387" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#667681">latitude + longitude</text>
-<text x="710" y="410" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#667681">unit: derajat</text>
+<!-- Projection -->
+<rect x="1020" y="155" width="150" height="100" rx="10" fill="#fff7ef" stroke="#b56a2f" stroke-width="3"/>
+<text x="1095" y="194" text-anchor="middle" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#9a5b2e">Proyeksi peta</text>
+<text x="1095" y="222" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6d6259">transformasi</text>
+<text x="1095" y="242" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6d6259">melengkung → datar</text>
+<text x="1095" y="315" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#26323e">Map projection</text>
 
-<!-- Projection arrow -->
-<line x1="805" y1="235" x2="935" y2="235" stroke="#b06b36" stroke-width="5" marker-end="url(#arrow)"/>
-<text x="870" y="203" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#9a5b2e">Proyeksi peta</text>
-<text x="870" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#6d6259">melengkung → datar</text>
+<!-- Node 6 Projected CRS -->
+<rect x="1260" y="130" width="130" height="150" rx="8" fill="#f8fafb" stroke="#075175" stroke-width="4"/>
+<line x1="1285" y1="250" x2="1360" y2="250" stroke="#b56a2f" stroke-width="3"/>
+<line x1="1285" y1="250" x2="1285" y2="165" stroke="#075175" stroke-width="3"/>
+<text x="1325" y="315" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#26323e">Projected CRS</text>
+<text x="1325" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#667681">Easting + Northing</text>
+<text x="1325" y="362" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#667681">unit: meter</text>
 
-<!-- Projected CRS -->
-<rect x="975" y="145" width="190" height="180" rx="8" fill="#f8fafb" stroke="#075175" stroke-width="4"/>
-<line x1="1010" y1="285" x2="1130" y2="285" stroke="#b06b36" stroke-width="4" marker-end="url(#arrow)"/>
-<line x1="1010" y1="285" x2="1010" y2="180" stroke="#075175" stroke-width="4" marker-end="url(#arrow)"/>
-<text x="1070" y="360" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#26323e">Projected CRS</text>
-<text x="1070" y="387" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#667681">Easting + Northing</text>
-<text x="1070" y="410" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#667681">unit: meter</text>
-
-<!-- Example -->
-<rect x="1185" y="155" width="180" height="160" rx="10" fill="#f6f8fa" stroke="#c3d0d7" stroke-width="2"/>
-<text x="1275" y="187" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#26323e">Contoh</text>
-<text x="1275" y="222" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#26323e">WGS 84</text>
-<text x="1275" y="249" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#26323e">↓</text>
-<text x="1275" y="276" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#26323e">Transverse Mercator</text>
-<text x="1275" y="303" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#26323e">↓ UTM Zone 49S</text>
-
-<!-- bottom explanation -->
-<rect x="95" y="485" width="1170" height="92" rx="10" fill="#f6f8fa" stroke="#c3d0d7" stroke-width="2"/>
-<text x="120" y="520" font-family="Arial, sans-serif" font-size="17" font-weight="700" fill="#26323e">Hubungannya:</text>
-<text x="120" y="551" font-family="Arial, sans-serif" font-size="16" fill="#26323e">Bumi dimodelkan dengan ellipsoid → datum memberi kerangka acuan → Geographic CRS menyatakan posisi → proyeksi peta meratakan → Projected CRS memberi koordinat datar.</text>
+<!-- Short story bullets -->
+<rect x="150" y="405" width="1140" height="64" rx="10" fill="#f6f8fa" stroke="#c5d1d8"/>
+<text x="180" y="432" font-family="Arial, sans-serif" font-size="15" fill="#26323e">• Ellipsoid menyederhanakan bentuk bumi.   • Datum memberi kerangka acuan posisi.</text>
+<text x="180" y="455" font-family="Arial, sans-serif" font-size="15" fill="#26323e">• Geographic CRS menyatakan posisi pada permukaan bumi.   • Proyeksi peta mengubahnya menjadi koordinat datar pada Projected CRS.</text>
 </svg>
