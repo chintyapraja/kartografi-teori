@@ -95,49 +95,15 @@
 
 
 
+
 <section class="lesson-section" id="hubungan">
 <h3>A.2 Hubungan Sistem Referensi Posisi</h3>
 <p>Proyeksi peta tidak berdiri sendiri. Sebelum suatu lokasi dapat ditampilkan pada peta datar, posisi tersebut perlu didefinisikan terlebih dahulu terhadap model bumi dan sistem referensi koordinat.</p>
 
-<div class="visual-box">
-<svg viewBox="0 0 1040 620" role="img" aria-label="Hubungan bumi nyata, ellipsoid, datum, geographic CRS, proyeksi peta, dan projected CRS">
-<rect width="1040" height="620" fill="#ffffff"/>
-<circle cx="120" cy="210" r="72" fill="#e8f2f8" stroke="#075175" stroke-width="4"/>
-<path d="M48 210 Q120 245 192 210 M120 138 V282 M68 170 Q120 193 172 170 M68 250 Q120 227 172 250" fill="none" stroke="#8ca0ac" stroke-width="2"/>
-<text x="120" y="315" text-anchor="middle" font-size="18" font-weight="700">Bumi nyata</text>
-<text x="120" y="338" text-anchor="middle" font-size="13" fill="#667681">bentuk fisik tidak beraturan</text>
-<path d="M210 210 H285" stroke="#7d909b" stroke-width="4"/><polygon points="285,210 268,200 268,220" fill="#7d909b"/>
-<ellipse cx="380" cy="210" rx="82" ry="64" fill="#f8fafb" stroke="#075175" stroke-width="4"/>
-<text x="380" y="315" text-anchor="middle" font-size="18" font-weight="700">Ellipsoid</text>
-<text x="380" y="338" text-anchor="middle" font-size="13" fill="#667681">model matematis bentuk bumi</text>
-<rect x="285" y="95" width="190" height="235" rx="12" fill="none" stroke="#b06b36" stroke-width="3" stroke-dasharray="8 6"/>
-<text x="380" y="78" text-anchor="middle" font-size="16" font-weight="700" fill="#9a5b2e">Datum geodetik</text>
-<text x="380" y="55" text-anchor="middle" font-size="12" fill="#6d6259">memberikan kerangka acuan posisi</text>
-<path d="M485 210 H560" stroke="#7d909b" stroke-width="4"/><polygon points="560,210 543,200 543,220" fill="#7d909b"/>
-<circle cx="650" cy="210" r="72" fill="#eef5f8" stroke="#075175" stroke-width="4"/>
-<ellipse cx="650" cy="210" rx="72" ry="23" fill="none" stroke="#b06b36" stroke-width="2"/>
-<line x1="650" y1="138" x2="650" y2="282" stroke="#8ca0ac" stroke-width="2"/>
-<text x="650" y="315" text-anchor="middle" font-size="18" font-weight="700">Geographic CRS</text>
-<text x="650" y="338" text-anchor="middle" font-size="13" fill="#667681">latitude + longitude</text>
-<text x="650" y="358" text-anchor="middle" font-size="13" fill="#667681">unit sudut: derajat</text>
-<path d="M735 210 H815" stroke="#b06b36" stroke-width="5"/><polygon points="815,210 796,199 796,221" fill="#b06b36"/>
-<text x="775" y="185" text-anchor="middle" font-size="15" font-weight="700" fill="#9a5b2e">Proyeksi peta</text>
-<text x="775" y="245" text-anchor="middle" font-size="12" fill="#6d6259">permukaan melengkung → bidang datar</text>
-<rect x="835" y="138" width="155" height="145" rx="6" fill="#f8fafb" stroke="#075175" stroke-width="4"/>
-<line x1="865" y1="250" x2="960" y2="250" stroke="#b06b36" stroke-width="3"/>
-<line x1="865" y1="250" x2="865" y2="165" stroke="#075175" stroke-width="3"/>
-<text x="912" y="315" text-anchor="middle" font-size="18" font-weight="700">Projected CRS</text>
-<text x="912" y="338" text-anchor="middle" font-size="13" fill="#667681">Easting + Northing</text>
-<text x="912" y="358" text-anchor="middle" font-size="13" fill="#667681">unit linear: meter</text>
-<rect x="105" y="405" width="820" height="150" rx="8" fill="#f6f8fa" stroke="#c5d1d8"/>
-<text x="130" y="438" font-size="16" font-weight="700" fill="#26323e">Urutan konsep:</text>
-<text x="130" y="470" font-size="15" fill="#26323e">1. Bumi nyata disederhanakan dengan model ellipsoid.</text>
-<text x="130" y="498" font-size="15" fill="#26323e">2. Datum memberikan kerangka acuan agar posisi pada ellipsoid terkait dengan bumi.</text>
-<text x="130" y="526" font-size="15" fill="#26323e">3. Geographic CRS menyatakan posisi dengan latitude dan longitude.</text>
-<text x="130" y="554" font-size="15" fill="#26323e">4. Proyeksi peta mengubahnya menjadi koordinat datar pada Projected CRS.</text>
-</svg>
-<p class="caption">Ilustrasi hubungan konsep. Diagram ini menunjukkan posisi setiap istilah dalam sistem referensi posisi sebelum masuk ke klasifikasi proyeksi peta.</p>
-</div>
+<figure class="reference-figure">
+<img src="assets/diagrams/hubungan-ellipsoid-datum-crs.svg?v=20260922-1905" alt="Ilustrasi hubungan bumi nyata, ellipsoid, datum geodetik, Geographic CRS, proyeksi peta, dan Projected CRS">
+<figcaption>Alur hubungan konsep: bumi nyata dimodelkan dengan ellipsoid, datum memberi kerangka acuan, Geographic CRS menyatakan posisi dengan latitude dan longitude, proyeksi peta mentransformasikan posisi ke bidang datar, dan Projected CRS menyatakan koordinat datar seperti Easting dan Northing.</figcaption>
+</figure>
 
 <ul class="key">
 <li><strong>Bumi nyata</strong> mempunyai bentuk fisik yang kompleks dan tidak beraturan.</li>
