@@ -122,15 +122,136 @@
 <p class="source-note">USGS menyatakan bahwa peta datar dapat mempertahankan satu atau beberapa sifat, tetapi tidak seluruhnya sekaligus. <a href="https://store.usgs.gov/assets/mod/storefiles/PDF/16573.pdf" target="_blank" rel="noopener">USGS — Map Projections Poster</a>.</p>
 </section>
 
-<section class="lesson-section" id="klasifikasi"><h2>7. Peta besar klasifikasi proyeksi peta</h2>
-<p>Proyeksi peta tidak hanya dibagi dengan satu cara. Klasifikasi diperlukan agar istilah yang berbeda tidak dianggap berada pada tingkat yang sama.</p>
-<div class="class-map"><div class="root">KLASIFIKASI PROYEKSI PETA</div><div class="class-grid">
-<div class="class-col"><h3>A. Berdasarkan permukaan proyeksi</h3><p>Menjelaskan bentuk konseptual yang digunakan untuk memahami projection.</p><ul><li>Cylindrical</li><li>Conic</li><li>Azimuthal / Planar</li><li>Pseudocylindrical</li></ul></div>
-<div class="class-col"><h3>B. Berdasarkan sifat yang dipertahankan</h3><p>Menjelaskan sifat geometris yang menjadi prioritas.</p><ul><li>Conformal</li><li>Equal-area</li><li>Equidistant</li><li>Direction-related</li></ul></div>
-<div class="class-col"><h3>C. Berdasarkan orientasi (aspect)</h3><p>Menjelaskan orientasi projection surface terhadap bumi.</p><ul><li>Normal</li><li>Transverse</li><li>Oblique</li></ul></div>
-<div class="class-col"><h3>D. Berdasarkan hubungan surface dengan bumi</h3><p>Menjelaskan apakah surface menyentuh atau memotong model bumi.</p><ul><li>Tangent</li><li>Secant</li></ul></div>
-</div></div>
-<div class="note-box"><strong>Mengapa klasifikasi diperlukan?</strong><br>Satu projection dapat mempunyai beberapa karakteristik sekaligus. Contohnya, Mercator adalah <strong>cylindrical</strong> berdasarkan permukaannya, <strong>conformal</strong> berdasarkan sifatnya, dan <strong>normal</strong> berdasarkan aspect-nya.</div>
+
+<section class="lesson-section" id="klasifikasi">
+<h2>7. Peta besar klasifikasi proyeksi peta</h2>
+<p>Proyeksi peta dapat diklasifikasikan berdasarkan beberapa aspek yang berbeda. Diagram berikut menunjukkan struktur klasifikasi secara keseluruhan agar setiap istilah dapat ditempatkan pada kategori yang tepat.</p>
+
+<div class="visual-box">
+<svg viewBox="0 0 1200 760" role="img" aria-label="Diagram klasifikasi proyeksi peta">
+  <rect width="1200" height="760" fill="#ffffff"/>
+
+  <!-- Root -->
+  <rect x="430" y="30" width="340" height="70" rx="8" fill="#075175"/>
+  <text x="600" y="72" text-anchor="middle" font-size="28" font-weight="700" fill="#ffffff">KLASIFIKASI PROYEKSI PETA</text>
+
+  <!-- Main connector -->
+  <line x1="600" y1="100" x2="600" y2="145" stroke="#6d7f8a" stroke-width="4"/>
+  <line x1="150" y1="145" x2="1050" y2="145" stroke="#6d7f8a" stroke-width="4"/>
+
+  <!-- Branch 1 -->
+  <line x1="150" y1="145" x2="150" y2="185" stroke="#6d7f8a" stroke-width="4"/>
+  <rect x="35" y="185" width="230" height="90" rx="8" fill="#eef5f8" stroke="#075175" stroke-width="3"/>
+  <text x="150" y="215" text-anchor="middle" font-size="19" font-weight="700" fill="#075175">A. Berdasarkan</text>
+  <text x="150" y="242" text-anchor="middle" font-size="19" font-weight="700" fill="#075175">permukaan proyeksi</text>
+  <text x="150" y="264" text-anchor="middle" font-size="13" fill="#5e6e79">bentuk konseptual projection surface</text>
+
+  <line x1="150" y1="275" x2="150" y2="320" stroke="#8da0ac" stroke-width="3"/>
+  <line x1="65" y1="320" x2="235" y2="320" stroke="#8da0ac" stroke-width="3"/>
+
+  <g font-size="17" fill="#26323e">
+    <rect x="15" y="335" width="105" height="48" rx="6" fill="#f8fafb" stroke="#b7c5cd"/>
+    <text x="67" y="365" text-anchor="middle">Cylindrical</text>
+
+    <rect x="130" y="335" width="90" height="48" rx="6" fill="#f8fafb" stroke="#b7c5cd"/>
+    <text x="175" y="365" text-anchor="middle">Conic</text>
+
+    <rect x="15" y="395" width="105" height="48" rx="6" fill="#f8fafb" stroke="#b7c5cd"/>
+    <text x="67" y="425" text-anchor="middle">Azimuthal</text>
+
+    <rect x="130" y="395" width="120" height="48" rx="6" fill="#f8fafb" stroke="#b7c5cd"/>
+    <text x="190" y="425" text-anchor="middle">Pseudocyl.</text>
+  </g>
+
+  <!-- Branch 2 -->
+  <line x1="450" y1="145" x2="450" y2="185" stroke="#6d7f8a" stroke-width="4"/>
+  <rect x="325" y="185" width="250" height="90" rx="8" fill="#eef5f8" stroke="#075175" stroke-width="3"/>
+  <text x="450" y="215" text-anchor="middle" font-size="19" font-weight="700" fill="#075175">B. Berdasarkan sifat</text>
+  <text x="450" y="242" text-anchor="middle" font-size="19" font-weight="700" fill="#075175">yang dipertahankan</text>
+  <text x="450" y="264" text-anchor="middle" font-size="13" fill="#5e6e79">sifat geometris yang diprioritaskan</text>
+
+  <line x1="450" y1="275" x2="450" y2="320" stroke="#8da0ac" stroke-width="3"/>
+  <line x1="350" y1="320" x2="550" y2="320" stroke="#8da0ac" stroke-width="3"/>
+
+  <g font-size="17" fill="#26323e">
+    <rect x="305" y="335" width="120" height="48" rx="6" fill="#f8fafb" stroke="#b7c5cd"/>
+    <text x="365" y="365" text-anchor="middle">Conformal</text>
+
+    <rect x="440" y="335" width="120" height="48" rx="6" fill="#f8fafb" stroke="#b7c5cd"/>
+    <text x="500" y="365" text-anchor="middle">Equal-area</text>
+
+    <rect x="305" y="395" width="120" height="48" rx="6" fill="#f8fafb" stroke="#b7c5cd"/>
+    <text x="365" y="425" text-anchor="middle">Equidistant</text>
+
+    <rect x="440" y="395" width="135" height="48" rx="6" fill="#f8fafb" stroke="#b7c5cd"/>
+    <text x="507" y="417" text-anchor="middle" font-size="15">Direction-</text>
+    <text x="507" y="435" text-anchor="middle" font-size="15">related</text>
+  </g>
+
+  <!-- Branch 3 -->
+  <line x1="750" y1="145" x2="750" y2="185" stroke="#6d7f8a" stroke-width="4"/>
+  <rect x="640" y="185" width="220" height="90" rx="8" fill="#eef5f8" stroke="#075175" stroke-width="3"/>
+  <text x="750" y="215" text-anchor="middle" font-size="19" font-weight="700" fill="#075175">C. Berdasarkan</text>
+  <text x="750" y="242" text-anchor="middle" font-size="19" font-weight="700" fill="#075175">orientasi (aspect)</text>
+  <text x="750" y="264" text-anchor="middle" font-size="13" fill="#5e6e79">arah projection surface terhadap bumi</text>
+
+  <line x1="750" y1="275" x2="750" y2="320" stroke="#8da0ac" stroke-width="3"/>
+  <line x1="680" y1="320" x2="820" y2="320" stroke="#8da0ac" stroke-width="3"/>
+
+  <g font-size="17" fill="#26323e">
+    <rect x="625" y="335" width="100" height="48" rx="6" fill="#f8fafb" stroke="#b7c5cd"/>
+    <text x="675" y="365" text-anchor="middle">Normal</text>
+
+    <rect x="735" y="335" width="115" height="48" rx="6" fill="#f8fafb" stroke="#b7c5cd"/>
+    <text x="792" y="365" text-anchor="middle">Transverse</text>
+
+    <rect x="680" y="395" width="115" height="48" rx="6" fill="#f8fafb" stroke="#b7c5cd"/>
+    <text x="737" y="425" text-anchor="middle">Oblique</text>
+  </g>
+
+  <!-- Branch 4 -->
+  <line x1="1050" y1="145" x2="1050" y2="185" stroke="#6d7f8a" stroke-width="4"/>
+  <rect x="920" y="185" width="260" height="90" rx="8" fill="#eef5f8" stroke="#075175" stroke-width="3"/>
+  <text x="1050" y="215" text-anchor="middle" font-size="19" font-weight="700" fill="#075175">D. Berdasarkan hubungan</text>
+  <text x="1050" y="242" text-anchor="middle" font-size="19" font-weight="700" fill="#075175">surface dengan bumi</text>
+  <text x="1050" y="264" text-anchor="middle" font-size="13" fill="#5e6e79">cara surface menyentuh/memotong globe</text>
+
+  <line x1="1050" y1="275" x2="1050" y2="320" stroke="#8da0ac" stroke-width="3"/>
+  <line x1="985" y1="320" x2="1115" y2="320" stroke="#8da0ac" stroke-width="3"/>
+
+  <g font-size="17" fill="#26323e">
+    <rect x="940" y="335" width="105" height="48" rx="6" fill="#f8fafb" stroke="#b7c5cd"/>
+    <text x="992" y="365" text-anchor="middle">Tangent</text>
+
+    <rect x="1060" y="335" width="105" height="48" rx="6" fill="#f8fafb" stroke="#b7c5cd"/>
+    <text x="1112" y="365" text-anchor="middle">Secant</text>
+  </g>
+
+  <!-- Examples row -->
+  <rect x="70" y="500" width="1060" height="195" rx="10" fill="#fbfcfd" stroke="#c6d2d9" stroke-width="2"/>
+  <text x="600" y="535" text-anchor="middle" font-size="22" font-weight="700" fill="#26323e">Contoh satu projection dapat memiliki beberapa klasifikasi sekaligus</text>
+
+  <g font-size="16" fill="#26323e">
+    <text x="115" y="575" font-weight="700">Mercator</text>
+    <text x="115" y="600">Cylindrical + Conformal + Normal</text>
+
+    <text x="115" y="635" font-weight="700">Transverse Mercator</text>
+    <text x="115" y="660">Cylindrical + Conformal + Transverse</text>
+
+    <text x="585" y="575" font-weight="700">Lambert Conformal Conic</text>
+    <text x="585" y="600">Conic + Conformal</text>
+
+    <text x="585" y="635" font-weight="700">Azimuthal Equidistant</text>
+    <text x="585" y="660">Azimuthal + Equidistant</text>
+
+    <text x="930" y="575" font-weight="700">Mollweide</text>
+    <text x="930" y="600">Pseudocylindrical + Equal-area</text>
+  </g>
+</svg>
+<p class="caption"><strong>Gambar klasifikasi utama.</strong> Empat cabang menunjukkan empat dasar klasifikasi yang berbeda. Contoh di bagian bawah menunjukkan bahwa satu proyeksi dapat memiliki beberapa label sekaligus.</p>
+</div>
+
+<div class="note-box"><strong>Fungsi klasifikasi:</strong> klasifikasi membantu membedakan apakah suatu istilah menjelaskan bentuk konseptual projection, sifat geometris yang dipertahankan, orientasi, atau hubungan projection surface dengan bumi.</div>
 </section>
 
 <section class="lesson-section" id="permukaan"><h2>8. Klasifikasi berdasarkan permukaan proyeksi</h2>
