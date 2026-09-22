@@ -77,7 +77,7 @@
 <li>memilih projection berdasarkan tujuan, cakupan, lokasi, dan sifat geometris yang perlu dipertahankan.</li>
 </ul></section>
 
-<section class="lesson-section" id="masalah"><h2 id="bagian-a">Bagian A — Dasar Konsep Proyeksi Peta</h2><h3>Konsep Dasar Proyeksi Peta</h3>
+<section class="lesson-section" id="masalah"><h2 id="bagian-a">Bagian A — Dasar Konsep Proyeksi Peta</h2><h3>A.1 Konsep Dasar Proyeksi Peta</h3>
 <p>Permukaan bumi melengkung, sedangkan peta pada kertas atau layar ditampilkan pada bidang datar. Permukaan melengkung tidak dapat diratakan tanpa mengalami perubahan. Karena itu, diperlukan suatu cara untuk memindahkan posisi dari permukaan bumi ke bidang datar.</p>
 <div class="visual-box"><svg viewBox="0 0 900 330" role="img" aria-label="Ilustrasi bumi melengkung menjadi peta datar">
 <rect width="900" height="330" fill="#fff"/>
@@ -95,7 +95,7 @@
 
 
 <section class="lesson-section" id="hubungan">
-<h3>Hubungan Sistem Referensi Posisi</h3>
+<h3>A.2 Hubungan Sistem Referensi Posisi</h3>
 <p>Ellipsoid, datum, CRS, Geographic CRS, map projection, dan Projected CRS bukan klasifikasi proyeksi. Istilah-istilah tersebut membentuk <strong>rangkaian konsep untuk menyatakan posisi di bumi dan kemudian menampilkannya pada peta datar</strong>.</p>
 
 <div class="story-flow">
@@ -120,7 +120,7 @@
 
 
 <section class="lesson-section" id="istilah">
-<h3>Sistem Referensi Posisi</h3>
+<h3>A.3 Sistem Referensi Posisi</h3>
 <p>Sistem referensi posisi terdiri atas beberapa konsep yang saling berkaitan. Setiap konsep mempunyai fungsi berbeda dalam mendefinisikan bentuk bumi, acuan posisi, sistem koordinat, dan representasi koordinat pada bidang datar.</p>
 
 <div class="definition-chain">
@@ -232,7 +232,7 @@ Transverse Mercator → metode projection yang mengubah koordinat ke bidang data
 WGS 84 / UTM Zone 49S → Projected CRS yang menggunakan Transverse Mercator dan menghasilkan Easting/Northing dalam meter.</div>
 </section>
 
-<section class="lesson-section" id="latlon"><h3>Geographic dan Projected Coordinate Reference System</h3>
+<section class="lesson-section" id="latlon"><h3>A.4 Geographic dan Projected Coordinate Reference System</h3>
 <div class="visual-box"><svg viewBox="0 0 900 390" role="img" aria-label="Latitude longitude dan projected coordinates">
 <rect width="900" height="390" fill="#fff"/>
 <circle cx="220" cy="175" r="115" fill="#eef6fa" stroke="#075175" stroke-width="4"/>
@@ -255,7 +255,7 @@ WGS 84 / UTM Zone 49S → Projected CRS yang menggunakan Transverse Mercator dan
 </ul>
 </section>
 
-<section class="lesson-section" id="distorsi"><h3>Distorsi pada Proyeksi Peta</h3>
+<section class="lesson-section" id="distorsi"><h3>A.5 Distorsi pada Proyeksi Peta</h3>
 <p>Karena permukaan melengkung harus diubah menjadi bidang datar, satu atau beberapa sifat geometris akan berubah.</p>
 <div class="visual-box"><svg viewBox="0 0 900 330" role="img" aria-label="Ilustrasi distorsi bentuk luas jarak dan arah">
 <rect width="900" height="330" fill="#fff"/>
@@ -271,89 +271,122 @@ WGS 84 / UTM Zone 49S → Projected CRS yang menggunakan Transverse Mercator dan
 
 
 
+
 <section class="lesson-section" id="klasifikasi">
 <h2>Bagian B — Klasifikasi Proyeksi Peta</h2>
-<h3>Klasifikasi Proyeksi Peta</h3>
-<p>Proyeksi peta dapat diklasifikasikan berdasarkan empat aspek. Bagan berikut menunjukkan hubungan dari tingkat utama ke subkategori. Klik setiap cabang untuk melihat jenis dan contohnya.</p>
+<h3>B.1 Klasifikasi Proyeksi Peta</h3>
+<p>Proyeksi peta dapat diklasifikasikan berdasarkan empat aspek. Bagan berikut menggunakan struktur hierarki tetap agar hubungan antara tingkat utama dan subkategori dapat dibaca sekaligus.</p>
 
-<div class="classification-interactive">
-  <div class="class-root">KLASIFIKASI PROYEKSI PETA<small>empat dasar klasifikasi utama</small></div>
-  <div class="class-trunk" aria-hidden="true"></div>
-  <div class="class-rail" aria-hidden="true"></div>
+<div class="visual-box">
+<svg viewBox="0 0 1280 760" role="img" aria-label="Bagan hierarki klasifikasi proyeksi peta">
+<rect width="1280" height="760" fill="#ffffff"/>
 
-  <div class="class-controls">
-    <button type="button" onclick="document.querySelectorAll('#klasifikasi details').forEach(d=>d.open=true)">Buka semua</button>
-    <button type="button" onclick="document.querySelectorAll('#klasifikasi details').forEach(d=>d.open=false)">Tutup semua</button>
-  </div>
+<!-- root -->
+<rect x="440" y="30" width="400" height="74" rx="8" fill="#075175"/>
+<text x="640" y="62" text-anchor="middle" font-size="27" font-weight="700" fill="#ffffff">KLASIFIKASI PROYEKSI PETA</text>
+<text x="640" y="87" text-anchor="middle" font-size="15" fill="#dce8ee">empat dasar klasifikasi utama</text>
 
-  <div class="class-branches">
-    <div class="class-branch">
-      <details>
-        <summary>A. Berdasarkan permukaan proyeksi<span class="branch-desc">bentuk konseptual projection surface</span></summary>
-        <div class="class-children">
-          <div class="class-child"><strong>Cylindrical</strong><span>contoh: Mercator</span></div>
-          <div class="class-child"><strong>Conic</strong><span>contoh: Lambert Conformal Conic</span></div>
-          <div class="class-child"><strong>Azimuthal / Planar</strong><span>contoh: Azimuthal Equidistant</span></div>
-          <div class="class-child"><strong>Pseudocylindrical</strong><span>contoh: Mollweide</span></div>
-        </div>
-      </details>
-    </div>
+<!-- trunk and rail -->
+<line x1="640" y1="104" x2="640" y2="155" stroke="#8ca0ac" stroke-width="4"/>
+<line x1="150" y1="155" x2="1130" y2="155" stroke="#8ca0ac" stroke-width="4"/>
 
-    <div class="class-branch">
-      <details>
-        <summary>B. Berdasarkan sifat yang dipertahankan<span class="branch-desc">sifat geometris yang diprioritaskan</span></summary>
-        <div class="class-children">
-          <div class="class-child"><strong>Conformal</strong><span>sudut lokal dipertahankan</span></div>
-          <div class="class-child"><strong>Equal-area</strong><span>luas relatif dipertahankan</span></div>
-          <div class="class-child"><strong>Equidistant</strong><span>jarak tertentu dipertahankan</span></div>
-          <div class="class-child"><strong>Direction-related</strong><span>arah tertentu dipertahankan</span></div>
-        </div>
-      </details>
-    </div>
+<!-- branch connectors -->
+<g stroke="#8ca0ac" stroke-width="4">
+<line x1="170" y1="155" x2="170" y2="210"/>
+<line x1="485" y1="155" x2="485" y2="210"/>
+<line x1="795" y1="155" x2="795" y2="210"/>
+<line x1="1110" y1="155" x2="1110" y2="210"/>
+</g>
 
-    <div class="class-branch">
-      <details>
-        <summary>C. Berdasarkan orientasi (aspect)<span class="branch-desc">arah projection surface terhadap bumi</span></summary>
-        <div class="class-children">
-          <div class="class-child"><strong>Normal</strong><span>orientasi standar</span></div>
-          <div class="class-child"><strong>Transverse</strong><span>surface diputar sekitar 90°</span></div>
-          <div class="class-child"><strong>Oblique</strong><span>surface diorientasikan miring</span></div>
-        </div>
-      </details>
-    </div>
+<!-- level 2 boxes -->
+<g>
+<rect x="45" y="210" width="250" height="112" rx="8" fill="#eef5f8" stroke="#075175" stroke-width="3"/>
+<text x="170" y="244" text-anchor="middle" font-size="19" font-weight="700" fill="#075175">A. Berdasarkan</text>
+<text x="170" y="270" text-anchor="middle" font-size="19" font-weight="700" fill="#075175">permukaan proyeksi</text>
+<text x="170" y="298" text-anchor="middle" font-size="13" fill="#5e6e79">bentuk konseptual surface</text>
 
-    <div class="class-branch">
-      <details>
-        <summary>D. Berdasarkan hubungan surface dengan bumi<span class="branch-desc">cara surface menyentuh atau memotong globe</span></summary>
-        <div class="class-children">
-          <div class="class-child"><strong>Tangent</strong><span>surface menyentuh globe</span></div>
-          <div class="class-child"><strong>Secant</strong><span>surface memotong globe</span></div>
-        </div>
-      </details>
-    </div>
-  </div>
+<rect x="360" y="210" width="250" height="112" rx="8" fill="#eef5f8" stroke="#075175" stroke-width="3"/>
+<text x="485" y="244" text-anchor="middle" font-size="19" font-weight="700" fill="#075175">B. Berdasarkan sifat</text>
+<text x="485" y="270" text-anchor="middle" font-size="19" font-weight="700" fill="#075175">yang dipertahankan</text>
+<text x="485" y="298" text-anchor="middle" font-size="13" fill="#5e6e79">sifat geometris utama</text>
+
+<rect x="670" y="210" width="250" height="112" rx="8" fill="#eef5f8" stroke="#075175" stroke-width="3"/>
+<text x="795" y="244" text-anchor="middle" font-size="19" font-weight="700" fill="#075175">C. Berdasarkan</text>
+<text x="795" y="270" text-anchor="middle" font-size="19" font-weight="700" fill="#075175">orientasi (aspect)</text>
+<text x="795" y="298" text-anchor="middle" font-size="13" fill="#5e6e79">orientasi surface terhadap bumi</text>
+
+<rect x="985" y="210" width="250" height="112" rx="8" fill="#eef5f8" stroke="#075175" stroke-width="3"/>
+<text x="1110" y="244" text-anchor="middle" font-size="18" font-weight="700" fill="#075175">D. Berdasarkan hubungan</text>
+<text x="1110" y="270" text-anchor="middle" font-size="18" font-weight="700" fill="#075175">surface dengan bumi</text>
+<text x="1110" y="298" text-anchor="middle" font-size="13" fill="#5e6e79">menyentuh atau memotong globe</text>
+</g>
+
+<!-- downward connectors -->
+<g stroke="#8ca0ac" stroke-width="3">
+<line x1="170" y1="322" x2="170" y2="365"/>
+<line x1="485" y1="322" x2="485" y2="365"/>
+<line x1="795" y1="322" x2="795" y2="365"/>
+<line x1="1110" y1="322" x2="1110" y2="365"/>
+</g>
+
+<!-- branch A leaves -->
+<line x1="80" y1="365" x2="260" y2="365" stroke="#8ca0ac" stroke-width="3"/>
+<g stroke="#8ca0ac" stroke-width="3">
+<line x1="95" y1="365" x2="95" y2="395"/><line x1="155" y1="365" x2="155" y2="395"/><line x1="215" y1="365" x2="215" y2="395"/><line x1="260" y1="365" x2="260" y2="395"/>
+</g>
+<g font-size="14" fill="#26323e">
+<rect x="35" y="395" width="120" height="55" rx="6" fill="#f8fafb" stroke="#b9c8d0"/><text x="95" y="428" text-anchor="middle">Cylindrical</text>
+<rect x="165" y="395" width="100" height="55" rx="6" fill="#f8fafb" stroke="#b9c8d0"/><text x="215" y="428" text-anchor="middle">Conic</text>
+<rect x="35" y="470" width="120" height="55" rx="6" fill="#f8fafb" stroke="#b9c8d0"/><text x="95" y="503" text-anchor="middle">Azimuthal</text>
+<rect x="165" y="470" width="120" height="55" rx="6" fill="#f8fafb" stroke="#b9c8d0"/><text x="225" y="503" text-anchor="middle">Pseudocyl.</text>
+</g>
+
+<!-- branch B leaves -->
+<line x1="390" y1="365" x2="575" y2="365" stroke="#8ca0ac" stroke-width="3"/>
+<g stroke="#8ca0ac" stroke-width="3">
+<line x1="405" y1="365" x2="405" y2="395"/><line x1="465" y1="365" x2="465" y2="395"/><line x1="525" y1="365" x2="525" y2="395"/><line x1="575" y1="365" x2="575" y2="395"/>
+</g>
+<g font-size="14" fill="#26323e">
+<rect x="350" y="395" width="110" height="55" rx="6" fill="#f8fafb" stroke="#b9c8d0"/><text x="405" y="428" text-anchor="middle">Conformal</text>
+<rect x="470" y="395" width="110" height="55" rx="6" fill="#f8fafb" stroke="#b9c8d0"/><text x="525" y="428" text-anchor="middle">Equal-area</text>
+<rect x="350" y="470" width="110" height="55" rx="6" fill="#f8fafb" stroke="#b9c8d0"/><text x="405" y="503" text-anchor="middle">Equidistant</text>
+<rect x="470" y="470" width="120" height="55" rx="6" fill="#f8fafb" stroke="#b9c8d0"/><text x="530" y="495" text-anchor="middle">Direction-</text><text x="530" y="513" text-anchor="middle">related</text>
+</g>
+
+<!-- branch C leaves -->
+<line x1="715" y1="365" x2="875" y2="365" stroke="#8ca0ac" stroke-width="3"/>
+<g stroke="#8ca0ac" stroke-width="3">
+<line x1="730" y1="365" x2="730" y2="395"/><line x1="795" y1="365" x2="795" y2="395"/><line x1="860" y1="365" x2="860" y2="395"/>
+</g>
+<g font-size="14" fill="#26323e">
+<rect x="680" y="395" width="100" height="55" rx="6" fill="#f8fafb" stroke="#b9c8d0"/><text x="730" y="428" text-anchor="middle">Normal</text>
+<rect x="790" y="395" width="110" height="55" rx="6" fill="#f8fafb" stroke="#b9c8d0"/><text x="845" y="428" text-anchor="middle">Transverse</text>
+<rect x="735" y="470" width="120" height="55" rx="6" fill="#f8fafb" stroke="#b9c8d0"/><text x="795" y="503" text-anchor="middle">Oblique</text>
+</g>
+
+<!-- branch D leaves -->
+<line x1="1045" y1="365" x2="1175" y2="365" stroke="#8ca0ac" stroke-width="3"/>
+<g stroke="#8ca0ac" stroke-width="3">
+<line x1="1065" y1="365" x2="1065" y2="395"/><line x1="1155" y1="365" x2="1155" y2="395"/>
+</g>
+<g font-size="14" fill="#26323e">
+<rect x="1010" y="395" width="110" height="55" rx="6" fill="#f8fafb" stroke="#b9c8d0"/><text x="1065" y="428" text-anchor="middle">Tangent</text>
+<rect x="1130" y="395" width="110" height="55" rx="6" fill="#f8fafb" stroke="#b9c8d0"/><text x="1185" y="428" text-anchor="middle">Secant</text>
+</g>
+
+<!-- example row -->
+<rect x="100" y="585" width="1080" height="115" rx="8" fill="#fbfcfd" stroke="#c6d2d9" stroke-width="2"/>
+<text x="640" y="615" text-anchor="middle" font-size="20" font-weight="700" fill="#26323e">Contoh satu projection memiliki beberapa klasifikasi sekaligus</text>
+<text x="135" y="648" font-size="15" font-weight="700">Mercator:</text><text x="225" y="648" font-size="15">Cylindrical + Conformal + Normal</text>
+<text x="135" y="678" font-size="15" font-weight="700">Transverse Mercator:</text><text x="300" y="678" font-size="15">Cylindrical + Conformal + Transverse</text>
+<text x="690" y="648" font-size="15" font-weight="700">Lambert Conformal Conic:</text><text x="885" y="648" font-size="15">Conic + Conformal</text>
+<text x="690" y="678" font-size="15" font-weight="700">Mollweide:</text><text x="775" y="678" font-size="15">Pseudocylindrical + Equal-area</text>
+</svg>
+<p class="caption">Bagan klasifikasi statis dengan tiga tingkat: root klasifikasi → dasar klasifikasi → subkategori. Seluruh hubungan terlihat sekaligus tanpa perlu expand/collapse.</p>
 </div>
-
-<h4>Contoh Klasifikasi Beberapa Proyeksi</h4>
-<div class="table-wrap"><table>
-<thead><tr><th>Projection</th><th>Permukaan</th><th>Sifat</th><th>Aspect</th></tr></thead>
-<tbody>
-<tr><td>Mercator</td><td>Cylindrical</td><td>Conformal</td><td>Normal</td></tr>
-<tr><td>Transverse Mercator</td><td>Cylindrical</td><td>Conformal</td><td>Transverse</td></tr>
-<tr><td>Lambert Conformal Conic</td><td>Conic</td><td>Conformal</td><td>bergantung konfigurasi</td></tr>
-<tr><td>Azimuthal Equidistant</td><td>Azimuthal</td><td>Equidistant</td><td>bergantung pusat/orientasi</td></tr>
-<tr><td>Mollweide</td><td>Pseudocylindrical</td><td>Equal-area</td><td>umumnya normal</td></tr>
-</tbody>
-</table></div>
-
-<ul class="key">
-<li>Satu projection dapat memiliki karakteristik dari beberapa dasar klasifikasi sekaligus.</li>
-<li>Contoh: Mercator adalah <strong>Cylindrical</strong> berdasarkan permukaan, <strong>Conformal</strong> berdasarkan sifat, dan <strong>Normal</strong> berdasarkan aspect.</li>
-<li>Klasifikasi membantu menjelaskan bagaimana projection bekerja dan sifat apa yang diprioritaskan sebelum menentukan projection yang sesuai.</li>
-</ul>
 </section>
 
-<section class="lesson-section" id="permukaan"><h3>Klasifikasi Berdasarkan Permukaan Proyeksi</h3>
+<section class="lesson-section" id="permukaan"><h3>B.2 Klasifikasi Berdasarkan Permukaan Proyeksi</h3>
 <div class="visual-box"><svg viewBox="0 0 900 360" role="img" aria-label="Cylindrical conic azimuthal dan pseudocylindrical">
 <rect width="900" height="360" fill="#fff"/>
 <circle cx="115" cy="150" r="70" fill="#eef6fa" stroke="#075175" stroke-width="3"/><rect x="45" y="60" width="140" height="180" fill="none" stroke="#b06b36" stroke-width="3"/><text x="115" y="280" text-anchor="middle" font-size="17">Cylindrical</text>
@@ -368,7 +401,7 @@ WGS 84 / UTM Zone 49S → Projected CRS yang menggunakan Transverse Mercator dan
 <h4>Pseudocylindrical</h4><ul class="key"><li>secara tampilan menyerupai cylindrical tetapi konstruksinya berbeda;</li><li>banyak digunakan untuk peta dunia;</li><li>contoh: Mollweide.</li></ul>
 </section>
 
-<section class="lesson-section" id="sifat"><h3>Klasifikasi Berdasarkan Sifat yang Dipertahankan</h3>
+<section class="lesson-section" id="sifat"><h3>B.3 Klasifikasi Berdasarkan Sifat yang Dipertahankan</h3>
 <div class="table-wrap"><table><thead><tr><th>Sifat</th><th>Pengertian</th><th>Contoh projection</th><th>Implikasi</th></tr></thead><tbody>
 <tr><td>Conformal</td><td>sudut lokal dipertahankan sehingga bentuk sangat lokal tetap serupa</td><td>Mercator, Lambert Conformal Conic</td><td>luas dapat terdistorsi</td></tr>
 <tr><td>Equal-area</td><td>luas relatif dipertahankan</td><td>Mollweide</td><td>bentuk dan sudut dapat berubah</td></tr>
@@ -377,7 +410,7 @@ WGS 84 / UTM Zone 49S → Projected CRS yang menggunakan Transverse Mercator dan
 </tbody></table></div>
 </section>
 
-<section class="lesson-section" id="aspect"><h3>Aspect Proyeksi</h3>
+<section class="lesson-section" id="aspect"><h3>B.4 Aspect Proyeksi</h3>
 <p><strong>Aspect</strong> adalah orientasi projection surface terhadap bumi.</p>
 <div class="visual-box"><svg viewBox="0 0 900 330" role="img" aria-label="Normal transverse dan oblique aspect">
 <rect width="900" height="330" fill="#fff"/>
@@ -388,7 +421,7 @@ WGS 84 / UTM Zone 49S → Projected CRS yang menggunakan Transverse Mercator dan
 <ul class="key"><li><strong>Normal:</strong> orientation standar.</li><li><strong>Transverse:</strong> surface diputar sekitar 90° dari normal orientation.</li><li><strong>Oblique:</strong> surface diorientasikan miring mengikuti arah tertentu.</li></ul>
 </section>
 
-<section class="lesson-section" id="tangent"><h3>Tangent, Secant, dan Standard Line</h3>
+<section class="lesson-section" id="tangent"><h3>B.5 Tangent, Secant, dan Standard Line</h3>
 <div class="visual-box"><svg viewBox="0 0 900 330" role="img" aria-label="Tangent dan secant">
 <rect width="900" height="330" fill="#fff"/>
 <circle cx="225" cy="160" r="80" fill="#eef6fa" stroke="#075175" stroke-width="3"/><line x1="85" y1="80" x2="365" y2="80" stroke="#b06b36" stroke-width="4"/><circle cx="225" cy="80" r="5" fill="#b06b36"/><text x="225" y="285" text-anchor="middle" font-size="18">Tangent: menyentuh</text>
@@ -402,7 +435,7 @@ WGS 84 / UTM Zone 49S → Projected CRS yang menggunakan Transverse Mercator dan
 </section>
 
 <section class="lesson-section" id="kamus">
-<h3>Terminologi dalam Proyeksi Peta</h3>
+<h3>B.6 Terminologi dalam Proyeksi Peta</h3>
 <div class="table-wrap"><table><thead><tr><th>Istilah</th><th>Pengertian sederhana</th><th>Contoh penggunaan</th></tr></thead><tbody>
 <tr><td>Graticule</td><td>Jaringan garis latitude dan longitude yang digambar pada peta.</td><td>garis meridian dan parallel pada peta dunia</td></tr>
 <tr><td>Projection surface</td><td>Permukaan konseptual yang digunakan untuk membantu memahami projection, misalnya cylinder, cone, atau plane.</td><td>cylindrical, conic, azimuthal</td></tr>
@@ -415,7 +448,7 @@ WGS 84 / UTM Zone 49S → Projected CRS yang menggunakan Transverse Mercator dan
 </tbody></table></div>
 </section>
 
-<section class="lesson-section" id="mercator"><h2 id="bagian-c">Bagian C — Contoh Proyeksi Utama</h2><h3>Mercator</h3>
+<section class="lesson-section" id="mercator"><h2 id="bagian-c">Bagian C — Contoh Proyeksi Utama</h2><h3>C.1 Mercator</h3>
 <div class="profile"><div class="r"><strong>Klasifikasi</strong><span>Cylindrical + conformal + normal aspect</span></div><div class="r"><strong>Yang dipertahankan</strong><span>Sudut lokal</span></div><div class="r"><strong>Kegunaan terkenal</strong><span>Navigasi laut secara historis</span></div><div class="r"><strong>Keterbatasan</strong><span>Luas dan skala membesar menuju lintang tinggi</span></div></div>
 <h4>Bearing</h4><p><strong>Bearing</strong> adalah arah suatu garis atau perjalanan yang dinyatakan sebagai sudut terhadap utara dan diukur searah jarum jam.</p>
 <div class="visual-box"><svg viewBox="0 0 900 300" role="img" aria-label="Bearing">
@@ -425,7 +458,19 @@ WGS 84 / UTM Zone 49S → Projected CRS yang menggunakan Transverse Mercator dan
 <p class="source-note">USGS menyebut Mercator sebagai projection yang sangat berguna untuk arah rhumb line, tetapi menunjukkan distorsi area yang besar di wilayah kutub. <a href="https://store.usgs.gov/assets/mod/storefiles/PDF/16573.pdf" target="_blank" rel="noopener">USGS Map Projections</a>.</p>
 </section>
 
-<section class="lesson-section" id="utm"><h3>Transverse Mercator dan UTM</h3>
+<section class="lesson-section" id="utm"><h3>C.2 Transverse Mercator dan UTM</h3>
+<div class="compare-grid">
+<figure class="reference-figure">
+<img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Ellipsoidal_transverse_Mercator_projection_SW.jpg" alt="Peta dunia dalam proyeksi Transverse Mercator" loading="lazy">
+<figcaption>Contoh Transverse Mercator. Sumber: Strebe, Wikimedia Commons, CC BY-SA 4.0.</figcaption>
+<p class="source-link"><a href="https://commons.wikimedia.org/wiki/File:Ellipsoidal_transverse_Mercator_projection_SW.jpg" target="_blank" rel="noopener">Buka sumber →</a></p>
+</figure>
+<figure class="reference-figure">
+<img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Universal_Transverse_Mercator_zones.svg" alt="Peta zona Universal Transverse Mercator" loading="lazy">
+<figcaption>Zona Universal Transverse Mercator (UTM). Setiap zona longitudinal menggunakan konfigurasi Transverse Mercator tersendiri. Sumber: Wikimedia Commons.</figcaption>
+<p class="source-link"><a href="https://commons.wikimedia.org/wiki/File:Universal_Transverse_Mercator_zones.svg" target="_blank" rel="noopener">Buka sumber →</a></p>
+</figure>
+</div>
 <p><strong>Transverse Mercator</strong> menggunakan prinsip conformal Mercator dengan transverse aspect. UTM adalah sistem zona yang menggunakan Transverse Mercator agar distorsi dapat dikendalikan dalam area yang relatif sempit.</p>
 <div class="visual-box"><svg viewBox="0 0 900 340" role="img" aria-label="Konsep zona UTM">
 <rect width="900" height="340" fill="#fff"/><ellipse cx="450" cy="155" rx="310" ry="125" fill="#eef6fa" stroke="#075175" stroke-width="3"/>
@@ -435,26 +480,41 @@ WGS 84 / UTM Zone 49S → Projected CRS yang menggunakan Transverse Mercator dan
 <ul class="key"><li><strong>UTM</strong> = Universal Transverse Mercator.</li><li>Bumi dibagi menjadi 60 zona longitudinal, masing-masing umumnya selebar 6°.</li><li><strong>Central meridian</strong> adalah meridian referensi utama di dalam suatu zona.</li><li>Koordinat menggunakan Easting dan Northing dalam meter.</li><li>Contoh projected CRS: <strong>WGS 84 / UTM Zone 49S</strong>.</li></ul>
 </section>
 
-<section class="lesson-section" id="lcc"><h3>Lambert Conformal Conic</h3>
+<section class="lesson-section" id="lcc"><h3>C.3 Lambert Conformal Conic</h3>
+<figure class="reference-figure">
+<img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Lambert_conformal_conic_projection_SW.jpg" alt="Peta dunia Lambert Conformal Conic" loading="lazy">
+<figcaption>Lambert Conformal Conic dengan standard parallels 20°N dan 50°N. Sumber: Strebe, Wikimedia Commons, CC BY-SA 3.0.</figcaption>
+<p class="source-link"><a href="https://commons.wikimedia.org/wiki/File:Lambert_conformal_conic_projection_SW.jpg" target="_blank" rel="noopener">Buka sumber gambar →</a></p>
+</figure>
 <div class="profile"><div class="r"><strong>Klasifikasi</strong><span>Conic + conformal</span></div><div class="r"><strong>Yang dipertahankan</strong><span>Sudut dan bentuk lokal</span></div><div class="r"><strong>Kesesuaian umum</strong><span>Wilayah lintang menengah yang memanjang timur–barat</span></div><div class="r"><strong>Istilah penting</strong><span>Standard parallel</span></div></div>
 <p><strong>Standard parallel</strong> adalah garis lintang referensi pada conic projection tempat skala benar atau distorsi minimum sesuai parameter projection. Lambert Conformal Conic sering menggunakan satu atau dua standard parallels.</p>
 <div class="visual-box"><svg viewBox="0 0 900 340" role="img" aria-label="Lambert Conformal Conic conceptual">
 <rect width="900" height="340" fill="#fff"/><circle cx="240" cy="185" r="90" fill="#eef6fa" stroke="#075175" stroke-width="3"/><path d="M110 280 L240 35 L370 280 Z" fill="none" stroke="#b06b36" stroke-width="4"/><path d="M160 190 Q240 220 320 190 M175 150 Q240 170 305 150" fill="none" stroke="#075175" stroke-width="3"/><text x="240" y="320" text-anchor="middle" font-size="17">Dua standard parallels</text><path d="M430 175 H520" stroke="#60727f" stroke-width="4"/><polygon points="520,175 502,164 502,186" fill="#60727f"/><path d="M575 275 Q690 60 805 275" fill="#f8fbfc" stroke="#075175" stroke-width="3"/><path d="M615 235 Q690 140 765 235 M640 205 Q690 170 740 205" fill="none" stroke="#9bb2bf" stroke-width="2"/><path d="M690 60 L600 275 M690 60 L645 275 M690 60 L735 275 M690 60 L780 275" fill="none" stroke="#9bb2bf" stroke-width="2"/><text x="690" y="320" text-anchor="middle" font-size="17">Hasil berbentuk kipas/busur</text></svg></div>
 </section>
 
-<section class="lesson-section" id="aeqd"><h3>Azimuthal Equidistant</h3>
+<section class="lesson-section" id="aeqd"><h3>C.4 Azimuthal Equidistant</h3>
+<figure class="reference-figure">
+<img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Azimuthal_equidistant_projection_SW.jpg" alt="Peta dunia Azimuthal Equidistant polar aspect" loading="lazy">
+<figcaption>Azimuthal Equidistant dengan polar aspect. Jarak dari pusat projection dipertahankan. Sumber: Strebe, Wikimedia Commons, CC BY-SA 3.0.</figcaption>
+<p class="source-link"><a href="https://commons.wikimedia.org/wiki/File:Azimuthal_equidistant_projection_SW.jpg" target="_blank" rel="noopener">Buka sumber gambar →</a></p>
+</figure>
 <div class="profile"><div class="r"><strong>Klasifikasi</strong><span>Azimuthal + equidistant</span></div><div class="r"><strong>Yang dipertahankan</strong><span>Jarak dari pusat ke lokasi lain</span></div><div class="r"><strong>Kegunaan</strong><span>Peta polar atau peta berpusat pada satu lokasi</span></div><div class="r"><strong>Keterbatasan</strong><span>Tidak semua jarak antarsemua titik benar</span></div></div>
 <div class="visual-box"><svg viewBox="0 0 900 330" role="img" aria-label="Azimuthal Equidistant">
 <rect width="900" height="330" fill="#fff"/><circle cx="450" cy="150" r="120" fill="#f8fbfc" stroke="#075175" stroke-width="3"/><circle cx="450" cy="150" r="80" fill="none" stroke="#9bb2bf" stroke-width="2"/><circle cx="450" cy="150" r="40" fill="none" stroke="#9bb2bf" stroke-width="2"/><g stroke="#9bb2bf" stroke-width="2"><line x1="330" y1="150" x2="570" y2="150"/><line x1="450" y1="30" x2="450" y2="270"/><line x1="365" y1="65" x2="535" y2="235"/><line x1="365" y1="235" x2="535" y2="65"/></g><circle cx="450" cy="150" r="7" fill="#b06b36"/><text x="450" y="310" text-anchor="middle" font-size="18">Pusat adalah referensi utama jarak</text></svg></div>
 </section>
 
-<section class="lesson-section" id="moll"><h3>Mollweide</h3>
+<section class="lesson-section" id="moll"><h3>C.5 Mollweide</h3>
+<figure class="reference-figure">
+<img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Mollweide_projection_SW.jpg" alt="Peta dunia dalam proyeksi Mollweide" loading="lazy">
+<figcaption>Mollweide merupakan pseudocylindrical equal-area projection. Sumber: Strebe, Wikimedia Commons, CC BY-SA 3.0.</figcaption>
+<p class="source-link"><a href="https://commons.wikimedia.org/wiki/File:Mollweide_projection_SW.jpg" target="_blank" rel="noopener">Buka sumber gambar →</a></p>
+</figure>
 <div class="profile"><div class="r"><strong>Klasifikasi</strong><span>Pseudocylindrical + equal-area</span></div><div class="r"><strong>Yang dipertahankan</strong><span>Luas relatif</span></div><div class="r"><strong>Kegunaan</strong><span>Peta dunia tematik ketika area perlu dibandingkan</span></div><div class="r"><strong>Keterbatasan</strong><span>Bentuk dan sudut dapat berubah</span></div></div>
 <div class="visual-box"><svg viewBox="0 0 900 340" role="img" aria-label="Mollweide">
 <rect width="900" height="340" fill="#fff"/><ellipse cx="450" cy="155" rx="330" ry="145" fill="#eef6fa" stroke="#075175" stroke-width="3"/><line x1="120" y1="155" x2="780" y2="155" stroke="#9bb2bf" stroke-width="2"/><line x1="450" y1="10" x2="450" y2="300" stroke="#9bb2bf" stroke-width="2"/><path d="M270 25 Q330 155 270 285 M350 15 Q385 155 350 295 M550 15 Q515 155 550 295 M630 25 Q570 155 630 285" fill="none" stroke="#9bb2bf" stroke-width="2"/><text x="450" y="330" text-anchor="middle" font-size="18">Bentuk elips; luas relatif dipertahankan</text></svg></div>
 </section>
 
-<section class="lesson-section" id="pilih"><h2 id="bagian-d">Bagian D — Pemilihan Proyeksi Peta</h2><h3>Dasar Pemilihan Proyeksi</h3>
+<section class="lesson-section" id="pilih"><h2 id="bagian-d">Bagian D — Pemilihan Proyeksi Peta</h2><h3>D.1 Dasar Pemilihan Proyeksi</h3>
 <p>Pemilihan projection dilakukan berdasarkan tujuan pemetaan, sifat geometris yang perlu dipertahankan, lokasi wilayah, cakupan pemetaan, serta tingkat distorsi yang dapat diterima.</p>
 <div class="decision-map"><div class="root">LANGKAH PEMILIHAN PROYEKSI</div><div class="decision-grid">
 <div class="decision-card"><h4>Tentukan tujuan</h4><p>Navigasi, perbandingan luas, peta umum, analisis GIS lokal, atau peta kutub?</p></div>
@@ -474,7 +534,7 @@ WGS 84 / UTM Zone 49S → Projected CRS yang menggunakan Transverse Mercator dan
 <p class="source-note">Penn State menekankan tujuan peta, geographic scale/extent, dan location sebagai faktor utama dalam memilih projection. <a href="https://courses.ems.psu.edu/geog486/node/857" target="_blank" rel="noopener">Penn State GEOG 486 — Choosing a Projection</a>.</p>
 </section>
 
-<section class="lesson-section" id="contoh"><h3>Studi Kasus dan Pembahasan</h3>
+<section class="lesson-section" id="contoh"><h3>D.2 Studi Kasus dan Pembahasan</h3>
 
 <div class="case"><h4>Kasus A — Navigasi kapal</h4><p>Sebuah peta digunakan untuk membantu kapal mempertahankan arah kompas yang tetap selama pelayaran.</p><div class="solution"><strong>Pembahasan:</strong><br>Tujuan peta adalah navigasi. Bearing adalah arah dalam derajat terhadap utara, sedangkan rhumb line adalah jalur dengan bearing tetap. Mercator sesuai karena bersifat conformal dan rhumb line digambar sebagai garis lurus. Keterbatasannya adalah distorsi luas yang besar pada lintang tinggi.</div></div>
 
@@ -487,7 +547,7 @@ WGS 84 / UTM Zone 49S → Projected CRS yang menggunakan Transverse Mercator dan
 <div class="case"><h4>Kasus E — GIS lokal Yogyakarta</h4><p>Peta digunakan untuk analisis lokal dan koordinat perlu dinyatakan dalam meter.</p><div class="solution"><strong>Pembahasan:</strong><br>Geographic CRS dalam derajat kurang praktis untuk pengukuran planar. Projected CRS seperti WGS 84 / UTM Zone 49S dapat digunakan. Projection yang mendasarinya adalah Transverse Mercator, sedangkan koordinat dinyatakan sebagai Easting dan Northing dalam meter.</div></div>
 </section>
 
-<section class="lesson-section" id="latihan"><h3>Latihan</h3>
+<section class="lesson-section" id="latihan"><h3>D.3 Latihan</h3>
 <div class="exercise"><ol>
 <li>Apa perbedaan datum dan map projection?</li>
 <li>Apa perbedaan geographic CRS dan projected CRS?</li>
@@ -499,7 +559,7 @@ WGS 84 / UTM Zone 49S → Projected CRS yang menggunakan Transverse Mercator dan
 </ol></div>
 </section>
 
-<section class="lesson-section" id="latihan-aplikasi"><h3>Latihan Aplikasi</h3>
+<section class="lesson-section" id="latihan-aplikasi"><h3>D.4 Latihan Aplikasi</h3>
 <p>Untuk setiap kasus, tentukan: <strong>tujuan → cakupan → sifat penting → projection/CRS → alasan → keterbatasan.</strong></p>
 <ol>
 <li>Peta curah hujan global yang digunakan untuk membandingkan luas zona hujan.</li>
@@ -509,7 +569,7 @@ WGS 84 / UTM Zone 49S → Projected CRS yang menggunakan Transverse Mercator dan
 </ol>
 </section>
 
-<section class="lesson-section" id="kesalahan"><h3>Kesalahan Konsep Umum</h3>
+<section class="lesson-section" id="kesalahan"><h3>D.5 Kesalahan Konsep Umum</h3>
 <ul class="key">
 <li>Datum = projection → <strong>salah</strong>.</li>
 <li>WGS 84 = Mercator → <strong>salah</strong>.</li>
@@ -520,13 +580,13 @@ WGS 84 / UTM Zone 49S → Projected CRS yang menggunakan Transverse Mercator dan
 </ul>
 </section>
 
-<section class="lesson-section" id="tugas"><h2 id="bagian-e">Bagian E — Tugas</h2><h3>Tugas Analisis Pemilihan Proyeksi</h3>
+<section class="lesson-section" id="tugas"><h2 id="bagian-e">Bagian E — Tugas</h2><h3>E.1 Tugas Analisis Pemilihan Proyeksi</h3>
 <p>Gunakan pola analisis yang telah dicontohkan: <strong>tujuan → cakupan → sifat penting → projection/CRS → alasan → keterbatasan.</strong></p>
 <div class="table-wrap"><table><thead><tr><th>Kasus</th><th>Tujuan</th><th>Cakupan</th><th>Sifat penting</th><th>Projection/CRS</th><th>Alasan</th><th>Keterbatasan</th></tr></thead><tbody><tr><td>1</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr></tbody></table></div>
 <p>Kasus tugas dapat mencakup navigasi, perbandingan area global, pemetaan regional, pemetaan kutub, dan pekerjaan GIS lokal.</p>
 </section>
 
-<section class="lesson-section" id="ringkasan"><h3>Ringkasan</h3>
+<section class="lesson-section" id="ringkasan"><h3>D.6 Ringkasan</h3>
 <div class="concept-flow"><div class="flow-row">
 <div class="flow-box"><strong>Ellipsoid</strong><span>model bentuk bumi</span></div><div class="arrow">→</div>
 <div class="flow-box"><strong>Datum</strong><span>kerangka acuan</span></div><div class="arrow">→</div>
