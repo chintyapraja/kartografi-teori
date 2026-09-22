@@ -29,35 +29,30 @@
 .story-step:not(:last-child) .story-marker::after{content:"";position:absolute;top:34px;left:16px;width:2px;height:46px;background:#b9c8d0}
 .story-body{padding:4px 0 24px}
 .story-body strong{color:#26323e}
-.classification-interactive{max-width:980px;margin:24px 0 38px;overflow-x:auto;padding:8px 0 18px}
-.projection-tree{min-width:920px;text-align:center}
-.projection-tree ul{padding-top:28px;position:relative;display:flex;justify-content:center;margin:0;padding-left:0}
-.projection-tree li{list-style:none;position:relative;padding:28px 8px 0;text-align:center;flex:1;min-width:0}
-.projection-tree li::before,.projection-tree li::after{content:"";position:absolute;top:0;right:50%;width:50%;height:28px;border-top:3px solid #8ca0ac}
-.projection-tree li::after{right:auto;left:50%;border-left:3px solid #8ca0ac}
-.projection-tree li:only-child::before,.projection-tree li:only-child::after{display:none}
-.projection-tree li:only-child{padding-top:0}
-.projection-tree li:first-child::before,.projection-tree li:last-child::after{border:0 none}
-.projection-tree li:last-child::before{border-right:3px solid #8ca0ac;border-radius:0 6px 0 0}
-.projection-tree li:first-child::after{border-radius:6px 0 0 0}
-.projection-tree ul ul::before{content:"";position:absolute;top:0;left:50%;height:28px;border-left:3px solid #8ca0ac}
-.tree-node{display:inline-block;min-width:180px;max-width:225px;padding:12px 14px;border:2px solid #075175;border-radius:8px;background:#fff;color:#075175;font-weight:800;line-height:1.3}
-.tree-node.root{min-width:320px;background:#075175;color:#fff;padding:15px 18px;font-size:19px}
-.tree-node small{display:block;margin-top:5px;font-size:12px;font-weight:500;color:#60717d}
-.tree-node.root small{color:#dce8ee}
-.projection-tree details{display:inline-block;width:100%}
-.projection-tree summary{cursor:pointer;list-style:none;display:inline-block}
-.projection-tree summary::-webkit-details-marker{display:none}
-.projection-tree summary .tree-node::after{content:" +";font-weight:800}
-.projection-tree details[open]>summary .tree-node::after{content:" −"}
-.projection-tree details>ul{display:none}
-.projection-tree details[open]>ul{display:flex}
-.tree-leaf{display:inline-block;min-width:135px;padding:10px 12px;border:1px solid #b7c6cf;border-radius:7px;background:#f8fafb;color:#26323e;font-weight:650}
-.tree-example{margin-top:10px;font-size:12px;color:#647581;line-height:1.35}
-.class-controls{display:flex;gap:10px;justify-content:flex-end;margin:4px 0 12px}
+.classification-interactive{max-width:980px;margin:24px 0 38px;padding:8px 0 18px}
+.class-root{width:min(360px,100%);margin:0 auto;padding:15px 18px;background:#075175;color:#fff;text-align:center;font-weight:800;border-radius:8px;box-sizing:border-box}
+.class-root small{display:block;margin-top:5px;color:#dce8ee;font-size:12px;font-weight:500}
+.class-trunk{width:3px;height:38px;background:#8ca0ac;margin:0 auto}
+.class-rail{height:3px;background:#8ca0ac;margin:0 12.5%}
+.class-branches{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:0}
+.class-branch{position:relative;padding-top:36px;min-width:0}
+.class-branch::before{content:"";position:absolute;top:0;left:50%;height:36px;border-left:3px solid #8ca0ac}
+.class-branch details{border:1px solid var(--line);border-top:4px solid #075175;background:#fff;border-radius:7px;overflow:hidden}
+.class-branch summary{cursor:pointer;list-style:none;padding:16px 14px;font-weight:800;color:#075175;line-height:1.35;min-height:88px;box-sizing:border-box}
+.class-branch summary::-webkit-details-marker{display:none}
+.class-branch summary::after{content:"+";float:right;font-size:24px;line-height:18px;margin-left:8px}
+.class-branch details[open] summary::after{content:"−"}
+.class-branch .branch-desc{display:block;margin-top:6px;font-size:12px;font-weight:500;color:#60717d}
+.class-children{position:relative;padding:22px 14px 14px;border-top:1px solid var(--line)}
+.class-children::before{content:"";position:absolute;top:0;left:50%;height:22px;border-left:2px solid #9db0ba}
+.class-child{position:relative;margin:0 auto 12px;max-width:210px;padding:10px 12px;background:#f8fafb;border:1px solid #b9c8d0;border-radius:6px;text-align:left}
+.class-child:not(:last-child)::after{content:"";position:absolute;left:50%;bottom:-13px;height:13px;border-left:2px solid #9db0ba}
+.class-child strong{display:block;color:#26323e}
+.class-child span{display:block;margin-top:3px;font-size:12px;color:#667681}
+.class-controls{display:flex;gap:10px;justify-content:flex-end;margin:12px 0 14px;flex-wrap:wrap}
 .class-controls button{border:1px solid #9fb1bc;background:#fff;color:#075175;padding:8px 12px;border-radius:5px;font:inherit;cursor:pointer}
 .class-controls button:hover{background:#eef5f8}
-@media(max-width:900px){.class-grid,.term-grid,.decision-grid{grid-template-columns:1fr}.flow-row{display:grid}.arrow{transform:rotate(90deg)}.profile .r{grid-template-columns:1fr}.story-step:not(:last-child) .story-marker::after{height:62px}.classification-interactive{overflow-x:auto}.projection-tree{min-width:900px}}
+@media(max-width:900px){.class-grid,.term-grid,.decision-grid{grid-template-columns:1fr}.flow-row{display:grid}.arrow{transform:rotate(90deg)}.profile .r{grid-template-columns:1fr}.story-step:not(:last-child) .story-marker::after{height:62px}.class-rail{display:none}.class-branches{grid-template-columns:1fr}.class-branch{padding-top:28px}.class-branch::before{height:28px}}
 </style>
 </head>
 <body>
@@ -275,70 +270,67 @@ WGS 84 / UTM Zone 49S → Projected CRS yang menggunakan Transverse Mercator dan
 
 
 
+
 <section class="lesson-section" id="klasifikasi">
-<h2 id="bagian-b">Bagian B — Klasifikasi Proyeksi Peta</h2><h3>Klasifikasi Proyeksi Peta</h3>
-<p>Proyeksi peta dapat diklasifikasikan berdasarkan beberapa aspek. Diagram berikut menunjukkan hubungan antartingkat klasifikasi dalam satu bagan. Setiap cabang dapat dibuka atau ditutup untuk melihat kategori di bawahnya.</p>
+<h2>Bagian B — Klasifikasi Proyeksi Peta</h2>
+<h3>Klasifikasi Proyeksi Peta</h3>
+<p>Proyeksi peta dapat diklasifikasikan berdasarkan empat aspek. Bagan berikut menunjukkan hubungan dari tingkat utama ke subkategori. Klik setiap cabang untuk melihat jenis dan contohnya.</p>
 
 <div class="classification-interactive">
+  <div class="class-root">KLASIFIKASI PROYEKSI PETA<small>empat dasar klasifikasi utama</small></div>
+  <div class="class-trunk" aria-hidden="true"></div>
+  <div class="class-rail" aria-hidden="true"></div>
+
   <div class="class-controls">
     <button type="button" onclick="document.querySelectorAll('#klasifikasi details').forEach(d=>d.open=true)">Buka semua</button>
     <button type="button" onclick="document.querySelectorAll('#klasifikasi details').forEach(d=>d.open=false)">Tutup semua</button>
   </div>
 
-  <div class="projection-tree">
-    <ul>
-      <li>
-        <div class="tree-node root">KLASIFIKASI PROYEKSI PETA<small>empat dasar klasifikasi utama</small></div>
-        <ul>
+  <div class="class-branches">
+    <div class="class-branch">
+      <details>
+        <summary>A. Berdasarkan permukaan proyeksi<span class="branch-desc">bentuk konseptual projection surface</span></summary>
+        <div class="class-children">
+          <div class="class-child"><strong>Cylindrical</strong><span>contoh: Mercator</span></div>
+          <div class="class-child"><strong>Conic</strong><span>contoh: Lambert Conformal Conic</span></div>
+          <div class="class-child"><strong>Azimuthal / Planar</strong><span>contoh: Azimuthal Equidistant</span></div>
+          <div class="class-child"><strong>Pseudocylindrical</strong><span>contoh: Mollweide</span></div>
+        </div>
+      </details>
+    </div>
 
-          <li>
-            <details>
-              <summary><span class="tree-node">A. Berdasarkan permukaan proyeksi<small>bentuk konseptual projection surface</small></span></summary>
-              <ul>
-                <li><span class="tree-leaf">Cylindrical</span><div class="tree-example">contoh: Mercator</div></li>
-                <li><span class="tree-leaf">Conic</span><div class="tree-example">contoh: Lambert Conformal Conic</div></li>
-                <li><span class="tree-leaf">Azimuthal / Planar</span><div class="tree-example">contoh: Azimuthal Equidistant</div></li>
-                <li><span class="tree-leaf">Pseudocylindrical</span><div class="tree-example">contoh: Mollweide</div></li>
-              </ul>
-            </details>
-          </li>
+    <div class="class-branch">
+      <details>
+        <summary>B. Berdasarkan sifat yang dipertahankan<span class="branch-desc">sifat geometris yang diprioritaskan</span></summary>
+        <div class="class-children">
+          <div class="class-child"><strong>Conformal</strong><span>sudut lokal dipertahankan</span></div>
+          <div class="class-child"><strong>Equal-area</strong><span>luas relatif dipertahankan</span></div>
+          <div class="class-child"><strong>Equidistant</strong><span>jarak tertentu dipertahankan</span></div>
+          <div class="class-child"><strong>Direction-related</strong><span>arah tertentu dipertahankan</span></div>
+        </div>
+      </details>
+    </div>
 
-          <li>
-            <details>
-              <summary><span class="tree-node">B. Berdasarkan sifat yang dipertahankan<small>sifat geometris yang diprioritaskan</small></span></summary>
-              <ul>
-                <li><span class="tree-leaf">Conformal</span><div class="tree-example">sudut lokal</div></li>
-                <li><span class="tree-leaf">Equal-area</span><div class="tree-example">luas relatif</div></li>
-                <li><span class="tree-leaf">Equidistant</span><div class="tree-example">jarak tertentu</div></li>
-                <li><span class="tree-leaf">Direction-related</span><div class="tree-example">arah tertentu</div></li>
-              </ul>
-            </details>
-          </li>
+    <div class="class-branch">
+      <details>
+        <summary>C. Berdasarkan orientasi (aspect)<span class="branch-desc">arah projection surface terhadap bumi</span></summary>
+        <div class="class-children">
+          <div class="class-child"><strong>Normal</strong><span>orientasi standar</span></div>
+          <div class="class-child"><strong>Transverse</strong><span>surface diputar sekitar 90°</span></div>
+          <div class="class-child"><strong>Oblique</strong><span>surface diorientasikan miring</span></div>
+        </div>
+      </details>
+    </div>
 
-          <li>
-            <details>
-              <summary><span class="tree-node">C. Berdasarkan orientasi (aspect)<small>arah projection surface terhadap bumi</small></span></summary>
-              <ul>
-                <li><span class="tree-leaf">Normal</span></li>
-                <li><span class="tree-leaf">Transverse</span></li>
-                <li><span class="tree-leaf">Oblique</span></li>
-              </ul>
-            </details>
-          </li>
-
-          <li>
-            <details>
-              <summary><span class="tree-node">D. Berdasarkan hubungan surface dengan bumi<small>cara surface menyentuh atau memotong globe</small></span></summary>
-              <ul>
-                <li><span class="tree-leaf">Tangent</span></li>
-                <li><span class="tree-leaf">Secant</span></li>
-              </ul>
-            </details>
-          </li>
-
-        </ul>
-      </li>
-    </ul>
+    <div class="class-branch">
+      <details>
+        <summary>D. Berdasarkan hubungan surface dengan bumi<span class="branch-desc">cara surface menyentuh atau memotong globe</span></summary>
+        <div class="class-children">
+          <div class="class-child"><strong>Tangent</strong><span>surface menyentuh globe</span></div>
+          <div class="class-child"><strong>Secant</strong><span>surface memotong globe</span></div>
+        </div>
+      </details>
+    </div>
   </div>
 </div>
 
@@ -355,9 +347,9 @@ WGS 84 / UTM Zone 49S → Projected CRS yang menggunakan Transverse Mercator dan
 </table></div>
 
 <ul class="key">
-<li>Diagram mempertahankan <strong>garis hierarki dari root ke setiap cabang dan subkategori</strong>.</li>
 <li>Satu projection dapat memiliki karakteristik dari beberapa dasar klasifikasi sekaligus.</li>
 <li>Contoh: Mercator adalah <strong>Cylindrical</strong> berdasarkan permukaan, <strong>Conformal</strong> berdasarkan sifat, dan <strong>Normal</strong> berdasarkan aspect.</li>
+<li>Klasifikasi membantu menjelaskan bagaimana projection bekerja dan sifat apa yang diprioritaskan sebelum menentukan projection yang sesuai.</li>
 </ul>
 </section>
 
