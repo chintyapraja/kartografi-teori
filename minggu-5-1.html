@@ -1,538 +1,275 @@
 <!doctype html>
 <html lang="id">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Materi 5.1 — Mengenal Sistem dan Jenis Proyeksi Peta | Kartografi (Teori)</title>
-<meta name="description" content="Pendalaman proyeksi peta: struktur klasifikasi, ellipsoid, datum, CRS, keluarga proyeksi, sifat, aspect, tangent/secant, contoh, implikasi, UTM, dan tugas analisis.">
-<link rel="stylesheet" href="style.css?v=20260906g">
-<link rel="stylesheet" href="visual-enhance.css?v=20260906b">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Materi 5.1 — Sistem dan Jenis Proyeksi Peta | Kartografi (Teori)</title>
+<meta name="description" content="Materi dasar proyeksi peta: hubungan ellipsoid, datum, CRS, geographic CRS, map projection, projected CRS, klasifikasi proyeksi, distorsi, UTM, dan pemilihan proyeksi.">
+<link rel="stylesheet" href="style.css?v=20260906g"><link rel="stylesheet" href="visual-enhance.css?v=20260906b">
 <style>
-.level-map{max-width:940px;margin:24px 0 42px;padding:22px;background:#f6f8fa;border:1px solid var(--line)}
-.level-map .root{max-width:300px;margin:0 auto 18px;padding:14px 18px;text-align:center;background:#075175;color:#fff;font-weight:800}
-.level-map .hint{text-align:center;color:#5a6976;margin:0 0 20px}
-.level-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.level-col{background:#fff;border-top:4px solid #075175;padding:16px}
-.level-col h3{font-size:18px;margin:0 0 8px}.level-col p{font-size:14px;margin:0 0 10px;color:#5a6976}
-.level-col ul{margin:0;padding-left:19px}
-.level-col li{margin:5px 0}
-.example-chain{margin-top:18px;padding:14px 16px;background:#fff;border-left:4px solid #075175}
-.concept-flow{display:flex;flex-wrap:wrap;align-items:center;gap:10px;max-width:940px;margin:20px 0 30px}
-.concept-flow .box{padding:14px 16px;background:#f4f7f9;border:1px solid var(--line);font-weight:700}
-.concept-flow .arr{font-size:24px;color:#637581}
-.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:940px;margin:20px 0 34px}
-.compare-grid figure{margin:0}.compare-grid img{width:100%;height:auto;background:#fff;border:1px solid var(--line)}
-.official-figure{max-width:900px;margin:20px 0 34px;text-align:center}.official-figure img{display:block;width:auto;max-width:min(100%,760px);height:auto;margin:0 auto;background:#fff;border:1px solid var(--line);image-rendering:auto}.official-figure figcaption,.compare-grid figcaption{font-size:14px;line-height:1.5;color:#667580;margin-top:8px;text-align:left}.projection-visual{max-width:900px;margin:18px 0 24px;padding:18px;background:#f6f8fa;border:1px solid var(--line)}.projection-visual svg{display:block;width:100%;height:auto;background:#fff}.projection-visual .visual-note{font-size:14px;color:#667580;margin:10px 0 0}.source-actions{margin-top:9px;font-size:14px}.source-actions a{font-weight:700}
-.key-bullets{max-width:900px}.key-bullets li{margin:9px 0}
-.level-label{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#075175;margin-bottom:6px}
-.profile{max-width:900px;margin:18px 0 30px;border-top:1px solid var(--line)}
-.profile .r{display:grid;grid-template-columns:185px 1fr;gap:18px;padding:12px 0;border-bottom:1px solid var(--line)}
-.profile .r strong{color:#26323e}.profile .r span{color:#566773}
-.answer-example{max-width:900px;padding:20px;background:#f6f8fa;border-left:4px solid #075175;margin:20px 0 36px}
-.answer-example h3{margin-top:0}.answer-example ol{margin-bottom:0}
-.assignment-case{max-width:900px;padding:20px 0;border-top:1px solid var(--line)}
-.assignment-case h3{margin:0 0 8px}.assignment-case .ask{padding:10px 14px;border-left:3px solid #075175;color:#455866}
-@media(max-width:900px){.level-grid,.compare-grid{grid-template-columns:1fr}.profile .r{grid-template-columns:1fr}.concept-flow{display:grid;grid-template-columns:1fr}.concept-flow .arr{text-align:center;transform:rotate(90deg)}}
+.concept-map,.class-map,.note-box{max-width:940px;margin:22px 0 38px;padding:22px;background:#f6f8fa;border:1px solid var(--line)}
+.concept-map .flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;gap:10px;align-items:center}
+.concept-map .box{background:#fff;border-top:4px solid #075175;padding:15px;text-align:center}
+.concept-map .arrow{font-size:24px;color:#6a7a85;text-align:center}
+.class-map .root{max-width:310px;margin:0 auto 20px;padding:14px 18px;background:#075175;color:#fff;text-align:center;font-weight:800}
+.class-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.class-col{background:#fff;border-top:4px solid #075175;padding:15px}.class-col h3{font-size:18px;margin:0 0 8px}.class-col p{font-size:14px;color:#596a76}.class-col li{margin:5px 0}
+.key li{margin:9px 0}.profile{max-width:900px;margin:18px 0 30px;border-top:1px solid var(--line)}.profile .r{display:grid;grid-template-columns:190px 1fr;gap:18px;padding:12px 0;border-bottom:1px solid var(--line)}.profile .r span{color:#566773}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:940px;margin:20px 0 34px}.compare-grid figure{margin:0}
+.official-figure{max-width:900px;margin:20px 0 34px;text-align:center}.official-figure img,.compare-grid img{display:block;width:auto;max-width:100%;height:auto;margin:0 auto;background:#fff;border:1px solid var(--line)}.official-figure figcaption,.compare-grid figcaption{font-size:14px;line-height:1.5;color:#667580;margin-top:8px;text-align:left}
+.projection-visual{max-width:900px;margin:18px 0 24px;padding:18px;background:#f6f8fa;border:1px solid var(--line)}.projection-visual svg{display:block;width:100%;height:auto;background:#fff}.projection-visual p{font-size:14px;color:#667580}
+.term-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:920px;margin:18px 0 30px}.term-card{padding:16px;background:#f8fafb;border-top:3px solid #075175}.term-card h3{margin-top:0}.term-card p{margin-bottom:8px}
+.answer-example{max-width:900px;padding:20px;background:#f6f8fa;border-left:4px solid #075175;margin:20px 0 36px}.assignment-case{max-width:900px;padding:18px 0;border-top:1px solid var(--line)}.assignment-case h3{margin:0 0 8px}.assignment-case .ask{padding:10px 14px;border-left:3px solid #075175;color:#455866}
+.small{font-size:14px;color:#657681}.source-actions{font-size:14px}.source-actions a{font-weight:700}
+@media(max-width:900px){.concept-map .flow,.class-grid,.term-grid,.compare-grid{grid-template-columns:1fr}.concept-map .arrow{transform:rotate(90deg)}.profile .r{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <a class="skip" href="#materi">Langsung ke materi</a>
-<aside class="sidebar">
-<a class="brand" href="index.html">Kartografi<br>(Teori)</a><div class="meta">Bahan perkuliahan</div>
-<nav aria-label="Navigasi buku">
-<a href="index.html">Pengantar</a>
-<a href="silabus.html">Silabus lengkap</a>
-<a href="minggu-1.html">1 · Pengertian dan konsep kartografi</a>
-<a href="minggu-2.html">2 · Klasifikasi peta dan lingkup kartografi</a>
-<a href="minggu-3.html">3 · Komunikasi kartografis</a>
-<a href="minggu-4.html">4 · Komponen dan kelengkapan peta</a>
-<a href="minggu-5.html">5 · Pengantar proyeksi peta</a>
-<a href="minggu-5-1.html" aria-current="page">5.1 · Sistem dan jenis proyeksi</a>
-<a href="minggu-6.html">6 · Jenis dan pembacaan peta</a>
-<a href="minggu-7.html">7 · Skala dan generalisasi</a>
-<a href="silabus.html#minggu-8">8 · Ujian Tengah Semester</a>
+<aside class="sidebar"><a class="brand" href="index.html">Kartografi<br>(Teori)</a><div class="meta">Bahan perkuliahan</div><nav aria-label="Navigasi buku">
+<a href="index.html">Pengantar</a><a href="silabus.html">Silabus lengkap</a>
+<a href="minggu-1.html">1 · Pengertian dan konsep kartografi</a><a href="minggu-2.html">2 · Klasifikasi peta dan lingkup kartografi</a><a href="minggu-3.html">3 · Komunikasi kartografis</a><a href="minggu-4.html">4 · Komponen dan kelengkapan peta</a><a href="minggu-5.html">5 · Pengantar proyeksi peta</a><a href="minggu-5-1.html" aria-current="page">5.1 · Sistem dan jenis proyeksi</a><a href="minggu-6.html">6 · Jenis dan pembacaan peta</a><a href="minggu-7.html">7 · Skala dan generalisasi</a><a href="silabus.html#minggu-8">8 · Ujian Tengah Semester</a>
 </nav></aside>
-
 <div class="layout"><main id="materi" class="presentation-notes">
 <div class="eyebrow">Materi 5.1 · Pendalaman Pertemuan 5</div>
-<h1>Mengenal sistem dan jenis proyeksi peta</h1>
-<p class="lead">Materi ini membahas sistem dan jenis proyeksi peta secara terstruktur, meliputi dasar klasifikasi proyeksi, hubungan antara datum dan sistem koordinat, karakteristik setiap keluarga proyeksi, sifat geometris yang dipertahankan, aspect, hubungan tangent/secant, serta pertimbangan pemilihan proyeksi sesuai tujuan pemetaan.</p>
+<h1>Sistem dan jenis proyeksi peta</h1>
+<p class="lead">Materi ini menjelaskan hubungan antara model bumi, datum, sistem referensi koordinat, proyeksi peta, dan sistem koordinat terproyeksi. Setelah hubungan antarkonsep tersebut dipahami, pembahasan dilanjutkan dengan klasifikasi proyeksi, sifat distorsi, contoh proyeksi penting, dan pertimbangan pemilihannya.</p>
 
-<section class="lesson-section" id="struktur">
-<h2>1. Peta besar: proyeksi peta dibagi berdasarkan apa?</h2>
-<p>Proyeksi peta dapat diklasifikasikan menurut beberapa dasar yang berbeda. Istilah <strong>cylindrical</strong>, <strong>conformal</strong>, <strong>transverse</strong>, dan <strong>secant</strong> tidak berada pada tingkat klasifikasi yang sama karena masing-masing menjelaskan aspek yang berbeda dari suatu proyeksi.</p>
+<section class="lesson-section" id="tujuan"><h2>1. Tujuan pembelajaran</h2>
+<p>Setelah mempelajari materi ini, mahasiswa diharapkan mampu:</p>
+<ul class="key">
+<li>membedakan ellipsoid, datum, coordinate reference system (CRS), geographic CRS, map projection, dan projected CRS;</li>
+<li>menjelaskan hubungan antaristilah tersebut secara runtut;</li>
+<li>menjelaskan mengapa proyeksi peta selalu menimbulkan distorsi;</li>
+<li>mengklasifikasikan proyeksi berdasarkan keluarga geometris, sifat yang dipertahankan, aspect, serta hubungan tangent/secant;</li>
+<li>menjelaskan karakteristik Mercator, Transverse Mercator/UTM, Lambert Conformal Conic, Azimuthal Equidistant, dan Mollweide;</li>
+<li>memilih proyeksi berdasarkan tujuan peta, lokasi, cakupan wilayah, dan sifat geometris yang perlu dipertahankan.</li>
+</ul></section>
 
-<div class="level-map">
-<div class="root">PROYEKSI PETA</div>
-<p class="hint">Satu proyeksi dapat memiliki karakteristik yang berasal dari beberapa dasar klasifikasi secara bersamaan.</p>
-<div class="level-grid">
-<div class="level-col">
-<span class="level-label">Dasar klasifikasi 1</span>
-<h3>Keluarga / bentuk konseptual</h3>
-<p>Menjawab: “secara geometris, proyeksi ini termasuk keluarga apa?”</p>
-<ul><li>Cylindrical</li><li>Conic</li><li>Azimuthal / planar</li><li>Pseudocylindrical</li></ul>
+<section class="lesson-section" id="hubungan"><h2>2. Hubungan konsep: dari bumi ke koordinat pada peta</h2>
+<p>Kesulitan utama dalam memahami proyeksi peta biasanya bukan terletak pada nama proyeksinya, tetapi pada hubungan antara <strong>model bumi, datum, sistem koordinat, dan proyeksi</strong>. Diagram berikut menunjukkan hubungan konseptualnya.</p>
+<div class="concept-map"><div class="flow">
+<div class="box"><strong>Bumi nyata</strong><br><span class="small">permukaan fisik bumi</span></div><div class="arrow">→</div>
+<div class="box"><strong>Ellipsoid + datum</strong><br><span class="small">model dan kerangka acuan geodetik</span></div><div class="arrow">→</div>
+<div class="box"><strong>Geographic CRS</strong><br><span class="small">latitude & longitude, satuan sudut</span></div><div class="arrow">→</div>
+<div class="box"><strong>Map projection</strong><br><span class="small">transformasi ke bidang datar</span></div><div class="arrow">→</div>
+<div class="box"><strong>Projected CRS</strong><br><span class="small">X/Y atau Easting/Northing, satuan linear</span></div>
 </div>
-<div class="level-col">
-<span class="level-label">Dasar klasifikasi 2</span>
-<h3>Sifat yang dipertahankan</h3>
-<p>Menjawab: “apa yang dibuat tetap benar atau paling terjaga?”</p>
-<ul><li>Conformal</li><li>Equal-area</li><li>Equidistant</li><li>Direction-related</li></ul>
-</div>
-<div class="level-col">
-<span class="level-label">Dasar klasifikasi 3</span>
-<h3>Aspect / orientasi</h3>
-<p>Menjawab: “bagaimana surface diorientasikan terhadap bumi?”</p>
-<ul><li>Normal</li><li>Transverse</li><li>Oblique</li></ul>
-</div>
-<div class="level-col">
-<span class="level-label">Dasar klasifikasi 4</span>
-<h3>Hubungan surface dengan globe</h3>
-<p>Menjawab: “apakah surface menyentuh atau memotong globe?”</p>
-<ul><li>Tangent</li><li>Secant</li></ul>
-</div>
-</div>
-<div class="example-chain"><strong>Contoh klasifikasi suatu proyeksi:</strong><br>
-Mercator = <strong>cylindrical</strong> (keluarga) + <strong>conformal</strong> (sifat) + <strong>normal</strong> (aspect).<br>
-Transverse Mercator = <strong>cylindrical</strong> + <strong>conformal</strong> + <strong>transverse</strong>.<br>
-Lambert Conformal Conic = <strong>conic</strong> + <strong>conformal</strong>.<br>
-Azimuthal Equidistant = <strong>azimuthal</strong> + <strong>equidistant</strong>.<br>
-Mollweide = <strong>pseudocylindrical</strong> + <strong>equal-area</strong>.</div>
-</div>
-
-<figure class="official-figure">
-<img src="https://desktop.arcgis.com/en/arcmap/latest/map/projections/GUID-622E6B6D-DAB6-4931-AA34-E8A48457B426-web.gif" alt="Ilustrasi resmi Esri tentang normal, transverse, dan oblique cylindrical aspects">
-<figcaption>Contoh resmi Esri untuk cylindrical aspects. Sumber: Esri ArcGIS Documentation, Projection types.</figcaption>
-</figure>
-<p class="plain-note"><strong>Prinsip pembacaan klasifikasi:</strong> tentukan terlebih dahulu dasar klasifikasi yang digunakan, yaitu keluarga geometris, sifat yang dipertahankan, aspect, atau hubungan projection surface dengan globe.</p>
+<p class="small"><strong>Catatan:</strong> diagram ini menunjukkan hubungan konsep untuk pembelajaran, bukan urutan komputasi yang selalu dilakukan secara terpisah oleh perangkat lunak GIS.</p></div>
+<div class="note-box"><strong>Inti hubungan:</strong> datum/CRS menjelaskan <em>acuan posisi</em>, sedangkan map projection menjelaskan <em>cara mengubah koordinat dari permukaan melengkung ke bidang datar</em>. Projected CRS menggabungkan keduanya menjadi sistem koordinat datar yang dapat digunakan pada peta dan GIS.</div>
 </section>
 
-<section class="lesson-section" id="sistem">
-<h2>2. Sebelum proyeksi: apa bedanya ellipsoid, datum, CRS, dan projection?</h2>
-<p>Pemahaman proyeksi peta perlu didahului dengan pembedaan antara model bumi, datum, coordinate reference system, dan map projection. Keempat konsep tersebut saling berkaitan, tetapi mempunyai fungsi yang berbeda.</p>
-<div class="concept-flow">
-<div class="box">Bumi nyata</div><div class="arr">→</div>
-<div class="box">Ellipsoid</div><div class="arr">→</div>
-<div class="box">Datum</div><div class="arr">→</div>
-<div class="box">Geographic CRS<br>Latitude / Longitude</div><div class="arr">→</div>
-<div class="box">Map Projection</div><div class="arr">→</div>
-<div class="box">Projected CRS<br>X/Y atau E/N</div>
+<section class="lesson-section" id="istilah"><h2>3. Istilah dasar yang harus dibedakan</h2>
+<div class="term-grid">
+<article class="term-card"><h3>3.1 Ellipsoid</h3><p><strong>Definisi:</strong> model matematis sederhana yang mendekati bentuk bumi.</p><p>Bumi tidak berbentuk bola sempurna. Untuk perhitungan posisi, digunakan ellipsoid yang mempunyai ukuran dan bentuk matematis tertentu.</p><p><strong>Contoh:</strong> ellipsoid yang digunakan dalam WGS 84.</p></article>
+<article class="term-card"><h3>3.2 Datum geodetik</h3><p><strong>Definisi:</strong> kerangka acuan yang digunakan untuk menentukan posisi terhadap model bumi.</p><p>Datum menghubungkan koordinat dengan kerangka referensi geodetik tertentu. Karena datum berbeda dapat menggunakan acuan yang berbeda, koordinat suatu lokasi dapat sedikit berbeda jika datumnya berbeda.</p><p><strong>Contoh:</strong> WGS 84.</p></article>
+<article class="term-card"><h3>3.3 Coordinate Reference System (CRS)</h3><p><strong>Definisi:</strong> sistem terdefinisi yang digunakan untuk menyatakan posisi dengan koordinat.</p><p>CRS tidak hanya berupa angka koordinat. CRS juga menetapkan acuan, sumbu koordinat, unit, dan aturan yang membuat angka tersebut mempunyai makna posisi.</p></article>
+<article class="term-card"><h3>3.4 Geographic CRS (GCRS)</h3><p><strong>Definisi:</strong> CRS yang menyatakan posisi pada model bumi menggunakan koordinat sudut.</p><p>Koordinat yang paling umum adalah <strong>latitude</strong> dan <strong>longitude</strong>, biasanya dalam derajat.</p><p><strong>Contoh:</strong> WGS 84 geographic CRS.</p></article>
+<article class="term-card"><h3>3.5 Map projection</h3><p><strong>Definisi:</strong> transformasi matematis yang memindahkan posisi dari permukaan melengkung bumi ke bidang datar.</p><p>Map projection bukan datum dan bukan nama lengkap sistem koordinat.</p><p><strong>Contoh:</strong> Mercator, Transverse Mercator, Lambert Conformal Conic.</p></article>
+<article class="term-card"><h3>3.6 Projected CRS (PCRS)</h3><p><strong>Definisi:</strong> CRS pada bidang datar yang menggunakan map projection untuk mengubah koordinat geografis menjadi koordinat Cartesian.</p><p>Koordinatnya biasanya berupa X/Y atau Easting/Northing dengan satuan linear seperti meter.</p><p><strong>Contoh:</strong> WGS 84 / UTM Zone 49S.</p></article>
 </div>
-
-<h3>2.1 Ellipsoid</h3>
-<ul class="key-bullets">
-<li>Bumi nyata tidak berbentuk bola sempurna dan permukaannya sangat tidak beraturan.</li>
-<li>Untuk perhitungan posisi, digunakan model matematis yang lebih sederhana, yaitu <strong>ellipsoid</strong>.</li>
-<li>Ellipsoid menjelaskan ukuran dan bentuk matematis dasar bumi.</li>
-<li>Contoh yang sering ditemui: ellipsoid WGS 84.</li>
-</ul>
-
-<h3>2.2 Datum</h3>
-<ul class="key-bullets">
-<li>Ellipsoid saja belum memberi kerangka posisi yang lengkap.</li>
-<li><strong>Datum</strong> menentukan bagaimana model matematis tersebut direferensikan terhadap bumi.</li>
-<li>Datum memengaruhi koordinat suatu lokasi.</li>
-<li>Contoh: WGS 84 dan SRGI2013.</li>
-<li><strong>WGS 84 bukan map projection.</strong></li>
-</ul>
-
-<h3>2.3 Geographic CRS</h3>
-<ul class="key-bullets">
-<li>Geographic CRS digunakan untuk menyatakan posisi pada permukaan bumi.</li>
-<li>Koordinat umum: <strong>latitude</strong> dan <strong>longitude</strong>.</li>
-<li>Satuan yang biasa digunakan adalah derajat.</li>
-<li>Contoh: WGS 84 geographic CRS.</li>
-</ul>
-
-<h3>2.4 Map projection</h3>
-<ul class="key-bullets">
-<li>Map projection adalah transformasi matematis dari permukaan melengkung ke bidang datar.</li>
-<li>Karena permukaan melengkung tidak dapat diratakan tanpa perubahan, selalu ada distorsi.</li>
-<li>Contoh: Mercator, Transverse Mercator, Lambert Conformal Conic, Mollweide, Azimuthal Equidistant.</li>
-</ul>
-
-<h3>2.5 Projected CRS</h3>
-<ul class="key-bullets">
-<li>Projected CRS adalah sistem koordinat lengkap pada bidang datar.</li>
-<li>Koordinat biasanya berupa X/Y atau Easting/Northing.</li>
-<li>Satuan sering berupa meter.</li>
-<li>Projected CRS mencakup datum/base CRS, projection, parameter projection, coordinate axes, dan unit.</li>
-<li>Contoh: <strong>WGS 84 / UTM Zone 49S</strong>.</li>
-</ul>
-<div class="table-wrap"><table><thead><tr><th>Istilah</th><th>Pertanyaan yang dijawab</th><th>Contoh</th></tr></thead><tbody>
-<tr><td>Ellipsoid</td><td>Bentuk matematis bumi seperti apa?</td><td>WGS 84 ellipsoid</td></tr>
-<tr><td>Datum</td><td>Bagaimana model bumi direferensikan terhadap bumi?</td><td>WGS 84, SRGI2013</td></tr>
-<tr><td>Geographic CRS</td><td>Bagaimana posisi dinyatakan pada permukaan bumi?</td><td>Latitude/longitude</td></tr>
-<tr><td>Map projection</td><td>Bagaimana permukaan melengkung ditransformasikan menjadi datar?</td><td>Mercator, Transverse Mercator</td></tr>
-<tr><td>Projected CRS</td><td>Bagaimana posisi dinyatakan pada bidang datar?</td><td>WGS 84 / UTM Zone 49S</td></tr>
-</tbody></table></div>
-<p class="source-note">Referensi: TIU Lecture Notes — Map Projection; EPSG:32749 untuk WGS 84 / UTM zone 49S.</p>
+<p class="source-note">ArcGIS menjelaskan bahwa projected coordinate system tersusun dari geographic coordinate system dan map projection, dan bahwa map projection mengubah koordinat geodetik bersatuan sudut menjadi koordinat Cartesian pada bidang datar. <a href="https://pro.arcgis.com/en/pro-app/3.1/help/mapping/properties/coordinate-systems-and-projections.htm" target="_blank" rel="noopener">Sumber: ArcGIS Pro</a>.</p>
 </section>
 
-<section class="lesson-section" id="distorsi">
-<h2>3. Mengapa ada banyak proyeksi?</h2>
-<p>Tidak ada satu proyeksi yang dapat mempertahankan seluruh sifat geometris permukaan bumi secara bersamaan pada bidang datar. Oleh karena itu, setiap proyeksi melibatkan kompromi terhadap bentuk, luas, jarak, sudut, atau arah.</p>
-<ul class="key-bullets">
-<li><strong>Area:</strong> apakah luas relatif wilayah tetap benar?</li>
-<li><strong>Shape:</strong> apakah bentuk lokal tetap menyerupai aslinya?</li>
-<li><strong>Angle:</strong> apakah sudut lokal dipertahankan?</li>
-<li><strong>Distance:</strong> apakah jarak tertentu dipertahankan?</li>
-<li><strong>Direction:</strong> apakah arah tertentu dapat dibaca dengan benar?</li>
-</ul>
-<p class="plain-note"><strong>Implikasi:</strong> pemilihan proyeksi harus didasarkan pada tujuan peta, cakupan wilayah, lokasi, serta sifat geometris yang perlu dipertahankan.</p>
-</section>
-
-<section class="lesson-section" id="keluarga">
-<h2>4. Dasar klasifikasi 1: berdasarkan keluarga / bentuk konseptual</h2>
-<p>Pada klasifikasi ini, fokus pembahasan adalah <strong>keluarga geometris proyeksi</strong>. Sifat seperti conformal, equal-area, atau equidistant merupakan dasar klasifikasi yang berbeda dan dibahas pada bagian tersendiri.</p>
-
-<h3>4.1 Cylindrical</h3>
-<ul class="key-bullets">
-<li>Dibayangkan menggunakan silinder yang mengelilingi globe.</li>
-<li>Pada normal aspect, silinder biasanya berhubungan dengan ekuator.</li>
-<li>Hasil peta dunia sering berbentuk persegi panjang.</li>
-<li>Meridian dan parallel pada banyak cylindrical normal tampak sebagai garis lurus.</li>
-<li><strong>Cylindrical tidak otomatis berarti conformal.</strong> Ada cylindrical conformal dan cylindrical equal-area.</li>
-<li>Contoh: Mercator, Transverse Mercator, Cylindrical Equal Area.</li>
-</ul>
-<figure class="official-figure">
-<img src="https://desktop.arcgis.com/en/arcmap/latest/map/projections/GUID-622E6B6D-DAB6-4931-AA34-E8A48457B426-web.gif" alt="Cylindrical projection aspects dari Esri">
-<figcaption>Cylindrical aspects: normal, transverse, dan oblique. Sumber: Esri ArcGIS Documentation.</figcaption>
-</figure>
-
-<h3>4.2 Conic</h3>
-<ul class="key-bullets">
-<li>Dibayangkan menggunakan kerucut yang ditempatkan di atas globe.</li>
-<li>Kerucut dapat menyentuh globe (tangent) atau memotong globe (secant).</li>
-<li>Pada hasil peta, parallels umumnya berupa busur konsentris dan meridians menyebar.</li>
-<li>Sering sesuai untuk wilayah lintang menengah yang memanjang timur-barat.</li>
-<li><strong>Conic tidak otomatis conformal.</strong> Ada Lambert Conformal Conic, Albers Equal Area Conic, dan Equidistant Conic.</li>
-</ul>
+<section class="lesson-section" id="contoh-satu-titik"><h2>4. Contoh: satu lokasi, dua cara menyatakan koordinat</h2>
+<p>Satu lokasi yang sama dapat dinyatakan menggunakan geographic CRS atau projected CRS. Lokasinya tidak berubah; yang berubah adalah <strong>sistem dan bentuk koordinat yang digunakan untuk merepresentasikannya</strong>.</p>
 <div class="compare-grid">
-<figure><img src="https://desktop.arcgis.com/en/arcmap/latest/map/projections/GUID-44C33C80-B331-4E62-8A90-E68E49F46954-web.gif" alt="Conic tangent"><figcaption>Conic tangent. Sumber: Esri.</figcaption></figure>
-<figure><img src="https://desktop.arcgis.com/en/arcmap/latest/map/projections/GUID-D2B234B0-AAE9-47D2-BFE5-380955DE3AE0-web.gif" alt="Conic secant"><figcaption>Conic secant dengan dua standard parallels. Sumber: Esri.</figcaption></figure>
+<article class="term-card"><h3>Geographic CRS</h3><p><strong>Contoh:</strong> lokasi di Yogyakarta.</p><p>Latitude ≈ 7,8° LS<br>Longitude ≈ 110,4° BT</p><p><strong>Unit:</strong> derajat.</p><p>Koordinat menyatakan posisi secara sudut terhadap sistem referensi geografis.</p></article>
+<article class="term-card"><h3>Projected CRS</h3><p><strong>Contoh sistem:</strong> WGS 84 / UTM Zone 49S.</p><p>Easting = nilai dalam meter<br>Northing = nilai dalam meter</p><p><strong>Unit:</strong> meter.</p><p>Koordinat sudah berada pada bidang datar sehingga lebih praktis untuk pengukuran planar dalam area yang sesuai.</p></article>
 </div>
-
-<h3>4.3 Azimuthal / planar</h3>
-<ul class="key-bullets">
-<li>Dibayangkan menggunakan sebuah bidang datar yang menyentuh globe.</li>
-<li>Titik pusat peta sangat penting.</li>
-<li>Banyak azimuthal projection menghasilkan tampilan berbentuk lingkaran.</li>
-<li>Sering digunakan untuk wilayah kutub atau peta yang berpusat pada satu lokasi.</li>
-<li>Sifat yang dipertahankan tergantung proyeksinya: bisa equidistant, equal-area, conformal, dan lain-lain.</li>
-</ul>
-<figure class="official-figure">
-<img src="https://desktop.arcgis.com/en/arcmap/latest/map/projections/GUID-C965A168-9923-42C0-88F1-0D3893EB9196-web.gif" alt="Planar projection aspects dari Esri">
-<figcaption>Planar aspects. Sumber: Esri ArcGIS Documentation.</figcaption>
-</figure>
-
-<h3>4.4 Pseudocylindrical</h3>
-<ul class="key-bullets">
-<li>Tampilannya sering menyerupai cylindrical tetapi meridiannya dapat melengkung.</li>
-<li>Banyak digunakan untuk peta dunia karena bentuk keseluruhan dapat dibuat lebih seimbang.</li>
-<li>Banyak contoh bersifat equal-area atau compromise.</li>
-<li>Contoh: Mollweide, Sinusoidal, Eckert IV.</li>
-</ul>
+<p class="plain-note"><strong>Perbedaan penting:</strong> longitude bukan Easting dan latitude bukan Northing. Map projection melakukan transformasi matematis dari koordinat geografis menjadi koordinat planar.</p>
 </section>
 
-<section class="lesson-section" id="mercator">
-<h2>5. Contoh cylindrical: Mercator</h2><p class="source-note">Untuk contoh bentuk peta, halaman ini memakai gambar resolusi tinggi dari Wikimedia Commons. Untuk definisi dan karakteristik proyeksi, referensi utama tetap dokumentasi Esri, USGS, ITC, UNIGIS, dan Penn State.</p><div class="projection-visual"><svg viewBox="0 0 900 360" role="img" aria-label="Ilustrasi konsep Mercator">
-<rect x="25" y="25" width="850" height="310" fill="#fff"/>
-<circle cx="225" cy="178" r="112" fill="#eef6fa" stroke="#075175" stroke-width="3"/>
-<ellipse cx="225" cy="178" rx="112" ry="35" fill="none" stroke="#8aa7b8" stroke-width="2"/>
-<path d="M113 178 H337 M225 66 V290 M146 98 Q225 138 304 98 M146 258 Q225 218 304 258" fill="none" stroke="#8aa7b8" stroke-width="2"/>
-<rect x="85" y="45" width="280" height="265" rx="4" fill="none" stroke="#075175" stroke-width="4"/>
-<text x="225" y="330" text-anchor="middle" font-size="20" fill="#26323e">Globe di dalam silinder</text>
-<path d="M390 178 H500" stroke="#596774" stroke-width="3"/><polygon points="500,178 482,168 482,188" fill="#596774"/>
-<rect x="545" y="55" width="300" height="245" fill="#f8fbfc" stroke="#075175" stroke-width="3"/>
-<g stroke="#a9becb" stroke-width="1.4"><path d="M595 55 V300 M645 55 V300 M695 55 V300 M745 55 V300 M795 55 V300"/><path d="M545 105 H845 M545 155 H845 M545 205 H845 M545 255 H845"/></g>
-<text x="695" y="330" text-anchor="middle" font-size="20" fill="#26323e">Hasil: bidang persegi panjang</text>
-</svg><p class="visual-note"><strong>Ilustrasi konsep.</strong> Silinder adalah cara konseptual untuk memahami keluarga cylindrical. Mercator modern didefinisikan secara matematis, bukan dengan benar-benar menyorot globe menggunakan cahaya.</p></div>
-<figure class="official-figure">
-<img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Mercator_projection_SW.jpg" alt="Peta dunia dalam proyeksi Mercator" loading="lazy">
-<figcaption>Peta dunia dalam proyeksi Mercator. Sumber: Wikimedia Commons, karya Strebe; digunakan di sini sebagai contoh visual proyeksi. Referensi konsep: Esri ArcGIS dan USGS.</figcaption>
-<p class="source-actions"><a href="https://commons.wikimedia.org/wiki/File:Mercator_projection_SW.jpg" target="_blank" rel="noopener">Buka gambar sumber resolusi penuh →</a></p>
-</figure>
-<div class="profile">
-<div class="r"><strong>Keluarga</strong><span>Cylindrical.</span></div>
-<div class="r"><strong>Sifat</strong><span>Conformal.</span></div>
-<div class="r"><strong>Aspect</strong><span>Normal pada Mercator standar.</span></div>
-<div class="r"><strong>Yang dijaga</strong><span>Sudut dan bentuk lokal pada skala sangat kecil.</span></div>
-<div class="r"><strong>Kegunaan</strong><span>Secara historis penting untuk navigasi laut karena rhumb line, yaitu jalur dengan bearing kompas tetap, digambar sebagai garis lurus.</span></div>
-<div class="r"><strong>Implikasi</strong><span>Scale dan area membesar semakin mendekati kutub; karena itu luas antarwilayah tidak boleh dibandingkan dari tampilan Mercator.</span></div>
-</div>
-<h3>Karakteristik dan implikasi</h3>
-<ul class="key-bullets">
-<li>Mercator <strong>bukan dipilih karena “bentuk dunia terlihat bagus”</strong>.</li>
-<li>Mercator dipilih ketika sifat conformal dan kebutuhan navigasi tertentu lebih penting daripada perbandingan luas.</li>
-<li>Greenland dapat terlihat sangat besar dibandingkan Afrika karena distorsi area meningkat di lintang tinggi.</li>
-<li>Pole tidak dapat direpresentasikan pada posisi Y yang terbatas dalam Mercator konvensional.</li>
+<section class="lesson-section" id="mengapa"><h2>5. Mengapa proyeksi peta diperlukan?</h2>
+<p>Geographic CRS dapat menyatakan lokasi pada permukaan bumi, tetapi peta dicetak atau ditampilkan pada bidang datar. Karena permukaan bumi melengkung, diperlukan map projection untuk mengubah posisi tersebut ke bidang dua dimensi.</p>
+<ul class="key">
+<li>Permukaan melengkung tidak dapat diratakan tanpa perubahan geometris.</li>
+<li>Setiap projection menghasilkan pola distorsi yang berbeda.</li>
+<li>Tidak ada satu projection yang mempertahankan semua sifat geometris secara bersamaan.</li>
+<li>Pemilihan projection bergantung pada tujuan peta dan wilayah yang dipetakan.</li>
 </ul>
-<p class="source-note">Referensi: Esri ArcGIS Pro — Mercator; Esri ArcGIS Desktop — Cylindrical projections; ITC University of Twente — Map projections.</p>
+<p class="source-note">USGS menegaskan bahwa setiap peta datar akan mendistorsi permukaan bumi dalam suatu bentuk, sehingga tidak ada satu projection yang paling baik untuk semua kebutuhan. <a href="https://www.usgs.gov/publications/map-projections" target="_blank" rel="noopener">Sumber: USGS Map Projections</a>.</p>
 </section>
 
-<section class="lesson-section" id="lcc">
-<h2>6. Contoh conic: Lambert Conformal Conic</h2><div class="projection-visual"><svg viewBox="0 0 900 380" role="img" aria-label="Ilustrasi konsep Lambert Conformal Conic">
-<rect width="900" height="380" fill="#fff"/>
-<circle cx="220" cy="205" r="105" fill="#eef6fa" stroke="#075175" stroke-width="3"/>
-<path d="M95 305 L220 35 L345 305 Z" fill="none" stroke="#075175" stroke-width="4"/>
-<path d="M132 225 Q220 260 308 225 M150 180 Q220 205 290 180" fill="none" stroke="#b36b35" stroke-width="4"/>
-<text x="220" y="355" text-anchor="middle" font-size="19" fill="#26323e">Kerucut memotong globe → standard parallels</text>
-<path d="M390 205 H500" stroke="#596774" stroke-width="3"/><polygon points="500,205 482,195 482,215" fill="#596774"/>
-<path d="M555 305 Q690 55 825 305" fill="#f8fbfc" stroke="#075175" stroke-width="3"/>
-<path d="M585 270 Q690 120 795 270 M610 235 Q690 165 770 235 M635 205 Q690 190 745 205" fill="none" stroke="#a9becb" stroke-width="2"/>
-<path d="M690 55 L580 305 M690 55 L635 305 M690 55 L745 305 M690 55 L800 305" fill="none" stroke="#a9becb" stroke-width="2"/>
-<text x="690" y="355" text-anchor="middle" font-size="19" fill="#26323e">Hasil: pola kipas / busur</text>
-</svg><p class="visual-note"><strong>Yang harus dilihat:</strong> parallels menjadi busur dan meridians menuju satu arah pusat. Pada bentuk secant, dua standard parallels digunakan untuk mengendalikan distorsi.</p></div>
-<figure class="official-figure">
-<img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Lambert_conformal_conic_projection_SW.jpg" alt="Peta dunia dalam proyeksi Lambert Conformal Conic" loading="lazy">
-<figcaption>Contoh visual Lambert Conformal Conic. Sumber: Wikimedia Commons, karya Strebe. Perhatikan bentuk graticule yang menyerupai kipas.</figcaption>
-<p class="source-actions"><a href="https://commons.wikimedia.org/wiki/File:Lambert_conformal_conic_projection_SW.jpg" target="_blank" rel="noopener">Buka gambar sumber resolusi penuh →</a></p>
-</figure>
-<div class="profile">
-<div class="r"><strong>Keluarga</strong><span>Conic.</span></div>
-<div class="r"><strong>Sifat</strong><span>Conformal.</span></div>
-<div class="r"><strong>Yang dijaga</strong><span>Sudut dan bentuk lokal.</span></div>
-<div class="r"><strong>Wilayah yang sesuai</strong><span>Terutama wilayah lintang menengah yang memanjang timur-barat.</span></div>
-<div class="r"><strong>Kegunaan</strong><span>Pemetaan regional dan berbagai aeronautical charts.</span></div>
-<div class="r"><strong>Implikasi</strong><span>Luas bukan sifat utama yang dipertahankan; distorsi bergantung pada posisi terhadap standard parallels.</span></div>
-</div>
-<h3>Makna unsur nama proyeksi</h3>
-<ul class="key-bullets">
-<li><strong>Lambert</strong> = nama proyeksi.</li>
-<li><strong>Conformal</strong> = sifat yang dipertahankan.</li>
-<li><strong>Conic</strong> = keluarga geometris.</li>
-</ul>
-<p class="source-note">Referensi: Esri ArcGIS Pro — Lambert conformal conic; Penn State GEOG 486 — Choosing a Projection.</p>
-</section>
-
-<section class="lesson-section" id="azimuthal">
-<h2>7. Contoh azimuthal: Azimuthal Equidistant</h2><div class="projection-visual"><svg viewBox="0 0 900 380" role="img" aria-label="Ilustrasi konsep Azimuthal Equidistant">
-<rect width="900" height="380" fill="#fff"/>
-<circle cx="220" cy="190" r="108" fill="#eef6fa" stroke="#075175" stroke-width="3"/>
-<line x1="90" y1="80" x2="350" y2="80" stroke="#075175" stroke-width="4"/>
-<line x1="220" y1="80" x2="220" y2="118" stroke="#b36b35" stroke-width="4"/>
-<text x="220" y="335" text-anchor="middle" font-size="19" fill="#26323e">Bidang menyentuh globe pada pusat</text>
-<path d="M390 190 H500" stroke="#596774" stroke-width="3"/><polygon points="500,190 482,180 482,200" fill="#596774"/>
-<circle cx="690" cy="190" r="125" fill="#f8fbfc" stroke="#075175" stroke-width="3"/>
-<circle cx="690" cy="190" r="85" fill="none" stroke="#a9becb" stroke-width="2"/>
-<circle cx="690" cy="190" r="45" fill="none" stroke="#a9becb" stroke-width="2"/>
-<g stroke="#a9becb" stroke-width="2"><line x1="565" y1="190" x2="815" y2="190"/><line x1="690" y1="65" x2="690" y2="315"/><line x1="602" y1="102" x2="778" y2="278"/><line x1="602" y1="278" x2="778" y2="102"/></g>
-<circle cx="690" cy="190" r="6" fill="#b36b35"/>
-<text x="690" y="345" text-anchor="middle" font-size="19" fill="#26323e">Jarak dari pusat menjadi fokus</text>
-</svg><p class="visual-note"><strong>Yang harus dilihat:</strong> pusat peta adalah referensi utama. Pada Azimuthal Equidistant, jarak dari pusat ke lokasi lain dipertahankan, bukan semua jarak antarsemua titik.</p></div>
-<figure class="official-figure">
-<img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Azimuthal_equidistant_projection_SW.jpg" alt="Peta dunia dalam proyeksi Azimuthal Equidistant" loading="lazy">
-<figcaption>Contoh visual Azimuthal Equidistant. Sumber: Wikimedia Commons, karya Strebe. Pusat proyeksi menjadi referensi utama.</figcaption>
-<p class="source-actions"><a href="https://commons.wikimedia.org/wiki/File:Azimuthal_equidistant_projection_SW.jpg" target="_blank" rel="noopener">Buka gambar sumber resolusi penuh →</a></p>
-</figure>
-<div class="profile">
-<div class="r"><strong>Keluarga</strong><span>Azimuthal / planar.</span></div>
-<div class="r"><strong>Sifat</strong><span>Equidistant dari titik pusat.</span></div>
-<div class="r"><strong>Yang dijaga</strong><span>Jarak dan arah dari pusat ke titik lain sesuai definisi proyeksinya.</span></div>
-<div class="r"><strong>Kegunaan</strong><span>Hemisphere maps, wilayah polar, atau peta ketika hubungan terhadap satu pusat penting.</span></div>
-<div class="r"><strong>Implikasi</strong><span>Tidak berarti semua jarak antara semua pasangan titik pada peta benar.</span></div>
-</div>
-<h3>Catatan interpretasi</h3>
-<ul class="key-bullets">
-<li>“Equidistant” <strong>bukan berarti semua jarak di seluruh peta benar</strong>.</li>
-<li>Selalu tanyakan: jarak benar <strong>dari mana ke mana?</strong></li>
-<li>Pada Azimuthal Equidistant, pusat peta adalah bagian penting dari interpretasi.</li>
-</ul>
-<p class="source-note">Referensi: Esri ArcGIS Pro — Azimuthal equidistant.</p>
-</section>
-
-<section class="lesson-section" id="mollweide">
-<h2>8. Contoh pseudocylindrical: Mollweide</h2><div class="projection-visual"><svg viewBox="0 0 900 390" role="img" aria-label="Ilustrasi konsep Mollweide">
-<rect width="900" height="390" fill="#fff"/>
-<ellipse cx="450" cy="190" rx="360" ry="170" fill="#f8fbfc" stroke="#075175" stroke-width="3"/>
-<line x1="90" y1="190" x2="810" y2="190" stroke="#a9becb" stroke-width="2"/>
-<line x1="450" y1="20" x2="450" y2="360" stroke="#a9becb" stroke-width="2"/>
-<path d="M270 36 Q330 190 270 344 M345 24 Q385 190 345 356 M555 24 Q515 190 555 356 M630 36 Q570 190 630 344" fill="none" stroke="#a9becb" stroke-width="2"/>
-<path d="M115 115 Q450 145 785 115 M95 155 Q450 175 805 155 M95 225 Q450 205 805 225 M115 265 Q450 235 785 265" fill="none" stroke="#a9becb" stroke-width="2"/>
-<text x="450" y="382" text-anchor="middle" font-size="19" fill="#26323e">Bentuk elips, equal-area: luas diprioritaskan</text>
-</svg><p class="visual-note"><strong>Yang harus dilihat:</strong> bentuk dunia menjadi elips. Mollweide mempertahankan luas relatif, tetapi bentuk dan sudut dapat berubah.</p></div>
-<figure class="official-figure">
-<img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Mollweide_projection_SW.jpg" alt="Peta dunia dalam proyeksi Mollweide" loading="lazy">
-<figcaption>Peta dunia dalam proyeksi Mollweide. Sumber: Wikimedia Commons, karya Strebe. Bentuk elips dan sifat equal-area mudah dikenali.</figcaption>
-<p class="source-actions"><a href="https://commons.wikimedia.org/wiki/File:Mollweide_projection_SW.jpg" target="_blank" rel="noopener">Buka gambar sumber resolusi penuh →</a></p>
-</figure>
-<div class="profile">
-<div class="r"><strong>Keluarga</strong><span>Pseudocylindrical.</span></div>
-<div class="r"><strong>Sifat</strong><span>Equal-area.</span></div>
-<div class="r"><strong>Bentuk hasil</strong><span>Dunia ditampilkan dalam bentuk elips dengan rasio sumbu sekitar 2:1.</span></div>
-<div class="r"><strong>Yang dijaga</strong><span>Luas relatif.</span></div>
-<div class="r"><strong>Kegunaan</strong><span>Peta dunia tematik skala kecil ketika perbandingan area penting.</span></div>
-<div class="r"><strong>Implikasi</strong><span>Bentuk dan sudut dapat terdistorsi karena prioritas diberikan pada area.</span></div>
-</div>
-<p class="source-note">Referensi: Esri ArcGIS Pro — Mollweide.</p>
-</section>
-
-<section class="lesson-section" id="properties">
-<h2>9. Dasar klasifikasi 2: berdasarkan sifat yang dipertahankan</h2>
-<p>Pada dasar klasifikasi ini, perhatian tidak lagi diberikan pada bentuk geometris projection surface, tetapi pada <strong>sifat geometris yang dipertahankan</strong> setelah permukaan bumi ditransformasikan ke bidang datar.</p>
-<div class="table-wrap"><table><thead><tr><th>Sifat</th><th>Apa artinya?</th><th>Contoh</th><th>Konsekuensi</th></tr></thead><tbody>
-<tr><td>Conformal</td><td>Sudut dan bentuk lokal dipertahankan.</td><td>Mercator, Lambert Conformal Conic</td><td>Luas tidak dipertahankan.</td></tr>
-<tr><td>Equal-area</td><td>Luas relatif dipertahankan.</td><td>Mollweide, Albers Equal Area</td><td>Bentuk/sudut dapat berubah.</td></tr>
-<tr><td>Equidistant</td><td>Jarak tertentu dipertahankan dari titik atau sepanjang garis tertentu.</td><td>Azimuthal Equidistant</td><td>Tidak semua jarak di seluruh peta benar.</td></tr>
-<tr><td>Direction-related</td><td>Arah tertentu dipertahankan sesuai desain proyeksi.</td><td>Azimuthal family tertentu</td><td>Tidak berarti semua sifat lain benar.</td></tr>
+<section class="lesson-section" id="distorsi"><h2>6. Distorsi yang dapat terjadi</h2>
+<p>Distorsi adalah perubahan sifat geometris akibat transformasi dari permukaan melengkung ke bidang datar.</p>
+<div class="table-wrap"><table><thead><tr><th>Sifat</th><th>Pertanyaan yang diperiksa</th><th>Implikasi</th></tr></thead><tbody>
+<tr><td>Area / luas</td><td>Apakah luas relatif antarwilayah tetap benar?</td><td>Penting untuk peta yang membandingkan besaran area.</td></tr>
+<tr><td>Shape / bentuk</td><td>Apakah bentuk lokal masih menyerupai bentuk pada bumi?</td><td>Berkaitan erat dengan conformality pada skala lokal.</td></tr>
+<tr><td>Angle / sudut</td><td>Apakah sudut lokal dipertahankan?</td><td>Penting untuk beberapa kebutuhan navigasi dan pemetaan detail.</td></tr>
+<tr><td>Distance / jarak</td><td>Apakah jarak tertentu tetap benar?</td><td>Biasanya hanya benar dari titik tertentu atau sepanjang garis tertentu.</td></tr>
+<tr><td>Direction / arah</td><td>Apakah arah tertentu dipertahankan?</td><td>Bergantung pada desain projection dan titik/garis referensinya.</td></tr>
 </tbody></table></div>
-<p class="plain-note"><strong>Contoh untuk membaca level:</strong> Mercator adalah <em>cylindrical</em> jika dilihat dari keluarganya, tetapi <em>conformal</em> jika dilihat dari sifatnya.</p>
+<p class="source-note">USGS menjelaskan bahwa peta datar dapat mempertahankan satu atau beberapa dari arah, jarak, luas, atau bentuk, tetapi tidak semuanya sekaligus. <a href="https://www.usgs.gov/faqs/how-are-different-map-projections-used" target="_blank" rel="noopener">Sumber: USGS</a>.</p>
 </section>
 
-<section class="lesson-section" id="aspect">
-<h2>10. Dasar klasifikasi 3: berdasarkan aspect</h2>
-<p>Aspect menjelaskan <strong>orientasi projection surface terhadap bumi</strong>.</p>
-<ul class="key-bullets">
-<li><strong>Normal:</strong> orientasi standar. Pada Mercator normal, kontak utamanya terkait ekuator.</li>
-<li><strong>Transverse:</strong> surface diputar sehingga kontak utama terkait meridian.</li>
-<li><strong>Oblique:</strong> surface dimiringkan untuk mengikuti orientasi wilayah tertentu.</li>
-<li>Aspect dapat mengubah lokasi area dengan distorsi paling kecil tanpa mengubah “keluarga” dasar proyeksi.</li>
-</ul>
-<figure class="official-figure">
-<img src="https://desktop.arcgis.com/en/arcmap/latest/map/projections/GUID-622E6B6D-DAB6-4931-AA34-E8A48457B426-web.gif" alt="Normal transverse oblique cylindrical aspect">
-<figcaption>Normal, transverse, dan oblique cylindrical aspects. Sumber: Esri ArcGIS Documentation.</figcaption>
-</figure>
-<p class="plain-note"><strong>Contoh:</strong> Mercator dan Transverse Mercator sama-sama berhubungan dengan keluarga cylindrical dan sama-sama conformal, tetapi aspect-nya berbeda.</p>
+<section class="lesson-section" id="klasifikasi"><h2>7. Struktur klasifikasi proyeksi peta</h2>
+<p>Istilah proyeksi harus dibaca berdasarkan <strong>dasar klasifikasinya</strong>. Cylindrical, conformal, transverse, dan secant tidak berada pada kategori yang sama.</p>
+<div class="class-map"><div class="root">PROYEKSI PETA</div><div class="class-grid">
+<div class="class-col"><h3>1. Keluarga geometris</h3><p>Menjelaskan bentuk konseptual projection surface.</p><ul><li>Cylindrical</li><li>Conic</li><li>Azimuthal / planar</li><li>Pseudocylindrical</li></ul></div>
+<div class="class-col"><h3>2. Sifat yang dipertahankan</h3><p>Menjelaskan sifat geometris yang menjadi prioritas.</p><ul><li>Conformal</li><li>Equal-area</li><li>Equidistant</li><li>Direction-related</li></ul></div>
+<div class="class-col"><h3>3. Aspect</h3><p>Menjelaskan orientasi projection surface terhadap bumi.</p><ul><li>Normal</li><li>Transverse</li><li>Oblique</li></ul></div>
+<div class="class-col"><h3>4. Hubungan dengan globe</h3><p>Menjelaskan apakah surface menyentuh atau memotong model bumi.</p><ul><li>Tangent</li><li>Secant</li></ul></div>
+</div></div>
+<div class="note-box"><strong>Contoh klasifikasi:</strong><br>
+Mercator = cylindrical + conformal + normal.<br>
+Transverse Mercator = cylindrical + conformal + transverse.<br>
+Lambert Conformal Conic = conic + conformal.<br>
+Azimuthal Equidistant = azimuthal + equidistant.<br>
+Mollweide = pseudocylindrical + equal-area.</div>
 </section>
 
-<section class="lesson-section" id="contact">
-<h2>11. Dasar klasifikasi 4: tangent dan secant</h2>
-<p>Tangent dan secant menjelaskan hubungan antara projection surface dan globe.</p>
-<ul class="key-bullets">
-<li><strong>Tangent:</strong> surface menyentuh globe pada satu point atau line, tergantung jenis surface.</li>
-<li><strong>Secant:</strong> surface memotong globe sehingga menghasilkan lebih dari satu standard line pada konfigurasi tertentu.</li>
-<li>Standard lines penting karena skala benar atau distorsi minimum terjadi di sana.</li>
-<li>Secara umum, distorsi meningkat ketika menjauh dari standard line atau point.</li>
-</ul>
-<div class="compare-grid">
-<figure><img src="https://desktop.arcgis.com/en/arcmap/latest/map/projections/GUID-44C33C80-B331-4E62-8A90-E68E49F46954-web.gif" alt="Conic tangent"><figcaption>Tangent case. Sumber: Esri.</figcaption></figure>
-<figure><img src="https://desktop.arcgis.com/en/arcmap/latest/map/projections/GUID-D2B234B0-AAE9-47D2-BFE5-380955DE3AE0-web.gif" alt="Conic secant"><figcaption>Secant case. Sumber: Esri.</figcaption></figure>
-</div>
+<section class="lesson-section" id="keluarga"><h2>8. Klasifikasi berdasarkan keluarga geometris</h2>
+<h3>8.1 Cylindrical</h3>
+<ul class="key"><li>Secara konseptual menggunakan silinder.</li><li>Pada normal aspect, garis kontak utama berkaitan dengan ekuator.</li><li>Pada banyak cylindrical normal, meridian dan parallel tampak sebagai garis lurus.</li><li>Keluarga cylindrical tidak menentukan sifat distorsi secara otomatis.</li><li>Contoh: Mercator, Transverse Mercator, Cylindrical Equal Area.</li></ul>
+<figure class="official-figure"><img src="https://desktop.arcgis.com/en/arcmap/latest/map/projections/GUID-622E6B6D-DAB6-4931-AA34-E8A48457B426-web.gif" alt="Normal transverse dan oblique cylindrical aspects"><figcaption>Cylindrical projection dapat mempunyai normal, transverse, atau oblique aspect. Sumber: Esri ArcGIS Documentation.</figcaption></figure>
+
+<h3>8.2 Conic</h3>
+<ul class="key"><li>Secara konseptual menggunakan kerucut.</li><li>Parallel umumnya digambarkan sebagai busur, sedangkan meridian menyebar menuju satu arah pusat.</li><li>Sering sesuai untuk wilayah lintang menengah yang memanjang timur-barat.</li><li>Conic dapat bersifat conformal, equal-area, atau equidistant tergantung projection yang digunakan.</li></ul>
+<div class="compare-grid"><figure><img src="https://desktop.arcgis.com/en/arcmap/latest/map/projections/GUID-44C33C80-B331-4E62-8A90-E68E49F46954-web.gif" alt="Conic tangent"><figcaption>Conic tangent. Sumber: Esri.</figcaption></figure><figure><img src="https://desktop.arcgis.com/en/arcmap/latest/map/projections/GUID-D2B234B0-AAE9-47D2-BFE5-380955DE3AE0-web.gif" alt="Conic secant"><figcaption>Conic secant dengan dua standard parallels. Sumber: Esri.</figcaption></figure></div>
+
+<h3>8.3 Azimuthal / planar</h3>
+<ul class="key"><li>Secara konseptual menggunakan bidang datar.</li><li>Titik pusat projection mempunyai peran penting.</li><li>Banyak contoh menghasilkan peta berbentuk lingkaran.</li><li>Sering digunakan untuk wilayah kutub atau peta yang berpusat pada satu lokasi.</li><li>Sifatnya bergantung pada projection tertentu, misalnya equidistant atau equal-area.</li></ul>
+
+<h3>8.4 Pseudocylindrical</h3>
+<ul class="key"><li>Secara tampilan memiliki kemiripan dengan cylindrical, tetapi tidak mengikuti bentuk cylindrical sederhana.</li><li>Meridian selain central meridian biasanya dapat melengkung.</li><li>Banyak digunakan untuk peta dunia tematik.</li><li>Contoh: Mollweide dan Sinusoidal.</li></ul>
 </section>
 
-<section class="lesson-section" id="utm">
-<h2>12. Dari Transverse Mercator ke UTM</h2>
-<p>UTM dapat dipahami sebagai penerapan Transverse Mercator dalam sistem zona untuk membatasi distorsi pada wilayah yang relatif sempit.</p>
-<ul class="key-bullets">
-<li><strong>Transverse Mercator</strong> adalah map projection.</li>
-<li>Keluarganya cylindrical.</li>
-<li>Sifatnya conformal.</li>
-<li>Aspect-nya transverse.</li>
-<li><strong>UTM</strong> menggunakan Transverse Mercator dalam zona-zona longitudinal agar distorsi dapat dikendalikan pada wilayah yang relatif sempit.</li>
-<li>Dunia dibagi menjadi 60 zona UTM, masing-masing umumnya selebar 6° longitude.</li>
-<li>Projected coordinates dinyatakan sebagai Easting dan Northing dalam meter.</li>
-</ul>
-<div class="profile">
-<div class="r"><strong>Contoh projected CRS</strong><span>WGS 84 / UTM Zone 49S</span></div>
-<div class="r"><strong>Base geodetic CRS</strong><span>WGS 84</span></div>
-<div class="r"><strong>Projection</strong><span>Transverse Mercator</span></div>
-<div class="r"><strong>Central meridian</strong><span>111°E untuk Zone 49S</span></div>
-<div class="r"><strong>Unit</strong><span>metre</span></div>
-<div class="r"><strong>Coordinate axes</strong><span>Easting, Northing</span></div>
-</div>
-<p class="source-note">Referensi teknis: EPSG:32749 — WGS 84 / UTM zone 49S.</p>
+<section class="lesson-section" id="properties"><h2>9. Klasifikasi berdasarkan sifat yang dipertahankan</h2>
+<div class="table-wrap"><table><thead><tr><th>Sifat</th><th>Definisi sederhana</th><th>Contoh</th><th>Hal yang perlu diingat</th></tr></thead><tbody>
+<tr><td>Conformal</td><td>Sudut lokal dipertahankan; bentuk sangat lokal tetap serupa.</td><td>Mercator, Lambert Conformal Conic</td><td>Luas dapat mengalami distorsi.</td></tr>
+<tr><td>Equal-area</td><td>Luas relatif dipertahankan.</td><td>Mollweide, Albers Equal Area</td><td>Bentuk dan sudut dapat berubah.</td></tr>
+<tr><td>Equidistant</td><td>Jarak tertentu dipertahankan dari titik atau sepanjang garis tertentu.</td><td>Azimuthal Equidistant</td><td>Tidak berarti semua jarak di seluruh peta benar.</td></tr>
+<tr><td>Direction-related</td><td>Arah tertentu dipertahankan sesuai desain projection.</td><td>Beberapa azimuthal projection</td><td>Hubungan arah harus dibaca sesuai titik/garis referensi projection.</td></tr>
+</tbody></table></div>
 </section>
 
-<section class="lesson-section" id="choose">
-<h2>13. Bagaimana memilih proyeksi?</h2>
-<p>Pemilihan proyeksi dilakukan berdasarkan kebutuhan pemetaan, bukan berdasarkan hafalan penggunaan suatu proyeksi pada wilayah tertentu.</p>
+<section class="lesson-section" id="aspect"><h2>10. Aspect: normal, transverse, dan oblique</h2>
+<p><strong>Aspect</strong> menjelaskan orientasi projection surface terhadap bumi. Perubahan aspect dapat memindahkan daerah dengan distorsi paling kecil.</p>
+<ul class="key"><li><strong>Normal:</strong> orientation standar untuk keluarga projection tersebut.</li><li><strong>Transverse:</strong> surface diputar sekitar 90° dari normal aspect.</li><li><strong>Oblique:</strong> surface diorientasikan miring mengikuti arah tertentu.</li></ul>
+<figure class="official-figure"><img src="https://desktop.arcgis.com/en/arcmap/latest/map/projections/GUID-622E6B6D-DAB6-4931-AA34-E8A48457B426-web.gif" alt="Aspect cylindrical"><figcaption>Normal, transverse, dan oblique aspect pada keluarga cylindrical. Sumber: Esri ArcGIS Documentation.</figcaption></figure>
+<p class="plain-note"><strong>Contoh:</strong> Mercator dan Transverse Mercator sama-sama conformal dan terkait keluarga cylindrical, tetapi mempunyai aspect yang berbeda.</p>
+</section>
+
+<section class="lesson-section" id="tangent"><h2>11. Tangent, secant, dan standard line</h2>
+<p>Hubungan antara projection surface dan globe juga memengaruhi pola distorsi.</p>
+<ul class="key"><li><strong>Tangent:</strong> projection surface menyentuh globe pada titik atau garis tertentu.</li><li><strong>Secant:</strong> projection surface memotong globe sehingga terdapat lebih dari satu garis kontak pada konfigurasi tertentu.</li><li><strong>Standard line:</strong> garis tempat skala benar atau distorsi sangat kecil/nihil sesuai definisi projection.</li><li>Secara umum, distorsi meningkat ketika menjauh dari titik atau garis kontak.</li></ul>
+<p class="source-note">Esri menjelaskan bahwa titik atau garis tangency/secancy penting karena berkaitan dengan lokasi distorsi nol atau true scale. <a href="https://desktop.arcgis.com/en/arcmap/latest/map/projections/projection-types.htm" target="_blank" rel="noopener">Sumber: Esri Projection Types</a>.</p>
+</section>
+
+<section class="lesson-section" id="mercator"><h2>12. Mercator</h2>
+<div class="projection-visual"><svg viewBox="0 0 900 360" role="img" aria-label="Ilustrasi konsep Mercator"><rect x="25" y="25" width="850" height="310" fill="#fff"/><circle cx="225" cy="178" r="112" fill="#eef6fa" stroke="#075175" stroke-width="3"/><ellipse cx="225" cy="178" rx="112" ry="35" fill="none" stroke="#8aa7b8" stroke-width="2"/><rect x="85" y="45" width="280" height="265" rx="4" fill="none" stroke="#075175" stroke-width="4"/><text x="225" y="330" text-anchor="middle" font-size="20" fill="#26323e">Konsep cylindrical</text><path d="M390 178 H500" stroke="#596774" stroke-width="3"/><polygon points="500,178 482,168 482,188" fill="#596774"/><rect x="545" y="55" width="300" height="245" fill="#f8fbfc" stroke="#075175" stroke-width="3"/><g stroke="#a9becb" stroke-width="1.4"><path d="M595 55 V300 M645 55 V300 M695 55 V300 M745 55 V300 M795 55 V300"/><path d="M545 105 H845 M545 155 H845 M545 205 H845 M545 255 H845"/></g><text x="695" y="330" text-anchor="middle" font-size="20" fill="#26323e">Peta datar</text></svg><p>Ilustrasi cylindrical digunakan untuk membantu memahami konsep keluarga projection. Mercator sesungguhnya didefinisikan secara matematis.</p></div>
+<figure class="official-figure"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Mercator_projection_SW.jpg" alt="Peta Mercator" loading="lazy"><figcaption>Peta dunia dalam proyeksi Mercator. Sumber gambar: Wikimedia Commons, karya Strebe.</figcaption></figure>
+<div class="profile"><div class="r"><strong>Keluarga</strong><span>Cylindrical</span></div><div class="r"><strong>Sifat</strong><span>Conformal</span></div><div class="r"><strong>Aspect</strong><span>Normal pada Mercator standar</span></div><div class="r"><strong>Sifat utama</strong><span>Sudut lokal dipertahankan; bentuk lokal pada area sangat kecil tetap serupa.</span></div><div class="r"><strong>Kegunaan penting</strong><span>Historis untuk navigasi karena rhumb line atau jalur dengan bearing kompas tetap dapat digambar sebagai garis lurus.</span></div><div class="r"><strong>Keterbatasan</strong><span>Area dan skala membesar kuat menuju lintang tinggi; kutub tidak dapat ditampilkan pada posisi Y terbatas dalam Mercator konvensional.</span></div></div>
+<p class="source-note">USGS menjelaskan bahwa Mercator bersifat conformal dan berguna untuk arah rhumb line, tetapi area dan distance sangat terdistorsi mendekati wilayah kutub. <a href="https://store.usgs.gov/assets/mod/storefiles/PDF/16573.pdf" target="_blank" rel="noopener">Sumber: USGS Map Projections</a>.</p>
+</section>
+
+<section class="lesson-section" id="utm"><h2>13. Transverse Mercator dan UTM</h2>
+<p><strong>Transverse Mercator</strong> adalah projection conformal dengan transverse aspect. UTM menggunakan Transverse Mercator dalam sistem zona untuk membatasi distorsi pada wilayah yang relatif sempit.</p>
+<ul class="key"><li>Bumi dibagi menjadi 60 zona longitudinal, masing-masing umumnya selebar 6°.</li><li>Setiap zona mempunyai central meridian sendiri.</li><li>Koordinat dinyatakan sebagai Easting dan Northing.</li><li>Unit koordinat adalah meter.</li><li>UTM adalah sistem koordinat terproyeksi, bukan sekadar nama projection.</li></ul>
+<div class="profile"><div class="r"><strong>Contoh projected CRS</strong><span>WGS 84 / UTM Zone 49S</span></div><div class="r"><strong>Base CRS</strong><span>WGS 84</span></div><div class="r"><strong>Projection / conversion</strong><span>Transverse Mercator</span></div><div class="r"><strong>Axes</strong><span>Easting, Northing</span></div><div class="r"><strong>Unit</strong><span>metre</span></div></div>
+<p class="source-note">EPSG mencatat WGS 84 / UTM zone 49S sebagai projected CRS dengan Cartesian 2D coordinate system, sumbu Easting dan Northing, serta unit meter. <a href="https://epsg.org/crs_32749/WGS-84-UTM-zone-49S.html" target="_blank" rel="noopener">Sumber: EPSG:32749</a>.</p>
+</section>
+
+<section class="lesson-section" id="lcc"><h2>14. Lambert Conformal Conic</h2>
+<figure class="official-figure"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Lambert_conformal_conic_projection_SW.jpg" alt="Lambert Conformal Conic" loading="lazy"><figcaption>Contoh Lambert Conformal Conic. Sumber gambar: Wikimedia Commons, karya Strebe.</figcaption></figure>
+<div class="profile"><div class="r"><strong>Keluarga</strong><span>Conic</span></div><div class="r"><strong>Sifat</strong><span>Conformal</span></div><div class="r"><strong>Sifat utama</strong><span>Sudut dan bentuk lokal dipertahankan.</span></div><div class="r"><strong>Kesesuaian wilayah</strong><span>Sering sesuai untuk wilayah lintang menengah yang memanjang timur-barat.</span></div><div class="r"><strong>Parameter penting</strong><span>Standard parallel(s) dan central meridian.</span></div><div class="r"><strong>Keterbatasan</strong><span>Luas tidak dipertahankan.</span></div></div>
+<p><strong>Makna nama:</strong> “Lambert” adalah nama projection, “Conformal” menunjukkan sifat yang dipertahankan, dan “Conic” menunjukkan keluarga geometrisnya.</p>
+</section>
+
+<section class="lesson-section" id="aeqd"><h2>15. Azimuthal Equidistant</h2>
+<figure class="official-figure"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Azimuthal_equidistant_projection_SW.jpg" alt="Azimuthal Equidistant" loading="lazy"><figcaption>Contoh Azimuthal Equidistant. Sumber gambar: Wikimedia Commons, karya Strebe.</figcaption></figure>
+<div class="profile"><div class="r"><strong>Keluarga</strong><span>Azimuthal / planar</span></div><div class="r"><strong>Sifat</strong><span>Equidistant terhadap pusat</span></div><div class="r"><strong>Sifat utama</strong><span>Jarak dari titik pusat ke titik lain dipertahankan sesuai definisi projection.</span></div><div class="r"><strong>Kegunaan</strong><span>Peta polar atau peta yang memerlukan hubungan jarak/arah terhadap satu pusat.</span></div><div class="r"><strong>Keterbatasan</strong><span>Tidak semua jarak antara semua pasangan titik benar.</span></div></div>
+<p class="plain-note"><strong>Interpretasi istilah:</strong> “equidistant” tidak berarti semua jarak di seluruh peta benar. Selalu perlu diketahui jarak yang dipertahankan dari titik atau sepanjang garis mana.</p>
+</section>
+
+<section class="lesson-section" id="mollweide"><h2>16. Mollweide</h2>
+<figure class="official-figure"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Mollweide_projection_SW.jpg" alt="Mollweide" loading="lazy"><figcaption>Peta dunia dalam proyeksi Mollweide. Sumber gambar: Wikimedia Commons, karya Strebe.</figcaption></figure>
+<div class="profile"><div class="r"><strong>Keluarga</strong><span>Pseudocylindrical</span></div><div class="r"><strong>Sifat</strong><span>Equal-area</span></div><div class="r"><strong>Sifat utama</strong><span>Luas relatif dipertahankan.</span></div><div class="r"><strong>Kegunaan</strong><span>Peta dunia tematik ketika perbandingan area penting.</span></div><div class="r"><strong>Keterbatasan</strong><span>Bentuk dan sudut mengalami distorsi.</span></div></div>
+<p class="plain-note"><strong>Contoh penggunaan:</strong> peta global tutupan lahan, iklim, atau fenomena lain yang memerlukan perbandingan luas antarwilayah.</p>
+</section>
+
+<section class="lesson-section" id="banding"><h2>17. Perbandingan contoh proyeksi</h2>
+<div class="table-wrap"><table><thead><tr><th>Projection</th><th>Keluarga</th><th>Sifat utama</th><th>Cocok untuk</th><th>Keterbatasan utama</th></tr></thead><tbody>
+<tr><td>Mercator</td><td>Cylindrical</td><td>Conformal</td><td>navigasi/rhumb line, konteks tertentu</td><td>area sangat membesar di lintang tinggi</td></tr>
+<tr><td>Transverse Mercator</td><td>Cylindrical, transverse aspect</td><td>Conformal</td><td>pemetaan regional yang relatif sempit; dasar UTM</td><td>distorsi meningkat menjauh dari central meridian</td></tr>
+<tr><td>Lambert Conformal Conic</td><td>Conic</td><td>Conformal</td><td>wilayah lintang menengah yang memanjang timur-barat</td><td>luas tidak dipertahankan</td></tr>
+<tr><td>Azimuthal Equidistant</td><td>Azimuthal</td><td>Equidistant dari pusat</td><td>peta berpusat pada satu lokasi/polar</td><td>jarak antarsemua titik tidak semuanya benar</td></tr>
+<tr><td>Mollweide</td><td>Pseudocylindrical</td><td>Equal-area</td><td>peta tematik global</td><td>bentuk berubah</td></tr>
+</tbody></table></div>
+</section>
+
+<section class="lesson-section" id="memilih"><h2>18. Dasar pemilihan proyeksi</h2>
+<p>Pemilihan projection dilakukan berdasarkan kebutuhan pemetaan. Tidak ada projection yang paling tepat untuk semua kondisi.</p>
 <ol class="component-list">
-<li><strong>Tujuan peta</strong><span>Apa yang akan dibaca, dibandingkan, atau diukur?</span></li>
-<li><strong>Sifat yang harus dipertahankan</strong><span>Area, sudut/bentuk lokal, jarak tertentu, atau arah?</span></li>
-<li><strong>Cakupan wilayah</strong><span>Dunia, benua, negara, provinsi, kota, atau koridor?</span></li>
-<li><strong>Lokasi dan orientasi wilayah</strong><span>Ekuator, lintang menengah, kutub, east-west, north-south, atau oblique?</span></li>
-<li><strong>Konsekuensi yang dapat diterima</strong><span>Distorsi apa yang tidak terlalu mengganggu tujuan peta?</span></li>
+<li><strong>Tujuan peta</strong><span>Informasi apa yang akan dibaca, dibandingkan, atau diukur?</span></li>
+<li><strong>Sifat geometris yang perlu dipertahankan</strong><span>Apakah area, sudut/bentuk lokal, jarak tertentu, atau arah lebih penting?</span></li>
+<li><strong>Cakupan wilayah</strong><span>Apakah peta berskala global, kontinental, regional, atau lokal?</span></li>
+<li><strong>Lokasi dan orientasi wilayah</strong><span>Apakah wilayah berada di ekuator, lintang menengah, kutub, memanjang timur-barat, atau utara-selatan?</span></li>
+<li><strong>Distorsi yang dapat diterima</strong><span>Sifat apa yang boleh mengalami perubahan tanpa mengganggu tujuan peta?</span></li>
 </ol>
-<p class="source-note">Penn State GEOG 486 menempatkan purpose, geographic scale/extent, dan location sebagai pertimbangan utama dalam memilih projection.</p>
+<p class="source-note">Penn State menempatkan purpose, geographic scale/extent, dan location sebagai pertimbangan utama dalam pemilihan projection. <a href="https://courses.ems.psu.edu/geog486/node/857" target="_blank" rel="noopener">Sumber: Penn State GEOG 486</a>.</p>
 </section>
 
-<section class="lesson-section" id="contoh-jawab">
-<h2>14. Contoh cara menjawab analisis proyeksi</h2>
-<p>Jawaban analisis harus menunjukkan dasar pemilihan proyeksi secara sistematis, bukan hanya menyebutkan nama proyeksi.</p>
-<div class="answer-example">
-<h3>Contoh latihan: peta tematik luas zona iklim dunia</h3>
-<p><strong>Situasi:</strong> Seorang peneliti ingin membuat peta dunia untuk membandingkan luas zona iklim antarwilayah. Bentuk benua boleh sedikit berubah, tetapi perbandingan luas harus tetap dapat dipercaya.</p>
+<section class="lesson-section" id="kesalahan"><h2>19. Kesalahan konsep yang perlu dihindari</h2>
+<ul class="key">
+<li><strong>Datum = projection</strong> → salah. Datum adalah bagian dari acuan geodetik; projection adalah transformasi ke bidang datar.</li>
+<li><strong>WGS 84 = Mercator</strong> → salah. WGS 84 adalah CRS/datum geodetik; Mercator adalah map projection.</li>
+<li><strong>UTM = datum</strong> → salah. UTM adalah sistem zona projected coordinate system berbasis Transverse Mercator; suatu UTM CRS tetap membutuhkan base CRS/datum, misalnya WGS 84.</li>
+<li><strong>Longitude = Easting dan latitude = Northing</strong> → salah. Koordinat tersebut berasal dari sistem yang berbeda dan dihubungkan melalui projection.</li>
+<li><strong>Equidistant berarti semua jarak benar</strong> → salah. Hanya jarak tertentu yang dipertahankan sesuai desain projection.</li>
+<li><strong>Conformal berarti tidak ada distorsi</strong> → salah. Conformal mempertahankan sudut lokal, tetapi area dan scale tetap dapat berubah.</li>
+</ul></section>
+
+<section class="lesson-section" id="contoh-jawab"><h2>20. Contoh analisis pemilihan proyeksi</h2>
+<div class="answer-example"><h3>Kasus: peta dunia untuk membandingkan luas zona iklim</h3>
 <ol>
-<li><strong>Tujuan peta:</strong> membandingkan luas zona iklim di seluruh dunia.</li>
+<li><strong>Tujuan:</strong> membandingkan luas zona iklim antarwilayah.</li>
 <li><strong>Cakupan:</strong> global.</li>
-<li><strong>Sifat terpenting:</strong> equal-area, karena yang dibandingkan adalah luas.</li>
-<li><strong>Pilihan:</strong> Mollweide dapat dipilih sebagai salah satu proyeksi equal-area untuk peta dunia.</li>
-<li><strong>Alasan:</strong> Mollweide mempertahankan luas relatif sehingga perbandingan besar-kecilnya zona lebih sesuai dengan tujuan.</li>
-<li><strong>Keterbatasan:</strong> bentuk wilayah dan sudut mengalami distorsi, sehingga peta ini tidak cocok untuk kebutuhan yang memerlukan bentuk lokal atau bearing.</li>
+<li><strong>Sifat yang diprioritaskan:</strong> equal-area.</li>
+<li><strong>Pilihan:</strong> Mollweide dapat digunakan sebagai salah satu projection equal-area untuk peta dunia.</li>
+<li><strong>Alasan:</strong> luas relatif dipertahankan sehingga perbandingan area sesuai dengan tujuan peta.</li>
+<li><strong>Keterbatasan:</strong> bentuk dan sudut mengalami distorsi, tetapi hal tersebut dapat diterima karena bentuk bukan variabel utama analisis.</li>
 </ol>
-<p><strong>Contoh jawaban ringkas:</strong> “Saya memilih Mollweide karena tujuan peta adalah membandingkan luas zona iklim secara global. Mollweide merupakan pseudocylindrical equal-area projection sehingga luas relatif dipertahankan. Konsekuensinya, bentuk wilayah dapat berubah. Distorsi bentuk tersebut dapat diterima karena bentuk bukan variabel utama yang dianalisis.”</p>
-</div>
-<p class="plain-note"><strong>Pola jawaban yang diharapkan:</strong> tujuan → cakupan → sifat penting → pilihan projection/CRS → alasan → keterbatasan.</p>
+<p><strong>Contoh jawaban:</strong> Mollweide dipilih karena peta bertujuan membandingkan luas zona iklim pada cakupan global. Mollweide merupakan pseudocylindrical equal-area projection sehingga luas relatif antarwilayah dipertahankan. Konsekuensinya, bentuk wilayah mengalami distorsi.</p></div>
+<p class="plain-note"><strong>Pola analisis:</strong> tujuan → cakupan → sifat yang diprioritaskan → projection/CRS → alasan → keterbatasan.</p>
 </section>
 
-<section class="lesson-section" id="tugas">
-<h2>15. Tugas: Analisis pemilihan proyeksi peta</h2>
-<p class="section-intro">Tugas ini menguji apakah mahasiswa memahami struktur dan konsekuensi pemilihan proyeksi. Jangan hanya menuliskan nama proyeksi.</p>
-<h3>Bagian A — Klasifikasi istilah</h3>
-<p>Klasifikasikan: <strong>WGS 84, Mercator, Transverse Mercator, WGS 84 / UTM Zone 49S, Mollweide, dan Azimuthal Equidistant.</strong> Untuk setiap istilah, tuliskan kategori dan alasan singkat.</p>
+<section class="lesson-section" id="tugas"><h2>21. Tugas: Analisis sistem dan pemilihan proyeksi</h2>
+<h3>Bagian A — Identifikasi istilah</h3><p>Klasifikasikan istilah berikut dan jelaskan hubungannya: <strong>WGS 84, Mercator, Transverse Mercator, WGS 84 / UTM Zone 49S, Mollweide, dan Azimuthal Equidistant.</strong></p>
+<h3>Bagian B — Analisis kasus</h3>
+<div class="assignment-case"><h3>Kasus 1 — Navigasi kapal</h3><p>Sebuah peta digunakan untuk membantu pembacaan bearing kompas selama pelayaran. Peta tidak digunakan untuk membandingkan luas negara.</p><p class="ask"><strong>Analisis:</strong> tujuan, sifat penting, projection yang sesuai, alasan, dan keterbatasannya.</p></div>
+<div class="assignment-case"><h3>Kasus 2 — Luas hutan dunia</h3><p>Peta digunakan untuk membandingkan luas tutupan hutan antarnegara secara global. Bentuk wilayah boleh berubah selama perbandingan luas tetap dapat dipercaya.</p><p class="ask"><strong>Analisis:</strong> property yang diprioritaskan, projection yang dapat digunakan, dan distorsi yang masih terjadi.</p></div>
+<div class="assignment-case"><h3>Kasus 3 — Peta dunia untuk atlas sekolah</h3><p>Peta digunakan untuk memberi gambaran umum dunia secara visual, bukan untuk navigasi atau pengukuran luas presisi.</p><p class="ask"><strong>Analisis:</strong> apakah conformal atau equal-area harus selalu dipilih, atau compromise projection lebih sesuai?</p></div>
+<div class="assignment-case"><h3>Kasus 4 — Wilayah Kutub Utara</h3><p>Peta berpusat pada Kutub Utara dan digunakan untuk melihat hubungan lokasi terhadap pusat.</p><p class="ask"><strong>Analisis:</strong> keluarga projection dan property yang sesuai.</p></div>
+<div class="assignment-case"><h3>Kasus 5 — Wilayah lintang menengah memanjang timur-barat</h3><p>Peta regional memerlukan bentuk lokal yang baik untuk wilayah yang luas memanjang timur-barat.</p><p class="ask"><strong>Analisis:</strong> keluarga dan projection yang dapat dipilih serta alasannya.</p></div>
+<div class="assignment-case"><h3>Kasus 6 — Pemetaan Kota Yogyakarta</h3><p>Peta GIS digunakan untuk analisis jarak lokal dan koordinat harus dinyatakan dalam meter.</p><p class="ask"><strong>Analisis:</strong> apakah geographic CRS cukup? Projected CRS apa yang lebih sesuai? Bedakan projection dan CRS dalam jawaban.</p></div>
+<h3>Bagian C — Perbandingan visual</h3><p>Bandingkan Mercator, Mollweide, dan satu compromise projection. Bandingkan bentuk benua, luas relatif, wilayah lintang tinggi, sifat yang dipertahankan, dan tujuan penggunaan.</p>
+<h3>Format jawaban</h3><div class="table-wrap"><table><thead><tr><th>Kasus</th><th>Tujuan</th><th>Cakupan</th><th>Sifat penting</th><th>Projection/CRS</th><th>Alasan</th><th>Keterbatasan</th></tr></thead><tbody><tr><td>1</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr></tbody></table></div>
+</section>
 
-<h3>Bagian B — Analisis delapan kasus</h3>
-<div class="assignment-case"><h3>Kasus 1 — Navigasi kapal</h3><p>Sebuah tim pelayaran ingin membuat peta untuk membantu kapal mempertahankan arah kompas selama perjalanan laut. Peta tidak digunakan untuk membandingkan luas negara atau benua. Yang lebih penting adalah agar jalur dengan bearing kompas tetap dapat ditampilkan dan dibaca dengan mudah.</p><p class="ask"><strong>Jawab:</strong> tujuan, sifat penting, projection yang sesuai, alasan, dan keterbatasannya.</p></div>
-<div class="assignment-case"><h3>Kasus 2 — Perbandingan luas hutan antarnegara</h3><p>Sebuah lembaga lingkungan ingin membuat peta dunia untuk membandingkan luas tutupan hutan antarnegara. Bentuk negara boleh berubah selama luas relatif antarwilayah tetap dapat dibandingkan secara benar.</p><p class="ask"><strong>Jawab:</strong> sifat apa yang paling penting, projection apa yang dapat dipilih, mengapa, dan distorsi apa yang masih ada?</p></div>
-<div class="assignment-case"><h3>Kasus 3 — Peta dunia untuk atlas sekolah</h3><p>Sebuah penerbit ingin membuat peta dunia umum untuk buku sekolah. Peta tidak digunakan untuk navigasi atau pengukuran area presisi. Prioritasnya adalah tampilan dunia yang seimbang dan mudah dikenali.</p><p class="ask"><strong>Jawab:</strong> apakah conformal atau equal-area harus selalu dipilih? Apakah compromise projection dapat lebih sesuai? Jelaskan.</p></div>
-<div class="assignment-case"><h3>Kasus 4 — Pemetaan wilayah Kutub Utara</h3><p>Sebuah tim penelitian ingin membuat peta kawasan Kutub Utara yang berpusat pada kutub. Hubungan lokasi terhadap titik pusat perlu mudah dibaca.</p><p class="ask"><strong>Jawab:</strong> keluarga projection apa yang cocok, property apa yang perlu dipertimbangkan, dan mengapa?</p></div>
-<div class="assignment-case"><h3>Kasus 5 — Wilayah lintang menengah memanjang timur-barat</h3><p>Sebuah instansi membuat peta regional untuk wilayah luas pada lintang menengah yang memanjang dari timur ke barat. Bentuk lokal harus tetap cukup baik untuk perencanaan.</p><p class="ask"><strong>Jawab:</strong> keluarga apa yang sesuai, projection apa yang dapat dipilih, dan apa alasan geometrisnya?</p></div>
-<div class="assignment-case"><h3>Kasus 6 — Pemetaan Kota Yogyakarta</h3><p>Sebuah tim GIS ingin memetakan jalan, bangunan, dan fasilitas di Kota Yogyakarta untuk analisis jarak lokal. Koordinat harus mudah digunakan dalam satuan meter.</p><p class="ask"><strong>Jawab:</strong> apakah geographic coordinates cukup? Projected CRS apa yang lebih sesuai? Bedakan projection dan CRS dalam jawaban.</p></div>
-<div class="assignment-case"><h3>Kasus 7 — Peta persebaran penduduk Indonesia</h3><p>Sebuah lembaga ingin membuat peta tematik Indonesia untuk membandingkan pola persebaran penduduk antarwilayah. Peta tidak digunakan untuk navigasi.</p><p class="ask"><strong>Jawab:</strong> tujuan apa yang harus diprioritaskan, property apa yang penting, projection apa yang dapat dipertimbangkan, dan apa komprominya?</p></div>
-<div class="assignment-case"><h3>Kasus 8 — Jalur penerbangan global</h3><p>Sebuah maskapai ingin menampilkan jalur penerbangan antarnegara pada peta dunia untuk komunikasi visual. Peta tidak dipakai menghitung jarak penerbangan secara presisi.</p><p class="ask"><strong>Jawab:</strong> apakah Mercator otomatis menjadi pilihan terbaik? Jelaskan berdasarkan tujuan, cakupan global, dan distorsi.</p></div>
-
-<h3>Bagian C — Perbandingan visual</h3>
-<p>Bandingkan <strong>Mercator, Mollweide, dan Robinson atau Winkel Tripel</strong>. Sertakan gambar yang bersumber jelas. Bandingkan bentuk benua, luas relatif, wilayah kutub, sifat utama, dan kegunaannya.</p>
-
-<h3>Bagian D — Aplikasi Indonesia</h3>
-<p>Pilih satu kebutuhan pemetaan nyata di Indonesia. Jelaskan tujuan, cakupan, projection/CRS yang dipilih, alasan, dan keterbatasannya.</p>
-
-<h3>Format jawaban</h3>
-<div class="table-wrap"><table><thead><tr><th>Kasus</th><th>Tujuan</th><th>Cakupan</th><th>Sifat penting</th><th>Projection/CRS</th><th>Alasan</th><th>Keterbatasan</th></tr></thead><tbody><tr><td>1</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr></tbody></table></div>
-<ul><li>2–3 halaman PDF.</li><li>Boleh memakai tabel.</li><li>Maksimum 3 gambar.</li><li>Setiap gambar wajib memiliki sumber.</li><li>Tidak perlu menuliskan rumus projection.</li></ul>
-
-<div class="table-wrap"><table><thead><tr><th>Komponen</th><th>Bobot</th></tr></thead><tbody>
-<tr><td>Bagian A — klasifikasi istilah</td><td>20%</td></tr>
-<tr><td>Bagian B — analisis kasus</td><td>35%</td></tr>
-<tr><td>Bagian C — perbandingan visual</td><td>25%</td></tr>
-<tr><td>Bagian D — aplikasi Indonesia</td><td>15%</td></tr>
-<tr><td>Kejelasan, sumber, dan kerapian</td><td>5%</td></tr>
+<section class="lesson-section" id="ringkasan"><h2>22. Ringkasan hubungan konsep</h2>
+<div class="table-wrap"><table><thead><tr><th>Konsep</th><th>Fungsi utama</th><th>Contoh</th></tr></thead><tbody>
+<tr><td>Ellipsoid</td><td>model matematis bentuk bumi</td><td>ellipsoid WGS 84</td></tr>
+<tr><td>Datum / geodetic reference</td><td>kerangka acuan posisi terhadap model bumi</td><td>WGS 84</td></tr>
+<tr><td>Geographic CRS</td><td>menyatakan posisi dengan koordinat sudut</td><td>latitude/longitude pada WGS 84</td></tr>
+<tr><td>Map projection</td><td>mentransformasikan koordinat dari permukaan melengkung ke bidang datar</td><td>Transverse Mercator</td></tr>
+<tr><td>Projected CRS</td><td>menyatakan posisi pada bidang datar dalam sistem lengkap</td><td>WGS 84 / UTM Zone 49S</td></tr>
 </tbody></table></div>
+<p class="plain-note"><strong>Hubungan utama:</strong> model bumi dan datum menyediakan acuan geodetik; geographic CRS menyatakan posisi pada acuan tersebut; map projection mengubahnya ke bidang datar; projected CRS menyediakan sistem koordinat planar yang lengkap.</p>
 </section>
 
-<section class="lesson-section" id="referensi">
-<h2>16. Referensi utama</h2>
-<ol class="reference">
-<li><a href="https://desktop.arcgis.com/en/arcmap/latest/map/projections/projection-types.htm" target="_blank">Esri ArcGIS — Projection types</a>. Diagram conic, cylindrical, planar, tangent, secant, dan aspect.</li>
-<li><a href="https://pro.arcgis.com/en/pro-app/3.3/help/mapping/properties/list-of-supported-map-projections.htm" target="_blank">Esri ArcGIS Pro — Supported map projections</a>. Contoh visual dan karakteristik Mercator, Lambert Conformal Conic, Azimuthal Equidistant, Mollweide, dan projection lainnya.</li>
-<li><a href="https://lecture-notes.tiu.edu.iq/wp-content/uploads/2021/10/Lecture-1-2.pdf" target="_blank">TIU Lecture Notes — Map Projection</a>. Dasar map projection, distortion, latitude dan longitude.</li>
-<li><a href="https://elearn.unigis.at/pluginfile.php/11981/mod_resource/content/1/Proj.html" target="_blank">UNIGIS Salzburg — Lesson 6 Projections</a>.</li>
-<li><a href="https://ltb.itc.utwente.nl/659/concept/131500" target="_blank">ITC University of Twente — Living Textbook: Map projections</a>.</li>
-<li><a href="https://courses.ems.psu.edu/geog486/node/857" target="_blank">Penn State GEOG 486 — Choosing a Projection</a>.</li>
-<li><a href="https://www.usgs.gov/media/files/map-projections-poster" target="_blank">USGS — Map Projections Poster</a> (Public Domain).</li>
-<li><a href="https://epsg.io/32749" target="_blank">EPSG:32749 — WGS 84 / UTM zone 49S</a>.</li>
-</ol>
-</section>
+<section class="lesson-section" id="referensi"><h2>23. Referensi</h2><ol class="reference">
+<li><a href="https://pro.arcgis.com/en/pro-app/3.1/help/mapping/properties/coordinate-systems-and-projections.htm" target="_blank" rel="noopener">Esri ArcGIS Pro — Coordinate systems, map projections, and transformations</a>.</li>
+<li><a href="https://desktop.arcgis.com/en/arcmap/latest/map/projections/projection-types.htm" target="_blank" rel="noopener">Esri ArcGIS — Projection types</a>.</li>
+<li><a href="https://www.usgs.gov/publications/map-projections" target="_blank" rel="noopener">U.S. Geological Survey — Map Projections</a>.</li>
+<li><a href="https://www.usgs.gov/faqs/how-are-different-map-projections-used" target="_blank" rel="noopener">U.S. Geological Survey — How are different map projections used?</a>.</li>
+<li><a href="https://www.usgs.gov/publications/map-projections-a-working-manual" target="_blank" rel="noopener">Snyder, J.P. — Map Projections: A Working Manual, USGS Professional Paper 1395</a>.</li>
+<li><a href="https://courses.ems.psu.edu/geog486/node/857" target="_blank" rel="noopener">Penn State GEOG 486 — Choosing a Projection</a>.</li>
+<li><a href="https://ltb.itc.utwente.nl/659/concept/131500" target="_blank" rel="noopener">ITC University of Twente — Living Textbook: Map Projections</a>.</li>
+<li><a href="https://epsg.org/crs_32749/WGS-84-UTM-zone-49S.html" target="_blank" rel="noopener">EPSG — WGS 84 / UTM zone 49S (EPSG:32749)</a>.</li>
+</ol></section>
 
-<footer>Kartografi (Teori) · Ni Putu Praja Chintya<br>Materi 5.1 merupakan pendalaman Pertemuan 5. Ilustrasi dan contoh peta dari sumber resmi dicantumkan pada setiap gambar.</footer>
-</main>
-
-<aside class="toc" aria-label="Pada halaman ini"><strong>Pada halaman ini</strong>
-<a href="#struktur">Struktur klasifikasi</a>
-<a href="#sistem">Datum, CRS, projection</a>
-<a href="#distorsi">Mengapa banyak proyeksi?</a>
-<a href="#keluarga">Keluarga proyeksi</a>
-<a href="#mercator">Mercator</a>
-<a href="#lcc">Lambert Conformal Conic</a>
-<a href="#azimuthal">Azimuthal Equidistant</a>
-<a href="#mollweide">Mollweide</a>
-<a href="#properties">Sifat proyeksi</a>
-<a href="#aspect">Aspect</a>
-<a href="#contact">Tangent/secant</a>
-<a href="#utm">UTM</a>
-<a href="#choose">Memilih proyeksi</a>
-<a href="#contoh-jawab">Contoh jawaban</a>
-<a href="#tugas">Tugas</a>
-<a href="#referensi">Referensi</a>
-</aside></div>
-</body></html>
+<footer>Kartografi (Teori) · Ni Putu Praja Chintya<br>Materi 5.1 merupakan pendalaman konsep dasar proyeksi peta dan hubungannya dengan sistem referensi koordinat.</footer>
+</main><aside class="toc" aria-label="Pada halaman ini"><strong>Pada halaman ini</strong>
+<a href="#tujuan">Tujuan</a><a href="#hubungan">Hubungan konsep</a><a href="#istilah">Istilah dasar</a><a href="#contoh-satu-titik">Satu lokasi, dua koordinat</a><a href="#mengapa">Mengapa projection?</a><a href="#distorsi">Distorsi</a><a href="#klasifikasi">Struktur klasifikasi</a><a href="#keluarga">Keluarga proyeksi</a><a href="#properties">Sifat proyeksi</a><a href="#aspect">Aspect</a><a href="#tangent">Tangent/secant</a><a href="#mercator">Mercator</a><a href="#utm">Transverse Mercator & UTM</a><a href="#lcc">Lambert Conformal Conic</a><a href="#aeqd">Azimuthal Equidistant</a><a href="#mollweide">Mollweide</a><a href="#banding">Perbandingan</a><a href="#memilih">Memilih proyeksi</a><a href="#kesalahan">Kesalahan konsep</a><a href="#contoh-jawab">Contoh analisis</a><a href="#tugas">Tugas</a><a href="#ringkasan">Ringkasan</a><a href="#referensi">Referensi</a>
+</aside></div></body></html>
