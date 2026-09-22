@@ -94,33 +94,65 @@
 
 
 
+
 <section class="lesson-section" id="hubungan">
 <h3>A.2 Hubungan Sistem Referensi Posisi</h3>
-<p>Ellipsoid, datum, CRS, Geographic CRS, map projection, dan Projected CRS bukan klasifikasi proyeksi. Istilah-istilah tersebut membentuk <strong>rangkaian konsep untuk menyatakan posisi di bumi dan kemudian menampilkannya pada peta datar</strong>.</p>
+<p>Proyeksi peta tidak berdiri sendiri. Sebelum suatu lokasi dapat ditampilkan pada peta datar, posisi tersebut perlu didefinisikan terlebih dahulu terhadap model bumi dan sistem referensi koordinat.</p>
 
-<div class="story-flow">
-  <div class="story-step"><div class="story-marker">1</div><div class="story-body"><strong>Bumi nyata</strong><br>Permukaan fisik bumi tidak beraturan sehingga terlalu kompleks untuk langsung digunakan sebagai model koordinat matematis.</div></div>
-  <div class="story-step"><div class="story-marker">2</div><div class="story-body"><strong>Ellipsoid</strong><br>Bentuk bumi disederhanakan menjadi model matematis yang teratur. Ellipsoid menjadi permukaan acuan untuk mendefinisikan posisi.</div></div>
-  <div class="story-step"><div class="story-marker">3</div><div class="story-body"><strong>Datum geodetik</strong><br>Datum memberikan kerangka acuan agar posisi pada ellipsoid dapat dikaitkan secara konsisten dengan bumi nyata.</div></div>
-  <div class="story-step"><div class="story-marker">4</div><div class="story-body"><strong>Coordinate Reference System (CRS)</strong><br>CRS menentukan bagaimana posisi ditulis sebagai koordinat, termasuk acuan, sumbu, arah sumbu, dan unit.</div></div>
-  <div class="story-step"><div class="story-marker">5</div><div class="story-body"><strong>Geographic CRS</strong><br>Pada tahap ini posisi dinyatakan menggunakan latitude dan longitude, biasanya dalam derajat.</div></div>
-  <div class="story-step"><div class="story-marker">6</div><div class="story-body"><strong>Map projection</strong><br>Koordinat pada permukaan melengkung ditransformasikan secara matematis ke bidang datar. Pada proses inilah distorsi muncul.</div></div>
-  <div class="story-step"><div class="story-marker">7</div><div class="story-body"><strong>Projected CRS</strong><br>Hasil akhirnya adalah sistem koordinat pada bidang datar, misalnya Easting dan Northing dalam meter.</div></div>
+<div class="visual-box">
+<svg viewBox="0 0 1040 620" role="img" aria-label="Hubungan bumi nyata, ellipsoid, datum, geographic CRS, proyeksi peta, dan projected CRS">
+<rect width="1040" height="620" fill="#ffffff"/>
+<circle cx="120" cy="210" r="72" fill="#e8f2f8" stroke="#075175" stroke-width="4"/>
+<path d="M48 210 Q120 245 192 210 M120 138 V282 M68 170 Q120 193 172 170 M68 250 Q120 227 172 250" fill="none" stroke="#8ca0ac" stroke-width="2"/>
+<text x="120" y="315" text-anchor="middle" font-size="18" font-weight="700">Bumi nyata</text>
+<text x="120" y="338" text-anchor="middle" font-size="13" fill="#667681">bentuk fisik tidak beraturan</text>
+<path d="M210 210 H285" stroke="#7d909b" stroke-width="4"/><polygon points="285,210 268,200 268,220" fill="#7d909b"/>
+<ellipse cx="380" cy="210" rx="82" ry="64" fill="#f8fafb" stroke="#075175" stroke-width="4"/>
+<text x="380" y="315" text-anchor="middle" font-size="18" font-weight="700">Ellipsoid</text>
+<text x="380" y="338" text-anchor="middle" font-size="13" fill="#667681">model matematis bentuk bumi</text>
+<rect x="285" y="95" width="190" height="235" rx="12" fill="none" stroke="#b06b36" stroke-width="3" stroke-dasharray="8 6"/>
+<text x="380" y="78" text-anchor="middle" font-size="16" font-weight="700" fill="#9a5b2e">Datum geodetik</text>
+<text x="380" y="55" text-anchor="middle" font-size="12" fill="#6d6259">memberikan kerangka acuan posisi</text>
+<path d="M485 210 H560" stroke="#7d909b" stroke-width="4"/><polygon points="560,210 543,200 543,220" fill="#7d909b"/>
+<circle cx="650" cy="210" r="72" fill="#eef5f8" stroke="#075175" stroke-width="4"/>
+<ellipse cx="650" cy="210" rx="72" ry="23" fill="none" stroke="#b06b36" stroke-width="2"/>
+<line x1="650" y1="138" x2="650" y2="282" stroke="#8ca0ac" stroke-width="2"/>
+<text x="650" y="315" text-anchor="middle" font-size="18" font-weight="700">Geographic CRS</text>
+<text x="650" y="338" text-anchor="middle" font-size="13" fill="#667681">latitude + longitude</text>
+<text x="650" y="358" text-anchor="middle" font-size="13" fill="#667681">unit sudut: derajat</text>
+<path d="M735 210 H815" stroke="#b06b36" stroke-width="5"/><polygon points="815,210 796,199 796,221" fill="#b06b36"/>
+<text x="775" y="185" text-anchor="middle" font-size="15" font-weight="700" fill="#9a5b2e">Proyeksi peta</text>
+<text x="775" y="245" text-anchor="middle" font-size="12" fill="#6d6259">permukaan melengkung → bidang datar</text>
+<rect x="835" y="138" width="155" height="145" rx="6" fill="#f8fafb" stroke="#075175" stroke-width="4"/>
+<line x1="865" y1="250" x2="960" y2="250" stroke="#b06b36" stroke-width="3"/>
+<line x1="865" y1="250" x2="865" y2="165" stroke="#075175" stroke-width="3"/>
+<text x="912" y="315" text-anchor="middle" font-size="18" font-weight="700">Projected CRS</text>
+<text x="912" y="338" text-anchor="middle" font-size="13" fill="#667681">Easting + Northing</text>
+<text x="912" y="358" text-anchor="middle" font-size="13" fill="#667681">unit linear: meter</text>
+<rect x="105" y="405" width="820" height="150" rx="8" fill="#f6f8fa" stroke="#c5d1d8"/>
+<text x="130" y="438" font-size="16" font-weight="700" fill="#26323e">Urutan konsep:</text>
+<text x="130" y="470" font-size="15" fill="#26323e">1. Bumi nyata disederhanakan dengan model ellipsoid.</text>
+<text x="130" y="498" font-size="15" fill="#26323e">2. Datum memberikan kerangka acuan agar posisi pada ellipsoid terkait dengan bumi.</text>
+<text x="130" y="526" font-size="15" fill="#26323e">3. Geographic CRS menyatakan posisi dengan latitude dan longitude.</text>
+<text x="130" y="554" font-size="15" fill="#26323e">4. Proyeksi peta mengubahnya menjadi koordinat datar pada Projected CRS.</text>
+</svg>
+<p class="caption">Ilustrasi hubungan konsep. Diagram ini menunjukkan posisi setiap istilah dalam sistem referensi posisi sebelum masuk ke klasifikasi proyeksi peta.</p>
 </div>
 
 <ul class="key">
-<li><strong>Ellipsoid</strong> menjawab: model bentuk bumi yang digunakan seperti apa?</li>
-<li><strong>Datum</strong> menjawab: model tersebut direferensikan terhadap bumi dengan kerangka acuan apa?</li>
-<li><strong>CRS</strong> menjawab: bagaimana posisi dinyatakan sebagai koordinat?</li>
-<li><strong>Map projection</strong> menjawab: bagaimana posisi pada permukaan melengkung diubah ke bidang datar?</li>
-<li><strong>Projected CRS</strong> menjawab: bagaimana posisi akhirnya dinyatakan pada bidang datar?</li>
+<li><strong>Bumi nyata</strong> mempunyai bentuk fisik yang kompleks dan tidak beraturan.</li>
+<li><strong>Ellipsoid</strong> menyederhanakan bentuk bumi menjadi model matematis yang dapat digunakan untuk mendefinisikan posisi.</li>
+<li><strong>Datum geodetik</strong> memberikan kerangka acuan untuk menghubungkan model ellipsoid dengan posisi di bumi.</li>
+<li><strong>Sistem referensi koordinat geografis (Geographic CRS)</strong> menyatakan posisi menggunakan latitude dan longitude.</li>
+<li><strong>Proyeksi peta</strong> mentransformasikan posisi dari permukaan melengkung ke bidang datar.</li>
+<li><strong>Sistem referensi koordinat terproyeksi (Projected CRS)</strong> menyatakan hasilnya sebagai koordinat planar, misalnya Easting dan Northing dalam meter.</li>
 </ul>
 </section>
 
 
 
 <section class="lesson-section" id="istilah">
-<h3>A.3 Sistem Referensi Posisi</h3>
+<h3>A.3 Komponen Sistem Referensi Posisi</h3>
 <p>Sistem referensi posisi terdiri atas beberapa konsep yang saling berkaitan. Setiap konsep mempunyai fungsi berbeda dalam mendefinisikan bentuk bumi, acuan posisi, sistem koordinat, dan representasi koordinat pada bidang datar.</p>
 
 <div class="definition-chain">
@@ -232,7 +264,7 @@ Transverse Mercator → metode projection yang mengubah koordinat ke bidang data
 WGS 84 / UTM Zone 49S → Projected CRS yang menggunakan Transverse Mercator dan menghasilkan Easting/Northing dalam meter.</div>
 </section>
 
-<section class="lesson-section" id="latlon"><h3>A.4 Geographic dan Projected Coordinate Reference System</h3>
+<section class="lesson-section" id="latlon"><h3>A.4 Sistem Referensi Koordinat Geografis dan Terproyeksi</h3>
 <div class="visual-box"><svg viewBox="0 0 900 390" role="img" aria-label="Latitude longitude dan projected coordinates">
 <rect width="900" height="390" fill="#fff"/>
 <circle cx="220" cy="175" r="115" fill="#eef6fa" stroke="#075175" stroke-width="4"/>
@@ -313,7 +345,7 @@ WGS 84 / UTM Zone 49S → Projected CRS yang menggunakan Transverse Mercator dan
 <rect x="670" y="210" width="250" height="112" rx="8" fill="#eef5f8" stroke="#075175" stroke-width="3"/>
 <text x="795" y="244" text-anchor="middle" font-size="19" font-weight="700" fill="#075175">C. Berdasarkan</text>
 <text x="795" y="270" text-anchor="middle" font-size="19" font-weight="700" fill="#075175">orientasi (aspect)</text>
-<text x="795" y="298" text-anchor="middle" font-size="13" fill="#5e6e79">orientasi surface terhadap bumi</text>
+<text x="795" y="298" text-anchor="middle" font-size="13" fill="#5e6e79">orientasi permukaan proyeksi terhadap bumi</text>
 
 <rect x="985" y="210" width="250" height="112" rx="8" fill="#eef5f8" stroke="#075175" stroke-width="3"/>
 <text x="1110" y="244" text-anchor="middle" font-size="18" font-weight="700" fill="#075175">D. Berdasarkan hubungan</text>
@@ -386,7 +418,7 @@ WGS 84 / UTM Zone 49S → Projected CRS yang menggunakan Transverse Mercator dan
 </div>
 </section>
 
-<section class="lesson-section" id="permukaan"><h3>B.2 Klasifikasi Berdasarkan Permukaan Proyeksi</h3>
+<section class="lesson-section" id="permukaan"><h3>B.2 Kelompok Berdasarkan Permukaan Proyeksi</h3>
 <div class="visual-box"><svg viewBox="0 0 900 360" role="img" aria-label="Cylindrical conic azimuthal dan pseudocylindrical">
 <rect width="900" height="360" fill="#fff"/>
 <circle cx="115" cy="150" r="70" fill="#eef6fa" stroke="#075175" stroke-width="3"/><rect x="45" y="60" width="140" height="180" fill="none" stroke="#b06b36" stroke-width="3"/><text x="115" y="280" text-anchor="middle" font-size="17">Cylindrical</text>
@@ -401,7 +433,7 @@ WGS 84 / UTM Zone 49S → Projected CRS yang menggunakan Transverse Mercator dan
 <h4>Pseudocylindrical</h4><ul class="key"><li>secara tampilan menyerupai cylindrical tetapi konstruksinya berbeda;</li><li>banyak digunakan untuk peta dunia;</li><li>contoh: Mollweide.</li></ul>
 </section>
 
-<section class="lesson-section" id="sifat"><h3>B.3 Klasifikasi Berdasarkan Sifat yang Dipertahankan</h3>
+<section class="lesson-section" id="sifat"><h3>B.3 Kelompok Berdasarkan Sifat yang Dipertahankan</h3>
 <div class="table-wrap"><table><thead><tr><th>Sifat</th><th>Pengertian</th><th>Contoh projection</th><th>Implikasi</th></tr></thead><tbody>
 <tr><td>Conformal</td><td>sudut lokal dipertahankan sehingga bentuk sangat lokal tetap serupa</td><td>Mercator, Lambert Conformal Conic</td><td>luas dapat terdistorsi</td></tr>
 <tr><td>Equal-area</td><td>luas relatif dipertahankan</td><td>Mollweide</td><td>bentuk dan sudut dapat berubah</td></tr>
@@ -410,27 +442,27 @@ WGS 84 / UTM Zone 49S → Projected CRS yang menggunakan Transverse Mercator dan
 </tbody></table></div>
 </section>
 
-<section class="lesson-section" id="aspect"><h3>B.4 Aspect Proyeksi</h3>
-<p><strong>Aspect</strong> adalah orientasi projection surface terhadap bumi.</p>
+<section class="lesson-section" id="aspect"><h3>B.4 Kelompok Berdasarkan Orientasi Proyeksi (Aspect)</h3>
+<p><strong>Aspect</strong> adalah orientasi permukaan proyeksi terhadap bumi.</p>
 <div class="visual-box"><svg viewBox="0 0 900 330" role="img" aria-label="Normal transverse dan oblique aspect">
 <rect width="900" height="330" fill="#fff"/>
 <g><circle cx="150" cy="145" r="65" fill="#eef6fa" stroke="#075175" stroke-width="3"/><rect x="80" y="55" width="140" height="180" fill="none" stroke="#b06b36" stroke-width="3"/><text x="150" y="270" text-anchor="middle" font-size="18">Normal</text></g>
 <g transform="translate(300 0)"><circle cx="150" cy="145" r="65" fill="#eef6fa" stroke="#075175" stroke-width="3"/><rect x="60" y="75" width="180" height="140" fill="none" stroke="#b06b36" stroke-width="3"/><text x="150" y="270" text-anchor="middle" font-size="18">Transverse</text></g>
 <g transform="translate(600 0)"><circle cx="150" cy="145" r="65" fill="#eef6fa" stroke="#075175" stroke-width="3"/><rect x="72" y="62" width="156" height="166" fill="none" stroke="#b06b36" stroke-width="3" transform="rotate(28 150 145)"/><text x="150" y="270" text-anchor="middle" font-size="18">Oblique</text></g>
 </svg></div>
-<ul class="key"><li><strong>Normal:</strong> orientation standar.</li><li><strong>Transverse:</strong> surface diputar sekitar 90° dari normal orientation.</li><li><strong>Oblique:</strong> surface diorientasikan miring mengikuti arah tertentu.</li></ul>
+<ul class="key"><li><strong>Normal:</strong> orientasi standar.</li><li><strong>Transverse:</strong> permukaan proyeksi diputar sekitar 90° dari normal orientation.</li><li><strong>Oblique:</strong> permukaan proyeksi diorientasikan miring mengikuti arah tertentu.</li></ul>
 </section>
 
-<section class="lesson-section" id="tangent"><h3>B.5 Tangent, Secant, dan Standard Line</h3>
+<section class="lesson-section" id="tangent"><h3>B.5 Kelompok Berdasarkan Hubungan Permukaan Proyeksi dengan Bumi</h3>
 <div class="visual-box"><svg viewBox="0 0 900 330" role="img" aria-label="Tangent dan secant">
 <rect width="900" height="330" fill="#fff"/>
 <circle cx="225" cy="160" r="80" fill="#eef6fa" stroke="#075175" stroke-width="3"/><line x1="85" y1="80" x2="365" y2="80" stroke="#b06b36" stroke-width="4"/><circle cx="225" cy="80" r="5" fill="#b06b36"/><text x="225" y="285" text-anchor="middle" font-size="18">Tangent: menyentuh</text>
 <circle cx="675" cy="160" r="80" fill="#eef6fa" stroke="#075175" stroke-width="3"/><line x1="535" y1="115" x2="815" y2="115" stroke="#b06b36" stroke-width="4"/><circle cx="615" cy="115" r="5" fill="#b06b36"/><circle cx="735" cy="115" r="5" fill="#b06b36"/><text x="675" y="285" text-anchor="middle" font-size="18">Secant: memotong</text>
 </svg></div>
-<ul class="key"><li><strong>Tangent:</strong> projection surface menyentuh model bumi.</li><li><strong>Secant:</strong> projection surface memotong model bumi.</li><li><strong>Standard line:</strong> garis referensi tempat skala benar atau distorsi minimum sesuai definisi projection.</li></ul>
+<ul class="key"><li><strong>Tangent:</strong> permukaan proyeksi menyentuh model bumi.</li><li><strong>Secant:</strong> permukaan proyeksi memotong model bumi.</li><li><strong>Standard line:</strong> garis referensi tempat skala benar atau distorsi minimum sesuai definisi projection.</li></ul>
 <div class="compare-grid">
-<figure class="reference-figure"><img src="https://desktop.arcgis.com/en/arcmap/latest/map/projections/GUID-44C33C80-B331-4E62-8A90-E68E49F46954-web.gif" alt="Conic tangent dari Esri" loading="lazy"><figcaption>Conic tangent: kerucut menyentuh globe pada satu standard parallel. Sumber: Esri.</figcaption></figure>
-<figure class="reference-figure"><img src="https://desktop.arcgis.com/en/arcmap/latest/map/projections/GUID-D2B234B0-AAE9-47D2-BFE5-380955DE3AE0-web.gif" alt="Conic secant dari Esri" loading="lazy"><figcaption>Conic secant: kerucut memotong globe dan menghasilkan dua standard parallels. Sumber: Esri.</figcaption></figure>
+<figure class="reference-figure"><img src="https://desktop.arcgis.com/en/arcmap/latest/map/projections/GUID-44C33C80-B331-4E62-8A90-E68E49F46954-web.gif" alt="Conic tangent dari Esri" loading="lazy"><figcaption>Conic tangent: kerucut menyentuh globe pada satu paralel standar. Sumber: Esri.</figcaption></figure>
+<figure class="reference-figure"><img src="https://desktop.arcgis.com/en/arcmap/latest/map/projections/GUID-D2B234B0-AAE9-47D2-BFE5-380955DE3AE0-web.gif" alt="Conic secant dari Esri" loading="lazy"><figcaption>Conic secant: kerucut memotong globe dan menghasilkan dua paralel standars. Sumber: Esri.</figcaption></figure>
 </div>
 </section>
 
@@ -441,7 +473,7 @@ WGS 84 / UTM Zone 49S → Projected CRS yang menggunakan Transverse Mercator dan
 <tr><td>Projection surface</td><td>Permukaan konseptual yang digunakan untuk membantu memahami projection, misalnya cylinder, cone, atau plane.</td><td>cylindrical, conic, azimuthal</td></tr>
 <tr><td>Central meridian</td><td>Meridian referensi utama suatu projection atau zona.</td><td>central meridian pada zona UTM</td></tr>
 <tr><td>Standard parallel</td><td>Garis lintang referensi tempat scale benar atau distorsi sangat kecil sesuai projection.</td><td>Lambert Conformal Conic</td></tr>
-<tr><td>Aspect</td><td>Orientasi projection surface terhadap bumi.</td><td>normal, transverse, oblique</td></tr>
+<tr><td>Aspect</td><td>Orientasi permukaan proyeksi terhadap bumi.</td><td>normal, transverse, oblique</td></tr>
 <tr><td>Bearing</td><td>Arah suatu garis/perjalanan sebagai sudut dari utara, diukur searah jarum jam.</td><td>90° berarti arah timur</td></tr>
 <tr><td>Rhumb line</td><td>Jalur yang mempertahankan bearing tetap.</td><td>garis lurus pada Mercator</td></tr>
 <tr><td>Zone</td><td>Bagian wilayah yang dibatasi agar satu sistem projection dapat digunakan dengan distorsi terkontrol.</td><td>60 zona UTM</td></tr>
@@ -483,13 +515,13 @@ WGS 84 / UTM Zone 49S → Projected CRS yang menggunakan Transverse Mercator dan
 <section class="lesson-section" id="lcc"><h3>C.3 Lambert Conformal Conic</h3>
 <figure class="reference-figure">
 <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Lambert_conformal_conic_projection_SW.jpg" alt="Peta dunia Lambert Conformal Conic" loading="lazy">
-<figcaption>Lambert Conformal Conic dengan standard parallels 20°N dan 50°N. Sumber: Strebe, Wikimedia Commons, CC BY-SA 3.0.</figcaption>
+<figcaption>Lambert Conformal Conic dengan paralel standars 20°N dan 50°N. Sumber: Strebe, Wikimedia Commons, CC BY-SA 3.0.</figcaption>
 <p class="source-link"><a href="https://commons.wikimedia.org/wiki/File:Lambert_conformal_conic_projection_SW.jpg" target="_blank" rel="noopener">Buka sumber gambar →</a></p>
 </figure>
 <div class="profile"><div class="r"><strong>Klasifikasi</strong><span>Conic + conformal</span></div><div class="r"><strong>Yang dipertahankan</strong><span>Sudut dan bentuk lokal</span></div><div class="r"><strong>Kesesuaian umum</strong><span>Wilayah lintang menengah yang memanjang timur–barat</span></div><div class="r"><strong>Istilah penting</strong><span>Standard parallel</span></div></div>
-<p><strong>Standard parallel</strong> adalah garis lintang referensi pada conic projection tempat skala benar atau distorsi minimum sesuai parameter projection. Lambert Conformal Conic sering menggunakan satu atau dua standard parallels.</p>
+<p><strong>Standard parallel</strong> adalah garis lintang referensi pada conic projection tempat skala benar atau distorsi minimum sesuai parameter projection. Lambert Conformal Conic sering menggunakan satu atau dua paralel standars.</p>
 <div class="visual-box"><svg viewBox="0 0 900 340" role="img" aria-label="Lambert Conformal Conic conceptual">
-<rect width="900" height="340" fill="#fff"/><circle cx="240" cy="185" r="90" fill="#eef6fa" stroke="#075175" stroke-width="3"/><path d="M110 280 L240 35 L370 280 Z" fill="none" stroke="#b06b36" stroke-width="4"/><path d="M160 190 Q240 220 320 190 M175 150 Q240 170 305 150" fill="none" stroke="#075175" stroke-width="3"/><text x="240" y="320" text-anchor="middle" font-size="17">Dua standard parallels</text><path d="M430 175 H520" stroke="#60727f" stroke-width="4"/><polygon points="520,175 502,164 502,186" fill="#60727f"/><path d="M575 275 Q690 60 805 275" fill="#f8fbfc" stroke="#075175" stroke-width="3"/><path d="M615 235 Q690 140 765 235 M640 205 Q690 170 740 205" fill="none" stroke="#9bb2bf" stroke-width="2"/><path d="M690 60 L600 275 M690 60 L645 275 M690 60 L735 275 M690 60 L780 275" fill="none" stroke="#9bb2bf" stroke-width="2"/><text x="690" y="320" text-anchor="middle" font-size="17">Hasil berbentuk kipas/busur</text></svg></div>
+<rect width="900" height="340" fill="#fff"/><circle cx="240" cy="185" r="90" fill="#eef6fa" stroke="#075175" stroke-width="3"/><path d="M110 280 L240 35 L370 280 Z" fill="none" stroke="#b06b36" stroke-width="4"/><path d="M160 190 Q240 220 320 190 M175 150 Q240 170 305 150" fill="none" stroke="#075175" stroke-width="3"/><text x="240" y="320" text-anchor="middle" font-size="17">Dua paralel standars</text><path d="M430 175 H520" stroke="#60727f" stroke-width="4"/><polygon points="520,175 502,164 502,186" fill="#60727f"/><path d="M575 275 Q690 60 805 275" fill="#f8fbfc" stroke="#075175" stroke-width="3"/><path d="M615 235 Q690 140 765 235 M640 205 Q690 170 740 205" fill="none" stroke="#9bb2bf" stroke-width="2"/><path d="M690 60 L600 275 M690 60 L645 275 M690 60 L735 275 M690 60 L780 275" fill="none" stroke="#9bb2bf" stroke-width="2"/><text x="690" y="320" text-anchor="middle" font-size="17">Hasil berbentuk kipas/busur</text></svg></div>
 </section>
 
 <section class="lesson-section" id="aeqd"><h3>C.4 Azimuthal Equidistant</h3>
@@ -534,39 +566,67 @@ WGS 84 / UTM Zone 49S → Projected CRS yang menggunakan Transverse Mercator dan
 <p class="source-note">Penn State menekankan tujuan peta, geographic scale/extent, dan location sebagai faktor utama dalam memilih projection. <a href="https://courses.ems.psu.edu/geog486/node/857" target="_blank" rel="noopener">Penn State GEOG 486 — Choosing a Projection</a>.</p>
 </section>
 
-<section class="lesson-section" id="contoh"><h3>D.2 Studi Kasus dan Pembahasan</h3>
 
-<div class="case"><h4>Kasus A — Navigasi kapal</h4><p>Sebuah peta digunakan untuk membantu kapal mempertahankan arah kompas yang tetap selama pelayaran.</p><div class="solution"><strong>Pembahasan:</strong><br>Tujuan peta adalah navigasi. Bearing adalah arah dalam derajat terhadap utara, sedangkan rhumb line adalah jalur dengan bearing tetap. Mercator sesuai karena bersifat conformal dan rhumb line digambar sebagai garis lurus. Keterbatasannya adalah distorsi luas yang besar pada lintang tinggi.</div></div>
+<section class="lesson-section" id="contoh">
+<h3>D.2 Contoh Kasus dengan Pembahasan</h3>
+<p>Bagian ini berisi <strong>contoh yang sudah dibahas lengkap</strong>. Tujuannya adalah menunjukkan cara menganalisis kebutuhan peta sebelum mahasiswa mengerjakan latihan dan tugas mandiri.</p>
 
-<div class="case"><h4>Kasus B — Membandingkan luas hutan dunia</h4><p>Peta global digunakan untuk membandingkan luas tutupan hutan antarnegara.</p><div class="solution"><strong>Pembahasan:</strong><br>Sifat utama yang perlu dipertahankan adalah area. Mollweide merupakan equal-area projection sehingga luas relatif dapat dibandingkan. Bentuk wilayah mengalami distorsi, tetapi dapat diterima karena tujuan utamanya adalah perbandingan luas.</div></div>
+<div class="case"><h4>D.2.1 Kasus A — Navigasi kapal</h4>
+<p><strong>Situasi:</strong> Sebuah kapal melakukan perjalanan laut dan navigator ingin mempertahankan arah kompas yang tetap selama beberapa bagian perjalanan. Peta digunakan untuk membantu membaca dan menggambar jalur tersebut, bukan untuk membandingkan luas negara.</p>
+<div class="solution"><strong>Pembahasan:</strong>
+<ul>
+<li><strong>Tujuan peta:</strong> mendukung navigasi.</li>
+<li><strong>Istilah penting:</strong> bearing adalah arah yang dinyatakan sebagai sudut terhadap utara; rhumb line adalah jalur dengan bearing tetap.</li>
+<li><strong>Sifat yang diprioritaskan:</strong> conformal dan kemudahan membaca rhumb line.</li>
+<li><strong>Pilihan:</strong> Mercator.</li>
+<li><strong>Alasan:</strong> pada Mercator, rhumb line digambar sebagai garis lurus sehingga arah kompas tetap lebih mudah digunakan.</li>
+<li><strong>Keterbatasan:</strong> luas wilayah semakin terdistorsi menuju lintang tinggi.</li>
+</ul></div></div>
 
-<div class="case"><h4>Kasus C — Peta regional lintang menengah</h4><p>Wilayah yang dipetakan memanjang timur–barat pada lintang menengah dan bentuk lokal perlu tetap baik.</p><div class="solution"><strong>Pembahasan:</strong><br>Sifat yang diprioritaskan adalah conformal. Lambert Conformal Conic sesuai karena bersifat conformal dan umum digunakan pada wilayah lintang menengah yang memanjang timur–barat.</div></div>
+<div class="case"><h4>D.2.2 Kasus B — Perbandingan luas hutan dunia</h4>
+<p><strong>Situasi:</strong> Sebuah lembaga lingkungan ingin membuat peta dunia untuk membandingkan luas tutupan hutan antarnegara. Bentuk benua boleh mengalami perubahan, tetapi perbandingan luas tidak boleh menyesatkan.</p>
+<div class="solution"><strong>Pembahasan:</strong>
+<ul><li><strong>Tujuan:</strong> membandingkan luas.</li><li><strong>Cakupan:</strong> global.</li><li><strong>Sifat yang diprioritaskan:</strong> equal-area.</li><li><strong>Pilihan:</strong> Mollweide dapat digunakan.</li><li><strong>Alasan:</strong> luas relatif dipertahankan.</li><li><strong>Keterbatasan:</strong> bentuk dan sudut dapat terdistorsi.</li></ul></div></div>
 
-<div class="case"><h4>Kasus D — Peta Kutub Utara</h4><p>Peta berpusat pada Kutub Utara dan jarak dari pusat perlu dibaca dengan baik.</p><div class="solution"><strong>Pembahasan:</strong><br>Keluarga azimuthal sesuai karena pusat peta menjadi fokus. Jika jarak dari pusat penting, Azimuthal Equidistant dapat dipilih. Jarak antarsemua pasangan titik tetap tidak otomatis benar.</div></div>
+<div class="case"><h4>D.2.3 Kasus C — Peta regional lintang menengah</h4>
+<p><strong>Situasi:</strong> Wilayah pemetaan berada pada lintang menengah dan memanjang terutama dari timur ke barat. Peta digunakan untuk perencanaan regional sehingga bentuk lokal perlu tetap baik.</p>
+<div class="solution"><strong>Pembahasan:</strong>
+<ul><li><strong>Sifat penting:</strong> conformal.</li><li><strong>Bentuk wilayah:</strong> memanjang timur–barat pada lintang menengah.</li><li><strong>Pilihan:</strong> Lambert Conformal Conic.</li><li><strong>Alasan:</strong> proyeksi ini bersifat conformal dan konfigurasi conic sesuai untuk banyak wilayah lintang menengah dengan extent timur–barat.</li></ul></div></div>
 
-<div class="case"><h4>Kasus E — GIS lokal Yogyakarta</h4><p>Peta digunakan untuk analisis lokal dan koordinat perlu dinyatakan dalam meter.</p><div class="solution"><strong>Pembahasan:</strong><br>Geographic CRS dalam derajat kurang praktis untuk pengukuran planar. Projected CRS seperti WGS 84 / UTM Zone 49S dapat digunakan. Projection yang mendasarinya adalah Transverse Mercator, sedangkan koordinat dinyatakan sebagai Easting dan Northing dalam meter.</div></div>
+<div class="case"><h4>D.2.4 Kasus D — Wilayah Kutub Utara</h4>
+<p><strong>Situasi:</strong> Peta penelitian berpusat pada Kutub Utara. Peneliti terutama perlu membandingkan jarak beberapa lokasi terhadap titik pusat peta.</p>
+<div class="solution"><strong>Pembahasan:</strong>
+<ul><li><strong>Kelompok berdasarkan permukaan:</strong> azimuthal/planar.</li><li><strong>Sifat penting:</strong> jarak dari pusat.</li><li><strong>Pilihan:</strong> Azimuthal Equidistant.</li><li><strong>Keterbatasan:</strong> istilah equidistant tidak berarti semua jarak antarsemua titik pada peta benar.</li></ul></div></div>
+
+<div class="case"><h4>D.2.5 Kasus E — GIS lokal Yogyakarta</h4>
+<p><strong>Situasi:</strong> Data jalan dan fasilitas di Yogyakarta akan digunakan untuk analisis GIS lokal. Pengguna perlu bekerja dengan koordinat dalam meter dan melakukan pengukuran planar pada wilayah yang relatif terbatas.</p>
+<div class="solution"><strong>Pembahasan:</strong>
+<ul><li><strong>Kebutuhan:</strong> sistem koordinat datar dengan unit meter.</li><li><strong>Geographic CRS saja:</strong> menggunakan derajat sehingga kurang praktis untuk kebutuhan planar tersebut.</li><li><strong>Contoh pilihan:</strong> WGS 84 / UTM Zone 49S.</li><li><strong>Proyeksi yang digunakan:</strong> Transverse Mercator.</li><li><strong>Koordinat:</strong> Easting dan Northing dalam meter.</li></ul></div></div>
 </section>
 
-<section class="lesson-section" id="latihan"><h3>D.3 Latihan</h3>
-<div class="exercise"><ol>
-<li>Apa perbedaan datum dan map projection?</li>
-<li>Apa perbedaan geographic CRS dan projected CRS?</li>
-<li>Mercator termasuk klasifikasi apa berdasarkan permukaan, sifat, dan aspect?</li>
-<li>Mengapa equal-area projection sesuai untuk membandingkan luas wilayah?</li>
-<li>Mengapa Azimuthal Equidistant tidak berarti semua jarak di seluruh peta benar?</li>
-<li>Apa perbedaan Mercator dan Transverse Mercator?</li>
-<li>Apa perbedaan WGS 84 dan WGS 84 / UTM Zone 49S?</li>
-</ol></div>
-</section>
 
-<section class="lesson-section" id="latihan-aplikasi"><h3>D.4 Latihan Aplikasi</h3>
-<p>Untuk setiap kasus, tentukan: <strong>tujuan → cakupan → sifat penting → projection/CRS → alasan → keterbatasan.</strong></p>
+<section class="lesson-section" id="latihan">
+<h3>D.3 Latihan Pemahaman</h3>
+<p><strong>Status: latihan, bukan tugas mandiri.</strong> Pertanyaan berikut digunakan untuk memastikan konsep dasar sudah dipahami sebelum masuk ke latihan aplikasi.</p>
 <ol>
-<li>Peta curah hujan global yang digunakan untuk membandingkan luas zona hujan.</li>
-<li>Peta penelitian yang berpusat di Antarktika dan membutuhkan jarak dari pusat.</li>
-<li>Peta regional wilayah yang sangat memanjang utara–selatan.</li>
-<li>Peta GIS kota yang memerlukan koordinat dalam meter.</li>
+<li>Jelaskan perbedaan fungsi <strong>ellipsoid</strong>, <strong>datum geodetik</strong>, dan <strong>proyeksi peta</strong> dalam satu rangkaian sistem referensi posisi.</li>
+<li>Sebuah koordinat ditulis sebagai latitude dan longitude dalam derajat. Termasuk jenis CRS apakah koordinat tersebut? Jelaskan alasannya.</li>
+<li>Mercator disebut cylindrical, conformal, dan normal. Jelaskan arti ketiga istilah tersebut berdasarkan dasar klasifikasinya.</li>
+<li>Mengapa equal-area projection lebih sesuai daripada Mercator jika tujuan utama peta adalah membandingkan luas wilayah?</li>
+<li>Jelaskan mengapa istilah “equidistant” tidak berarti seluruh jarak di dalam peta selalu benar.</li>
+<li>Apa perbedaan utama antara Mercator dan Transverse Mercator dari sisi orientasi proyeksi?</li>
+<li>Jelaskan perbedaan antara WGS 84 Geographic CRS dan WGS 84 / UTM Zone 49S.</li>
 </ol>
+</section>
+
+
+<section class="lesson-section" id="latihan-aplikasi">
+<h3>D.4 Latihan Aplikasi</h3>
+<p><strong>Status: latihan kelas/mandiri singkat, belum merupakan tugas yang dikumpulkan.</strong> Untuk setiap kasus, gunakan pola analisis: <strong>tujuan → cakupan → sifat penting → projection/CRS → alasan → keterbatasan</strong>.</p>
+<div class="case"><h4>Latihan 1 — Peta zona curah hujan dunia</h4><p>Sebuah peta global digunakan untuk membandingkan luas wilayah yang termasuk dalam beberapa kelas curah hujan. Bentuk benua bukan prioritas utama.</p></div>
+<div class="case"><h4>Latihan 2 — Peta penelitian Antarktika</h4><p>Peta berpusat di Antarktika dan peneliti perlu membaca jarak lokasi-lokasi penelitian terhadap pusat peta.</p></div>
+<div class="case"><h4>Latihan 3 — Wilayah regional memanjang utara–selatan</h4><p>Sebuah wilayah sempit tetapi panjang dari utara ke selatan akan dipetakan untuk pekerjaan regional. Bentuk lokal perlu tetap baik.</p></div>
+<div class="case"><h4>Latihan 4 — Peta GIS kota</h4><p>Data jalan, bangunan, dan fasilitas digunakan untuk analisis jarak lokal. Koordinat perlu dinyatakan dalam meter.</p></div>
 </section>
 
 <section class="lesson-section" id="kesalahan"><h3>D.5 Kesalahan Konsep Umum</h3>
@@ -580,10 +640,31 @@ WGS 84 / UTM Zone 49S → Projected CRS yang menggunakan Transverse Mercator dan
 </ul>
 </section>
 
-<section class="lesson-section" id="tugas"><h2 id="bagian-e">Bagian E — Tugas</h2><h3>E.1 Tugas Analisis Pemilihan Proyeksi</h3>
-<p>Gunakan pola analisis yang telah dicontohkan: <strong>tujuan → cakupan → sifat penting → projection/CRS → alasan → keterbatasan.</strong></p>
+
+<section class="lesson-section" id="tugas">
+<h2>Bagian E — Tugas Mandiri</h2>
+<h3>E.1 Analisis Pemilihan Proyeksi Peta</h3>
+<p><strong>Status: tugas mandiri yang dikumpulkan.</strong> Mahasiswa menerapkan pola analisis yang telah dicontohkan pada Bagian D, tetapi menggunakan kasus yang harus dianalisis sendiri.</p>
+<h4>Petunjuk pengerjaan</h4>
+<ul class="key">
+<li>Untuk setiap kasus, identifikasi tujuan peta dan cakupan wilayah.</li>
+<li>Tentukan sifat geometris yang paling penting dipertahankan.</li>
+<li>Pilih projection atau CRS yang sesuai.</li>
+<li>Jelaskan alasan pemilihan menggunakan konsep dari materi.</li>
+<li>Sebutkan minimal satu keterbatasan atau distorsi yang tetap ada.</li>
+<li>Jawaban tidak cukup hanya menyebutkan nama projection.</li>
+</ul>
+<h4>Kasus tugas</h4>
+<ol>
+<li><strong>Peta jalur pelayaran regional.</strong> Peta digunakan untuk membantu pembacaan arah perjalanan kapal. Jelaskan projection yang dipilih dan konsekuensi penggunaannya.</li>
+<li><strong>Peta kehilangan hutan global.</strong> Tujuan utama adalah membandingkan luas wilayah kehilangan hutan antarnegara. Tentukan sifat projection yang diperlukan dan satu contoh projection.</li>
+<li><strong>Peta regional lintang menengah.</strong> Wilayah memanjang timur–barat dan bentuk lokal perlu dijaga. Tentukan projection yang dapat digunakan dan jelaskan alasannya.</li>
+<li><strong>Peta wilayah kutub.</strong> Peta berpusat pada Kutub Utara dan jarak dari pusat menjadi informasi penting. Tentukan kelompok dan projection yang sesuai.</li>
+<li><strong>Pemetaan GIS lokal di Yogyakarta.</strong> Koordinat dibutuhkan dalam meter untuk analisis jarak. Jelaskan mengapa projected CRS diperlukan dan berikan satu contoh CRS yang sesuai.</li>
+</ol>
+<h4>Format jawaban</h4>
 <div class="table-wrap"><table><thead><tr><th>Kasus</th><th>Tujuan</th><th>Cakupan</th><th>Sifat penting</th><th>Projection/CRS</th><th>Alasan</th><th>Keterbatasan</th></tr></thead><tbody><tr><td>1</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr></tbody></table></div>
-<p>Kasus tugas dapat mencakup navigasi, perbandingan area global, pemetaan regional, pemetaan kutub, dan pekerjaan GIS lokal.</p>
+<p class="plain-note"><strong>Perbedaan dengan latihan:</strong> contoh pada D.2 sudah memiliki pembahasan, D.3–D.4 digunakan untuk latihan pemahaman, sedangkan Bagian E merupakan pekerjaan mandiri yang dikumpulkan.</p>
 </section>
 
 <section class="lesson-section" id="ringkasan"><h3>D.6 Ringkasan</h3>
