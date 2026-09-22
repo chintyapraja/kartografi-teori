@@ -56,15 +56,15 @@
 <div class="layout"><main id="materi" class="presentation-notes">
 <div class="eyebrow">Materi 5.1 · Pendalaman Pertemuan 5</div>
 <h1>Mengenal sistem dan jenis proyeksi peta</h1>
-<p class="lead">Tujuan halaman ini adalah membuat struktur proyeksi peta menjadi jelas. Kita mulai dari <strong>level klasifikasinya</strong>, lalu melihat contoh setiap keluarga, sifat yang dipertahankan, orientasi, hubungan tangent/secant, dan akhirnya memilih proyeksi sesuai kebutuhan.</p>
+<p class="lead">Materi ini membahas sistem dan jenis proyeksi peta secara terstruktur, meliputi dasar klasifikasi proyeksi, hubungan antara datum dan sistem koordinat, karakteristik setiap keluarga proyeksi, sifat geometris yang dipertahankan, aspect, hubungan tangent/secant, serta pertimbangan pemilihan proyeksi sesuai tujuan pemetaan.</p>
 
 <section class="lesson-section" id="struktur">
 <h2>1. Peta besar: proyeksi peta dibagi berdasarkan apa?</h2>
-<p>Ini bagian paling penting. <strong>Cylindrical, conformal, transverse, dan secant bukan empat jenis yang berada pada level yang sama.</strong> Mereka menjawab pertanyaan yang berbeda.</p>
+<p>Proyeksi peta dapat diklasifikasikan menurut beberapa dasar yang berbeda. Istilah <strong>cylindrical</strong>, <strong>conformal</strong>, <strong>transverse</strong>, dan <strong>secant</strong> tidak berada pada tingkat klasifikasi yang sama karena masing-masing menjelaskan aspek yang berbeda dari suatu proyeksi.</p>
 
 <div class="level-map">
 <div class="root">PROYEKSI PETA</div>
-<p class="hint">Satu proyeksi dapat memiliki satu label dari beberapa dasar klasifikasi sekaligus.</p>
+<p class="hint">Satu proyeksi dapat memiliki karakteristik yang berasal dari beberapa dasar klasifikasi secara bersamaan.</p>
 <div class="level-grid">
 <div class="level-col">
 <span class="level-label">Dasar klasifikasi 1</span>
@@ -91,7 +91,7 @@
 <ul><li>Tangent</li><li>Secant</li></ul>
 </div>
 </div>
-<div class="example-chain"><strong>Contoh membaca satu proyeksi:</strong><br>
+<div class="example-chain"><strong>Contoh klasifikasi suatu proyeksi:</strong><br>
 Mercator = <strong>cylindrical</strong> (keluarga) + <strong>conformal</strong> (sifat) + <strong>normal</strong> (aspect).<br>
 Transverse Mercator = <strong>cylindrical</strong> + <strong>conformal</strong> + <strong>transverse</strong>.<br>
 Lambert Conformal Conic = <strong>conic</strong> + <strong>conformal</strong>.<br>
@@ -103,12 +103,12 @@ Mollweide = <strong>pseudocylindrical</strong> + <strong>equal-area</strong>.</d
 <img src="https://desktop.arcgis.com/en/arcmap/latest/map/projections/GUID-622E6B6D-DAB6-4931-AA34-E8A48457B426-web.gif" alt="Ilustrasi resmi Esri tentang normal, transverse, dan oblique cylindrical aspects">
 <figcaption>Contoh resmi Esri untuk cylindrical aspects. Sumber: Esri ArcGIS Documentation, Projection types.</figcaption>
 </figure>
-<p class="plain-note"><strong>Jangan hafalkan semua nama sekaligus.</strong> Mulai dengan pertanyaan: “Ini sedang dibagi berdasarkan bentuk, sifat, aspect, atau hubungan dengan globe?”</p>
+<p class="plain-note"><strong>Prinsip pembacaan klasifikasi:</strong> tentukan terlebih dahulu dasar klasifikasi yang digunakan, yaitu keluarga geometris, sifat yang dipertahankan, aspect, atau hubungan projection surface dengan globe.</p>
 </section>
 
 <section class="lesson-section" id="sistem">
 <h2>2. Sebelum proyeksi: apa bedanya ellipsoid, datum, CRS, dan projection?</h2>
-<p>Sebelum memilih proyeksi, kita harus tahu posisi konsepnya. Proyeksi bukan datum, dan datum bukan coordinate system.</p>
+<p>Pemahaman proyeksi peta perlu didahului dengan pembedaan antara model bumi, datum, coordinate reference system, dan map projection. Keempat konsep tersebut saling berkaitan, tetapi mempunyai fungsi yang berbeda.</p>
 <div class="concept-flow">
 <div class="box">Bumi nyata</div><div class="arr">→</div>
 <div class="box">Ellipsoid</div><div class="arr">→</div>
@@ -170,7 +170,7 @@ Mollweide = <strong>pseudocylindrical</strong> + <strong>equal-area</strong>.</d
 
 <section class="lesson-section" id="distorsi">
 <h2>3. Mengapa ada banyak proyeksi?</h2>
-<p>Karena tidak ada satu proyeksi yang dapat mempertahankan semua sifat bumi sekaligus pada bidang datar. Pemilihan proyeksi selalu merupakan kompromi.</p>
+<p>Tidak ada satu proyeksi yang dapat mempertahankan seluruh sifat geometris permukaan bumi secara bersamaan pada bidang datar. Oleh karena itu, setiap proyeksi melibatkan kompromi terhadap bentuk, luas, jarak, sudut, atau arah.</p>
 <ul class="key-bullets">
 <li><strong>Area:</strong> apakah luas relatif wilayah tetap benar?</li>
 <li><strong>Shape:</strong> apakah bentuk lokal tetap menyerupai aslinya?</li>
@@ -178,12 +178,12 @@ Mollweide = <strong>pseudocylindrical</strong> + <strong>equal-area</strong>.</d
 <li><strong>Distance:</strong> apakah jarak tertentu dipertahankan?</li>
 <li><strong>Direction:</strong> apakah arah tertentu dapat dibaca dengan benar?</li>
 </ul>
-<p class="plain-note"><strong>Akibatnya:</strong> kita tidak bertanya “proyeksi mana yang paling bagus?”, tetapi “proyeksi mana yang paling sesuai untuk tujuan peta ini?”</p>
+<p class="plain-note"><strong>Implikasi:</strong> pemilihan proyeksi harus didasarkan pada tujuan peta, cakupan wilayah, lokasi, serta sifat geometris yang perlu dipertahankan.</p>
 </section>
 
 <section class="lesson-section" id="keluarga">
 <h2>4. Dasar klasifikasi 1: berdasarkan keluarga / bentuk konseptual</h2>
-<p>Pada level ini kita hanya menanyakan <strong>keluarga geometrisnya</strong>. Sifat seperti conformal atau equal-area dibahas nanti pada level yang berbeda.</p>
+<p>Pada klasifikasi ini, fokus pembahasan adalah <strong>keluarga geometris proyeksi</strong>. Sifat seperti conformal, equal-area, atau equidistant merupakan dasar klasifikasi yang berbeda dan dibahas pada bagian tersendiri.</p>
 
 <h3>4.1 Cylindrical</h3>
 <ul class="key-bullets">
@@ -260,7 +260,7 @@ Mollweide = <strong>pseudocylindrical</strong> + <strong>equal-area</strong>.</d
 <div class="r"><strong>Kegunaan</strong><span>Secara historis penting untuk navigasi laut karena rhumb line, yaitu jalur dengan bearing kompas tetap, digambar sebagai garis lurus.</span></div>
 <div class="r"><strong>Implikasi</strong><span>Scale dan area membesar semakin mendekati kutub; karena itu luas antarwilayah tidak boleh dibandingkan dari tampilan Mercator.</span></div>
 </div>
-<h3>Bagaimana membacanya?</h3>
+<h3>Karakteristik dan implikasi</h3>
 <ul class="key-bullets">
 <li>Mercator <strong>bukan dipilih karena “bentuk dunia terlihat bagus”</strong>.</li>
 <li>Mercator dipilih ketika sifat conformal dan kebutuhan navigasi tertentu lebih penting daripada perbandingan luas.</li>
@@ -296,7 +296,7 @@ Mollweide = <strong>pseudocylindrical</strong> + <strong>equal-area</strong>.</d
 <div class="r"><strong>Kegunaan</strong><span>Pemetaan regional dan berbagai aeronautical charts.</span></div>
 <div class="r"><strong>Implikasi</strong><span>Luas bukan sifat utama yang dipertahankan; distorsi bergantung pada posisi terhadap standard parallels.</span></div>
 </div>
-<h3>Kenapa namanya panjang?</h3>
+<h3>Makna unsur nama proyeksi</h3>
 <ul class="key-bullets">
 <li><strong>Lambert</strong> = nama proyeksi.</li>
 <li><strong>Conformal</strong> = sifat yang dipertahankan.</li>
@@ -332,7 +332,7 @@ Mollweide = <strong>pseudocylindrical</strong> + <strong>equal-area</strong>.</d
 <div class="r"><strong>Kegunaan</strong><span>Hemisphere maps, wilayah polar, atau peta ketika hubungan terhadap satu pusat penting.</span></div>
 <div class="r"><strong>Implikasi</strong><span>Tidak berarti semua jarak antara semua pasangan titik pada peta benar.</span></div>
 </div>
-<h3>Kesalahan yang sering terjadi</h3>
+<h3>Catatan interpretasi</h3>
 <ul class="key-bullets">
 <li>“Equidistant” <strong>bukan berarti semua jarak di seluruh peta benar</strong>.</li>
 <li>Selalu tanyakan: jarak benar <strong>dari mana ke mana?</strong></li>
@@ -369,7 +369,7 @@ Mollweide = <strong>pseudocylindrical</strong> + <strong>equal-area</strong>.</d
 
 <section class="lesson-section" id="properties">
 <h2>9. Dasar klasifikasi 2: berdasarkan sifat yang dipertahankan</h2>
-<p>Sekarang kita pindah level. Pada bagian ini kita <strong>tidak lagi bertanya bentuknya apa</strong>, tetapi bertanya <strong>sifat geometris apa yang ingin dipertahankan</strong>.</p>
+<p>Pada dasar klasifikasi ini, perhatian tidak lagi diberikan pada bentuk geometris projection surface, tetapi pada <strong>sifat geometris yang dipertahankan</strong> setelah permukaan bumi ditransformasikan ke bidang datar.</p>
 <div class="table-wrap"><table><thead><tr><th>Sifat</th><th>Apa artinya?</th><th>Contoh</th><th>Konsekuensi</th></tr></thead><tbody>
 <tr><td>Conformal</td><td>Sudut dan bentuk lokal dipertahankan.</td><td>Mercator, Lambert Conformal Conic</td><td>Luas tidak dipertahankan.</td></tr>
 <tr><td>Equal-area</td><td>Luas relatif dipertahankan.</td><td>Mollweide, Albers Equal Area</td><td>Bentuk/sudut dapat berubah.</td></tr>
@@ -412,7 +412,7 @@ Mollweide = <strong>pseudocylindrical</strong> + <strong>equal-area</strong>.</d
 
 <section class="lesson-section" id="utm">
 <h2>12. Dari Transverse Mercator ke UTM</h2>
-<p>UTM menjadi lebih mudah dipahami setelah kita memisahkan level-level di atas.</p>
+<p>UTM dapat dipahami sebagai penerapan Transverse Mercator dalam sistem zona untuk membatasi distorsi pada wilayah yang relatif sempit.</p>
 <ul class="key-bullets">
 <li><strong>Transverse Mercator</strong> adalah map projection.</li>
 <li>Keluarganya cylindrical.</li>
@@ -435,7 +435,7 @@ Mollweide = <strong>pseudocylindrical</strong> + <strong>equal-area</strong>.</d
 
 <section class="lesson-section" id="choose">
 <h2>13. Bagaimana memilih proyeksi?</h2>
-<p>Pemilihan proyeksi bukan menghafal “negara A pakai X”. Mulai dari kebutuhan pemetaan.</p>
+<p>Pemilihan proyeksi dilakukan berdasarkan kebutuhan pemetaan, bukan berdasarkan hafalan penggunaan suatu proyeksi pada wilayah tertentu.</p>
 <ol class="component-list">
 <li><strong>Tujuan peta</strong><span>Apa yang akan dibaca, dibandingkan, atau diukur?</span></li>
 <li><strong>Sifat yang harus dipertahankan</strong><span>Area, sudut/bentuk lokal, jarak tertentu, atau arah?</span></li>
@@ -448,7 +448,7 @@ Mollweide = <strong>pseudocylindrical</strong> + <strong>equal-area</strong>.</d
 
 <section class="lesson-section" id="contoh-jawab">
 <h2>14. Contoh cara menjawab analisis proyeksi</h2>
-<p>Mahasiswa tidak cukup menulis “Saya memilih Mercator”. Jawaban harus menunjukkan alur berpikir.</p>
+<p>Jawaban analisis harus menunjukkan dasar pemilihan proyeksi secara sistematis, bukan hanya menyebutkan nama proyeksi.</p>
 <div class="answer-example">
 <h3>Contoh latihan: peta tematik luas zona iklim dunia</h3>
 <p><strong>Situasi:</strong> Seorang peneliti ingin membuat peta dunia untuk membandingkan luas zona iklim antarwilayah. Bentuk benua boleh sedikit berubah, tetapi perbandingan luas harus tetap dapat dipercaya.</p>
@@ -467,7 +467,7 @@ Mollweide = <strong>pseudocylindrical</strong> + <strong>equal-area</strong>.</d
 
 <section class="lesson-section" id="tugas">
 <h2>15. Tugas: Analisis pemilihan proyeksi peta</h2>
-<p class="section-intro">Tugas ini menguji apakah kalian memahami struktur dan konsekuensi pemilihan proyeksi. Jangan hanya menuliskan nama proyeksi.</p>
+<p class="section-intro">Tugas ini menguji apakah mahasiswa memahami struktur dan konsekuensi pemilihan proyeksi. Jangan hanya menuliskan nama proyeksi.</p>
 <h3>Bagian A — Klasifikasi istilah</h3>
 <p>Klasifikasikan: <strong>WGS 84, Mercator, Transverse Mercator, WGS 84 / UTM Zone 49S, Mollweide, dan Azimuthal Equidistant.</strong> Untuk setiap istilah, tuliskan kategori dan alasan singkat.</p>
 
