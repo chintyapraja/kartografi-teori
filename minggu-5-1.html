@@ -23,7 +23,33 @@
 .case{max-width:920px;border-top:1px solid var(--line);padding:20px 0}.case h3{margin:0 0 8px}.case .solution{margin-top:12px;padding:15px 17px;background:#f6f8fa;border-left:4px solid #075175}
 .decision-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.decision-card{background:#fff;border-top:4px solid #075175;padding:15px}.decision-card h3{margin:0 0 8px;font-size:18px}
 .exercise{max-width:920px;background:#f6f8fa;border-left:4px solid #075175;padding:17px;margin:18px 0 30px}
-@media(max-width:900px){.class-grid,.term-grid,.decision-grid{grid-template-columns:1fr}.flow-row{display:grid}.arrow{transform:rotate(90deg)}.profile .r{grid-template-columns:1fr}}
+.story-flow{max-width:900px;margin:22px 0 34px}
+.story-step{display:grid;grid-template-columns:42px 1fr;gap:12px;align-items:start;margin:0}
+.story-marker{width:34px;height:34px;border-radius:50%;background:#075175;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;position:relative}
+.story-step:not(:last-child) .story-marker::after{content:"";position:absolute;top:34px;left:16px;width:2px;height:46px;background:#b9c8d0}
+.story-body{padding:4px 0 24px}
+.story-body strong{color:#26323e}
+.classification-interactive{max-width:940px;margin:24px 0 38px}
+.class-root{max-width:360px;margin:0 auto;padding:15px 18px;background:#075175;color:#fff;text-align:center;font-weight:800;border-radius:8px}
+.class-connector{height:58px;position:relative;margin:0 70px}
+.class-connector::before{content:"";position:absolute;top:0;left:50%;height:30px;border-left:3px solid #8ca0ac}
+.class-connector::after{content:"";position:absolute;top:30px;left:6%;right:6%;border-top:3px solid #8ca0ac}
+.class-details-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.class-details{position:relative;background:#fff;border:1px solid var(--line);border-top:4px solid #075175;border-radius:6px;overflow:hidden}
+.class-details::before{content:"";position:absolute;top:-31px;left:50%;height:31px;border-left:3px solid #8ca0ac}
+.class-details summary{cursor:pointer;list-style:none;padding:16px 16px 14px;font-weight:800;color:#075175;min-height:76px}
+.class-details summary::-webkit-details-marker{display:none}
+.class-details summary::after{content:"+";float:right;font-size:24px;line-height:18px;color:#075175}
+.class-details[open] summary::after{content:"−"}
+.class-details .detail-content{padding:0 16px 16px;border-top:1px solid var(--line)}
+.class-details .detail-content p{font-size:14px;color:#5e6e79}
+.class-details .detail-content ul{padding-left:19px;margin-bottom:12px}
+.class-details .detail-content li{margin:6px 0}
+.class-example{padding:10px 12px;background:#f6f8fa;border-left:3px solid #075175;font-size:14px;margin-top:10px}
+.class-controls{display:flex;gap:10px;justify-content:flex-end;margin:10px 0 14px}
+.class-controls button{border:1px solid #9fb1bc;background:#fff;color:#075175;padding:8px 12px;border-radius:5px;font:inherit;cursor:pointer}
+.class-controls button:hover{background:#eef5f8}
+@media(max-width:900px){.class-grid,.term-grid,.decision-grid,.class-details-grid{grid-template-columns:1fr}.flow-row{display:grid}.arrow{transform:rotate(90deg)}.profile .r{grid-template-columns:1fr}.class-connector{display:none}.class-details::before{display:none}.story-step:not(:last-child) .story-marker::after{height:62px}}
 </style>
 </head>
 <body>
@@ -64,79 +90,28 @@
 </section>
 
 
+
 <section class="lesson-section" id="hubungan">
-<h2>3. Peta hubungan: sistem referensi posisi</h2>
-<p>Istilah <strong>ellipsoid</strong>, <strong>datum</strong>, <strong>CRS</strong>, <strong>Geographic CRS</strong>, <strong>map projection</strong>, dan <strong>Projected CRS</strong> bukan bagian dari klasifikasi proyeksi. Istilah-istilah tersebut menjelaskan <strong>rantai sistem referensi posisi</strong> yang digunakan sebelum dan sesudah proses proyeksi.</p>
+<h2>3. Hubungan konsep: sistem referensi posisi</h2>
+<p>Ellipsoid, datum, CRS, Geographic CRS, map projection, dan Projected CRS bukan klasifikasi proyeksi. Istilah-istilah tersebut membentuk <strong>rangkaian konsep untuk menyatakan posisi di bumi dan kemudian menampilkannya pada peta datar</strong>.</p>
 
-<div class="visual-box">
-<svg viewBox="0 0 1180 820" role="img" aria-label="Diagram hubungan bumi, ellipsoid, datum, CRS, geographic CRS, map projection, dan projected CRS">
-  <rect width="1180" height="820" fill="#ffffff"/>
-
-  <!-- title -->
-  <rect x="390" y="25" width="400" height="70" rx="8" fill="#075175"/>
-  <text x="590" y="68" text-anchor="middle" font-size="28" font-weight="700" fill="#ffffff">SISTEM REFERENSI POSISI</text>
-
-  <!-- trunk -->
-  <line x1="590" y1="95" x2="590" y2="145" stroke="#6d7f8a" stroke-width="4"/>
-
-  <!-- earth -->
-  <rect x="430" y="145" width="320" height="70" rx="8" fill="#eef5f8" stroke="#075175" stroke-width="3"/>
-  <text x="590" y="177" text-anchor="middle" font-size="22" font-weight="700" fill="#075175">BUMI NYATA</text>
-  <text x="590" y="201" text-anchor="middle" font-size="14" fill="#5e6e79">permukaan fisik bumi</text>
-
-  <line x1="590" y1="215" x2="590" y2="255" stroke="#6d7f8a" stroke-width="4"/>
-
-  <!-- ellipsoid -->
-  <rect x="430" y="255" width="320" height="80" rx="8" fill="#f8fafb" stroke="#8ca3b0" stroke-width="2"/>
-  <text x="590" y="287" text-anchor="middle" font-size="22" font-weight="700" fill="#26323e">ELLIPSOID</text>
-  <text x="590" y="313" text-anchor="middle" font-size="14" fill="#5e6e79">model matematis bentuk bumi</text>
-
-  <line x1="590" y1="335" x2="590" y2="375" stroke="#6d7f8a" stroke-width="4"/>
-
-  <!-- datum -->
-  <rect x="430" y="375" width="320" height="80" rx="8" fill="#f8fafb" stroke="#8ca3b0" stroke-width="2"/>
-  <text x="590" y="407" text-anchor="middle" font-size="22" font-weight="700" fill="#26323e">DATUM</text>
-  <text x="590" y="433" text-anchor="middle" font-size="14" fill="#5e6e79">kerangka acuan geodetik</text>
-
-  <line x1="590" y1="455" x2="590" y2="495" stroke="#6d7f8a" stroke-width="4"/>
-
-  <!-- CRS -->
-  <rect x="430" y="495" width="320" height="80" rx="8" fill="#eef5f8" stroke="#075175" stroke-width="3"/>
-  <text x="590" y="527" text-anchor="middle" font-size="22" font-weight="700" fill="#075175">COORDINATE REFERENCE SYSTEM (CRS)</text>
-  <text x="590" y="553" text-anchor="middle" font-size="14" fill="#5e6e79">sistem yang memberi arti pada angka koordinat</text>
-
-  <!-- CRS branches -->
-  <line x1="590" y1="575" x2="590" y2="610" stroke="#6d7f8a" stroke-width="4"/>
-  <line x1="285" y1="610" x2="895" y2="610" stroke="#6d7f8a" stroke-width="4"/>
-  <line x1="285" y1="610" x2="285" y2="645" stroke="#6d7f8a" stroke-width="4"/>
-  <line x1="895" y1="610" x2="895" y2="645" stroke="#6d7f8a" stroke-width="4"/>
-
-  <!-- GCRS -->
-  <rect x="120" y="645" width="330" height="105" rx="8" fill="#f8fafb" stroke="#8ca3b0" stroke-width="2"/>
-  <text x="285" y="678" text-anchor="middle" font-size="21" font-weight="700" fill="#26323e">GEOGRAPHIC CRS</text>
-  <text x="285" y="705" text-anchor="middle" font-size="15" fill="#5e6e79">latitude + longitude</text>
-  <text x="285" y="730" text-anchor="middle" font-size="14" fill="#5e6e79">unit umumnya derajat</text>
-
-  <!-- PCRS -->
-  <rect x="730" y="645" width="330" height="105" rx="8" fill="#f8fafb" stroke="#8ca3b0" stroke-width="2"/>
-  <text x="895" y="678" text-anchor="middle" font-size="21" font-weight="700" fill="#26323e">PROJECTED CRS</text>
-  <text x="895" y="705" text-anchor="middle" font-size="15" fill="#5e6e79">Easting + Northing / X + Y</text>
-  <text x="895" y="730" text-anchor="middle" font-size="14" fill="#5e6e79">unit linear, misalnya meter</text>
-
-  <!-- projection bridge -->
-  <line x1="450" y1="697" x2="730" y2="697" stroke="#b06b36" stroke-width="5"/>
-  <polygon points="730,697 710,686 710,708" fill="#b06b36"/>
-  <rect x="495" y="655" width="190" height="70" rx="8" fill="#fff7ef" stroke="#b06b36" stroke-width="2"/>
-  <text x="590" y="684" text-anchor="middle" font-size="20" font-weight="700" fill="#9a5b2e">MAP PROJECTION</text>
-  <text x="590" y="708" text-anchor="middle" font-size="13" fill="#6d6259">transformasi ke bidang datar</text>
-
-  <!-- footer -->
-  <text x="590" y="792" text-anchor="middle" font-size="15" fill="#667681">Map projection menghubungkan Geographic CRS dengan Projected CRS secara konseptual.</text>
-</svg>
-<p class="caption"><strong>Diagram hubungan konsep.</strong> Ellipsoid, datum, dan CRS membentuk sistem referensi posisi. Map projection bukan subkategori datum atau CRS, tetapi proses transformasi yang menghubungkan Geographic CRS dengan Projected CRS.</p>
+<div class="story-flow">
+  <div class="story-step"><div class="story-marker">1</div><div class="story-body"><strong>Bumi nyata</strong><br>Permukaan fisik bumi tidak beraturan sehingga terlalu kompleks untuk langsung digunakan sebagai model koordinat matematis.</div></div>
+  <div class="story-step"><div class="story-marker">2</div><div class="story-body"><strong>Ellipsoid</strong><br>Bentuk bumi disederhanakan menjadi model matematis yang teratur. Ellipsoid menjadi permukaan acuan untuk mendefinisikan posisi.</div></div>
+  <div class="story-step"><div class="story-marker">3</div><div class="story-body"><strong>Datum geodetik</strong><br>Datum memberikan kerangka acuan agar posisi pada ellipsoid dapat dikaitkan secara konsisten dengan bumi nyata.</div></div>
+  <div class="story-step"><div class="story-marker">4</div><div class="story-body"><strong>Coordinate Reference System (CRS)</strong><br>CRS menentukan bagaimana posisi ditulis sebagai koordinat, termasuk acuan, sumbu, arah sumbu, dan unit.</div></div>
+  <div class="story-step"><div class="story-marker">5</div><div class="story-body"><strong>Geographic CRS</strong><br>Pada tahap ini posisi dinyatakan menggunakan latitude dan longitude, biasanya dalam derajat.</div></div>
+  <div class="story-step"><div class="story-marker">6</div><div class="story-body"><strong>Map projection</strong><br>Koordinat pada permukaan melengkung ditransformasikan secara matematis ke bidang datar. Pada proses inilah distorsi muncul.</div></div>
+  <div class="story-step"><div class="story-marker">7</div><div class="story-body"><strong>Projected CRS</strong><br>Hasil akhirnya adalah sistem koordinat pada bidang datar, misalnya Easting dan Northing dalam meter.</div></div>
 </div>
 
-<div class="note-box"><strong>Inti hubungan:</strong> ellipsoid memodelkan bentuk bumi; datum menyediakan acuan geodetik; CRS memberi aturan koordinat; Geographic CRS menggunakan latitude/longitude; map projection mentransformasikan posisi ke bidang datar; Projected CRS menggunakan koordinat planar seperti Easting dan Northing.</div>
+<ul class="key">
+<li><strong>Ellipsoid</strong> menjawab: model bentuk bumi yang digunakan seperti apa?</li>
+<li><strong>Datum</strong> menjawab: model tersebut direferensikan terhadap bumi dengan kerangka acuan apa?</li>
+<li><strong>CRS</strong> menjawab: bagaimana posisi dinyatakan sebagai koordinat?</li>
+<li><strong>Map projection</strong> menjawab: bagaimana posisi pada permukaan melengkung diubah ke bidang datar?</li>
+<li><strong>Projected CRS</strong> menjawab: bagaimana posisi akhirnya dinyatakan pada bidang datar?</li>
+</ul>
 </section>
 
 
@@ -290,140 +265,93 @@ WGS 84 / UTM Zone 49S → Projected CRS yang menggunakan Transverse Mercator dan
 </section>
 
 
+
 <section class="lesson-section" id="klasifikasi">
 <h2>7. Peta besar klasifikasi proyeksi peta</h2>
-<p>Proyeksi peta dapat diklasifikasikan berdasarkan beberapa aspek yang berbeda. Diagram berikut menunjukkan struktur klasifikasi secara keseluruhan agar setiap istilah dapat ditempatkan pada kategori yang tepat.</p>
+<p>Setelah hubungan datum, CRS, dan projection dipahami, barulah proyeksi peta diklasifikasikan. Klasifikasi berikut menunjukkan bahwa satu projection dapat dijelaskan dari beberapa sudut yang berbeda.</p>
 
-<div class="visual-box">
-<svg viewBox="0 0 1200 760" role="img" aria-label="Diagram klasifikasi proyeksi peta">
-  <rect width="1200" height="760" fill="#ffffff"/>
+<div class="classification-interactive">
+  <div class="class-root">KLASIFIKASI PROYEKSI PETA</div>
+  <div class="class-connector" aria-hidden="true"></div>
 
-  <!-- Root -->
-  <rect x="430" y="30" width="340" height="70" rx="8" fill="#075175"/>
-  <text x="600" y="72" text-anchor="middle" font-size="28" font-weight="700" fill="#ffffff">KLASIFIKASI PROYEKSI PETA</text>
+  <div class="class-controls">
+    <button type="button" onclick="document.querySelectorAll('#klasifikasi details').forEach(d=>d.open=true)">Buka semua</button>
+    <button type="button" onclick="document.querySelectorAll('#klasifikasi details').forEach(d=>d.open=false)">Tutup semua</button>
+  </div>
 
-  <!-- Main connector -->
-  <line x1="600" y1="100" x2="600" y2="145" stroke="#6d7f8a" stroke-width="4"/>
-  <line x1="150" y1="145" x2="1050" y2="145" stroke="#6d7f8a" stroke-width="4"/>
+  <div class="class-details-grid">
+    <details class="class-details">
+      <summary>A. Berdasarkan permukaan proyeksi</summary>
+      <div class="detail-content">
+        <p>Menjelaskan <strong>bentuk konseptual projection surface</strong> yang digunakan untuk memahami cara permukaan bumi dipindahkan ke peta.</p>
+        <ul>
+          <li><strong>Cylindrical</strong> — konsep silinder; contoh: Mercator.</li>
+          <li><strong>Conic</strong> — konsep kerucut; contoh: Lambert Conformal Conic.</li>
+          <li><strong>Azimuthal / Planar</strong> — konsep bidang datar; contoh: Azimuthal Equidistant.</li>
+          <li><strong>Pseudocylindrical</strong> — tampilan menyerupai cylindrical tetapi konstruksinya berbeda; contoh: Mollweide.</li>
+        </ul>
+        <div class="class-example"><strong>Contoh:</strong> Mercator termasuk cylindrical berdasarkan permukaan proyeksinya.</div>
+      </div>
+    </details>
 
-  <!-- Branch 1 -->
-  <line x1="150" y1="145" x2="150" y2="185" stroke="#6d7f8a" stroke-width="4"/>
-  <rect x="35" y="185" width="230" height="90" rx="8" fill="#eef5f8" stroke="#075175" stroke-width="3"/>
-  <text x="150" y="215" text-anchor="middle" font-size="19" font-weight="700" fill="#075175">A. Berdasarkan</text>
-  <text x="150" y="242" text-anchor="middle" font-size="19" font-weight="700" fill="#075175">permukaan proyeksi</text>
-  <text x="150" y="264" text-anchor="middle" font-size="13" fill="#5e6e79">bentuk konseptual projection surface</text>
+    <details class="class-details">
+      <summary>B. Berdasarkan sifat yang dipertahankan</summary>
+      <div class="detail-content">
+        <p>Menjelaskan <strong>sifat geometris yang diprioritaskan</strong> setelah permukaan bumi diproyeksikan.</p>
+        <ul>
+          <li><strong>Conformal</strong> — mempertahankan sudut lokal; contoh: Mercator.</li>
+          <li><strong>Equal-area</strong> — mempertahankan luas relatif; contoh: Mollweide.</li>
+          <li><strong>Equidistant</strong> — mempertahankan jarak tertentu; contoh: Azimuthal Equidistant.</li>
+          <li><strong>Direction-related</strong> — mempertahankan arah tertentu sesuai desain projection.</li>
+        </ul>
+        <div class="class-example"><strong>Contoh:</strong> Mercator termasuk conformal berdasarkan sifat yang dipertahankan.</div>
+      </div>
+    </details>
 
-  <line x1="150" y1="275" x2="150" y2="320" stroke="#8da0ac" stroke-width="3"/>
-  <line x1="65" y1="320" x2="235" y2="320" stroke="#8da0ac" stroke-width="3"/>
+    <details class="class-details">
+      <summary>C. Berdasarkan orientasi (aspect)</summary>
+      <div class="detail-content">
+        <p>Menjelaskan <strong>orientasi projection surface terhadap bumi</strong>.</p>
+        <ul>
+          <li><strong>Normal</strong> — orientasi standar.</li>
+          <li><strong>Transverse</strong> — surface diputar sekitar 90° dari orientasi normal.</li>
+          <li><strong>Oblique</strong> — surface diorientasikan miring.</li>
+        </ul>
+        <div class="class-example"><strong>Contoh:</strong> Mercator standar menggunakan normal aspect, sedangkan Transverse Mercator menggunakan transverse aspect.</div>
+      </div>
+    </details>
 
-  <g font-size="17" fill="#26323e">
-    <rect x="15" y="335" width="105" height="48" rx="6" fill="#f8fafb" stroke="#b7c5cd"/>
-    <text x="67" y="365" text-anchor="middle">Cylindrical</text>
-
-    <rect x="130" y="335" width="90" height="48" rx="6" fill="#f8fafb" stroke="#b7c5cd"/>
-    <text x="175" y="365" text-anchor="middle">Conic</text>
-
-    <rect x="15" y="395" width="105" height="48" rx="6" fill="#f8fafb" stroke="#b7c5cd"/>
-    <text x="67" y="425" text-anchor="middle">Azimuthal</text>
-
-    <rect x="130" y="395" width="120" height="48" rx="6" fill="#f8fafb" stroke="#b7c5cd"/>
-    <text x="190" y="425" text-anchor="middle">Pseudocyl.</text>
-  </g>
-
-  <!-- Branch 2 -->
-  <line x1="450" y1="145" x2="450" y2="185" stroke="#6d7f8a" stroke-width="4"/>
-  <rect x="325" y="185" width="250" height="90" rx="8" fill="#eef5f8" stroke="#075175" stroke-width="3"/>
-  <text x="450" y="215" text-anchor="middle" font-size="19" font-weight="700" fill="#075175">B. Berdasarkan sifat</text>
-  <text x="450" y="242" text-anchor="middle" font-size="19" font-weight="700" fill="#075175">yang dipertahankan</text>
-  <text x="450" y="264" text-anchor="middle" font-size="13" fill="#5e6e79">sifat geometris yang diprioritaskan</text>
-
-  <line x1="450" y1="275" x2="450" y2="320" stroke="#8da0ac" stroke-width="3"/>
-  <line x1="350" y1="320" x2="550" y2="320" stroke="#8da0ac" stroke-width="3"/>
-
-  <g font-size="17" fill="#26323e">
-    <rect x="305" y="335" width="120" height="48" rx="6" fill="#f8fafb" stroke="#b7c5cd"/>
-    <text x="365" y="365" text-anchor="middle">Conformal</text>
-
-    <rect x="440" y="335" width="120" height="48" rx="6" fill="#f8fafb" stroke="#b7c5cd"/>
-    <text x="500" y="365" text-anchor="middle">Equal-area</text>
-
-    <rect x="305" y="395" width="120" height="48" rx="6" fill="#f8fafb" stroke="#b7c5cd"/>
-    <text x="365" y="425" text-anchor="middle">Equidistant</text>
-
-    <rect x="440" y="395" width="135" height="48" rx="6" fill="#f8fafb" stroke="#b7c5cd"/>
-    <text x="507" y="417" text-anchor="middle" font-size="15">Direction-</text>
-    <text x="507" y="435" text-anchor="middle" font-size="15">related</text>
-  </g>
-
-  <!-- Branch 3 -->
-  <line x1="750" y1="145" x2="750" y2="185" stroke="#6d7f8a" stroke-width="4"/>
-  <rect x="640" y="185" width="220" height="90" rx="8" fill="#eef5f8" stroke="#075175" stroke-width="3"/>
-  <text x="750" y="215" text-anchor="middle" font-size="19" font-weight="700" fill="#075175">C. Berdasarkan</text>
-  <text x="750" y="242" text-anchor="middle" font-size="19" font-weight="700" fill="#075175">orientasi (aspect)</text>
-  <text x="750" y="264" text-anchor="middle" font-size="13" fill="#5e6e79">arah projection surface terhadap bumi</text>
-
-  <line x1="750" y1="275" x2="750" y2="320" stroke="#8da0ac" stroke-width="3"/>
-  <line x1="680" y1="320" x2="820" y2="320" stroke="#8da0ac" stroke-width="3"/>
-
-  <g font-size="17" fill="#26323e">
-    <rect x="625" y="335" width="100" height="48" rx="6" fill="#f8fafb" stroke="#b7c5cd"/>
-    <text x="675" y="365" text-anchor="middle">Normal</text>
-
-    <rect x="735" y="335" width="115" height="48" rx="6" fill="#f8fafb" stroke="#b7c5cd"/>
-    <text x="792" y="365" text-anchor="middle">Transverse</text>
-
-    <rect x="680" y="395" width="115" height="48" rx="6" fill="#f8fafb" stroke="#b7c5cd"/>
-    <text x="737" y="425" text-anchor="middle">Oblique</text>
-  </g>
-
-  <!-- Branch 4 -->
-  <line x1="1050" y1="145" x2="1050" y2="185" stroke="#6d7f8a" stroke-width="4"/>
-  <rect x="920" y="185" width="260" height="90" rx="8" fill="#eef5f8" stroke="#075175" stroke-width="3"/>
-  <text x="1050" y="215" text-anchor="middle" font-size="19" font-weight="700" fill="#075175">D. Berdasarkan hubungan</text>
-  <text x="1050" y="242" text-anchor="middle" font-size="19" font-weight="700" fill="#075175">surface dengan bumi</text>
-  <text x="1050" y="264" text-anchor="middle" font-size="13" fill="#5e6e79">cara surface menyentuh/memotong globe</text>
-
-  <line x1="1050" y1="275" x2="1050" y2="320" stroke="#8da0ac" stroke-width="3"/>
-  <line x1="985" y1="320" x2="1115" y2="320" stroke="#8da0ac" stroke-width="3"/>
-
-  <g font-size="17" fill="#26323e">
-    <rect x="940" y="335" width="105" height="48" rx="6" fill="#f8fafb" stroke="#b7c5cd"/>
-    <text x="992" y="365" text-anchor="middle">Tangent</text>
-
-    <rect x="1060" y="335" width="105" height="48" rx="6" fill="#f8fafb" stroke="#b7c5cd"/>
-    <text x="1112" y="365" text-anchor="middle">Secant</text>
-  </g>
-
-  <!-- Examples row -->
-  <rect x="70" y="500" width="1060" height="195" rx="10" fill="#fbfcfd" stroke="#c6d2d9" stroke-width="2"/>
-  <text x="600" y="535" text-anchor="middle" font-size="22" font-weight="700" fill="#26323e">Contoh satu projection dapat memiliki beberapa klasifikasi sekaligus</text>
-
-  <g font-size="16" fill="#26323e">
-    <text x="115" y="575" font-weight="700">Mercator</text>
-    <text x="115" y="600">Cylindrical + Conformal + Normal</text>
-
-    <text x="115" y="635" font-weight="700">Transverse Mercator</text>
-    <text x="115" y="660">Cylindrical + Conformal + Transverse</text>
-
-    <text x="585" y="575" font-weight="700">Lambert Conformal Conic</text>
-    <text x="585" y="600">Conic + Conformal</text>
-
-    <text x="585" y="635" font-weight="700">Azimuthal Equidistant</text>
-    <text x="585" y="660">Azimuthal + Equidistant</text>
-
-    <text x="930" y="575" font-weight="700">Mollweide</text>
-    <text x="930" y="600">Pseudocylindrical + Equal-area</text>
-  </g>
-</svg>
-<p class="caption"><strong>Gambar klasifikasi utama.</strong> Empat cabang menunjukkan empat dasar klasifikasi yang berbeda. Contoh di bagian bawah menunjukkan bahwa satu proyeksi dapat memiliki beberapa label sekaligus.</p>
+    <details class="class-details">
+      <summary>D. Berdasarkan hubungan surface dengan bumi</summary>
+      <div class="detail-content">
+        <p>Menjelaskan <strong>bagaimana projection surface menyentuh atau memotong model bumi</strong>.</p>
+        <ul>
+          <li><strong>Tangent</strong> — surface menyentuh globe.</li>
+          <li><strong>Secant</strong> — surface memotong globe.</li>
+        </ul>
+        <div class="class-example"><strong>Contoh:</strong> conic projection dapat dirancang tangent atau secant; pada secant conic dapat terdapat dua standard parallels.</div>
+      </div>
+    </details>
+  </div>
 </div>
 
-<div class="note-box"><strong>Fungsi klasifikasi:</strong> klasifikasi membantu membedakan apakah suatu istilah menjelaskan bentuk konseptual projection, sifat geometris yang dipertahankan, orientasi, atau hubungan projection surface dengan bumi.</div>
-<figure class="reference-figure">
-<img src="https://desktop.arcgis.com/en/arcmap/latest/map/projections/GUID-622E6B6D-DAB6-4931-AA34-E8A48457B426-web.gif" alt="Ilustrasi cylindrical aspects dari dokumentasi Esri" loading="lazy">
-<figcaption><strong>Contoh dari dokumentasi resmi Esri.</strong> Silinder yang sama dapat mempunyai normal, transverse, atau oblique aspect. Gambar ini membantu membedakan <em>jenis permukaan</em> dari <em>aspect/orientasi</em>.</figcaption>
-<p class="source-link"><a href="https://desktop.arcgis.com/en/arcmap/latest/map/projections/projection-types.htm" target="_blank" rel="noopener">Sumber: Esri ArcGIS Desktop — Projection types →</a></p>
-</figure>
+<h3>Contoh membaca satu projection dari beberapa klasifikasi</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>Projection</th><th>Permukaan</th><th>Sifat</th><th>Aspect</th></tr></thead>
+<tbody>
+<tr><td>Mercator</td><td>Cylindrical</td><td>Conformal</td><td>Normal</td></tr>
+<tr><td>Transverse Mercator</td><td>Cylindrical</td><td>Conformal</td><td>Transverse</td></tr>
+<tr><td>Lambert Conformal Conic</td><td>Conic</td><td>Conformal</td><td>bergantung konfigurasi</td></tr>
+<tr><td>Azimuthal Equidistant</td><td>Azimuthal</td><td>Equidistant</td><td>bergantung pusat/orientasi</td></tr>
+<tr><td>Mollweide</td><td>Pseudocylindrical</td><td>Equal-area</td><td>umumnya normal</td></tr>
+</tbody>
+</table></div>
+
+<ul class="key">
+<li>Klasifikasi <strong>bukan daftar projection yang saling terpisah</strong>.</li>
+<li>Satu projection dapat memiliki satu label dari beberapa dasar klasifikasi sekaligus.</li>
+<li>Tujuan klasifikasi adalah membantu memahami <strong>bagaimana projection bekerja, sifat apa yang dipertahankan, dan untuk kebutuhan apa projection tersebut sesuai</strong>.</li>
+</ul>
 </section>
 
 <section class="lesson-section" id="permukaan"><h2>8. Klasifikasi berdasarkan permukaan proyeksi</h2>
