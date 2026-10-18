@@ -12,3 +12,21 @@
 .sidebar .week-nav a[aria-current="page"] .week-number{color:inherit}
 @media(max-width:760px){.sidebar .week-nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;max-height:320px;overflow-y:auto}.sidebar .week-nav a{font-size:13.5px;padding:7px}}
 @media(max-width:480px){.sidebar .week-nav{grid-template-columns:1fr}}
+
+
+/* Menu pertemuan bergaya ringkas. */
+.sidebar{width:300px;padding:34px 28px;background:#f4f7f9}
+.brand{font-size:29px;line-height:1.22;letter-spacing:-.02em;margin-bottom:10px}
+.course-kind{font-size:15px;color:var(--muted)}
+.course-staff{margin-top:22px;padding-top:18px;border-top:1px solid var(--line);font-size:14px;line-height:1.55;color:#405260}
+.course-staff span{display:block}
+.nav-heading{margin:30px 0 12px;text-transform:uppercase;letter-spacing:.08em;font-size:13px;font-weight:750;color:var(--muted)}
+.sidebar .week-nav{margin-top:0}
+.sidebar .week-nav a{display:grid;grid-template-columns:1.7rem minmax(0,1fr);gap:.35rem;align-items:center;padding:7px 9px;margin:1px 0;border-radius:4px;font-size:14px;line-height:1.35;min-width:0}
+.sidebar .week-nav .week-number{font-weight:750;color:var(--blue);font-variant-numeric:tabular-nums;text-align:right}
+.sidebar .week-nav .week-title{display:block;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sidebar .week-nav a[aria-current="page"]{background:#dcebf3;border-left:4px solid var(--blue);padding-left:5px;font-weight:700}
+.sidebar .week-nav a[aria-current="page"] .week-number{color:inherit}
+.layout{margin-left:300px}
+.layout:has(.presentation-notes){margin-left:300px}
+@media(max-width:760px){.sidebar{position:static;width:auto;padding:24px}.course-staff{margin-top:18px}.nav-heading{margin-top:22px}.sidebar .week-nav{display:block;max-height:310px;overflow-y:auto}.sidebar .week-nav a{font-size:14px}.layout,.layout:has(.presentation-notes){margin-left:0}}

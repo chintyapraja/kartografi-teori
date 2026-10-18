@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="610" viewBox="0 0 1200 610" role="img" aria-labelledby="title desc">
+<title id="title">Ilustrasi proses proyeksi dari globe ke peta datar</title><desc id="desc">Ilustrasi proses proyeksi dari globe ke peta datar</desc>
+<style>
+  text{font-family:Inter,Arial,sans-serif;fill:#173042}.title{font-size:30px;font-weight:750}.label{font-size:22px;font-weight:700}.small{font-size:17px;fill:#536775}.tiny{font-size:14px;fill:#536775}.earth{fill:#e7f3f5;stroke:#23677a;stroke-width:3}.land{fill:#c9ddd0;stroke:#3b6754;stroke-width:1}.line{fill:none;stroke:#23677a;stroke-width:3}.guide{fill:none;stroke:#89aab3;stroke-width:2;stroke-dasharray:7 7}.accent{fill:#f1b44c;stroke:#9a6512;stroke-width:2}.paper{fill:#fff;stroke:#23677a;stroke-width:3}.soft{fill:#f5f7f4;stroke:#c8d4d8;stroke-width:2}.arrow{stroke:#d1643f;stroke-width:4;fill:none;marker-end:url(#arrow)}
+</style>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#d1643f"/></marker></defs>
+
+<text x="600" y="48" text-anchor="middle" class="title">Dari permukaan melengkung ke bidang datar</text>
+<g transform="translate(70 105)"><circle cx="210" cy="210" r="175" class="earth"/><ellipse cx="210" cy="210" rx="175" ry="52" class="guide"/><path d="M35 210H385M210 35V385M62 125Q210 195 358 125M62 295Q210 225 358 295" class="guide"/><path d="M105 115Q165 70 215 105L240 145 205 180 145 170Z" class="land"/><path d="M238 218Q310 180 350 235L318 315 258 300 220 255Z" class="land"/><text x="210" y="430" text-anchor="middle" class="label">Globe</text><text x="210" y="462" text-anchor="middle" class="small">permukaan tiga dimensi</text></g>
+<path d="M470 310H710" class="arrow"/><text x="590" y="275" text-anchor="middle" class="label">Proyeksi</text><text x="590" y="345" text-anchor="middle" class="small">transformasi matematis</text>
+<g transform="translate(760 115)"><rect x="0" y="0" width="370" height="350" rx="12" class="paper"/><path d="M25 175H345M185 20V330M42 95Q185 145 328 95M42 255Q185 205 328 255" class="guide"/><path d="M78 80Q145 48 195 88L214 132 166 165 105 148Z" class="land"/><path d="M205 195Q286 168 335 224L303 300 236 285 193 238Z" class="land"/><text x="185" y="392" text-anchor="middle" class="label">Peta</text><text x="185" y="424" text-anchor="middle" class="small">bidang dua dimensi</text></g>
+<rect x="294" y="505" width="612" height="70" rx="18" fill="#fff4df" stroke="#e0a541" stroke-width="2"/><text x="600" y="535" text-anchor="middle" class="label">Perubahan tidak dapat dihindari</text><text x="600" y="562" text-anchor="middle" class="small">bentuk, luas, jarak, atau arah dapat mengalami distorsi</text>
+</svg>
