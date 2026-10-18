@@ -15,11 +15,11 @@
 <main id="materi" class="presentation-notes week5-page">
   <div class="eyebrow">Pertemuan 5 · Daring · 100 menit</div>
   <h1>Pengantar proyeksi peta</h1>
-  <p class="lead">Bagaimana permukaan bumi yang melengkung digambarkan pada bidang datar—dan perubahan apa yang harus kita pahami ketika membaca atau membuat peta?</p>
+  <p class="lead">Proyeksi peta menjelaskan cara menggambarkan permukaan bumi yang melengkung pada bidang datar serta perubahan yang timbul dalam proses tersebut.</p>
 
   <section class="lesson-block" id="agenda">
     <div class="section-kicker">Pembukaan</div>
-    <h2>1. Kegiatan hari ini</h2>
+    <h2>1. Rencana pembelajaran</h2>
     <div class="agenda-grid">
       <div class="agenda-item"><time>0–10</time><p><strong>Kilas balik</strong>Komponen, simbol, skala, dan koordinat pada peta.</p></div>
       <div class="agenda-item"><time>10–25</time><p><strong>Dari globe ke peta</strong>Mengapa permukaan lengkung tidak dapat diratakan tanpa perubahan?</p></div>
@@ -46,7 +46,7 @@
     <div class="definition"><strong>Proyeksi peta</strong> adalah metode matematis untuk mengubah posisi pada permukaan bumi yang melengkung menjadi posisi pada bidang datar.</div>
     <p>Proses tersebut memungkinkan peta dicetak pada kertas dan ditampilkan pada layar. Namun, permukaan lengkung tidak dapat dipindahkan ke bidang datar tanpa mengalami perubahan.</p>
     <div class="key-message"><strong>Pesan utama:</strong> tidak ada proyeksi yang sempurna untuk semua kebutuhan. Proyeksi dipilih berdasarkan wilayah yang dipetakan, tujuan peta, dan sifat yang perlu dipertahankan.</div>
-    <div class="question-box"><strong>Pertanyaan pembuka</strong><ol><li>Jika kulit jeruk dibuka dan diratakan, bagian mana yang harus robek, bergeser, atau meregang?</li><li>Apa padanannya pada peta dunia?</li></ol></div>
+    <div class="question-box"><strong>Latihan awal</strong><ol><li>Jika kulit jeruk dibuka dan diratakan, bagian mana yang harus robek, bergeser, atau meregang?</li><li>Apa padanannya pada peta dunia?</li></ol></div>
     <p class="source-note">Konsep mengacu pada <a href="https://pubs.usgs.gov/publication/70047422" target="_blank" rel="noopener">USGS, Map Projections</a> dan <a href="https://education.nationalgeographic.org/resource/selecting-map-projection/" target="_blank" rel="noopener">National Geographic, Selecting a Map Projection</a>.</p>
   </section>
 
@@ -105,7 +105,7 @@
 
   <section class="lesson-block" id="distorsi">
     <div class="section-kicker">Konsekuensi proyeksi</div>
-    <h2>6. Distorsi: apa yang berubah?</h2>
+    <h2>6. Distorsi pada proyeksi peta</h2>
     <figure><a href="jenis-distorsi.svg" target="_blank" rel="noopener"><img src="jenis-distorsi.svg" alt="Empat sifat yang dapat mengalami distorsi: bentuk, luas, jarak, dan arah"></a><figcaption>Gambar ilustrasi.</figcaption></figure>
     <div class="property-grid">
       <div class="property-card"><strong>Bentuk</strong><p>Sudut atau bentuk lokal dapat berubah. Proyeksi konformal mempertahankan sudut lokal, bukan bentuk benua secara sempurna.</p></div>
@@ -145,7 +145,7 @@
   <section class="lesson-block" id="tissot">
     <div class="section-kicker">Membaca pola perubahan</div>
     <h2>9. Tissot’s indicatrix</h2>
-    <p>Bayangkan lingkaran kecil dengan ukuran yang sama ditempatkan di berbagai lokasi pada globe. Setelah diproyeksikan, lingkaran tersebut dapat berubah ukuran atau menjadi oval.</p>
+    <p>Indikatriks Tissot menggunakan lingkaran berukuran sama yang ditempatkan di berbagai lokasi pada globe. Setelah diproyeksikan, lingkaran tersebut dapat berubah ukuran atau menjadi elips.</p>
     <figure><a href="tissot-proyeksi.svg" target="_blank" rel="noopener"><img src="tissot-proyeksi.svg" alt="Lingkaran Tissot pada Mercator dan Equal Earth"></a><figcaption>Gambar ilustrasi. Lingkaran geodesik beradius sama dibuat pada beberapa lintang dan bujur, kemudian diproyeksikan dengan PROJ/GDAL. Batas negara berasal dari <a href="https://www.naturalearthdata.com/downloads/110m-cultural-vectors/" target="_blank" rel="noopener">Natural Earth</a>.</figcaption></figure>
     <ul>
       <li>Lingkaran tetap bulat tetapi membesar → bentuk lokal dipertahankan, luas berubah.</li>
@@ -178,7 +178,7 @@
 
   <section class="lesson-block" id="memilih">
     <div class="section-kicker">Pengambilan keputusan</div>
-    <h2>11. Bagaimana memilih proyeksi?</h2>
+    <h2>11. Dasar pemilihan proyeksi</h2>
     <div class="decision-path">
       <div><span>1 · Tujuan</span><strong>Apa yang ingin disampaikan atau diukur?</strong></div>
       <div><span>2 · Wilayah</span><strong>Di mana lokasi dan bagaimana bentuk wilayahnya?</strong></div>
@@ -215,10 +215,10 @@
       <li>UTM membagi bumi menjadi zona; Indonesia melintasi zona 46–54.</li>
       <li>Pilih proyeksi berdasarkan tujuan, wilayah, cakupan, dan sifat yang perlu dipertahankan.</li>
     </ol>
-    <div class="question-box"><strong>Pertanyaan penutup</strong><p>Manakah peta yang paling benar: Mercator, Equal Earth, Robinson, atau Winkel Tripel?</p></div>
+    <div class="question-box"><strong>Latihan penutup</strong><p>Manakah peta yang paling benar: Mercator, Equal Earth, Robinson, atau Winkel Tripel?</p></div>
     <details class="answer-reveal"><summary>Lihat jawaban</summary><p>Tidak ada satu proyeksi yang paling benar untuk semua tujuan. Pertanyaan yang tepat adalah: <strong>proyeksi mana yang paling sesuai untuk tujuan peta ini?</strong></p></details>
     <h3>Pertemuan 6</h3>
-    <p>Berikutnya kita akan membahas <strong>jenis dan pembacaan peta</strong>, terutama cara membaca informasi pada peta topografi.</p>
+    <p>Pertemuan berikutnya membahas <strong>jenis dan pembacaan peta</strong>, terutama cara membaca informasi pada peta topografi.</p>
   </section>
 
   <section class="lesson-block" id="referensi">
@@ -243,7 +243,7 @@
   <footer>Kartografi (Teori) · Ni Putu Praja Chintya<br>Sumber dan hak penggunaan setiap peta tercantum pada keterangan gambar. Situs bahan ajar pribadi, bukan situs resmi universitas.</footer>
 </main>
 <aside class="toc" aria-label="Pada halaman ini"><strong>Pada halaman ini</strong>
-  <a href="#agenda">1. Kegiatan hari ini</a><a href="#masalah">2. Dari globe ke peta</a><a href="#istilah">3. Istilah dasar</a><a href="#bidang">4. Bidang proyeksi</a><a href="#posisi">5. Posisi bidang</a><a href="#distorsi">6. Distorsi</a><a href="#sifat">7. Sifat proyeksi</a><a href="#perbandingan">8. Perbandingan</a><a href="#tissot">9. Tissot</a><a href="#utm">10. UTM Indonesia</a><a href="#memilih">11. Memilih proyeksi</a><a href="#diskusi">12. Diskusi</a><a href="#ringkasan">13. Ringkasan</a><a href="#referensi">14. Sumber</a>
+  <a href="#agenda">1. Rencana pembelajaran</a><a href="#masalah">2. Dari globe ke peta</a><a href="#istilah">3. Istilah dasar</a><a href="#bidang">4. Bidang proyeksi</a><a href="#posisi">5. Posisi bidang</a><a href="#distorsi">6. Distorsi</a><a href="#sifat">7. Sifat proyeksi</a><a href="#perbandingan">8. Perbandingan</a><a href="#tissot">9. Tissot</a><a href="#utm">10. UTM Indonesia</a><a href="#memilih">11. Memilih proyeksi</a><a href="#diskusi">12. Diskusi</a><a href="#ringkasan">13. Ringkasan</a><a href="#referensi">14. Sumber</a>
 </aside>
 </div>
 </body>
