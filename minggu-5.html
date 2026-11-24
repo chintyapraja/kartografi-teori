@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Minggu 5 — Pengantar proyeksi peta | Kartografi (Teori)</title>
+  <meta name="description" content="Pengantar proyeksi peta: dari globe ke bidang datar, distorsi, sifat proyeksi, perbandingan proyeksi dunia, dan UTM di Indonesia.">
+  <link rel="stylesheet" href="style.css?v=20261018b">
+  <link rel="stylesheet" href="week9-16.css?v=20261018b">
+  <link rel="stylesheet" href="week5.css?v=20260917a">
+<link rel="stylesheet" href="compact.css?v=20261122g">
+</head>
+<body>
+<a class="skip" href="#materi">Langsung ke materi</a>
+<aside class="sidebar"><a class="brand" href="index.html">Kartografi<br>(Teori)</a><div class="course-kind">Bahan kuliah teori</div><div class="course-staff"><span>Ni Putu Praja Chintya</span><span>bersama Wahyu Marta Mutiarasari</span></div><div class="nav-heading">Pertemuan 1–16</div><nav class="week-nav" aria-label="Materi pertemuan 1 sampai 16"><a href="minggu-1.html" title="1. Pengertian dan konsep kartografi"><span class="week-number">1</span><span class="week-title">Pengertian dan konsep kartografi</span></a><a href="minggu-2.html" title="2. Klasifikasi peta dan lingkup kartografi"><span class="week-number">2</span><span class="week-title">Klasifikasi peta dan lingkup kartografi</span></a><a href="minggu-3.html" title="3. Komunikasi kartografis"><span class="week-number">3</span><span class="week-title">Komunikasi kartografis</span></a><a href="minggu-4.html" title="4. Komponen dan kelengkapan peta"><span class="week-number">4</span><span class="week-title">Komponen dan kelengkapan peta</span></a><a href="minggu-5.html" aria-current="page" title="5. Proyeksi peta"><span class="week-number">5</span><span class="week-title">Proyeksi peta</span></a><a href="minggu-6.html" title="6. Jenis dan pembacaan peta"><span class="week-number">6</span><span class="week-title">Jenis dan pembacaan peta</span></a><a href="minggu-7.html" title="7. Skala dan generalisasi"><span class="week-number">7</span><span class="week-title">Skala dan generalisasi</span></a><a href="latihan-uts.html" title="8. Ujian Tengah Semester"><span class="week-number">8</span><span class="week-title">Ujian Tengah Semester</span></a><a href="minggu-9.html" title="9. Penyajian relief"><span class="week-number">9</span><span class="week-title">Penyajian relief</span></a><a href="minggu-10.html" title="10. Tampilan peta 3D"><span class="week-number">10</span><span class="week-title">Tampilan peta 3D</span></a><a href="minggu-11.html" title="11. Variabel tampak dan simbol"><span class="week-number">11</span><span class="week-title">Variabel tampak dan simbol</span></a><a href="minggu-12.html" title="12. Pemetaan data kualitatif dan kuantitatif"><span class="week-number">12</span><span class="week-title">Pemetaan data kualitatif dan kuantitatif</span></a><a href="minggu-12a.html" title="12A. Digitalisasi peta"><span class="week-number">12A</span><span class="week-title">Digitalisasi peta</span></a><a href="minggu-13.html" title="13. Toponimi"><span class="week-number">13</span><span class="week-title">Toponimi</span></a><a href="minggu-14.html" title="14. Tata letak dan keseimbangan peta"><span class="week-number">14</span><span class="week-title">Tata letak dan keseimbangan peta</span></a><a href="minggu-15.html" title="15. Evaluasi peta terpadu"><span class="week-number">15</span><span class="week-title">Evaluasi peta terpadu</span></a><a href="minggu-16.html" title="16. Ujian Akhir Semester"><span class="week-number">16</span><span class="week-title">Ujian Akhir Semester</span></a></nav>
+<div class="nav-heading">Sumber belajar</div>
+<nav class="week-nav side-extra" aria-label="Sumber belajar"><a href="album-peta.html" title="Album sumber peta"><span class="week-number">A</span><span class="week-title">Album sumber peta</span></a></nav></aside>
+<div class="layout">
+<main id="materi" class="presentation-notes week5-page">
+  <div class="eyebrow">Pertemuan 5 · Daring · 100 menit</div>
+  <h1>Pengantar proyeksi peta</h1>
+  <p class="lead">Pertemuan ini menjelaskan cara menggambarkan permukaan bumi yang melengkung pada bidang datar.</p>
+  <ul class="pts">
+    <li>Mahasiswa mempelajari <strong>fungsi proyeksi peta</strong> dan <strong>perubahan (distorsi)</strong> yang selalu timbul dalam proses tersebut.</li>
+    <li>Materi rinci, contoh kasus, dan tugas mandiri tersedia pada <a href="minggu-5-1.html">Materi 5.1: Sistem dan jenis proyeksi peta</a>.</li>
+  </ul>
+
+  <section class="lesson-block" id="agenda">
+    <div class="section-kicker">Pembukaan</div>
+    <h2>1. Rencana pembelajaran</h2>
+    <div class="agenda-grid">
+      <div class="agenda-item"><time>0–10</time><p><strong>Kilas balik</strong>Komponen peta, skala, dan koordinat pada peta.</p></div>
+      <div class="agenda-item"><time>10–20</time><p><strong>Dari globe ke peta</strong>Mengapa permukaan lengkung tidak dapat diratakan tanpa perubahan?</p></div>
+      <div class="agenda-item"><time>20–35</time><p><strong>Distorsi dan sifat proyeksi</strong>Luas, bentuk, jarak, dan arah; konform, sama luas, ekuidistan, azimutal.</p></div>
+      <div class="agenda-item"><time>35–50</time><p><strong>Membaca contoh</strong>Perbandingan peta dunia dan indikatriks Tissot.</p></div>
+      <div class="agenda-item"><time>50–62</time><p><strong>Bidang dan aspek proyeksi</strong>Silinder, kerucut, bidang datar; normal, transversal, miring; singgung dan potong.</p></div>
+      <div class="agenda-item"><time>62–72</time><p><strong>Elipsoid, datum, dan CRS</strong>Hubungan model bumi, acuan posisi, dan sistem koordinat.</p></div>
+      <div class="agenda-item"><time>72–85</time><p><strong>UTM di Indonesia</strong>Zona 46–54, belahan utara/selatan, dan contoh Yogyakarta.</p></div>
+      <div class="agenda-item"><time>85–100</time><p><strong>Memilih proyeksi dan latihan</strong>Menentukan proyeksi berdasarkan tujuan peta.</p></div>
+    </div>
+    <h3>Setelah pertemuan ini, mahasiswa mampu:</h3>
+    <ol>
+      <li>menjelaskan mengapa proyeksi peta diperlukan;</li>
+      <li>mengenali empat jenis distorsi, yaitu distorsi luas, bentuk/sudut, jarak, dan arah;</li>
+      <li>membedakan sifat proyeksi, bidang proyeksi, dan aspek proyeksi;</li>
+      <li>menjelaskan hubungan elipsoid, datum, dan sistem referensi koordinat;</li>
+      <li>membaca zona UTM yang digunakan di Indonesia; serta</li>
+      <li>memberikan alasan awal dalam memilih proyeksi untuk suatu peta.</li>
+    </ol>
+  </section>
+
+  <section class="lesson-block" id="masalah">
+    <div class="section-kicker">Pertanyaan utama</div>
+    <h2>2. Dari globe ke peta datar</h2>
+    <div class="definition"><strong>Proyeksi peta</strong> (<em>map projection</em>) adalah metode matematis untuk mengubah posisi pada permukaan bumi yang melengkung menjadi posisi pada bidang datar.</div>
+    <figure class="real-map"><svg viewBox="0 0 880 330" role="img" aria-label="Globe dikupas seperti kulit jeruk sehingga muncul celah, lalu diregangkan menjadi peta datar sehingga muncul distorsi" style="width:100%;height:auto;background:#fff;border:1px solid #d7e0e5;font-family:Arial,sans-serif">
+      <circle cx="140" cy="150" r="90" fill="#e8f2f6" stroke="#0b607c" stroke-width="3"/>
+      <ellipse cx="140" cy="150" rx="90" ry="20" fill="none" stroke="#8aa7b8" stroke-width="2"/>
+      <ellipse cx="140" cy="150" rx="40" ry="90" fill="none" stroke="#8aa7b8" stroke-width="2"/>
+      <line x1="140" y1="60" x2="140" y2="240" stroke="#8aa7b8" stroke-width="2"/>
+      <text x="140" y="278" text-anchor="middle" font-size="16" font-weight="700" fill="#173746">1. Globe</text>
+      <text x="140" y="300" text-anchor="middle" font-size="14" fill="#173746">permukaan melengkung</text>
+      <path d="M255 150 H300" stroke="#0b607c" stroke-width="3"/><polygon points="306,150 294,143 294,157" fill="#0b607c"/>
+      <g fill="#e8f2f6" stroke="#0b607c" stroke-width="2">
+        <path d="M340 60 Q384 150 340 240 Q296 150 340 60Z"/><path d="M384 60 Q428 150 384 240 Q340 150 384 60Z"/><path d="M428 60 Q472 150 428 240 Q384 150 428 60Z"/><path d="M472 60 Q516 150 472 240 Q428 150 472 60Z"/><path d="M516 60 Q560 150 516 240 Q472 150 516 60Z"/>
+      </g>
+      <text x="362" y="92" text-anchor="middle" font-size="13" fill="#9a4545">celah</text>
+      <text x="450" y="210" text-anchor="middle" font-size="13" fill="#9a4545">celah</text>
+      <text x="428" y="278" text-anchor="middle" font-size="16" font-weight="700" fill="#173746">2. Dikupas seperti kulit jeruk</text>
+      <text x="428" y="300" text-anchor="middle" font-size="14" fill="#173746">permukaan robek dan muncul celah</text>
+      <path d="M572 150 H617" stroke="#0b607c" stroke-width="3"/><polygon points="623,150 611,143 611,157" fill="#0b607c"/>
+      <rect x="640" y="65" width="220" height="170" fill="#e8f2f6" stroke="#0b607c" stroke-width="3"/>
+      <g stroke="#8aa7b8" stroke-width="2"><line x1="684" y1="65" x2="684" y2="235"/><line x1="728" y1="65" x2="728" y2="235"/><line x1="772" y1="65" x2="772" y2="235"/><line x1="816" y1="65" x2="816" y2="235"/><line x1="640" y1="88" x2="860" y2="88"/><line x1="640" y1="118" x2="860" y2="118"/><line x1="640" y1="150" x2="860" y2="150"/><line x1="640" y1="182" x2="860" y2="182"/><line x1="640" y1="212" x2="860" y2="212"/></g>
+      <text x="750" y="278" text-anchor="middle" font-size="16" font-weight="700" fill="#173746">3. Diregangkan menjadi peta</text>
+      <text x="750" y="300" text-anchor="middle" font-size="14" fill="#9a4545">celah tertutup, tetapi muncul distorsi</text>
+    </svg><figcaption>Ilustrasi konsep dengan analogi kulit jeruk.
+      <ul class="pts">
+        <li>Permukaan globe <strong>tidak dapat diratakan</strong> tanpa robek, bergeser, atau meregang.</li>
+        <li>Jika celah ditutup dengan meregangkan permukaan, <strong>luas, bentuk, jarak, atau arah</strong> berubah pada peta.</li>
+      </ul></figcaption></figure>
+    <p>Proyeksi diperlukan karena beberapa alasan berikut.</p>
+    <ul class="pts">
+      <li>Peta harus dapat <strong>dicetak pada kertas</strong> dan <strong>ditampilkan pada layar</strong> yang datar.</li>
+      <li>Globe sulit dibawa dan tidak dapat menampilkan wilayah kecil secara rinci, misalnya satu kecamatan pada skala besar.</li>
+      <li>Pengukuran jarak dan luas di lapangan lebih mudah dilakukan dalam <strong>satuan meter</strong> pada bidang datar daripada dalam derajat pada permukaan lengkung.</li>
+    </ul>
+    <div class="key-message"><strong>Pesan utama:</strong> tidak ada proyeksi yang sempurna untuk semua kebutuhan. Proyeksi dipilih berdasarkan tujuan peta, wilayah yang dipetakan, dan sifat yang perlu dipertahankan.</div>
+    <div class="question-box"><strong>Latihan awal</strong><ol><li>Jika kulit jeruk dibuka dan diratakan, bagian mana yang harus robek, bergeser, atau meregang?</li><li>Apa padanan bagian yang robek dan meregang tersebut pada peta dunia?</li></ol></div>
+    <p class="source-note">Konsep mengacu pada <a href="https://pubs.usgs.gov/publication/70047422" target="_blank" rel="noopener">USGS, Map Projections</a> dan <a href="https://education.nationalgeographic.org/resource/selecting-map-projection/" target="_blank" rel="noopener">National Geographic, Selecting a Map Projection</a>.</p>
+  </section>
+
+  <section class="lesson-block" id="distorsi">
+    <div class="section-kicker">Konsekuensi proyeksi</div>
+    <h2>3. Empat jenis distorsi</h2>
+    <p><strong>Distorsi</strong> (<em>distortion</em>) adalah perbedaan antara ukuran atau bentuk suatu objek di permukaan bumi dan gambarnya pada peta.</p>
+    <figure class="real-map"><svg viewBox="0 0 880 330" role="img" aria-label="Empat jenis distorsi: bentuk atau sudut, luas, jarak, dan arah" style="width:100%;height:auto;background:#fff;border:1px solid #d7e0e5;font-family:Arial,sans-serif">
+      <g fill="#f6f8fa" stroke="#d7e0e5" stroke-width="2"><rect x="15" y="15" width="200" height="255" rx="8"/><rect x="235" y="15" width="200" height="255" rx="8"/><rect x="455" y="15" width="200" height="255" rx="8"/><rect x="675" y="15" width="190" height="255" rx="8"/></g>
+      <g font-size="17" font-weight="700" fill="#173746" text-anchor="middle"><text x="115" y="45">Bentuk / sudut</text><text x="335" y="45">Luas</text><text x="555" y="45">Jarak</text><text x="770" y="45">Arah</text></g>
+      <rect x="45" y="85" width="60" height="60" fill="none" stroke="#6d7f8a" stroke-width="2.5" stroke-dasharray="6 5"/>
+      <path d="M45 132 H58 V145" fill="none" stroke="#6d7f8a" stroke-width="2"/>
+      <polygon points="125,145 175,145 200,85 150,85" fill="#f4e3d6" stroke="#b06b36" stroke-width="3"/>
+      <text x="75" y="175" text-anchor="middle" font-size="13" fill="#173746">90°</text><text x="160" y="175" text-anchor="middle" font-size="13" fill="#9a4545">bukan 90°</text>
+      <rect x="260" y="105" width="45" height="45" fill="none" stroke="#6d7f8a" stroke-width="2.5" stroke-dasharray="6 5"/>
+      <rect x="325" y="70" width="85" height="80" fill="#f4e3d6" stroke="#b06b36" stroke-width="3"/>
+      <circle cx="480" cy="95" r="5" fill="#6d7f8a"/><circle cx="540" cy="95" r="5" fill="#6d7f8a"/><line x1="480" y1="95" x2="540" y2="95" stroke="#6d7f8a" stroke-width="2.5" stroke-dasharray="6 5"/>
+      <text x="510" y="82" text-anchor="middle" font-size="13" fill="#173746">10 km</text>
+      <circle cx="480" cy="140" r="5" fill="#b06b36"/><circle cx="630" cy="140" r="5" fill="#b06b36"/><line x1="480" y1="140" x2="630" y2="140" stroke="#b06b36" stroke-width="3"/>
+      <text x="555" y="167" text-anchor="middle" font-size="13" fill="#9a4545">tergambar lebih panjang</text>
+      <line x1="720" y1="160" x2="720" y2="70" stroke="#173746" stroke-width="2"/><polygon points="720,62 714,76 726,76" fill="#173746"/><text x="720" y="58" text-anchor="middle" font-size="13" fill="#173746">U</text>
+      <line x1="720" y1="160" x2="790" y2="90" stroke="#6d7f8a" stroke-width="2.5" stroke-dasharray="6 5"/>
+      <line x1="720" y1="160" x2="815" y2="125" stroke="#b06b36" stroke-width="3"/>
+      <text x="795" y="80" font-size="13" fill="#173746">45°</text><text x="820" y="135" font-size="13" fill="#9a4545">70°</text>
+      <g font-size="13.5" fill="#173746" text-anchor="middle">
+        <text x="115" y="215">Sudut siku-siku</text><text x="115" y="235">tidak lagi siku-siku.</text>
+        <text x="335" y="215">Dua wilayah sama luas</text><text x="335" y="235">tampak berbeda ukuran.</text>
+        <text x="555" y="215">Jarak yang sama</text><text x="555" y="235">tergambar berbeda.</text>
+        <text x="770" y="215">Sudut arah dari utara</text><text x="770" y="235">dapat bergeser.</text>
+      </g>
+      <line x1="250" y1="302" x2="290" y2="302" stroke="#6d7f8a" stroke-width="2.5" stroke-dasharray="6 5"/><text x="298" y="307" font-size="14" fill="#173746">kondisi di globe</text>
+      <line x1="470" y1="302" x2="510" y2="302" stroke="#b06b36" stroke-width="3"/><text x="518" y="307" font-size="14" fill="#173746">gambar pada peta</text>
+    </svg><figcaption>Ilustrasi konsep. Garis putus-putus menunjukkan kondisi di globe, sedangkan garis cokelat menunjukkan gambar pada peta setelah diproyeksikan.</figcaption></figure>
+    <div class="property-grid">
+      <div class="property-card"><strong>Luas</strong><p>Wilayah dapat tampak <b>lebih besar atau lebih kecil</b> daripada kenyataannya.</p></div>
+      <div class="property-card"><strong>Bentuk / sudut</strong><p>Sudut antara dua garis berubah sehingga <b>bentuk wilayah</b> tampak tertarik atau miring.</p></div>
+      <div class="property-card"><strong>Jarak</strong><p>Jarak yang sama di bumi dapat <b>tergambar berbeda</b> pada bagian peta yang berbeda.</p></div>
+      <div class="property-card"><strong>Arah</strong><p>Sudut arah terhadap utara dapat <b>bergeser</b>, kecuali dari titik atau garis tertentu.</p></div>
+    </div>
+    <p class="source-note">Jenis distorsi mengacu pada <a href="https://pubs.usgs.gov/publication/70047422" target="_blank" rel="noopener">USGS, Map Projections</a> dan <a href="https://pro.arcgis.com/en/pro-app/latest/help/mapping/properties/specify-a-coordinate-system.htm" target="_blank" rel="noopener">Esri, Work with Coordinate Systems</a>.</p>
+  </section>
+
+  <section class="lesson-block" id="sifat">
+    <div class="section-kicker">Apa yang dipertahankan?</div>
+    <h2>4. Sifat proyeksi</h2>
+    <p>Setiap proyeksi dirancang untuk <strong>mempertahankan sifat tertentu</strong> dan mengorbankan sifat lainnya.</p>
+    <div class="projection-strip">
+      <article><b>Konform (<em>conformal</em>)</b><span>Proyeksi konform, disebut juga konformal, mempertahankan sudut lokal sehingga bentuk objek kecil tampak benar, tetapi luas dapat sangat berubah.</span></article>
+      <article><b>Sama luas (<em>equal-area</em>)</b><span>Proyeksi sama luas, disebut juga ekuivalen, mempertahankan perbandingan luas, tetapi bentuk dan sudut berubah.</span></article>
+      <article><b>Ekuidistan (<em>equidistant</em>)</b><span>Proyeksi ekuidistan mempertahankan jarak hanya dari satu titik pusat atau sepanjang garis tertentu.</span></article>
+      <article><b>Azimutal (<em>azimuthal</em>)</b><span>Proyeksi azimutal mempertahankan arah yang benar dari titik pusat proyeksi ke semua titik lain.</span></article>
+    </div>
+    <ul class="pts">
+      <li>Proyeksi <strong>kompromi</strong> (<em>compromise</em>) tidak mempertahankan satu sifat secara sempurna, tetapi menyeimbangkan beberapa distorsi agar peta dunia tampak wajar.</li>
+      <li>Satu peta datar <strong>tidak mungkin</strong> sekaligus konform dan sama luas.</li>
+      <li>Istilah <strong>azimutal</strong> juga dipakai untuk menyebut bidang proyeksi datar, sehingga artinya perlu dibaca dari konteks.</li>
+    </ul>
+    <div class="question-box"><strong>Periksa pemahaman</strong><p>Jika tujuan peta adalah membandingkan luas hutan antarnegara, sifat apa yang lebih penting: konform atau sama luas?</p></div>
+    <details class="answer-reveal"><summary>Lihat pembahasan</summary><ul class="pts"><li>Sifat yang lebih penting adalah <strong>sama luas</strong>.</li><li>Perbandingan luas harus dipertahankan agar dua negara yang luasnya sama di bumi juga tampak sama luas pada peta.</li></ul></details>
+  </section>
+
+  <section class="lesson-block" id="perbandingan">
+    <div class="section-kicker">Membaca contoh</div>
+    <h2>5. Bumi yang sama, tampilan yang berbeda</h2>
+    <figure><a href="perbandingan-proyeksi.svg" target="_blank" rel="noopener"><img src="perbandingan-proyeksi.svg" alt="Perbandingan Mercator, Equal Earth, Robinson, dan Winkel Tripel"></a><figcaption>Perbandingan dibuat dari data batas negara <a href="https://www.naturalearthdata.com/downloads/110m-cultural-vectors/" target="_blank" rel="noopener">Natural Earth 1:110 juta</a> yang diproyeksikan menggunakan <a href="https://proj.org/" target="_blank" rel="noopener">PROJ</a>/GDAL.
+      <ul class="pts"><li>Natural Earth menyediakan data untuk digunakan secara bebas.</li><li>Garis batas digunakan sebagai konteks visual dan tidak dimaksudkan sebagai pernyataan mengenai status wilayah.</li></ul></figcaption></figure>
+    <div class="table-wrap"><table><thead><tr><th>Proyeksi</th><th>Sifat utama</th><th>Cara membaca</th></tr></thead><tbody>
+      <tr><td><strong>Mercator</strong></td><td>Konform</td><td>Sudut lokal benar; ukuran wilayah membesar cepat menuju kutub.</td></tr>
+      <tr><td><strong>Equal Earth</strong></td><td>Sama luas</td><td>Perbandingan luas benar; bentuk benua berubah.</td></tr>
+      <tr><td><strong>Robinson</strong></td><td>Kompromi</td><td>Tampilan dunia seimbang; tidak ada sifat yang benar sempurna.</td></tr>
+      <tr><td><strong>Winkel Tripel</strong></td><td>Kompromi</td><td>Gabungan distorsi luas, arah, dan jarak dibuat kecil.</td></tr>
+    </tbody></table></div>
+    <ul class="pts">
+      <li>Pada Mercator, Greenland tampak hampir sebesar Afrika, padahal <strong>luas Afrika sekitar 14 kali luas Greenland</strong>.</li>
+      <li>Pada lintang 60°, skala Mercator sekitar <strong>dua kali</strong> skala di khatulistiwa, sehingga luas wilayah tampak sekitar <strong>empat kali</strong> lebih besar.</li>
+    </ul>
+    <div class="question-box"><strong>Amati sebelum menjawab</strong><ol><li>Pada proyeksi mana Greenland tampak paling besar?</li><li>Pada proyeksi mana perbandingan luas Afrika dan Greenland lebih masuk akal?</li><li>Apakah proyeksi kompromi berarti bebas distorsi?</li></ol></div>
+  </section>
+
+  <section class="lesson-block" id="tissot">
+    <div class="section-kicker">Membaca pola perubahan</div>
+    <h2>6. Indikatriks Tissot</h2>
+    <ul class="pts">
+      <li><strong>Indikatriks Tissot</strong> (<em>Tissot's indicatrix</em>) adalah sekumpulan lingkaran berukuran sama yang ditempatkan di berbagai lokasi pada globe.</li>
+      <li>Setelah diproyeksikan, lingkaran tersebut dapat <strong>berubah ukuran</strong> atau <strong>berubah menjadi elips</strong>, sehingga pola distorsi dapat dilihat.</li>
+    </ul>
+    <figure><a href="tissot-proyeksi.svg" target="_blank" rel="noopener"><img src="tissot-proyeksi.svg" alt="Lingkaran Tissot pada Mercator dan Equal Earth"></a><figcaption>Gambar ilustrasi.
+      <ul class="pts"><li>Lingkaran geodesik beradius sama dibuat pada beberapa lintang dan bujur, kemudian diproyeksikan dengan PROJ/GDAL.</li><li>Batas negara berasal dari <a href="https://www.naturalearthdata.com/downloads/110m-cultural-vectors/" target="_blank" rel="noopener">Natural Earth</a>.</li></ul></figcaption></figure>
+    <ul class="pts">
+      <li>Jika lingkaran <strong>tetap bulat tetapi membesar</strong>, proyeksi tersebut mempertahankan bentuk lokal (konform) tetapi mengubah luas.</li>
+      <li>Jika lingkaran <strong>berubah menjadi oval</strong>, proyeksi tersebut mengubah sudut dan bentuk lokal.</li>
+      <li>Jika semua lingkaran <strong>memiliki luas yang sama</strong> walaupun bentuknya oval, proyeksi tersebut bersifat sama luas.</li>
+    </ul>
+    <div class="key-message">Indikatriks Tissot hanya menunjukkan <b>pola distorsi</b>. Lingkaran tersebut bukan simbol data tematik dan bukan lokasi pengamatan.</div>
+  </section>
+
+  <section class="lesson-block" id="bidang">
+    <div class="section-kicker">Cara mengenali keluarga proyeksi</div>
+    <h2>7. Bidang proyeksi: silinder, kerucut, dan bidang datar</h2>
+    <p><strong>Bidang proyeksi</strong> (<em>developable surface</em>) adalah bidang yang dapat dibentangkan menjadi datar tanpa robek, yaitu silinder, kerucut, dan bidang datar.</p>
+    <figure class="real-map"><svg viewBox="0 0 880 470" role="img" aria-label="Bidang proyeksi silinder, kerucut, dan bidang datar beserta bentuk gratikul yang dihasilkan" style="width:100%;height:auto;background:#fff;border:1px solid #d7e0e5;font-family:Arial,sans-serif">
+      <g fill="#e8f2f6" stroke="#0b607c" stroke-width="3"><circle cx="147" cy="155" r="62"/><circle cx="440" cy="155" r="62"/><circle cx="733" cy="155" r="62"/></g>
+      <g fill="none" stroke="#b06b36" stroke-width="3">
+        <line x1="85" y1="70" x2="85" y2="240"/><line x1="209" y1="70" x2="209" y2="240"/><ellipse cx="147" cy="70" rx="62" ry="11"/><path d="M85 240 A62 11 0 0 0 209 240"/>
+        <path d="M440 59 L308.6 215 M440 59 L571.4 215"/><path d="M308.6 215 A131.4 16 0 0 0 571.4 215"/>
+        <polygon points="658,100 768,100 808,86 698,86" fill="#f4e3d6"/>
+      </g>
+      <ellipse cx="147" cy="155" rx="62" ry="11" fill="none" stroke="#12643e" stroke-width="4"/>
+      <ellipse cx="440" cy="115" rx="47.5" ry="8" fill="none" stroke="#12643e" stroke-width="4"/>
+      <circle cx="733" cy="93" r="6" fill="#12643e"/>
+      <g text-anchor="middle" fill="#173746">
+        <text x="147" y="272" font-size="17" font-weight="700">Silinder (<tspan font-style="italic">cylindrical</tspan>)</text>
+        <text x="147" y="294" font-size="13.5">menyinggung di khatulistiwa</text>
+        <text x="440" y="272" font-size="17" font-weight="700">Kerucut (<tspan font-style="italic">conic</tspan>)</text>
+        <text x="440" y="294" font-size="13.5">menyinggung di satu paralel</text>
+        <text x="733" y="272" font-size="17" font-weight="700">Bidang datar (<tspan font-style="italic">planar</tspan>)</text>
+        <text x="733" y="294" font-size="13.5">menyinggung di satu titik</text>
+      </g>
+      <line x1="20" y1="312" x2="860" y2="312" stroke="#d7e0e5" stroke-width="2"/>
+      <g fill="none" stroke="#8aa7b8" stroke-width="2">
+        <rect x="82" y="330" width="130" height="85" stroke="#0b607c"/>
+        <path d="M108 330V415M134 330V415M160 330V415M186 330V415M82 345H212M82 362H212M82 372.5H212M82 383H212M82 400H212"/>
+        <path d="M369.3 392.7 A100 100 0 0 0 510.7 392.7 M392.6 369.4 A67 67 0 0 0 487.4 369.4 M416 346 A34 34 0 0 0 464 346"/>
+        <path d="M440 322 L365.8 396.2 M440 322 L399.8 419 M440 322 L440 427 M440 322 L480.2 419 M440 322 L514.2 396.2"/>
+        <circle cx="733" cy="372" r="15"/><circle cx="733" cy="372" r="30"/><circle cx="733" cy="372" r="45" stroke="#0b607c"/>
+        <path d="M688 372H778M733 327V417M701.2 340.2L764.8 403.8M701.2 403.8L764.8 340.2"/>
+      </g>
+      <g text-anchor="middle" font-size="13.5" fill="#173746">
+        <text x="147" y="445">gratikul berbentuk persegi</text>
+        <text x="440" y="445">gratikul berbentuk kipas</text>
+        <text x="733" y="445">gratikul berupa lingkaran memusat</text>
+      </g>
+    </svg><figcaption>Ilustrasi konsep. Baris atas menunjukkan posisi bidang terhadap globe; garis atau titik hijau menunjukkan bagian yang menyinggung globe. Baris bawah menunjukkan bentuk jaring lintang–bujur (gratikul) setelah bidang dibentangkan.</figcaption></figure>
+    <div class="concept-grid">
+      <div class="concept-card"><strong>Silinder</strong><ul class="pts"><li>Silinder membungkus globe, dan hasilnya sering berbentuk <strong>persegi panjang</strong>.</li><li>Contohnya adalah Mercator dan Transverse Mercator.</li></ul></div>
+      <div class="concept-card"><strong>Kerucut</strong><ul class="pts"><li>Kerucut sesuai untuk wilayah <strong>lintang menengah</strong> yang memanjang barat–timur.</li><li>Contohnya adalah Lambert Conformal Conic.</li></ul></div>
+      <div class="concept-card"><strong>Bidang datar</strong><ul class="pts"><li>Bidang datar menyinggung globe di <strong>satu titik pusat</strong>, misalnya kutub.</li><li>Contohnya adalah Azimuthal Equidistant.</li></ul></div>
+      <div class="concept-card"><strong>Catatan</strong><ul class="pts"><li>Gambar bidang hanya membantu memahami prinsip.</li><li>Proyeksi modern <strong>dihitung dengan rumus</strong>, bukan dengan menyinari globe.</li></ul></div>
+    </div>
+    <p class="source-note">Pengelompokan dasar mengacu pada <a href="https://education.nationalgeographic.org/resource/map/" target="_blank" rel="noopener">National Geographic, Map</a> dan uraian proyeksi pada <a href="https://pubs.usgs.gov/publication/pp1395" target="_blank" rel="noopener">Snyder (1987), USGS Professional Paper 1395</a>.</p>
+  </section>
+
+  <section class="lesson-block" id="posisi">
+    <div class="section-kicker">Orientasi bidang</div>
+    <h2>8. Aspek proyeksi serta garis singgung dan potong</h2>
+    <p><strong>Aspek proyeksi</strong> (<em>projection aspect</em>) adalah orientasi bidang proyeksi terhadap sumbu bumi.</p>
+    <figure class="real-map"><svg viewBox="0 0 880 330" role="img" aria-label="Aspek normal, transversal, dan miring pada bidang silinder" style="width:100%;height:auto;background:#fff;border:1px solid #d7e0e5;font-family:Arial,sans-serif">
+      <g fill="#e8f2f6" stroke="#0b607c" stroke-width="3"><circle cx="147" cy="145" r="60"/><circle cx="440" cy="145" r="60"/><circle cx="733" cy="145" r="60"/></g>
+      <g stroke="#173746" stroke-width="2" stroke-dasharray="5 5"><line x1="147" y1="70" x2="147" y2="220"/><line x1="440" y1="70" x2="440" y2="220"/><line x1="733" y1="70" x2="733" y2="220"/></g>
+      <g font-size="13" font-weight="700" fill="#173746"><text x="153" y="80">KU</text><text x="446" y="80">KU</text><text x="739" y="80">KU</text></g>
+      <g fill="none" stroke="#b06b36" stroke-width="3">
+        <rect x="87" y="65" width="120" height="160" rx="4"/>
+        <rect x="360" y="85" width="160" height="120" rx="4"/>
+        <rect x="673" y="65" width="120" height="160" rx="4" transform="rotate(40 733 145)"/>
+      </g>
+      <g text-anchor="middle" fill="#173746">
+        <text x="147" y="282" font-size="17" font-weight="700">Normal</text><text x="147" y="304" font-size="13.5">sumbu silinder = sumbu bumi</text>
+        <text x="440" y="282" font-size="17" font-weight="700">Transversal (<tspan font-style="italic">transverse</tspan>)</text><text x="440" y="304" font-size="13.5">silinder diputar 90°</text>
+        <text x="733" y="282" font-size="17" font-weight="700">Miring (<tspan font-style="italic">oblique</tspan>)</text><text x="733" y="304" font-size="13.5">silinder diputar pada sudut lain</text>
+      </g>
+    </svg><figcaption>Ilustrasi konsep. Garis putus-putus adalah sumbu bumi dari Kutub Utara (KU) ke Kutub Selatan.</figcaption></figure>
+    <ul class="pts">
+      <li>Pada aspek <strong>normal</strong>, sumbu bidang proyeksi berimpit dengan sumbu bumi.</li>
+      <li>Pada aspek <strong>transversal</strong>, bidang diputar 90° sehingga silinder menyinggung globe di sepanjang satu meridian.</li>
+      <li>Pada aspek <strong>miring</strong>, bidang diputar pada sudut selain 0° atau 90°.</li>
+    </ul>
+    <h3>Garis singgung dan garis potong</h3>
+    <figure class="real-map"><svg viewBox="0 0 880 300" role="img" aria-label="Silinder singgung menyentuh globe pada satu garis; silinder potong memotong globe pada dua garis" style="width:100%;height:auto;background:#fff;border:1px solid #d7e0e5;font-family:Arial,sans-serif">
+      <g fill="#e8f2f6" stroke="#0b607c" stroke-width="3"><circle cx="220" cy="140" r="80"/><circle cx="660" cy="140" r="80"/></g>
+      <g fill="none" stroke="#b06b36" stroke-width="3"><line x1="140" y1="35" x2="140" y2="245"/><line x1="300" y1="35" x2="300" y2="245"/><line x1="595" y1="35" x2="595" y2="245"/><line x1="725" y1="35" x2="725" y2="245"/></g>
+      <ellipse cx="220" cy="140" rx="80" ry="12" fill="none" stroke="#12643e" stroke-width="4"/>
+      <ellipse cx="660" cy="93.2" rx="65" ry="10" fill="none" stroke="#12643e" stroke-width="4"/>
+      <ellipse cx="660" cy="186.8" rx="65" ry="10" fill="none" stroke="#12643e" stroke-width="4"/>
+      <g text-anchor="middle" fill="#173746">
+        <text x="220" y="272" font-size="17" font-weight="700">Singgung (<tspan font-style="italic">tangent</tspan>): satu garis baku</text>
+        <text x="660" y="272" font-size="17" font-weight="700">Potong (<tspan font-style="italic">secant</tspan>): dua garis baku</text>
+      </g>
+    </svg><figcaption>Ilustrasi konsep. Garis hijau adalah <strong>garis baku</strong> (<em>standard line</em>), yaitu garis tempat skala peta tepat sama dengan skala globe.</figcaption></figure>
+    <div class="choice-grid">
+      <div class="choice-card"><strong>Singgung</strong><ul class="pts"><li>Bidang <strong>menyentuh</strong> globe pada satu titik atau satu garis.</li><li>Distorsi bertambah makin jauh dari garis singgung tersebut.</li></ul></div>
+      <div class="choice-card"><strong>Potong</strong><ul class="pts"><li>Bidang <strong>memotong</strong> globe sehingga terdapat dua garis baku.</li><li>Distorsi dibagi lebih merata di antara kedua garis tersebut.</li></ul></div>
+    </div>
+    <div class="key-message">Jenis bidang dan aspeknya adalah dua hal berbeda. Kata <b>silinder</b> menjelaskan jenis bidang, sedangkan kata <b>transversal</b> menjelaskan orientasinya.</div>
+  </section>
+
+  <section class="lesson-block" id="istilah">
+    <div class="section-kicker">Fondasi konsep</div>
+    <h2>9. Elipsoid, datum, dan sistem referensi koordinat</h2>
+    <p>Sebelum diproyeksikan, posisi suatu titik harus didefinisikan terhadap <strong>model bumi</strong> dan <strong>acuan posisi</strong>.</p>
+    <div class="flow-row" aria-label="Hubungan model bumi hingga koordinat peta">
+      <div class="flow-step"><strong>Elipsoid</strong><span>model bentuk bumi</span></div><span class="flow-arrow">→</span>
+      <div class="flow-step"><strong>Datum</strong><span>mengikat model ke bumi</span></div><span class="flow-arrow">→</span>
+      <div class="flow-step"><strong>Koordinat geografis</strong><span>lintang dan bujur</span></div><span class="flow-arrow">→</span>
+      <div class="flow-step"><strong>Proyeksi</strong><span>rumus konversi</span></div><span class="flow-arrow">→</span>
+      <div class="flow-step"><strong>Koordinat proyeksi</strong><span>Easting–Northing</span></div>
+    </div>
+    <ul class="pts">
+      <li><strong>Elipsoid</strong> (<em>ellipsoid</em>) adalah model matematis bumi yang berbentuk bola sedikit pepat di kutub.</li>
+      <li><strong>Datum</strong> (<em>geodetic datum</em>) menetapkan posisi dan orientasi elipsoid terhadap bumi sehingga angka koordinat memiliki acuan yang jelas.</li>
+      <li><strong>Sistem referensi koordinat</strong> (<em>coordinate reference system</em>, CRS) adalah sistem koordinat yang sudah dikaitkan dengan datum tertentu.</li>
+      <li>CRS geografis menyatakan posisi dalam <strong>derajat</strong>, sedangkan CRS proyeksi menyatakan posisi dalam <strong>meter</strong> pada bidang datar.</li>
+    </ul>
+    <div class="table-wrap"><table class="comparison-table"><thead><tr><th>Istilah</th><th>Fungsi</th><th>Contoh</th></tr></thead><tbody>
+      <tr><td>Elipsoid</td><td>Model matematis bentuk bumi.</td><td>Elipsoid WGS 84</td></tr>
+      <tr><td>Datum / kerangka referensi</td><td>Mengikat elipsoid pada bumi; menentukan titik asal dan orientasi.</td><td>SRGI2013, WGS 84</td></tr>
+      <tr><td>CRS geografis</td><td>Menyatakan posisi dengan lintang dan bujur.</td><td>110,37° BT; 7,80° LS</td></tr>
+      <tr><td>Proyeksi peta</td><td>Rumus yang mengubah lintang–bujur menjadi koordinat datar.</td><td>Transverse Mercator</td></tr>
+      <tr><td>CRS proyeksi</td><td>Gabungan CRS geografis, proyeksi, parameter, dan satuan meter.</td><td>WGS 84 / UTM zona 49S</td></tr>
+    </tbody></table></div>
+    <div class="do-not-confuse">
+      <div><h4>Koordinat geografis</h4><ul><li>Satuannya adalah satuan sudut, biasanya derajat.</li><li>Posisi dinyatakan dengan lintang dan bujur.</li><li>Posisi berada pada permukaan elipsoid.</li></ul></div>
+      <div><h4>Koordinat proyeksi</h4><ul><li>Satuannya adalah satuan panjang, biasanya meter.</li><li>Posisi dinyatakan dengan Easting dan Northing (X dan Y).</li><li>Posisi berada pada bidang datar.</li></ul></div>
+    </div>
+    <div class="key-message"><strong>Hal penting:</strong> datum <b>bukan</b> proyeksi. Datum menjawab pertanyaan "posisi diukur terhadap apa", sedangkan proyeksi menjawab pertanyaan "bagaimana posisi digambar di bidang datar".</div>
+    <p class="source-note">Definisi disederhanakan dari <a href="https://docs.ogc.org/as/18-005r4/18-005r4.html" target="_blank" rel="noopener">OGC Abstract Specification: Referencing by Coordinates</a> dan <a href="https://pro.arcgis.com/en/pro-app/latest/help/mapping/properties/coordinate-systems-and-projections.htm" target="_blank" rel="noopener">Esri, Coordinate Systems, Map Projections, and Transformations</a>.</p>
+  </section>
+
+  <section class="lesson-block" id="utm">
+    <div class="section-kicker">Penerapan di Indonesia</div>
+    <h2>10. Universal Transverse Mercator (UTM)</h2>
+    <div class="utm-facts">
+      <div><strong>60 zona</strong><span>mengelilingi bumi dari barat ke timur</span></div>
+      <div><strong>6° bujur</strong><span>lebar setiap zona</span></div>
+      <div><strong>Meter</strong><span>satuan Easting dan Northing</span></div>
+    </div>
+    <ul class="pts">
+      <li><strong>UTM</strong> adalah sistem koordinat yang menggunakan proyeksi <strong>Transverse Mercator</strong>, yaitu proyeksi silinder, konform, dan beraspek transversal.</li>
+      <li>Setiap zona memiliki <strong>meridian tengah</strong> (<em>central meridian</em>) sendiri sehingga distorsi tetap kecil di dalam zona.</li>
+      <li>Setiap zona dibagi lagi menjadi bagian <strong>utara (N)</strong> dan <strong>selatan (S)</strong> khatulistiwa.</li>
+    </ul>
+    <figure class="real-map"><svg viewBox="0 0 880 400" role="img" aria-label="Satu zona UTM dengan meridian tengah bernilai Easting 500.000 meter dan nilai Northing untuk belahan utara dan selatan" style="width:100%;height:auto;background:#fff;border:1px solid #d7e0e5;font-family:Arial,sans-serif">
+      <rect x="300" y="30" width="220" height="330" fill="#e8f2f6" stroke="#0b607c" stroke-width="3"/>
+      <line x1="410" y1="30" x2="410" y2="360" stroke="#0b607c" stroke-width="3" stroke-dasharray="8 6"/>
+      <line x1="300" y1="195" x2="520" y2="195" stroke="#b06b36" stroke-width="3"/>
+      <text x="410" y="22" text-anchor="middle" font-size="14" font-weight="700" fill="#0b607c">meridian tengah</text>
+      <text x="410" y="385" text-anchor="middle" font-size="14" fill="#173746">lebar zona 6° bujur</text>
+      <text x="530" y="200" font-size="14" font-weight="700" fill="#b06b36">khatulistiwa</text>
+      <g font-size="14" fill="#173746">
+        <text x="20" y="90" font-weight="700">Belahan utara (N)</text>
+        <text x="20" y="112">Northing = 0 m di khatulistiwa,</text>
+        <text x="20" y="132">bertambah ke arah utara.</text>
+        <text x="20" y="250" font-weight="700">Belahan selatan (S)</text>
+        <text x="20" y="272">Northing = 10.000.000 m di</text>
+        <text x="20" y="292">khatulistiwa, berkurang ke selatan.</text>
+        <text x="590" y="90" font-weight="700">Easting</text>
+        <text x="590" y="112">Meridian tengah diberi nilai</text>
+        <text x="590" y="132">500.000 m (<tspan font-style="italic">false easting</tspan>)</text>
+        <text x="590" y="152">agar Easting tidak bernilai negatif.</text>
+      </g>
+      <circle cx="455" cy="250" r="7" fill="#12643e"/>
+      <text x="590" y="250" font-size="14" font-weight="700" fill="#12643e">Contoh titik di belahan selatan:</text>
+      <text x="590" y="272" font-size="14" fill="#173746">Easting sedikit di atas 500.000 m</text>
+      <text x="590" y="292" font-size="14" fill="#173746">(di timur meridian tengah) dan</text>
+      <text x="590" y="312" font-size="14" fill="#173746">Northing di bawah 10.000.000 m.</text>
+    </svg><figcaption>Ilustrasi konsep satu zona UTM. Nilai 500.000 m dan 10.000.000 m adalah nilai tambahan (<em>false easting</em> dan <em>false northing</em>) yang ditetapkan dalam definisi UTM.</figcaption></figure>
+    <figure><a href="zona-utm-indonesia.svg" target="_blank" rel="noopener"><img src="zona-utm-indonesia.svg" alt="Indonesia melintasi zona UTM 46 sampai 54"></a><figcaption>Indonesia melintasi zona UTM 46–54.
+      <ul class="pts"><li>Gambar dibuat dari data batas negara <a href="https://www.naturalearthdata.com/downloads/110m-cultural-vectors/" target="_blank" rel="noopener">Natural Earth</a>.</li><li>Pembagian zona mengacu pada <a href="https://srgi.big.go.id/page/transformasi-koordinat" target="_blank" rel="noopener">SRGI–BIG</a> dan <a href="https://proj.org/en/stable/operations/projections/utm.html" target="_blank" rel="noopener">PROJ</a>.</li></ul></figcaption></figure>
+    <h3>Contoh: Yogyakarta</h3>
+    <ul class="pts">
+      <li>Yogyakarta terletak sekitar <strong>110,4° BT</strong> dan di selatan khatulistiwa.</li>
+      <li>Zona 49 mencakup bujur 108°–114° BT, sehingga Yogyakarta berada dalam <strong>zona UTM 49S</strong>.</li>
+      <li>Nama zona saja belum cukup, sehingga <strong>datum</strong> data juga harus diketahui, misalnya WGS 84 atau SRGI2013.</li>
+      <li>Untuk data geospasial nasional, Badan Informasi Geospasial menetapkan <strong>SRGI2013</strong> (Sistem Referensi Geospasial Indonesia 2013) sebagai acuan posisi yang wajib digunakan (Peraturan BIG Nomor 13 Tahun 2021).</li>
+    </ul>
+    <div class="key-message"><strong>Kesalahan yang harus dihindari:</strong> menggabungkan koordinat dari dua zona UTM atau dua datum yang berbeda seolah-olah keduanya berada dalam satu sistem yang sama.</div>
+    <p class="source-note">Sumber: <a href="https://srgi.big.go.id/page/transformasi-koordinat" target="_blank" rel="noopener">BIG, Transformasi Geodetik–UTM</a>; <a href="https://www.big.go.id/uploads/content/produk/Geomatika/JIGVol26No12020.pdf" target="_blank" rel="noopener">Jurnal Ilmiah Geomatika Vol. 26 No. 1</a>; <a href="https://earth-info.nga.mil/?action=coordsys&dir=coordsys" target="_blank" rel="noopener">NGA, Coordinate Systems</a>; dan <a href="https://proj.org/en/stable/operations/projections/utm.html" target="_blank" rel="noopener">PROJ, UTM</a>.</p>
+  </section>
+
+  <section class="lesson-block" id="memilih">
+    <div class="section-kicker">Pengambilan keputusan</div>
+    <h2>11. Dasar pemilihan proyeksi</h2>
+    <div class="decision-path">
+      <div><span>1 · Tujuan</span><strong>Apa yang ingin disampaikan atau diukur?</strong></div>
+      <div><span>2 · Wilayah</span><strong>Di mana lokasi dan bagaimana bentuk wilayahnya?</strong></div>
+      <div><span>3 · Cakupan</span><strong>Lokal, nasional, benua, atau dunia?</strong></div>
+      <div><span>4 · Sifat</span><strong>Luas, bentuk, jarak, atau arah yang diprioritaskan?</strong></div>
+    </div>
+    <div class="table-wrap"><table><thead><tr><th>Kebutuhan peta</th><th>Hal yang diprioritaskan</th><th>Arah pilihan awal</th></tr></thead><tbody>
+      <tr><td>Perbandingan luas hutan dunia</td><td>Luas relatif</td><td>Proyeksi sama luas, misalnya Equal Earth</td></tr>
+      <tr><td>Peta dunia untuk gambaran umum</td><td>Keseimbangan tampilan</td><td>Proyeksi kompromi, misalnya Robinson</td></tr>
+      <tr><td>Navigasi laut dengan arah kompas tetap</td><td>Sudut dan arah</td><td>Proyeksi konform Mercator</td></tr>
+      <tr><td>Jarak dari satu pusat</td><td>Jarak dari titik tersebut</td><td>Azimuthal Equidistant yang dipusatkan pada titik tersebut</td></tr>
+      <tr><td>Peta topografi wilayah Yogyakarta</td><td>Ketelitian lokal dan koordinat meter</td><td>UTM zona 49S dengan datum yang benar</td></tr>
+    </tbody></table></div>
+    <p class="source-note">Pemilihan akhir tetap harus memeriksa area penggunaan, datum, parameter proyeksi, ketelitian yang diperlukan, dan perangkat lunak yang digunakan.</p>
+  </section>
+
+  <section class="lesson-block" id="ringkasan">
+    <div class="section-kicker">Penutup</div>
+    <h2>12. Ringkasan</h2>
+    <ol>
+      <li>Proyeksi mengubah posisi dari permukaan bumi yang melengkung ke bidang datar.</li>
+      <li>Setiap proyeksi menimbulkan distorsi luas, bentuk/sudut, jarak, atau arah.</li>
+      <li>Sifat konform, sama luas, ekuidistan, dan azimutal menunjukkan apa yang dipertahankan oleh suatu proyeksi.</li>
+      <li>Bidang proyeksi (silinder, kerucut, bidang datar) dan aspeknya (normal, transversal, miring) adalah dua dasar klasifikasi yang berbeda.</li>
+      <li>Elipsoid dan datum mendefinisikan posisi, sedangkan proyeksi mengubah posisi tersebut menjadi koordinat datar.</li>
+      <li>UTM membagi bumi menjadi 60 zona selebar 6°, dan Indonesia melintasi zona 46–54.</li>
+      <li>Proyeksi dipilih berdasarkan tujuan, wilayah, cakupan, dan sifat yang perlu dipertahankan.</li>
+    </ol>
+    <h3>Pertemuan 6</h3>
+    <p>Pertemuan berikutnya membahas <strong>jenis dan pembacaan peta</strong>, terutama cara membaca informasi pada peta topografi.</p>
+  </section>
+
+  <section class="lesson-block" id="latihan">
+    <div class="section-kicker">Lembar latihan proyeksi</div>
+    <h2>13. Latihan dan tugas</h2>
+    <h3>A. Latihan konsep</h3>
+    <div class="question-box"><strong>Jawablah dengan kalimat sendiri</strong><ol>
+      <li>Jelaskan dalam dua sampai tiga kalimat mengapa satu peta dunia <b>tidak dapat sekaligus</b> benar luasnya dan benar bentuknya.</li>
+      <li>Sebutkan <b>empat jenis distorsi</b>, lalu tulis satu contoh untuk setiap jenis yang dapat dilihat atau dihitung dari gambar dan uraian pada <a href="#perbandingan">Bagian 5</a>.</li>
+      <li>Jelaskan perbedaan <b>bidang proyeksi silinder</b> dan <b>aspek transversal</b> dengan menyebut dasar klasifikasi masing-masing, lalu sebutkan satu proyeksi yang memakai keduanya.</li>
+      <li>Jelaskan perbedaan <b>datum</b> dan <b>proyeksi peta</b>, lalu tunjukkan bagian datum dan bagian proyeksi pada nama CRS "WGS 84 / UTM zona 49S".</li>
+      <li>Sebuah titik terletak pada <b>124,8° BT dan 1,5° LU</b>, sehingga kamu diminta menentukan zona UTM titik tersebut beserta belahannya (N atau S).</li>
+      <li>Tentukan zona UTM, belahan, dan meridian tengah untuk <b>Banda Aceh</b> (sekitar 95,3° BT dan 5,5° LU) dan <b>Merauke</b> (sekitar 140,4° BT dan 8,5° LS).</li>
+    </ol></div>
+    <div class="question-box"><strong>Rumus bantu zona UTM (untuk bujur timur)</strong><ul class="pts">
+      <li><b>Nomor zona</b> = bilangan bulat dari (bujur + 180) ÷ 6, lalu ditambah 1.</li>
+      <li><b>Meridian tengah</b> = 6 × nomor zona − 183, dalam derajat bujur timur.</li>
+      <li>Huruf <b>N</b> dipakai untuk titik di utara khatulistiwa (LU), sedangkan huruf <b>S</b> dipakai untuk titik di selatan khatulistiwa (LS).</li>
+    </ul></div>
+    <details class="answer-reveal"><summary>Kunci jawaban latihan konsep</summary><ol>
+      <li>Permukaan bumi yang melengkung tidak dapat dibentangkan menjadi bidang datar tanpa diregangkan atau disobek; proyeksi konform menjaga sudut lokal tetapi mengubah luas, sedangkan proyeksi sama luas menjaga luas tetapi mengubah bentuk.</li>
+      <li><strong>Luas</strong>: Greenland tampak hampir sebesar Afrika pada Mercator; <strong>bentuk</strong>: benua di lintang tinggi tampak memipih pada Equal Earth; <strong>jarak</strong>: skala Mercator pada lintang 60° sekitar dua kali skala di khatulistiwa; <strong>arah</strong>: meridian pada Robinson melengkung, sehingga arah utara di tepi kiri dan kanan peta tidak sejajar dengan tepi kertas.</li>
+      <li>Silinder adalah klasifikasi menurut <strong>bentuk bidang proyeksi</strong>, sedangkan transversal adalah klasifikasi menurut <strong>posisi sumbu bidang terhadap sumbu bumi</strong>; contoh yang memakai keduanya adalah <strong>Transverse Mercator</strong>.</li>
+      <li>Datum menetapkan acuan posisi, sedangkan proyeksi mengubah posisi ke bidang datar; pada nama tersebut, <strong>WGS 84</strong> adalah datum dan <strong>UTM zona 49S</strong> adalah sistem proyeksinya.</li>
+      <li>(124,8 + 180) ÷ 6 = 50,8, sehingga bilangan bulatnya 50 dan nomor zonanya 50 + 1 = 51; titik berada di utara khatulistiwa, sehingga zonanya <strong>51N</strong>.</li>
+      <li>Banda Aceh: (95,3 + 180) ÷ 6 = 45,9 → zona 46, meridian tengah 6 × 46 − 183 = 93° BT, sehingga ditulis <strong>46N</strong>; Merauke: (140,4 + 180) ÷ 6 = 53,4 → zona 54, meridian tengah 6 × 54 − 183 = 141° BT, sehingga ditulis <strong>54S</strong>.</li>
+    </ol></details>
+
+    <h3>B. Kasus untuk diskusi kelas</h3>
+    <div class="case-grid">
+      <article class="case-card"><strong>Kasus A · Peta luas hutan</strong><p>Peta dunia dipakai untuk membandingkan luas hutan antarnegara. Pilih satu dari empat proyeksi di Bagian 5 dan sebutkan sifat yang dipertahankannya.</p></article>
+      <article class="case-card"><strong>Kasus B · Rute penerbangan</strong><p>Jelaskan dalam dua kalimat mengapa rute terpendek Jakarta–Los Angeles tampak melengkung pada peta datar, dengan memakai istilah <em>lingkaran besar</em>.</p></article>
+      <article class="case-card"><strong>Kasus C · Peta Kota Yogyakarta</strong><p>Jelaskan mengapa koordinat dalam meter pada zona UTM yang tepat lebih praktis daripada derajat untuk mengukur jarak antargedung.</p></article>
+    </div>
+    <details class="answer-reveal"><summary>Arah pembahasan</summary><ul class="pts">
+      <li>Pada kasus A, pilihan yang tepat adalah <strong>Equal Earth</strong> karena proyeksi ini bersifat <strong>sama luas</strong>, sehingga perbandingan luas tidak menyesatkan.</li>
+      <li>Pada kasus B, rute terpendek mengikuti <strong>lingkaran besar</strong> (<em>great circle</em>) di permukaan bumi, sehingga bentuknya pada peta datar bergantung pada proyeksi dan biasanya tampak melengkung.</li>
+      <li>Pada kasus C, koordinat proyeksi dalam <strong>meter</strong> dapat langsung dipakai untuk menghitung jarak, sedangkan satu derajat bujur tidak selalu sama panjangnya; syaratnya CRS, datum, dan zona (49S) harus benar.</li>
+    </ul></details>
+
+    <h3 id="tugas-proyeksi">C. Tugas mandiri: periksa proyeksi pada dua peta pilihanmu</h3>
+    <p>Tugas ini <strong>dikumpulkan</strong> sebagai <strong>Bagian A</strong> tugas proyeksi; Bagian B (kasus pemilihan proyeksi) ada di <a href="minggu-5-1.html#tugas">Materi 5.1, Bagian F.3</a>.</p>
+    <h4>Langkah kerja</h4>
+    <ol class="pts">
+      <li>Cari <strong>dua peta dunia atau peta regional</strong> (satu benua atau lebih) yang berbeda tampilannya, misalnya dari <a href="https://www.cia.gov/the-world-factbook/maps/" target="_blank" rel="noopener">CIA World Factbook</a>, <a href="https://earthobservatory.nasa.gov" target="_blank" rel="noopener">NASA Earth Observatory</a>, <a href="https://commons.wikimedia.org/wiki/Category:Maps_of_the_world" target="_blank" rel="noopener">Wikimedia Commons</a>, atau <a href="https://coralreefwatch.noaa.gov" target="_blank" rel="noopener">NOAA Coral Reef Watch</a> (lihat juga <a href="album-peta.html"><strong>Album sumber peta</strong></a>).</li>
+      <li>Tempelkan <strong>gambar kedua peta</strong> dan tulis <strong>identitas sumbernya</strong> (judul, lembaga, tahun, tautan, tanggal akses).</li>
+      <li>Usahakan salah satu peta memperlihatkan <strong>Greenland dan Afrika</strong> secara utuh agar uji luas pada baris 5 dapat dikerjakan.</li>
+      <li>Isi <strong>tabel analisis proyeksi</strong> di bawah ini untuk kedua peta dengan menunjuk bagian peta yang menjadi bukti.</li>
+      <li>Bandingkan hasilmu dengan <strong>contoh jawaban</strong> untuk peta CIA dan peta NASA di bawahnya.</li>
+    </ol>
+    <div class="formula-box"><strong>Istilah dan cara mengukur</strong>
+      <ul class="pts">
+        <li><strong>Gratikul</strong> (<em>graticule</em>) adalah jaring garis lintang (paralel) dan garis bujur (meridian) yang digambar pada peta; bentuk jaring inilah petunjuk utama jenis proyeksi.</li>
+        <li>Peta dunia yang <strong>lonjong</strong>, dengan paralel lurus mendatar dan meridian melengkung, termasuk kelompok <strong>pseudosilinder</strong> (<em>pseudocylindrical</em>), misalnya Robinson dan Equal Earth; peta persegi panjang dengan meridian dan paralel lurus saling tegak lurus termasuk kelompok silinder, misalnya Mercator.</li>
+        <li><strong>Uji Greenland–Afrika</strong>: ukur panjang (utara–selatan) dan lebar (barat–timur) kotak yang tepat melingkupi setiap daratan, lalu hitung <strong>rasio = (panjang × lebar Afrika) ÷ (panjang × lebar Greenland)</strong>.</li>
+        <li>Luas Afrika di bumi sekitar <strong>30,3 juta km²</strong> dan luas Greenland sekitar <strong>2,2 juta km²</strong>, sehingga rasio sebenarnya sekitar <strong>14</strong>.</li>
+        <li>Jika rasio pada peta jauh lebih kecil, misalnya 1–3, luas di lintang tinggi <strong>sangat dibesar-besarkan</strong> seperti pada Mercator; jika rasionya sekitar 10–14, luas relatif <strong>cukup terjaga</strong>.</li>
+        <li>Uji ini hanya <strong>perkiraan kasar</strong> karena bentuk kedua daratan tidak persis mengisi kotaknya.</li>
+      </ul>
+    </div>
+    <h4>Tabel analisis proyeksi</h4>
+    <table class="compare-table">
+      <thead><tr><th>No.</th><th>Aspek</th><th>Pertanyaan yang harus dijawab</th><th>Peta 1</th><th>Peta 2</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Tujuan peta</td><td>Peta ini dibuat untuk apa (gambaran umum, tema tertentu, navigasi)? Tulis bukti dari judul atau legenda.</td><td>…</td><td>…</td></tr>
+        <tr><td>2</td><td>Nama proyeksi</td><td>Apakah nama proyeksi tertulis di informasi tepi, catatan, atau halaman sumber? Tulis namanya, atau tulis "tidak dicantumkan".</td><td>…</td><td>…</td></tr>
+        <tr><td>3</td><td>Bentuk gratikul</td><td>Apakah paralel lurus atau melengkung? Apakah meridian lurus sejajar, melengkung, atau bertemu di satu titik? Apa bentuk tepi peta?</td><td>…</td><td>…</td></tr>
+        <tr><td>4</td><td>Kelompok proyeksi</td><td>Berdasarkan baris 3 dan gambar di <a href="#perbandingan">Bagian 5</a>, panel mana yang paling mirip, dan termasuk kelompok silinder, pseudosilinder, kerucut, atau bidang datar?</td><td>…</td><td>…</td></tr>
+        <tr><td>5</td><td>Uji Greenland–Afrika</td><td>Ukur kotak Greenland dan Afrika, hitung rasionya, lalu bandingkan dengan angka 14.</td><td>…</td><td>…</td></tr>
+        <tr><td>6</td><td>Petunjuk distorsi lain</td><td>Bagian peta mana yang bentuknya paling miring, memipih, atau membesar? Sebutkan nama daratannya.</td><td>…</td><td>…</td></tr>
+        <tr><td>7</td><td>Sifat proyeksi</td><td>Apakah proyeksi ini konform, sama luas, atau kompromi? Tulis bukti dari baris 2–6 dan tandai "pasti" atau "perkiraan".</td><td>…</td><td>…</td></tr>
+        <tr><td>8</td><td>Kesesuaian dengan tujuan</td><td>Apakah proyeksi ini sesuai dengan tujuan pada baris 1? Jawab "sesuai" atau "kurang sesuai", beri alasan, dan usulkan proyeksi lain jika kurang sesuai.</td><td>…</td><td>…</td></tr>
+      </tbody>
+    </table>
+
+    <h4>Contoh jawaban: peta fisik dunia CIA dan peta anomali suhu NASA</h4>
+    <figure class="real-map"><a href="world.webp" target="_blank" rel="noopener"><img src="world.webp" alt="Peta 1: peta fisik dunia CIA World Factbook dengan tepi lonjong dan meridian melengkung" loading="lazy"></a><figcaption><strong>Peta 1.</strong> Physical World Map, CIA World Factbook, versi Wikimedia Commons; domain publik, gambar diperkecil tanpa mengubah isi. Sumber: <a href="https://commons.wikimedia.org/wiki/File:Physical_World_Map.svg" target="_blank" rel="noopener">Wikimedia Commons</a>.</figcaption></figure>
+    <figure class="real-map"><a href="temperature.webp" target="_blank" rel="noopener"><img src="temperature.webp" alt="Peta 2: peta anomali suhu rata-rata 2020–2024 dari NASA dengan tepi atas dan bawah terpotong datar" loading="lazy"></a><figcaption><strong>Peta 2.</strong> Anomali suhu rata-rata 2020–2024 terhadap periode acuan 1951–1980, NASA Earth Observatory / GISS. Sumber: <a href="https://science.nasa.gov/earth/earth-observatory/world-of-change/global-temperatures/" target="_blank" rel="noopener">NASA Earth Observatory, World of Change: Global Temperatures</a>.</figcaption></figure>
+    <table class="compare-table">
+      <thead><tr><th>No.</th><th>Aspek</th><th>Peta 1 (CIA)</th><th>Peta 2 (NASA)</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Tujuan peta</td><td>Peta umum dunia untuk rujukan; buktinya adalah banyaknya nama negara, laut, dan kota serta relief daratan dan dasar laut.</td><td>Peta tematik suhu; buktinya adalah judul legenda "Temperature Anomaly (°C compared to 1951–1980 average)".</td></tr>
+        <tr><td>2</td><td>Nama proyeksi</td><td>Tidak dicantumkan pada gambar.</td><td>Tidak dicantumkan pada gambar.</td></tr>
+        <tr><td>3</td><td>Bentuk gratikul</td><td>Paralel, misalnya garis Antarctic Circle, berupa garis lurus mendatar; meridian melengkung ke arah kutub; tepi kiri dan kanan lonjong, sedangkan tepi atas dan bawah datar.</td><td>Paralel lurus mendatar dan meridian melengkung; tepi kiri dan kanan lonjong, sedangkan tepi atas dan bawah terpotong datar sehingga sebagian Arktika dan Antarktika tidak tampil.</td></tr>
+        <tr><td>4</td><td>Kelompok proyeksi</td><td>Pseudosilinder; paling mirip dengan panel <strong>Robinson</strong> pada Bagian 5.</td><td>Pseudosilinder; juga paling mirip dengan panel <strong>Robinson</strong>.</td></tr>
+        <tr><td>5</td><td>Uji Greenland–Afrika</td><td>Pada gambar selebar 2.400 piksel, kotak Afrika sekitar 505 × 525 piksel dan kotak Greenland sekitar 170 × 140 piksel, sehingga rasionya sekitar 265.000 ÷ 23.800 ≈ <strong>11</strong>; angka ini cukup dekat dengan 14, sehingga luas Greenland tidak banyak dibesar-besarkan.</td><td>Bagian utara Greenland terpotong oleh tepi atas peta, sehingga rasio tidak dapat dihitung; bagian Greenland yang tampak jelas jauh lebih kecil daripada Afrika.</td></tr>
+        <tr><td>6</td><td>Petunjuk distorsi lain</td><td>Daratan di sudut kiri atas, misalnya Alaska, tampak miring karena meridian di tepi peta melengkung tajam.</td><td>Garis pantai Kanada utara dan Rusia utara di dekat tepi atas tampak melebar ke samping dan miring.</td></tr>
+        <tr><td>7</td><td>Sifat proyeksi</td><td>Kompromi (perkiraan), karena gratikulnya mirip Robinson, bentuk di tepi peta miring, dan luas tidak dibesar-besarkan secara kuat.</td><td>Kompromi (perkiraan), dengan alasan yang sama seperti Peta 1.</td></tr>
+        <tr><td>8</td><td>Kesesuaian dengan tujuan</td><td>Sesuai, karena peta umum dunia membutuhkan tampilan seimbang tanpa wilayah kutub yang tampak raksasa.</td><td>Kurang sesuai untuk membandingkan luas wilayah yang memanas, karena proyeksi kompromi tidak tepat sama luas dan tepi atasnya terpotong; <strong>Equal Earth</strong> lebih tepat untuk tujuan itu.</td></tr>
+      </tbody>
+    </table>
+    <h4>Kriteria penilaian</h4>
+    <table class="compare-table">
+      <thead><tr><th>Kriteria</th><th>Baik</th><th>Perlu perbaikan</th></tr></thead>
+      <tbody>
+        <tr><td>Identitas peta</td><td>Gambar kedua peta dan sumbernya (judul, lembaga, tahun, tautan) lengkap.</td><td>Gambar atau sumber peta tidak dicantumkan.</td></tr>
+        <tr><td>Bukti gratikul</td><td>Bentuk paralel, meridian, dan tepi peta dijelaskan dengan menunjuk bagian peta.</td><td>Nama proyeksi ditebak tanpa bukti dari gratikul.</td></tr>
+        <tr><td>Uji luas</td><td>Ukuran kotak, perhitungan rasio, dan kesimpulannya ditulis.</td><td>Hanya menulis "Greenland tampak besar" tanpa ukuran.</td></tr>
+        <tr><td>Kesesuaian</td><td>Kesimpulan dikaitkan dengan tujuan peta dan disertai usulan proyeksi bila kurang sesuai.</td><td>Kesimpulan tidak dikaitkan dengan tujuan peta.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="question-box"><strong>Pertanyaan penutup</strong><p>Manakah peta yang paling benar: Mercator, Equal Earth, Robinson, atau Winkel Tripel?</p></div>
+    <details class="answer-reveal"><summary>Lihat jawaban</summary><ul class="pts"><li>Tidak ada satu proyeksi yang paling benar untuk semua tujuan.</li><li>Pertanyaan yang tepat adalah <strong>proyeksi mana yang paling sesuai untuk tujuan peta ini</strong>.</li></ul></details>
+    <p>Latihan lanjutan dan Bagian B tugas mandiri tersedia pada <a href="minggu-5-1.html#latihan">Materi 5.1, Bagian F</a>.</p>
+  </section>
+
+  <section class="lesson-block" id="referensi">
+    <div class="section-kicker">Sumber yang dapat diperiksa</div>
+    <h2>14. Referensi dan sumber ilustrasi</h2>
+    <ol class="reference">
+      <li><a href="https://pubs.usgs.gov/publication/pp1395" target="_blank" rel="noopener">Snyder, J. P. (1987). <em>Map Projections—A Working Manual</em>. USGS Professional Paper 1395.</a></li>
+      <li><a href="https://pubs.usgs.gov/publication/pp1453" target="_blank" rel="noopener">Snyder, J. P., &amp; Voxland, P. M. (1989). <em>An Album of Map Projections</em>. USGS Professional Paper 1453.</a></li>
+      <li><a href="https://pubs.usgs.gov/publication/70047422" target="_blank" rel="noopener">U.S. Geological Survey. <em>Map Projections</em>.</a></li>
+      <li><a href="https://docs.ogc.org/as/18-005r4/18-005r4.html" target="_blank" rel="noopener">Open Geospatial Consortium. Abstract Specification Topic 2: Referencing by Coordinates.</a></li>
+      <li><a href="https://pro.arcgis.com/en/pro-app/latest/help/mapping/properties/coordinate-systems-and-projections.htm" target="_blank" rel="noopener">Esri. Coordinate Systems, Map Projections, and Transformations.</a></li>
+      <li><a href="https://pro.arcgis.com/en/pro-app/latest/help/mapping/properties/specify-a-coordinate-system.htm" target="_blank" rel="noopener">Esri. Work with Coordinate Systems.</a></li>
+      <li><a href="https://proj.org/en/stable/operations/projections/tmerc.html" target="_blank" rel="noopener">PROJ. Transverse Mercator.</a></li>
+      <li><a href="https://proj.org/en/stable/operations/projections/utm.html" target="_blank" rel="noopener">PROJ. Universal Transverse Mercator.</a></li>
+      <li><a href="https://srgi.big.go.id/page/transformasi-koordinat" target="_blank" rel="noopener">Badan Informasi Geospasial. Transformasi Koordinat Geodetik–UTM.</a></li>
+      <li><a href="https://www.big.go.id/uploads/content/produk/Geomatika/JIGVol26No12020.pdf" target="_blank" rel="noopener">Badan Informasi Geospasial. <em>Jurnal Ilmiah Geomatika</em>, Vol. 26 No. 1, 2020.</a></li>
+      <li><a href="https://earth-info.nga.mil/?action=coordsys&dir=coordsys" target="_blank" rel="noopener">National Geospatial-Intelligence Agency. Coordinate Systems: UTM.</a></li>
+      <li><a href="https://education.nationalgeographic.org/resource/selecting-map-projection/" target="_blank" rel="noopener">National Geographic Society. Selecting a Map Projection.</a></li>
+      <li><a href="https://www.naturalearthdata.com/downloads/110m-cultural-vectors/" target="_blank" rel="noopener">Natural Earth. Admin 0 Countries, skala 1:110 juta.</a><br><span class="meta">Digunakan untuk peta perbandingan proyeksi, Tissot, dan zona UTM Indonesia.</span></li>
+    </ol>
+  </section>
+  <footer>Kartografi (Teori) · Ni Putu Praja Chintya<br>Sumber dan hak penggunaan setiap peta tercantum pada keterangan gambar. Situs bahan ajar pribadi, bukan situs resmi universitas.</footer>
+</main>
+</div>
+<script src="site.js?v=20261122c" defer></script>
+</body>
+</html>

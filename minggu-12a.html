@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Minggu 12A — Digitalisasi peta | Kartografi (Teori)</title>
+<meta name="description" content="Bahan ajar digitalisasi peta: peta analog dan digital, raster dan vektor, penggambaran manual, pemindaian, georeferensi, digitasi, atribut, topologi, dan kontrol kualitas.">
+<link rel="stylesheet" href="style.css?v=20261018b">
+<link rel="stylesheet" href="visual-enhance.css?v=20260906b">
+<link rel="stylesheet" href="week9-16.css?v=20261018b">
+<link rel="stylesheet" href="compact.css?v=20261122g">
+</head>
+<body>
+<a class="skip" href="#materi">Langsung ke materi</a>
+<aside class="sidebar">
+<a class="brand" href="index.html">Kartografi<br>(Teori)</a>
+<div class="course-kind">Bahan kuliah teori</div>
+<div class="course-staff">
+<span>Ni Putu Praja Chintya</span>
+<span>bersama Wahyu Marta Mutiarasari</span>
+</div>
+<div class="nav-heading">Pertemuan 1–16</div>
+<nav class="week-nav" aria-label="Materi pertemuan 1 sampai 16">
+<a href="minggu-1.html" title="1. Pengertian dan konsep kartografi">
+<span class="week-number">1</span>
+<span class="week-title">Pengertian dan konsep kartografi</span>
+</a>
+<a href="minggu-2.html" title="2. Klasifikasi peta dan lingkup kartografi">
+<span class="week-number">2</span>
+<span class="week-title">Klasifikasi peta dan lingkup kartografi</span>
+</a>
+<a href="minggu-3.html" title="3. Komunikasi kartografis">
+<span class="week-number">3</span>
+<span class="week-title">Komunikasi kartografis</span>
+</a>
+<a href="minggu-4.html" title="4. Komponen dan kelengkapan peta">
+<span class="week-number">4</span>
+<span class="week-title">Komponen dan kelengkapan peta</span>
+</a>
+<a href="minggu-5.html" title="5. Proyeksi peta">
+<span class="week-number">5</span>
+<span class="week-title">Proyeksi peta</span>
+</a>
+<a href="minggu-6.html" title="6. Jenis dan pembacaan peta">
+<span class="week-number">6</span>
+<span class="week-title">Jenis dan pembacaan peta</span>
+</a>
+<a href="minggu-7.html" title="7. Skala dan generalisasi">
+<span class="week-number">7</span>
+<span class="week-title">Skala dan generalisasi</span>
+</a>
+<a href="latihan-uts.html" title="8. Ujian Tengah Semester">
+<span class="week-number">8</span>
+<span class="week-title">Ujian Tengah Semester</span>
+</a>
+<a href="minggu-9.html" title="9. Penyajian relief">
+<span class="week-number">9</span>
+<span class="week-title">Penyajian relief</span>
+</a>
+<a href="minggu-10.html" title="10. Tampilan peta 3D">
+<span class="week-number">10</span>
+<span class="week-title">Tampilan peta 3D</span>
+</a>
+<a href="minggu-11.html" title="11. Variabel tampak dan simbol">
+<span class="week-number">11</span>
+<span class="week-title">Variabel tampak dan simbol</span>
+</a>
+<a href="minggu-12.html" title="12. Pemetaan data kualitatif dan kuantitatif">
+<span class="week-number">12</span>
+<span class="week-title">Pemetaan data kualitatif dan kuantitatif</span>
+</a>
+<a href="minggu-12a.html" aria-current="page" title="12A. Digitalisasi peta"><span class="week-number">12A</span><span class="week-title">Digitalisasi peta</span></a>
+<a href="minggu-13.html" title="13. Toponimi">
+<span class="week-number">13</span>
+<span class="week-title">Toponimi</span>
+</a>
+<a href="minggu-14.html" title="14. Tata letak dan keseimbangan peta">
+<span class="week-number">14</span>
+<span class="week-title">Tata letak dan keseimbangan peta</span>
+</a>
+<a href="minggu-15.html" title="15. Evaluasi peta terpadu">
+<span class="week-number">15</span>
+<span class="week-title">Evaluasi peta terpadu</span>
+</a>
+<a href="minggu-16.html" title="16. Ujian Akhir Semester">
+<span class="week-number">16</span>
+<span class="week-title">Ujian Akhir Semester</span>
+</a>
+</nav>
+<div class="nav-heading">Sumber belajar</div>
+<nav class="week-nav side-extra" aria-label="Sumber belajar"><a href="album-peta.html" title="Album sumber peta"><span class="week-number">A</span><span class="week-title">Album sumber peta</span></a></nav>
+</aside>
+<div class="layout">
+<main id="materi" class="presentation-notes">
+<div class="eyebrow">Pertemuan 12A · Kartografi (Teori)</div>
+<h1>Digitalisasi peta</h1>
+<p class="lead"><strong>Digitalisasi</strong> adalah proses mengubah <strong>peta kertas (analog)</strong> menjadi <strong>data digital</strong> yang dapat diolah komputer. Prosesnya terdiri atas empat langkah berikut.</p><ul class="pts"><li>Pertama, peta <strong>digambar secara manual</strong> di atas kertas dengan titik kontrol yang diketahui koordinatnya.</li><li>Kedua, peta kertas <strong>dipindai</strong> sehingga menjadi gambar digital berbentuk raster.</li><li>Ketiga, gambar raster <strong>diberi koordinat</strong> agar posisinya sesuai dengan lokasi sebenarnya di bumi (georeferensi).</li><li>Keempat, objek pada gambar <strong>digambar ulang</strong> sebagai titik, garis, dan area sehingga menjadi data vektor (digitasi).</li></ul>
+
+<div class="plain-note">
+<p><strong>Kaitan dengan CPMK:</strong> materi pendukung CPMK2 dan CPMK3. Kaidah skala, generalisasi, simbol, dan penyajian data tetap berlaku ketika peta dibuat dalam bentuk digital.</p>
+<p><strong>Materi prasyarat:</strong> sistem koordinat dan proyeksi (Pertemuan 5), skala dan generalisasi (Pertemuan 7), bentuk geometris simbol (Pertemuan 11).</p>
+</div>
+
+<section class="lesson-section" id="capaian">
+<h2>1. Capaian pembelajaran</h2>
+<ul class="key">
+<li>menjelaskan pengertian digitalisasi serta perbedaan data analog dan digital;</li>
+<li>membedakan data raster dan data vektor;</li>
+<li>menjelaskan tahapan digitalisasi: penggambaran manual, pemindaian, georeferensi, digitasi, pengisian atribut, dan kontrol kualitas;</li>
+<li>menghitung ukuran piksel hasil pindai berdasarkan resolusi dan skala peta;</li>
+<li>mengenali kesalahan digitasi dan cara memperbaikinya;</li>
+<li>membaca contoh proses dari peta kertas menjadi peta digital.</li>
+</ul>
+</section>
+
+<section class="lesson-section" id="pengertian">
+<h2>2. Analog dan digital, raster dan vektor</h2>
+<div class="concept-grid two">
+<article class="concept-card"><h3>Peta analog</h3><ul class="pts"><li>Peta analog adalah peta yang tergambar pada <strong>media fisik</strong>, seperti kertas, kalkir (<em>tracing paper</em>), atau film.</li><li>Contohnya adalah peta RBI cetak, peta lama, dan sketsa hasil survei lapangan.</li><li>Peta analog <strong>sulit dianalisis, diperbesar, dan diperbarui</strong> karena informasinya hanya berupa gambar.</li></ul></article>
+<article class="concept-card"><h3>Peta digital</h3><ul class="pts"><li>Peta digital adalah peta yang disimpan sebagai <strong>data</strong> di dalam komputer.</li><li>Setiap objek pada peta digital memiliki <strong>koordinat dan atribut</strong>.</li><li>Karena itu, peta digital <strong>mudah diukur, dianalisis, diperbarui</strong>, dan disajikan ulang dengan simbol atau skala yang berbeda.</li></ul></article>
+</div>
+<figure class="real-map">
+<svg viewBox="0 0 880 250" role="img" aria-label="Perbandingan objek yang sama dalam bentuk raster dan vektor" style="width:100%;height:auto;background:#fff;border:1px solid #d7e0e5">
+<g font-family="Arial,sans-serif" font-size="13" fill="#173746" text-anchor="middle">
+<g transform="translate(60,20)"><rect x="0" y="0" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="22" y="0" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="44" y="0" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="66" y="0" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="88" y="0" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="110" y="0" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="132" y="0" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="154" y="0" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="176" y="0" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="198" y="0" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="220" y="0" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="242" y="0" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="264" y="0" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="286" y="0" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="0" y="18" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="22" y="18" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="44" y="18" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="66" y="18" width="22" height="18" fill="#08519c" stroke="#fff" stroke-width="1"/><rect x="88" y="18" width="22" height="18" fill="#08519c" stroke="#fff" stroke-width="1"/><rect x="110" y="18" width="22" height="18" fill="#08519c" stroke="#fff" stroke-width="1"/><rect x="132" y="18" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="154" y="18" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="176" y="18" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="198" y="18" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="220" y="18" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="242" y="18" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="264" y="18" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="286" y="18" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="0" y="36" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="22" y="36" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="44" y="36" width="22" height="18" fill="#08519c" stroke="#fff" stroke-width="1"/><rect x="66" y="36" width="22" height="18" fill="#08519c" stroke="#fff" stroke-width="1"/><rect x="88" y="36" width="22" height="18" fill="#08519c" stroke="#fff" stroke-width="1"/><rect x="110" y="36" width="22" height="18" fill="#08519c" stroke="#fff" stroke-width="1"/><rect x="132" y="36" width="22" height="18" fill="#08519c" stroke="#fff" stroke-width="1"/><rect x="154" y="36" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="176" y="36" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="198" y="36" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="220" y="36" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="242" y="36" width="22" height="18" fill="#173746" stroke="#fff" stroke-width="1"/><rect x="264" y="36" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="286" y="36" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="0" y="54" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="22" y="54" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="44" y="54" width="22" height="18" fill="#08519c" stroke="#fff" stroke-width="1"/><rect x="66" y="54" width="22" height="18" fill="#08519c" stroke="#fff" stroke-width="1"/><rect x="88" y="54" width="22" height="18" fill="#08519c" stroke="#fff" stroke-width="1"/><rect x="110" y="54" width="22" height="18" fill="#08519c" stroke="#fff" stroke-width="1"/><rect x="132" y="54" width="22" height="18" fill="#08519c" stroke="#fff" stroke-width="1"/><rect x="154" y="54" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="176" y="54" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="198" y="54" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="220" y="54" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="242" y="54" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="264" y="54" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="286" y="54" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="0" y="72" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="22" y="72" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="44" y="72" width="22" height="18" fill="#08519c" stroke="#fff" stroke-width="1"/><rect x="66" y="72" width="22" height="18" fill="#08519c" stroke="#fff" stroke-width="1"/><rect x="88" y="72" width="22" height="18" fill="#08519c" stroke="#fff" stroke-width="1"/><rect x="110" y="72" width="22" height="18" fill="#08519c" stroke="#fff" stroke-width="1"/><rect x="132" y="72" width="22" height="18" fill="#08519c" stroke="#fff" stroke-width="1"/><rect x="154" y="72" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="176" y="72" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="198" y="72" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="220" y="72" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="242" y="72" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="264" y="72" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="286" y="72" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="0" y="90" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="22" y="90" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="44" y="90" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="66" y="90" width="22" height="18" fill="#08519c" stroke="#fff" stroke-width="1"/><rect x="88" y="90" width="22" height="18" fill="#08519c" stroke="#fff" stroke-width="1"/><rect x="110" y="90" width="22" height="18" fill="#08519c" stroke="#fff" stroke-width="1"/><rect x="132" y="90" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="154" y="90" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="176" y="90" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="198" y="90" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="220" y="90" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="242" y="90" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="264" y="90" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="286" y="90" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="0" y="108" width="22" height="18" fill="#c0392b" stroke="#fff" stroke-width="1"/><rect x="22" y="108" width="22" height="18" fill="#c0392b" stroke="#fff" stroke-width="1"/><rect x="44" y="108" width="22" height="18" fill="#c0392b" stroke="#fff" stroke-width="1"/><rect x="66" y="108" width="22" height="18" fill="#c0392b" stroke="#fff" stroke-width="1"/><rect x="88" y="108" width="22" height="18" fill="#c0392b" stroke="#fff" stroke-width="1"/><rect x="110" y="108" width="22" height="18" fill="#c0392b" stroke="#fff" stroke-width="1"/><rect x="132" y="108" width="22" height="18" fill="#c0392b" stroke="#fff" stroke-width="1"/><rect x="154" y="108" width="22" height="18" fill="#c0392b" stroke="#fff" stroke-width="1"/><rect x="176" y="108" width="22" height="18" fill="#c0392b" stroke="#fff" stroke-width="1"/><rect x="198" y="108" width="22" height="18" fill="#c0392b" stroke="#fff" stroke-width="1"/><rect x="220" y="108" width="22" height="18" fill="#c0392b" stroke="#fff" stroke-width="1"/><rect x="242" y="108" width="22" height="18" fill="#c0392b" stroke="#fff" stroke-width="1"/><rect x="264" y="108" width="22" height="18" fill="#c0392b" stroke="#fff" stroke-width="1"/><rect x="286" y="108" width="22" height="18" fill="#c0392b" stroke="#fff" stroke-width="1"/><rect x="0" y="126" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="22" y="126" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="44" y="126" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="66" y="126" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="88" y="126" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="110" y="126" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="132" y="126" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="154" y="126" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="176" y="126" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="198" y="126" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="220" y="126" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="242" y="126" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="264" y="126" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="286" y="126" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="0" y="144" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="22" y="144" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="44" y="144" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="66" y="144" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="88" y="144" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="110" y="144" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="132" y="144" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="154" y="144" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="176" y="144" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="198" y="144" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="220" y="144" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="242" y="144" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="264" y="144" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="286" y="144" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="0" y="162" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="22" y="162" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="44" y="162" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="66" y="162" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="88" y="162" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="110" y="162" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="132" y="162" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="154" y="162" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="176" y="162" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="198" y="162" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="220" y="162" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="242" y="162" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="264" y="162" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><rect x="286" y="162" width="22" height="18" fill="#f4f1e8" stroke="#fff" stroke-width="1"/><text x="154" y="210" font-weight="700">Raster</text><text x="154" y="228" font-size="12" fill="#5c6c77">tepi bergerigi; nilai per piksel</text></g>
+<g transform="translate(500,20)">
+<rect width="308" height="180" fill="#fff" stroke="#d7e0e5"/>
+<ellipse cx="99" cy="63" rx="62" ry="40" fill="#9ecae1" stroke="#08519c" stroke-width="2"/>
+<line x1="0" y1="117" x2="308" y2="117" stroke="#c0392b" stroke-width="4"/>
+<circle cx="253" cy="45" r="6" fill="#173746"/>
+<text x="99" y="68" font-size="11">poligon</text><text x="270" y="110" font-size="11">garis</text><text x="253" y="30" font-size="11">titik</text>
+<text x="154" y="210" font-weight="700">Vektor</text><text x="154" y="228" font-size="12" fill="#5c6c77">tepi tajam; tiap objek punya atribut</text></g>
+</g>
+</svg>
+</figure>
+<table class="compare-table">
+<thead><tr><th>Aspek</th><th>Raster</th><th>Vektor</th></tr></thead>
+<tbody>
+<tr><td>Bentuk data</td><td>Kumpulan piksel (<em>pixel</em>, sel gambar) berukuran sama; setiap piksel memiliki satu nilai.</td><td>Objek berupa titik, garis, dan poligon yang dibentuk oleh koordinat.</td></tr>
+<tr><td>Contoh</td><td>Hasil pindai peta, foto udara, citra satelit, dan DEM (<em>Digital Elevation Model</em>, model ketinggian digital).</td><td>Batas desa, jaringan jalan, sungai, lokasi sekolah.</td></tr>
+<tr><td>Atribut</td><td>Hanya nilai piksel (misalnya warna).</td><td>Tabel atribut untuk setiap objek (nama, kelas, nilai).</td></tr>
+<tr><td>Jika diperbesar</td><td>Piksel terlihat dan tepi objek bergerigi.</td><td>Garis tetap tajam.</td></tr>
+<tr><td>Peran dalam digitalisasi</td><td>Hasil pemindaian; menjadi latar untuk digitasi.</td><td>Hasil akhir digitasi.</td></tr>
+</tbody>
+</table>
+</section>
+
+<section class="lesson-section" id="alur">
+<h2>3. Alur digitalisasi</h2>
+<p>Digitalisasi peta manual terdiri atas lima tahap. Setiap tahap dijelaskan pada bagian 4–10.</p>
+<figure class="real-map">
+<svg viewBox="0 0 900 300" role="img" aria-label="Alur digitalisasi: peta manual, hasil pindai raster, georeferensi dengan titik kontrol, dan data vektor" style="width:100%;height:auto;background:#fff;border:1px solid #d7e0e5">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#0b607c"/></marker></defs>
+<g font-family="Arial,sans-serif" font-size="13" fill="#173746" text-anchor="middle">
+<g transform="translate(15,30)">
+<rect width="180" height="200" fill="#f4f1e8" stroke="#9a8f74"/>
+<path d="M20 160 C60 120 90 140 120 80 S160 40 170 30" fill="none" stroke="#173746" stroke-width="2"/>
+<ellipse cx="80" cy="100" rx="35" ry="25" fill="none" stroke="#173746" stroke-width="1.5"/>
+<g stroke="#c0392b" stroke-width="2"><path d="M8 15 h14 M15 8 v14"/><path d="M158 15 h14 M165 8 v14"/><path d="M8 185 h14 M15 178 v14"/><path d="M158 185 h14 M165 178 v14"/></g>
+<text x="90" y="232" font-weight="700">1. Peta manual</text><text x="90" y="250" font-size="12" fill="#5c6c77">tanda + = titik kontrol</text>
+</g>
+<line x1="200" y1="130" x2="228" y2="130" stroke="#0b607c" stroke-width="2.5" marker-end="url(#ar)"/>
+<g transform="translate(238,34)">
+<g><rect x="0" y="0" width="16" height="16" fill="#f4f1e8" stroke="#fff" stroke-width=".5"/><rect x="16" y="0" width="16" height="16" fill="#f4f1e8" stroke="#fff" stroke-width=".5"/><rect x="32" y="0" width="16" height="16" fill="#f4f1e8" stroke="#fff" stroke-width=".5"/><rect x="48" y="0" width="16" height="16" fill="#f4f1e8" stroke="#fff" stroke-width=".5"/><rect x="64" y="0" width="16" height="16" fill="#f4f1e8" stroke="#fff" stroke-width=".5"/><rect x="80" y="0" width="16" height="16" fill="#f4f1e8" stroke="#fff" stroke-width=".5"/><rect x="96" y="0" width="16" height="16" fill="#f4f1e8" stroke="#fff" stroke-width=".5"/><rect x="112" y="0" width="16" height="16" fill="#f4f1e8" stroke="#fff" stroke-width=".5"/><rect x="128" y="0" width="16" height="16" fill="#f4f1e8" stroke="#fff" stroke-width=".5"/><rect x="144" y="0" width="16" height="16" fill="#f4f1e8" stroke="#fff" stroke-width=".5"/><rect x="0" y="16" width="16" height="16" fill="#f4f1e8" stroke="#fff" stroke-width=".5"/><rect x="16" y="16" width="16" height="16" fill="#f4f1e8" stroke="#fff" stroke-width=".5"/><rect x="32" y="16" width="16" height="16" fill="#f4f1e8" stroke="#fff" stroke-width=".5"/><rect x="48" y="16" width="16" height="16" fill="#f4f1e8" stroke="#fff" stroke-width=".5"/><rect x="64" y="16" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="80" y="16" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="96" y="16" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="112" y="16" width="16" height="16" fill="#f4f1e8" stroke="#fff" stroke-width=".5"/><rect x="128" y="16" width="16" height="16" fill="#f4f1e8" stroke="#fff" stroke-width=".5"/><rect x="144" y="16" width="16" height="16" fill="#f4f1e8" stroke="#fff" stroke-width=".5"/><rect x="0" y="32" width="16" height="16" fill="#173746" stroke="#fff" stroke-width=".5"/><rect x="16" y="32" width="16" height="16" fill="#f4f1e8" stroke="#fff" stroke-width=".5"/><rect x="32" y="32" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="48" y="32" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="64" y="32" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="80" y="32" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="96" y="32" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="112" y="32" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="128" y="32" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="144" y="32" width="16" height="16" fill="#f4f1e8" stroke="#fff" stroke-width=".5"/><rect x="0" y="48" width="16" height="16" fill="#f4f1e8" stroke="#fff" stroke-width=".5"/><rect x="16" y="48" width="16" height="16" fill="#173746" stroke="#fff" stroke-width=".5"/><rect x="32" y="48" width="16" height="16" fill="#173746" stroke="#fff" stroke-width=".5"/><rect x="48" y="48" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="64" y="48" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="80" y="48" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="96" y="48" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="112" y="48" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="128" y="48" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="144" y="48" width="16" height="16" fill="#f4f1e8" stroke="#fff" stroke-width=".5"/><rect x="0" y="64" width="16" height="16" fill="#f4f1e8" stroke="#fff" stroke-width=".5"/><rect x="16" y="64" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="32" y="64" width="16" height="16" fill="#173746" stroke="#fff" stroke-width=".5"/><rect x="48" y="64" width="16" height="16" fill="#173746" stroke="#fff" stroke-width=".5"/><rect x="64" y="64" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="80" y="64" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="96" y="64" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="112" y="64" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="128" y="64" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="144" y="64" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="0" y="80" width="16" height="16" fill="#f4f1e8" stroke="#fff" stroke-width=".5"/><rect x="16" y="80" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="32" y="80" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="48" y="80" width="16" height="16" fill="#173746" stroke="#fff" stroke-width=".5"/><rect x="64" y="80" width="16" height="16" fill="#173746" stroke="#fff" stroke-width=".5"/><rect x="80" y="80" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="96" y="80" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="112" y="80" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="128" y="80" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="144" y="80" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="0" y="96" width="16" height="16" fill="#f4f1e8" stroke="#fff" stroke-width=".5"/><rect x="16" y="96" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="32" y="96" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="48" y="96" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="64" y="96" width="16" height="16" fill="#173746" stroke="#fff" stroke-width=".5"/><rect x="80" y="96" width="16" height="16" fill="#173746" stroke="#fff" stroke-width=".5"/><rect x="96" y="96" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="112" y="96" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="128" y="96" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="144" y="96" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="0" y="112" width="16" height="16" fill="#f4f1e8" stroke="#fff" stroke-width=".5"/><rect x="16" y="112" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="32" y="112" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="48" y="112" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="64" y="112" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="80" y="112" width="16" height="16" fill="#173746" stroke="#fff" stroke-width=".5"/><rect x="96" y="112" width="16" height="16" fill="#173746" stroke="#fff" stroke-width=".5"/><rect x="112" y="112" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="128" y="112" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="144" y="112" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="0" y="128" width="16" height="16" fill="#f4f1e8" stroke="#fff" stroke-width=".5"/><rect x="16" y="128" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="32" y="128" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="48" y="128" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="64" y="128" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="80" y="128" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="96" y="128" width="16" height="16" fill="#173746" stroke="#fff" stroke-width=".5"/><rect x="112" y="128" width="16" height="16" fill="#173746" stroke="#fff" stroke-width=".5"/><rect x="128" y="128" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="144" y="128" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="0" y="144" width="16" height="16" fill="#f4f1e8" stroke="#fff" stroke-width=".5"/><rect x="16" y="144" width="16" height="16" fill="#f4f1e8" stroke="#fff" stroke-width=".5"/><rect x="32" y="144" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="48" y="144" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="64" y="144" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="80" y="144" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="96" y="144" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="112" y="144" width="16" height="16" fill="#173746" stroke="#fff" stroke-width=".5"/><rect x="128" y="144" width="16" height="16" fill="#173746" stroke="#fff" stroke-width=".5"/><rect x="144" y="144" width="16" height="16" fill="#f4f1e8" stroke="#fff" stroke-width=".5"/><rect x="0" y="160" width="16" height="16" fill="#f4f1e8" stroke="#fff" stroke-width=".5"/><rect x="16" y="160" width="16" height="16" fill="#f4f1e8" stroke="#fff" stroke-width=".5"/><rect x="32" y="160" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="48" y="160" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="64" y="160" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="80" y="160" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="96" y="160" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="112" y="160" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="128" y="160" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="144" y="160" width="16" height="16" fill="#173746" stroke="#fff" stroke-width=".5"/><rect x="0" y="176" width="16" height="16" fill="#f4f1e8" stroke="#fff" stroke-width=".5"/><rect x="16" y="176" width="16" height="16" fill="#f4f1e8" stroke="#fff" stroke-width=".5"/><rect x="32" y="176" width="16" height="16" fill="#f4f1e8" stroke="#fff" stroke-width=".5"/><rect x="48" y="176" width="16" height="16" fill="#f4f1e8" stroke="#fff" stroke-width=".5"/><rect x="64" y="176" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="80" y="176" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="96" y="176" width="16" height="16" fill="#9ecae1" stroke="#fff" stroke-width=".5"/><rect x="112" y="176" width="16" height="16" fill="#f4f1e8" stroke="#fff" stroke-width=".5"/><rect x="128" y="176" width="16" height="16" fill="#f4f1e8" stroke="#fff" stroke-width=".5"/><rect x="144" y="176" width="16" height="16" fill="#f4f1e8" stroke="#fff" stroke-width=".5"/></g>
+<text x="80" y="228" font-weight="700">2. Hasil pindai (raster)</text><text x="80" y="246" font-size="12" fill="#5c6c77">kumpulan piksel tanpa koordinat</text>
+</g>
+<line x1="410" y1="130" x2="438" y2="130" stroke="#0b607c" stroke-width="2.5" marker-end="url(#ar)"/>
+<g transform="translate(450,30)">
+<rect width="190" height="200" fill="#eaf3f7" stroke="#0b607c"/>
+<g fill="#c0392b"><circle cx="15" cy="15" r="6"/><circle cx="175" cy="15" r="6"/><circle cx="15" cy="185" r="6"/><circle cx="175" cy="185" r="6"/><circle cx="95" cy="100" r="6"/></g>
+<g font-size="10" fill="#c0392b" text-anchor="start"><text x="24" y="20">X, Y</text><text x="140" y="34">X, Y</text><text x="24" y="180">X, Y</text><text x="140" y="180">X, Y</text><text x="104" y="104">X, Y</text></g>
+<text x="95" y="232" font-weight="700">3. Georeferensi</text><text x="95" y="250" font-size="12" fill="#5c6c77">titik kontrol diberi koordinat</text>
+</g>
+<line x1="645" y1="130" x2="673" y2="130" stroke="#0b607c" stroke-width="2.5" marker-end="url(#ar)"/>
+<g transform="translate(685,30)">
+<rect width="200" height="200" fill="#fff" stroke="#0b607c"/>
+<ellipse cx="90" cy="100" rx="38" ry="27" fill="#9ecae1" fill-opacity=".6" stroke="#08519c" stroke-width="2"/>
+<polyline points="20,170 50,140 75,145 100,115 125,80 150,60 185,30" fill="none" stroke="#c0392b" stroke-width="3"/>
+<g fill="#c0392b"><circle cx="20" cy="170" r="3.5"/><circle cx="50" cy="140" r="3.5"/><circle cx="75" cy="145" r="3.5"/><circle cx="100" cy="115" r="3.5"/><circle cx="125" cy="80" r="3.5"/><circle cx="150" cy="60" r="3.5"/><circle cx="185" cy="30" r="3.5"/></g>
+<rect x="150" y="135" width="9" height="9" fill="#173746"/>
+<text x="100" y="232" font-weight="700">4. Digitasi (vektor)</text><text x="100" y="250" font-size="12" fill="#5c6c77">titik, garis, poligon + atribut</text>
+</g>
+</g>
+</svg>
+<figcaption>Alur digitalisasi peta manual. Titik merah pada panel 4 adalah <em>vertex</em>, yaitu titik belok yang diklik saat digitasi.</figcaption>
+</figure>
+<div class="method-sequence">
+<div><strong>1. Gambar manual</strong><span>Peta digambar di kertas dengan titik kontrol berkoordinat.</span></div>
+<div><strong>2. Pindai</strong><span>Peta kertas diubah menjadi gambar raster.</span></div>
+<div><strong>3. Georeferensi</strong><span>Raster diberi koordinat geografis.</span></div>
+<div><strong>4. Digitasi</strong><span>Objek digambar ulang sebagai titik, garis, dan poligon.</span></div>
+<div><strong>5. Atribut dan kontrol kualitas</strong><span>Isi tabel atribut, perbaiki topologi, lalu sajikan sesuai kaidah kartografi.</span></div>
+</div>
+</section>
+
+<section class="lesson-section" id="manual">
+<h2>4. Menggambar peta manual yang siap didigitalisasi</h2>
+<p>Peta manual bisa berupa <strong>sketsa lapangan</strong>, <strong>gambar ulang</strong> dari sumber lain, atau <strong>peta lama</strong>. Agar mudah didigitalisasi, perhatikan hal berikut <strong>sejak menggambar</strong>:</p>
+<ul class="checklist">
+<li><strong>Titik kontrol</strong><span>Gambar minimal empat tanda silang (+) di dekat sudut kertas dan tuliskan koordinatnya, misalnya dari GPS, peta RBI, atau grid peta sumber. Titik ini dipakai saat georeferensi.</span></li>
+<li><strong>Skala dan garis tepi</strong><span>Cantumkan skala, arah utara, dan garis tepi peta.</span></li>
+<li><strong>Media stabil</strong><span>Gunakan kertas milimeter, kalkir, atau kertas tebal; hindari lipatan dan basah karena kertas dapat mulur atau menyusut.</span></li>
+<li><strong>Garis tegas</strong><span>Gunakan tinta hitam atau warna kontras dengan ketebalan konsisten. Garis yang terputus atau samar sulit diikuti saat digitasi.</span></li>
+<li><strong>Kode objek</strong><span>Bedakan jenis objek dengan simbol atau kode yang jelas, misalnya nomor untuk setiap kelas penggunaan lahan.</span></li>
+</ul>
+</section>
+
+<section class="lesson-section" id="pindai">
+<h2>5. Pemindaian (<em>scanning</em>)</h2>
+<p>Pemindaian mengubah peta kertas menjadi gambar raster. Kualitas hasil pindai menentukan seberapa teliti digitasi dapat dilakukan.</p>
+<div class="formula-box"><strong>Ukuran piksel di lapangan = (2,54 cm ÷ dpi) × penyebut skala</strong><p><em>dpi</em> (<em>dots per inch</em>) adalah jumlah piksel per inci; 1 inci = 2,54 cm.</p><p>Contoh: peta 1:25.000 dipindai 300 dpi.</p><ul class="pts"><li>Ukuran satu piksel di kertas adalah 2,54 ÷ 300 = <strong>0,0085 cm</strong>.</li><li>Ukuran satu piksel di lapangan adalah 0,0085 cm × 25.000 = 212 cm, atau <strong>sekitar 2,1 m</strong>.</li><li>Artinya, objek yang <strong>lebih kecil dari 2,1 m</strong> tidak dapat dibedakan pada hasil pindai tersebut.</li></ul></div>
+<ul class="checklist">
+<li><strong>Resolusi</strong><span>Umumnya 300–600 dpi. Resolusi lebih tinggi memperjelas detail tetapi memperbesar ukuran berkas (<em>file</em>).</span></li>
+<li><strong>Format</strong><span>Simpan dalam format tanpa kompresi yang merusak kualitas (<em>lossy compression</em>), misalnya TIFF atau PNG. JPEG dapat membuat garis tipis menjadi kabur.</span></li>
+<li><strong>Posisi lurus dan utuh</strong><span>Letakkan peta rata dan lurus; pindai seluruh lembar termasuk titik kontrol, grid, dan informasi tepi.</span></li>
+<li><strong>Foto dengan ponsel</strong><span>Dapat dipakai untuk latihan, tetapi hasilnya mengalami distorsi perspektif dan lensa. Ambil foto tegak lurus di atas peta dengan cahaya merata.</span></li>
+</ul>
+</section>
+
+<section class="lesson-section" id="georeferensi">
+<h2>6. Georeferensi</h2>
+<ul class="pts"><li>Hasil pindai hanya berupa gambar yang <strong>belum memiliki koordinat</strong>.</li><li><strong>Georeferensi</strong> adalah proses memberi koordinat pada gambar tersebut dengan <strong>mencocokkan titik-titik pada gambar</strong> dengan koordinat sebenarnya di bumi.</li></ul>
+<div class="decision-grid">
+<article><h3>Titik kontrol (GCP)</h3><ul class="pts"><li>Titik kontrol adalah titik yang <strong>terlihat jelas pada gambar</strong> dan <strong>koordinatnya sudah diketahui</strong>.</li><li>Contohnya adalah perpotongan garis grid, sudut lembar peta, atau tanda silang (+) yang digambar pada peta manual.</li><li>Titik kontrol harus <strong>tersebar merata</strong>, yaitu di keempat sudut dan di bagian tengah peta.</li></ul></article>
+<article><h3>Sistem koordinat</h3><ul class="pts"><li>Sistem koordinat yang dipilih harus <strong>sama dengan sistem koordinat titik kontrol</strong>.</li><li>Contohnya, sebagian besar wilayah Jawa Tengah dan DIY menggunakan <strong>UTM zona 49S dengan datum WGS 84</strong> (lihat Pertemuan 5).</li></ul></article>
+<article><h3>Transformasi (<em>transformation</em>)</h3><ul class="pts"><li>Transformasi <strong>afin</strong> (<em>affine</em>, polinomial orde 1) memerlukan <strong>minimal tiga titik kontrol</strong>.</li><li>Transformasi ini dapat mengoreksi pergeseran, rotasi, perbedaan skala, dan kemiringan gambar.</li><li>Sebaiknya digunakan <strong>lebih dari tiga titik</strong> agar besar kesalahannya dapat dihitung.</li><li>Setelah transformasi, nilai piksel dihitung ulang pada posisi barunya (<strong>resampling</strong>); metode <em>nearest neighbour</em> dipakai agar warna asli peta tidak berubah.</li></ul></article>
+<article><h3>Kesalahan RMS (<em>RMS error</em>)</h3><ul class="pts"><li><strong>RMSE</strong> (<em>Root Mean Square Error</em>) adalah rata-rata selisih antara posisi titik kontrol setelah transformasi dan koordinat sebenarnya.</li><li>Titik kontrol yang selisihnya sangat besar harus <strong>diperiksa ulang atau dihapus</strong>.</li><li>Nilai RMSE umumnya diusahakan <strong>lebih kecil dari ukuran satu piksel</strong>.</li></ul></article>
+</div>
+</section>
+
+<section class="lesson-section" id="digitasi">
+<h2>7. Digitasi</h2>
+<p><strong>Digitasi</strong> adalah menggambar ulang objek pada raster hasil georeferensi menjadi data vektor. Ada tiga cara digitasi:</p>
+<table class="compare-table">
+<thead><tr><th>Cara</th><th>Penjelasan</th><th>Penggunaan</th></tr></thead>
+<tbody>
+<tr><td>Meja digitasi (<em>digitizer</em>)</td><td>Peta kertas diletakkan di meja khusus, lalu objek ditelusuri dengan alat penunjuk.</td><td>Cara lama; kini jarang digunakan.</td></tr>
+<tr><td>Digitasi di layar (<em>on-screen digitizing</em>)</td><td>Raster ditampilkan di layar, lalu objek digambar dengan klik <em>mouse</em> pada setiap titik belok (<em>vertex</em>).</td><td>Cara yang paling umum, misalnya dengan QGIS atau ArcGIS.</td></tr>
+<tr><td>Vektorisasi otomatis/semi-otomatis</td><td>Perangkat lunak menelusuri garis pada raster secara otomatis.</td><td>Cocok untuk garis tegas dan bersih, misalnya kontur; hasilnya tetap harus diperiksa.</td></tr>
+</tbody>
+</table>
+<p>Setiap jenis objek disimpan pada lapisan (<em>layer</em>) terpisah sesuai bentuk geometrisnya:</p>
+<div class="concept-grid">
+<article class="concept-card"><h3>Titik</h3><p>Objek yang pada skala peta cukup diwakili satu lokasi: sekolah, masjid, titik tinggi.</p></article>
+<article class="concept-card"><h3>Garis</h3><p>Objek memanjang: jalan, sungai, kontur, batas administrasi.</p></article>
+<article class="concept-card"><h3>Poligon</h3><p>Objek berupa area tertutup: penggunaan lahan, danau, wilayah desa.</p></article>
+</div>
+<ul class="checklist">
+<li><strong>Skala tampilan tetap</strong><span>Digitasi pada perbesaran yang sama untuk seluruh peta agar tingkat detail seragam. Perbesaran berlebihan tidak menambah ketelitian karena ketelitian dibatasi oleh peta sumber.</span></li>
+<li><strong>Kerapatan vertex</strong><span>Tambahkan vertex lebih rapat pada lengkungan dan lebih jarang pada bagian lurus.</span></li>
+<li><strong>Penyambungan otomatis (<em>snapping</em>)</strong><span>Aktifkan fitur ini agar ujung garis dan batas poligon yang bersebelahan tersambung tepat.</span></li>
+<li><strong>Arah digitasi</strong><span>Sungai digitasi searah aliran (hulu ke hilir) agar arah aliran tersimpan dalam data.</span></li>
+</ul>
+</section>
+
+<section class="lesson-section" id="atribut">
+<h2>8. Atribut</h2>
+<p>Setiap objek hasil digitasi dilengkapi data atribut dalam tabel atribut (<em>attribute table</em>). Data vektor beserta atributnya disimpan dalam format seperti GeoPackage (.gpkg) atau shapefile (.shp). Tanpa atribut, data vektor hanya berupa gambar garis tanpa makna.</p>
+<table class="compare-table">
+<thead><tr><th>Lapisan</th><th>Contoh kolom atribut</th></tr></thead>
+<tbody>
+<tr><td>Jalan (garis)</td><td>id, kelas_jalan (arteri/kolektor/lokal), nama, permukaan</td></tr>
+<tr><td>Kontur (garis)</td><td>id, ketinggian (m), jenis (indeks/antara)</td></tr>
+<tr><td>Penggunaan lahan (poligon)</td><td>id, kelas, luas (ha)</td></tr>
+<tr><td>Fasilitas (titik)</td><td>id, jenis, nama</td></tr>
+</tbody>
+</table>
+<p>Kolom nama diisi sesuai nama baku pada gazeter (Pertemuan 13). Kolom kelas dan nilai menjadi dasar simbolisasi pada Pertemuan 11–12.</p>
+</section>
+
+<section class="lesson-section" id="kesalahan">
+<h2>9. Kesalahan digitasi dan topologi</h2>
+<p><strong>Topologi</strong> (<em>topology</em>) adalah aturan hubungan ruang antarobjek, misalnya:</p><ul class="pts"><li>Garis jalan harus <strong>tersambung</strong> dengan tepat di setiap persimpangan.</li><li>Poligon yang bersebelahan <strong>tidak boleh bertumpuk dan tidak boleh bercelah</strong>.</li><li>Jika topologi salah, hasil analisis menjadi keliru, misalnya <strong>luas wilayah salah</strong> atau <strong>rute jalan terputus</strong>.</li></ul>
+<figure class="real-map">
+<svg viewBox="0 0 880 230" role="img" aria-label="Ilustrasi kesalahan digitasi: overshoot, undershoot, sliver, dan poligon tidak tertutup" style="width:100%;height:auto;background:#fff;border:1px solid #d7e0e5">
+<g font-family="sans-serif" font-size="15" fill="#173746" text-anchor="middle">
+<g transform="translate(20,20)"><line x1="10" y1="40" x2="190" y2="40" stroke="#173746" stroke-width="3"/><line x1="100" y1="160" x2="100" y2="22" stroke="#c0392b" stroke-width="3"/><circle cx="100" cy="40" r="4" fill="#173746"/><text x="100" y="195">Overshoot</text><text x="100" y="213" font-size="12" fill="#5c6c77">garis melewati titik temu</text></g>
+<g transform="translate(240,20)"><line x1="10" y1="40" x2="190" y2="40" stroke="#173746" stroke-width="3"/><line x1="100" y1="160" x2="100" y2="58" stroke="#c0392b" stroke-width="3"/><text x="100" y="195">Undershoot</text><text x="100" y="213" font-size="12" fill="#5c6c77">garis tidak sampai titik temu</text></g>
+<g transform="translate(460,20)"><path d="M20 20 L100 20 L104 90 L100 160 L20 160 Z" fill="#dcebf3" stroke="#173746" stroke-width="2"/><path d="M110 20 L190 20 L190 160 L110 160 L96 90 Z" fill="#e9f5ef" stroke="#173746" stroke-width="2"/><path d="M100 20 L110 20 L96 90 L104 90 Z M104 90 L96 90 L110 160 L100 160 Z" fill="#c0392b" opacity=".75"/><text x="100" y="195">Sliver dan celah</text><text x="100" y="213" font-size="12" fill="#5c6c77">batas bersama didigitasi dua kali</text></g>
+<g transform="translate(680,20)"><path d="M30 150 L30 30 L170 30 L170 150 L60 150" fill="none" stroke="#c0392b" stroke-width="3"/><text x="100" y="195">Poligon tidak tertutup</text><text x="100" y="213" font-size="12" fill="#5c6c77">titik awal dan akhir tidak bertemu</text></g>
+</g>
+</svg>
+<figcaption><strong>Ilustrasi kesalahan digitasi.</strong> Garis atau area berwarna merah menunjukkan bagian yang salah.</figcaption>
+</figure>
+<table class="compare-table">
+<thead><tr><th>Kesalahan</th><th>Penyebab</th><th>Pencegahan dan perbaikan</th></tr></thead>
+<tbody>
+<tr><td>Garis berlebih (<em>overshoot</em>)</td><td>Garis diteruskan melewati garis lain.</td><td>Aktifkan snapping; potong ujung yang berlebih.</td></tr>
+<tr><td>Garis kurang (<em>undershoot</em>)</td><td>Garis berhenti sebelum mencapai garis lain.</td><td>Aktifkan snapping; perpanjang garis hingga tersambung.</td></tr>
+<tr><td>Poligon serpihan (<em>sliver</em>) dan celah (<em>gap</em>)</td><td>Batas bersama dua poligon digambar dua kali dan tidak berimpit.</td><td>Gunakan fitur digitasi yang mengikuti batas poligon tetangga; periksa dengan aturan topologi.</td></tr>
+<tr><td>Poligon tidak tertutup</td><td>Vertex terakhir tidak kembali ke vertex pertama.</td><td>Gunakan alat digitasi poligon yang menutup otomatis.</td></tr>
+<tr><td>Objek ganda atau terlewat</td><td>Objek didigitasi dua kali atau terlupa.</td><td>Digitasi per lapisan secara sistematis; tumpangkan hasil di atas raster untuk diperiksa.</td></tr>
+</tbody>
+</table>
+</section>
+
+<section class="lesson-section" id="kontrol">
+<h2>10. Kontrol kualitas</h2>
+<ul class="checklist">
+<li><strong>Ketelitian posisi</strong><span>RMSE georeferensi dicatat; hasil digitasi ditumpangkan pada raster untuk melihat pergeseran.</span></li>
+<li><strong>Kelengkapan</strong><span>Semua objek pada peta sumber sudah didigitasi atau sengaja tidak dimasukkan dengan alasan yang jelas.</span></li>
+<li><strong>Topologi</strong><span>Tidak ada overshoot, undershoot, sliver, celah, atau poligon terbuka.</span></li>
+<li><strong>Atribut</strong><span>Setiap objek memiliki atribut yang terisi dan konsisten penulisannya.</span></li>
+<li><strong>Metadata (keterangan tentang data)</strong><span>Sumber peta, skala sumber, tahun, sistem koordinat, resolusi pindai, dan pembuat data dicatat.</span></li>
+</ul>
+<div class="warning-box"><strong>Ketelitian tidak bertambah karena digitalisasi.</strong> Data hasil digitasi peta 1:25.000 tetap memiliki ketelitian skala 1:25.000 walaupun dapat diperbesar tanpa batas di layar. Skala sumber harus dicantumkan pada metadata.</div>
+</section>
+
+<section class="lesson-section" id="contoh">
+<h2>11. Contoh: dari peta kertas menjadi peta digital</h2>
+<p>Contoh berikut memakai potongan peta RBI cetak Lembar Yosowilangun di sekitar Rowokangkung. Keempat panel menunjukkan wilayah yang sama pada setiap tahap.</p>
+<div class="digit-steps">
+<figure><div class="digit-num">1</div><svg viewBox="0 0 520 300" role="img" aria-label="Pindaian peta RBI" style="width:100%;height:auto;display:block;background:#fff;border:1px solid #d7e0e5"><image href="assets/digitasi/yoso-pindaian.webp" x="0" y="0" width="520" height="300" preserveAspectRatio="none"/></svg><figcaption><strong>Pindaian peta kertas.</strong><ul class="pts"><li>Peta cetak dipindai sehingga menjadi <strong>gambar raster</strong> yang belum memiliki koordinat.</li></ul></figcaption></figure>
+<figure><div class="digit-num">2</div><svg viewBox="0 0 520 300" role="img" aria-label="Georeferensi dengan empat titik kontrol" style="width:100%;height:auto;display:block;background:#fff;border:1px solid #d7e0e5"><image href="assets/digitasi/yoso-pindaian.webp" x="0" y="0" width="520" height="300" preserveAspectRatio="none"/><rect width="520" height="300" fill="#fff" opacity=".15"/><g transform="translate(26,22)"><circle r="9" fill="none" stroke="#c0392b" stroke-width="2.5"/><path d="M-13 0H13M0 -13V13" stroke="#c0392b" stroke-width="2"/></g><g transform="translate(494,22)"><circle r="9" fill="none" stroke="#c0392b" stroke-width="2.5"/><path d="M-13 0H13M0 -13V13" stroke="#c0392b" stroke-width="2"/></g><g transform="translate(26,278)"><circle r="9" fill="none" stroke="#c0392b" stroke-width="2.5"/><path d="M-13 0H13M0 -13V13" stroke="#c0392b" stroke-width="2"/></g><g transform="translate(494,278)"><circle r="9" fill="none" stroke="#c0392b" stroke-width="2.5"/><path d="M-13 0H13M0 -13V13" stroke="#c0392b" stroke-width="2"/></g><text x="40" y="40" font-family="Arial" font-size="11" font-weight="700" fill="#c0392b" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="3">GCP 1</text><text x="480" y="40" font-family="Arial" font-size="11" font-weight="700" fill="#c0392b" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">GCP 2</text><text x="40" y="266" font-family="Arial" font-size="11" font-weight="700" fill="#c0392b" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="3">GCP 3</text><text x="480" y="266" font-family="Arial" font-size="11" font-weight="700" fill="#c0392b" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">GCP 4</text></svg><figcaption><strong>Georeferensi.</strong><ul class="pts"><li>Titik kontrol (GCP) dipilih pada <strong>perpotongan grid</strong> peta, lalu diberi koordinat sebenarnya (posisi GCP pada gambar ini adalah ilustrasi).</li></ul></figcaption></figure>
+<figure><div class="digit-num">3</div><svg viewBox="0 0 520 300" role="img" aria-label="Digitasi di atas raster" style="width:100%;height:auto;display:block;background:#fff;border:1px solid #d7e0e5"><image href="assets/digitasi/yoso-pindaian.webp" x="0" y="0" width="520" height="300" preserveAspectRatio="none"/><rect width="520" height="300" fill="#fff" opacity=".45"/><polygon points="462,133 456,129 455,122 451,119 449,113 442,109 436,96 430,90 394,84 375,85 365,81 331,82 326,87 315,91 314,98 291,95 287,99 287,104 281,115 281,119 284,119 286,122 285,147 281,149 281,156 272,161 266,161 265,158 250,160 237,188 237,195 234,196 222,220 222,224 227,224 227,221 233,217 234,213 241,214 241,220 229,246 221,246 223,226 219,226 216,240 210,249 194,259 186,274 173,275 172,286 174,294 172,299 181,299 183,290 196,270 202,270 211,276 211,284 203,299 232,299 235,293 234,279 256,253 256,249 248,244 251,232 269,203 288,183 292,183 292,177 296,175 317,150 323,127 352,126 353,131 368,133 399,131 401,136 405,137 439,136 441,140 445,140 447,136 462,137" fill="rgba(230,85,13,.25)" stroke="#b03a0e" stroke-width="2"/><polygon points="272,45 264,40 222,37 221,24 210,22 209,57 194,56 192,58 182,58 180,50 176,50 175,57 152,56 151,38 143,38 140,90 132,104 132,119 105,120 105,127 131,129 132,141 172,143 176,142 177,129 186,127 188,120 271,121 273,101" fill="rgba(230,85,13,.25)" stroke="#b03a0e" stroke-width="2"/><polygon points="10,0 10,35 8,41 0,41 0,52 10,53 13,56 28,56 29,34 24,32 24,25 31,0" fill="rgba(230,85,13,.25)" stroke="#b03a0e" stroke-width="2"/><polyline points="248,290 256,287 264,283 272,280 280,277 288,272 296,267 304,263 312,261 320,261 328,260 336,260 344,260 352,260 360,260 368,260 376,265 384,271 392,276 400,276 408,276 424,276 432,276 440,276 448,276 456,277 464,277 472,273 480,266 488,256 496,249 504,243 512,240" fill="none" stroke="#08519c" stroke-width="3.5"/><polyline points="0,115 60,117 120,118 250,123 380,125 440,130 480,138 520,143" fill="none" stroke="#111" stroke-width="3" stroke-dasharray="1 0"/><circle cx="248" cy="290" r="2.2" fill="#c0392b"/><circle cx="264" cy="283" r="2.2" fill="#c0392b"/><circle cx="280" cy="277" r="2.2" fill="#c0392b"/><circle cx="296" cy="267" r="2.2" fill="#c0392b"/><circle cx="312" cy="261" r="2.2" fill="#c0392b"/><circle cx="328" cy="260" r="2.2" fill="#c0392b"/><circle cx="344" cy="260" r="2.2" fill="#c0392b"/><circle cx="360" cy="260" r="2.2" fill="#c0392b"/><circle cx="376" cy="265" r="2.2" fill="#c0392b"/><circle cx="392" cy="276" r="2.2" fill="#c0392b"/><circle cx="408" cy="276" r="2.2" fill="#c0392b"/><circle cx="432" cy="276" r="2.2" fill="#c0392b"/><circle cx="448" cy="276" r="2.2" fill="#c0392b"/><circle cx="464" cy="277" r="2.2" fill="#c0392b"/><circle cx="480" cy="266" r="2.2" fill="#c0392b"/><circle cx="496" cy="249" r="2.2" fill="#c0392b"/><circle cx="512" cy="240" r="2.2" fill="#c0392b"/><circle cx="117" cy="84" r="4" fill="#111" stroke="#fff" stroke-width="1.5"/><circle cx="300" cy="74" r="4" fill="#111" stroke="#fff" stroke-width="1.5"/><circle cx="460" cy="92" r="4" fill="#111" stroke="#fff" stroke-width="1.5"/><circle cx="292" cy="176" r="4" fill="#111" stroke="#fff" stroke-width="1.5"/><circle cx="262" cy="252" r="4" fill="#111" stroke="#fff" stroke-width="1.5"/></svg><figcaption><strong>Digitasi di atas raster.</strong><ul class="pts"><li>Permukiman digambar sebagai <strong>poligon</strong>, sungai dan jalan sebagai <strong>garis</strong>, dan nama tempat sebagai <strong>titik</strong>; titik merah kecil pada sungai adalah <em>vertex</em>.</li></ul></figcaption></figure>
+<figure><div class="digit-num">4</div><svg viewBox="0 0 520 300" role="img" aria-label="Peta digital hasil digitasi" style="width:100%;height:auto;display:block;background:#fff;border:1px solid #d7e0e5"><rect width="520" height="300" fill="#f7f9f5"/><polygon points="462,133 456,129 455,122 451,119 449,113 442,109 436,96 430,90 394,84 375,85 365,81 331,82 326,87 315,91 314,98 291,95 287,99 287,104 281,115 281,119 284,119 286,122 285,147 281,149 281,156 272,161 266,161 265,158 250,160 237,188 237,195 234,196 222,220 222,224 227,224 227,221 233,217 234,213 241,214 241,220 229,246 221,246 223,226 219,226 216,240 210,249 194,259 186,274 173,275 172,286 174,294 172,299 181,299 183,290 196,270 202,270 211,276 211,284 203,299 232,299 235,293 234,279 256,253 256,249 248,244 251,232 269,203 288,183 292,183 292,177 296,175 317,150 323,127 352,126 353,131 368,133 399,131 401,136 405,137 439,136 441,140 445,140 447,136 462,137" fill="#f4b183" stroke="#b03a0e" stroke-width="1.2"/><polygon points="272,45 264,40 222,37 221,24 210,22 209,57 194,56 192,58 182,58 180,50 176,50 175,57 152,56 151,38 143,38 140,90 132,104 132,119 105,120 105,127 131,129 132,141 172,143 176,142 177,129 186,127 188,120 271,121 273,101" fill="#f4b183" stroke="#b03a0e" stroke-width="1.2"/><polygon points="10,0 10,35 8,41 0,41 0,52 10,53 13,56 28,56 29,34 24,32 24,25 31,0" fill="#f4b183" stroke="#b03a0e" stroke-width="1.2"/><polyline points="248,290 256,287 264,283 272,280 280,277 288,272 296,267 304,263 312,261 320,261 328,260 336,260 344,260 352,260 360,260 368,260 376,265 384,271 392,276 400,276 408,276 424,276 432,276 440,276 448,276 456,277 464,277 472,273 480,266 488,256 496,249 504,243 512,240" fill="none" stroke="#3182bd" stroke-width="3"/><polyline points="0,115 60,117 120,118 250,123 380,125 440,130 480,138 520,143" fill="none" stroke="#555" stroke-width="2.5"/><circle cx="117" cy="84" r="4" fill="#111" stroke="#fff" stroke-width="1.5"/><circle cx="300" cy="74" r="4" fill="#111" stroke="#fff" stroke-width="1.5"/><circle cx="460" cy="92" r="4" fill="#111" stroke="#fff" stroke-width="1.5"/><circle cx="292" cy="176" r="4" fill="#111" stroke="#fff" stroke-width="1.5"/><circle cx="262" cy="252" r="4" fill="#111" stroke="#fff" stroke-width="1.5"/><text x="124" y="78" font-family="Georgia,serif" font-size="14" fill="#173746" paint-order="stroke" stroke="#fff" stroke-width="3">Rowokangkung</text><text x="307" y="68" font-family="Georgia,serif" font-size="11" fill="#173746" paint-order="stroke" stroke="#fff" stroke-width="3">Krajan</text><text x="467" y="86" font-family="Georgia,serif" font-size="11" fill="#173746" paint-order="stroke" stroke="#fff" stroke-width="3">Rowosari</text><text x="299" y="170" font-family="Georgia,serif" font-size="11" fill="#173746" paint-order="stroke" stroke="#fff" stroke-width="3">Penggung Lor</text><text x="269" y="246" font-family="Georgia,serif" font-size="11" fill="#173746" paint-order="stroke" stroke="#fff" stroke-width="3">Wungunrejo</text><text x="400" y="290" font-family="Georgia,serif" font-style="italic" font-size="11" fill="#3182bd">K. Jatiroto</text><g font-family="Arial" font-size="10.5" fill="#173746"><rect x="8" y="212" width="158" height="82" fill="#fff" stroke="#c9d5dc"/><rect x="16" y="222" width="14" height="10" fill="#f4b183" stroke="#b03a0e"/><text x="36" y="231">Permukiman (poligon)</text><line x1="16" y1="246" x2="30" y2="246" stroke="#3182bd" stroke-width="3"/><text x="36" y="250">Sungai (garis)</text><line x1="16" y1="265" x2="30" y2="265" stroke="#555" stroke-width="2.5"/><text x="36" y="269">Jalan (garis)</text><circle cx="23" cy="284" r="3.5" fill="#111"/><text x="36" y="288">Nama tempat (titik)</text></g><g font-family="Arial" font-size="10.5" fill="#173746"><path d="M498 10 L505 30 L498 26 L491 30 Z" fill="#173746"/><text x="498" y="43" text-anchor="middle" font-weight="700">U</text><rect x="300" y="18" width="138" height="5" fill="#173746"/><text x="300" y="36">0</text><text x="438" y="36" text-anchor="end">1 km</text></g></svg><figcaption><strong>Peta digital.</strong><ul class="pts"><li>Raster disembunyikan, lalu data vektor <strong>disimbolkan ulang</strong> dan dilengkapi legenda, arah utara, dan skala.</li></ul></figcaption></figure>
+</div>
+<h3>Tabel atribut hasil digitasi</h3>
+<p>Setiap objek vektor menyimpan data dalam tabel atribut. Luas dihitung otomatis dari poligon.</p>
+<table class="compare-table">
+<thead><tr><th>Lapisan</th><th>id</th><th>jenis</th><th>nama</th><th>luas (ha, perkiraan)</th></tr></thead>
+<tbody>
+<tr><td>permukiman (poligon)</td><td>1</td><td>permukiman</td><td>Penggung Lor – Rowosari</td><td>±73</td></tr>
+<tr><td>permukiman (poligon)</td><td>2</td><td>permukiman</td><td>Rowokangkung</td><td>±59</td></tr>
+<tr><td>permukiman (poligon)</td><td>3</td><td>permukiman</td><td>(tanpa nama pada potongan)</td><td>±6</td></tr>
+<tr><td>sungai (garis)</td><td>1</td><td>sungai</td><td>K. Jatiroto</td><td>–</td></tr>
+<tr><td>jalan (garis)</td><td>1</td><td>jalan</td><td>–</td><td>–</td></tr>
+<tr><td>nama_tempat (titik)</td><td>1–5</td><td>kampung</td><td>Rowokangkung, Krajan, Rowosari, Penggung Lor, Wungunrejo</td><td>–</td></tr>
+</tbody>
+</table>
+<ul class="pts">
+<li>Batas permukiman pada contoh ini ditelusuri <strong>otomatis dari warna</strong> permukiman pada RBI, sedangkan sungai dan jalan ditelusuri mengikuti garisnya.</li>
+<li>Luas dihitung dari ukuran piksel pindaian (sekitar 7 m per piksel), sehingga nilainya hanya <strong>perkiraan</strong>.</li>
+<li>Peta digital ini tetap memiliki <strong>ketelitian peta sumber 1:25.000</strong> walaupun dapat diperbesar di layar.</li>
+</ul>
+<p class="source-note">Sumber peta: Peta Rupabumi Digital Indonesia 1:25.000, Lembar 1607-541 Yosowilangun, BIG. Panel 2–4 adalah olahan untuk bahan ajar.</p>
+</section>
+
+<section class="lesson-section" id="sumber">
+<h2>12. Sumber</h2>
+<ul class="source-list">
+<li>Kraak, M.-J., &amp; Ormeling, F. (2021). <em>Cartography: Visualization of Geospatial Data</em> (4th ed.). CRC Press — bab tentang sumber data dan pengolahan data geospasial.</li>
+<li>Rabenhorst, T. D., &amp; McDermott, P. D. (1989). <em>Applied Cartography: Source Materials for Mapmaking</em>. Merrill.</li>
+<li><a href="https://docs.qgis.org/latest/en/docs/user_manual/working_with_raster/georeferencer.html" target="_blank" rel="noopener">QGIS User Manual — Georeferencer</a></li>
+<li><a href="https://docs.qgis.org/latest/en/docs/gentle_gis_introduction/data_capture.html" target="_blank" rel="noopener">QGIS — A Gentle Introduction to GIS: Data Capture</a></li>
+<li><a href="https://docs.qgis.org/latest/en/docs/gentle_gis_introduction/topology.html" target="_blank" rel="noopener">QGIS — A Gentle Introduction to GIS: Topology</a></li>
+</ul>
+</section>
+
+<footer>Kartografi (Teori) · Ni Putu Praja Chintya</footer>
+</main>
+</div>
+<script src="site.js?v=20261122c" defer></script>
+</body>
+</html>

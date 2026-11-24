@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Minggu 12 — Pemetaan data kualitatif dan kuantitatif | Kartografi (Teori)</title>
+<meta name="description" content="Bahan ajar tentang skala pengukuran data, pemetaan data kualitatif dan kuantitatif, normalisasi, klasifikasi, skema warna, dan legenda peta tematik.">
+<link rel="stylesheet" href="style.css?v=20261018b">
+<link rel="stylesheet" href="visual-enhance.css?v=20260906b">
+<link rel="stylesheet" href="week9-16.css?v=20261018b">
+<link rel="stylesheet" href="compact.css?v=20261122g">
+</head>
+<body>
+<a class="skip" href="#materi">Langsung ke materi</a>
+<aside class="sidebar">
+<a class="brand" href="index.html">Kartografi<br>(Teori)</a>
+<div class="course-kind">Bahan kuliah teori</div>
+<div class="course-staff">
+<span>Ni Putu Praja Chintya</span>
+<span>bersama Wahyu Marta Mutiarasari</span>
+</div>
+<div class="nav-heading">Pertemuan 1–16</div>
+<nav class="week-nav" aria-label="Materi pertemuan 1 sampai 16">
+<a href="minggu-1.html" title="1. Pengertian dan konsep kartografi">
+<span class="week-number">1</span>
+<span class="week-title">Pengertian dan konsep kartografi</span>
+</a>
+<a href="minggu-2.html" title="2. Klasifikasi peta dan lingkup kartografi">
+<span class="week-number">2</span>
+<span class="week-title">Klasifikasi peta dan lingkup kartografi</span>
+</a>
+<a href="minggu-3.html" title="3. Komunikasi kartografis">
+<span class="week-number">3</span>
+<span class="week-title">Komunikasi kartografis</span>
+</a>
+<a href="minggu-4.html" title="4. Komponen dan kelengkapan peta">
+<span class="week-number">4</span>
+<span class="week-title">Komponen dan kelengkapan peta</span>
+</a>
+<a href="minggu-5.html" title="5. Proyeksi peta">
+<span class="week-number">5</span>
+<span class="week-title">Proyeksi peta</span>
+</a>
+<a href="minggu-6.html" title="6. Jenis dan pembacaan peta">
+<span class="week-number">6</span>
+<span class="week-title">Jenis dan pembacaan peta</span>
+</a>
+<a href="minggu-7.html" title="7. Skala dan generalisasi">
+<span class="week-number">7</span>
+<span class="week-title">Skala dan generalisasi</span>
+</a>
+<a href="latihan-uts.html" title="8. Ujian Tengah Semester">
+<span class="week-number">8</span>
+<span class="week-title">Ujian Tengah Semester</span>
+</a>
+<a href="minggu-9.html" title="9. Penyajian relief">
+<span class="week-number">9</span>
+<span class="week-title">Penyajian relief</span>
+</a>
+<a href="minggu-10.html" title="10. Tampilan peta 3D">
+<span class="week-number">10</span>
+<span class="week-title">Tampilan peta 3D</span>
+</a>
+<a href="minggu-11.html" title="11. Variabel tampak dan simbol">
+<span class="week-number">11</span>
+<span class="week-title">Variabel tampak dan simbol</span>
+</a>
+<a href="minggu-12.html" aria-current="page" title="12. Pemetaan data kualitatif dan kuantitatif">
+<span class="week-number">12</span>
+<span class="week-title">Pemetaan data kualitatif dan kuantitatif</span>
+</a>
+<a href="minggu-12a.html" title="12A. Digitalisasi peta"><span class="week-number">12A</span><span class="week-title">Digitalisasi peta</span></a>
+<a href="minggu-13.html" title="13. Toponimi">
+<span class="week-number">13</span>
+<span class="week-title">Toponimi</span>
+</a>
+<a href="minggu-14.html" title="14. Tata letak dan keseimbangan peta">
+<span class="week-number">14</span>
+<span class="week-title">Tata letak dan keseimbangan peta</span>
+</a>
+<a href="minggu-15.html" title="15. Evaluasi peta terpadu">
+<span class="week-number">15</span>
+<span class="week-title">Evaluasi peta terpadu</span>
+</a>
+<a href="minggu-16.html" title="16. Ujian Akhir Semester">
+<span class="week-number">16</span>
+<span class="week-title">Ujian Akhir Semester</span>
+</a>
+</nav>
+<div class="nav-heading">Sumber belajar</div>
+<nav class="week-nav side-extra" aria-label="Sumber belajar"><a href="album-peta.html" title="Album sumber peta"><span class="week-number">A</span><span class="week-title">Album sumber peta</span></a></nav>
+</aside>
+<div class="layout">
+<main id="materi" class="presentation-notes">
+<div class="eyebrow">Pertemuan 12 · Kartografi (Teori)</div>
+<h1>Pemetaan data kualitatif dan kuantitatif</h1>
+<p class="lead">Metode pemetaan ditentukan oleh <strong>sifat data</strong>.</p><ul class="pts"><li><strong>Data kualitatif</strong> digunakan untuk membedakan <strong>jenis</strong> objek, misalnya jenis tanah atau penggunaan lahan.</li><li><strong>Data kuantitatif</strong> digunakan untuk menyatakan <strong>besaran</strong>, misalnya jumlah penduduk atau curah hujan.</li><li>Sebelum memilih simbol atau warna, kita harus menentukan <strong>skala pengukuran</strong> data dan memeriksa apakah nilainya perlu <strong>dinormalisasi</strong>.</li></ul>
+
+<div class="plain-note">
+<p><strong>CPMK3.</strong> Mahasiswa mampu merancang penyajian relief serta data kualitatif dan kuantitatif pada peta.</p>
+</div>
+
+<section class="lesson-section" id="capaian">
+<h2>1. Capaian pembelajaran</h2>
+<ul class="key">
+<li>membedakan skala pengukuran nominal, ordinal, interval, dan rasio;</li>
+<li>membedakan data kualitatif dan kuantitatif serta jumlah absolut dan nilai relatif;</li>
+<li>memilih metode pemetaan berdasarkan skala pengukuran, geometri, dan pertanyaan peta;</li>
+<li>menentukan klasifikasi, skema warna, dan legenda yang sesuai;</li>
+<li>merancang peta tematik secara berkelompok (Tugas 2).</li>
+</ul>
+</section>
+
+<section class="lesson-section" id="skala-ukur">
+<h2>2. Skala pengukuran data</h2>
+<ul class="pts"><li>Setiap atribut (<em>attribute</em>, yaitu data yang melekat pada objek) memiliki <strong>skala pengukuran</strong> (<em>level of measurement</em>), yaitu nominal, ordinal, interval, atau rasio.</li><li>Skala pengukuran menentukan <strong>operasi hitung</strong> yang boleh dilakukan pada data dan <strong>variabel tampak</strong> (<em>visual variables</em>) yang cocok untuk menyajikannya.</li></ul>
+<table class="compare-table">
+<thead><tr><th>Skala</th><th>Sifat</th><th>Contoh</th><th>Kelompok</th></tr></thead>
+<tbody>
+<tr><td>Nominal</td><td>Hanya membedakan kategori; tidak ada urutan.</td><td>Jenis tanah, penggunaan lahan, agama mayoritas</td><td>Kualitatif</td></tr>
+<tr><td>Ordinal</td><td>Kategori memiliki urutan, tetapi jarak antarkelas tidak diketahui.</td><td>Kelas jalan (arteri–kolektor–lokal), tingkat risiko rendah–sedang–tinggi</td><td>Kualitatif berurutan</td></tr>
+<tr><td>Interval</td><td>Nilai numerik dengan jarak yang sama, tetapi tanpa nol mutlak.</td><td>Suhu dalam °C, tahun</td><td>Kuantitatif</td></tr>
+<tr><td>Rasio</td><td>Nilai numerik dengan nol mutlak sehingga perbandingan kelipatan bermakna.</td><td>Jumlah penduduk, curah hujan, luas, ketinggian</td><td>Kuantitatif</td></tr>
+</tbody>
+</table>
+<div class="warning-box"><strong>Perhatikan istilah.</strong> Pada bagian ini, <em>rasio</em> berarti skala pengukuran. Nilai hasil pembagian, misalnya penduduk per km², disebut <em>nilai relatif</em> atau <em>nilai ternormalisasi</em> (bagian 4).</div>
+</section>
+
+<section class="lesson-section" id="variabel">
+<h2>3. Hubungan skala pengukuran dan variabel tampak</h2>
+<p>Materi Pertemuan 11 menjelaskan variabel tampak. Pemilihan variabel tampak mengikuti skala pengukuran data:</p>
+<table class="compare-table">
+<thead><tr><th>Skala pengukuran</th><th>Variabel tampak yang sesuai</th><th>Hindari</th></tr></thead>
+<tbody>
+<tr><td>Nominal</td><td>Bentuk, corak warna (<em>hue</em>), orientasi, tekstur</td><td>Ukuran dan gradasi gelap–terang, karena memberi kesan urutan</td></tr>
+<tr><td>Ordinal</td><td>Nilai gelap–terang (<em>value</em>), ukuran bertingkat</td><td>Corak warna acak yang tidak menunjukkan urutan</td></tr>
+<tr><td>Interval/rasio</td><td>Ukuran (jumlah), nilai gelap–terang (data relatif yang dikelaskan)</td><td>Bentuk dan corak warna acak</td></tr>
+</tbody>
+</table>
+</section>
+
+<section class="lesson-section" id="normalisasi">
+<h2>4. Jumlah absolut dan nilai relatif</h2>
+<div class="concept-grid two">
+<article class="concept-card"><h3>Jumlah absolut (<em>total count</em>)</h3><p>Total suatu fenomena dalam satu unit, misalnya jumlah penduduk atau jumlah kasus per kecamatan. Nilainya dipengaruhi luas dan ukuran unit wilayah.</p></article>
+<article class="concept-card"><h3>Nilai relatif (<em>normalized value</em>)</h3><ul class="pts"><li>Nilai relatif diperoleh dengan <strong>membagi jumlah absolut dengan suatu pembanding</strong>.</li><li>Jika dibagi dengan luas wilayah, hasilnya adalah <strong>kepadatan</strong>, misalnya jiwa/km².</li><li>Jika dibagi dengan jumlah penduduk, hasilnya adalah <strong>persentase</strong> atau kasus per 1.000 penduduk.</li><li>Karena sudah memperhitungkan pembanding, nilai relatif <strong>dapat dibandingkan antarwilayah</strong> yang luasnya berbeda.</li></ul></article>
+</div>
+<div class="formula-box"><strong>Kepadatan penduduk = jumlah penduduk ÷ luas wilayah</strong><ul class="pts"><li><strong>Kecamatan A</strong> berpenduduk 60.000 jiwa dengan luas 120 km², sehingga kepadatannya <strong>500 jiwa/km²</strong>.</li><li><strong>Kecamatan B</strong> berpenduduk 40.000 jiwa dengan luas 20 km², sehingga kepadatannya <strong>2.000 jiwa/km²</strong>.</li><li>Jadi, Kecamatan A memiliki penduduk <strong>lebih banyak</strong>, tetapi Kecamatan B <strong>lebih padat</strong>.</li></ul></div>
+<figure class="real-map">
+<svg viewBox="0 0 880 300" role="img" aria-label="Data yang sama disajikan sebagai koroplet jumlah absolut, koroplet kepadatan, dan simbol proporsional" style="width:100%;height:auto;background:#fff;border:1px solid #d7e0e5">
+<g font-family="Arial,sans-serif" font-size="13" text-anchor="middle" fill="#173746">
+<g transform="translate(15,20)">
+<path d="M10 20 L180 10 L200 150 L20 200 Z" fill="#08519c" stroke="#fff" stroke-width="2"/><path d="M200 150 L180 10 L270 60 L260 160 Z" fill="#6baed6" stroke="#fff" stroke-width="2"/>
+<text x="95" y="110" fill="#fff" font-weight="700">A</text><text x="230" y="105" font-weight="700">B</text>
+<text x="140" y="230" font-weight="700">1. Koroplet jumlah absolut</text><text x="140" y="250" fill="#9a4545">Salah: A tampak paling "padat"</text>
+</g>
+<g transform="translate(305,20)">
+<path d="M10 20 L180 10 L200 150 L20 200 Z" fill="#c6dbef" stroke="#fff" stroke-width="2"/><path d="M200 150 L180 10 L270 60 L260 160 Z" fill="#08519c" stroke="#fff" stroke-width="2"/>
+<text x="95" y="110" font-weight="700">A</text><text x="230" y="105" fill="#fff" font-weight="700">B</text>
+<text x="140" y="230" font-weight="700">2. Koroplet kepadatan</text><text x="140" y="250" fill="#12643e">Benar: B lebih padat</text>
+</g>
+<g transform="translate(595,20)">
+<path d="M10 20 L180 10 L200 150 L20 200 Z" fill="#f1f1ee" stroke="#9fb2bd" stroke-width="1.5"/><path d="M200 150 L180 10 L270 60 L260 160 Z" fill="#f1f1ee" stroke="#9fb2bd" stroke-width="1.5"/>
+<circle cx="100" cy="100" r="32" fill="#e6550d" fill-opacity=".8" stroke="#fff"/><circle cx="228" cy="95" r="26" fill="#e6550d" fill-opacity=".8" stroke="#fff"/>
+<text x="100" y="105" fill="#fff" font-weight="700">A</text><text x="228" y="100" fill="#fff" font-weight="700">B</text>
+<text x="140" y="230" font-weight="700">3. Simbol proporsional</text><text x="140" y="250" fill="#12643e">Benar: menunjukkan jumlah</text>
+</g>
+</g>
+</svg>
+<figcaption><ul class="pts"><li>Ketiga panel memakai data yang sama dengan contoh di atas, yaitu A 500 jiwa/km² dan B 2.000 jiwa/km².</li><li><strong>Panel 1 menyesatkan</strong> karena koroplet dipakai untuk jumlah absolut sehingga A yang luas tampak paling padat.</li><li><strong>Panel 2 dan 3 benar</strong> karena kepadatan disajikan dengan koroplet dan jumlah disajikan dengan simbol proporsional.</li></ul></figcaption>
+</figure>
+<div class="warning-box"><strong>Aturan dasar.</strong> Peta koroplet digunakan untuk nilai relatif. Jumlah absolut disajikan dengan simbol proporsional atau titik kepadatan. Pada koroplet jumlah absolut, wilayah yang luas tampak dominan walaupun kepadatannya rendah.</div>
+</section>
+
+<section class="lesson-section" id="kualitatif">
+<h2>5. Metode untuk data kualitatif</h2>
+<div class="concept-grid">
+<article class="concept-card"><h3>Simbol titik kategori</h3><p>Bentuk atau warna simbol membedakan jenis objek titik, misalnya sekolah, puskesmas, dan masjid.</p></article>
+<article class="concept-card"><h3>Simbol garis kategori</h3><p>Warna, pola putus-putus, atau ketebalan bertingkat membedakan jenis garis, misalnya batas administrasi, jalan, dan sungai.</p></article>
+<article class="concept-card"><h3>Peta area kategori</h3><p>Corak warna atau arsiran membedakan kelas area, misalnya penggunaan lahan, jenis tanah, atau satuan geologi.</p></article>
+</div>
+<p>Untuk data ordinal, misalnya kelas risiko, warna disusun dari terang ke gelap agar urutan kelas langsung terlihat.</p>
+</section>
+
+<section class="lesson-section" id="kuantitatif">
+<h2>6. Metode untuk data kuantitatif</h2>
+<div class="decision-grid">
+<article><h3>Peta koroplet (<em>choropleth map</em>)</h3><ul class="pts"><li>Setiap unit wilayah, misalnya kecamatan, diberi <strong>warna sesuai kelas nilainya</strong>.</li><li>Peta koroplet cocok untuk <strong>nilai relatif</strong> seperti kepadatan, persentase, atau indeks.</li><li>Kelemahannya, nilai dianggap <strong>seragam di seluruh wilayah</strong>, padahal kenyataannya bisa berbeda di dalam wilayah tersebut.</li></ul></article>
+<article><h3>Simbol proporsional (<em>proportional symbol</em>)</h3><p>Luas simbol sebanding dengan jumlah absolut. Jari-jari dihitung dari akar nilai (lihat Pertemuan 11). Simbol bertingkat (<em>graduated symbol</em>) mengelompokkan nilai ke beberapa ukuran kelas.</p></article>
+<article><h3>Peta titik kepadatan (<em>dot density</em>)</h3><ul class="pts"><li>Setiap titik mewakili <strong>jumlah tertentu</strong>, misalnya satu titik sama dengan 500 jiwa.</li><li>Perancang peta harus menentukan <strong>nilai satu titik</strong>, <strong>ukuran titik</strong>, dan <strong>cara menempatkan titik</strong>.</li><li>Titik diletakkan pada area yang memungkinkan, misalnya permukiman, dan <strong>tidak diletakkan di danau atau hutan</strong>.</li></ul></article>
+<article><h3>Peta isaritma (<em>isarithmic map</em>)</h3><ul class="pts"><li>Peta isaritma menggunakan garis yang menghubungkan tempat-tempat dengan <strong>nilai yang sama</strong>.</li><li><strong>Isometrik</strong> (<em>isometric</em>) dibuat dari nilai yang diukur langsung di titik, misalnya curah hujan di stasiun atau ketinggian (kontur).</li><li><strong>Isoplet</strong> (<em>isopleth</em>) dibuat dari nilai relatif suatu area yang diwakilkan pada titik pusatnya, misalnya kepadatan penduduk.</li></ul></article>
+<article><h3>Peta dasimetrik (<em>dasymetric map</em>)</h3><p>Penyempurnaan koroplet. Nilai hanya ditempatkan pada bagian wilayah yang sesuai, misalnya penduduk hanya pada area permukiman berdasarkan data tutupan lahan (<em>land cover</em>).</p></article>
+<article><h3>Diagram pada peta dan peta aliran (<em>flow map</em>)</h3><p>Diagram lingkaran atau batang menunjukkan komposisi di setiap lokasi. Peta aliran menunjukkan perpindahan asal–tujuan; lebar garis menyatakan volume.</p></article>
+</div>
+</section>
+
+<section class="lesson-section" id="klasifikasi">
+<h2>7. Klasifikasi data kuantitatif</h2>
+<p>Peta koroplet dan simbol bertingkat memerlukan pengelompokan nilai ke dalam kelas. Jumlah kelas umumnya 4–7 karena mata sulit membedakan lebih banyak gradasi warna.</p>
+<table class="compare-table">
+<thead><tr><th>Metode</th><th>Cara kerja</th><th>Kelebihan</th><th>Kelemahan</th></tr></thead>
+<tbody>
+<tr><td>Interval sama (<em>equal interval</em>)</td><td>Rentang data dibagi menjadi kelas dengan lebar sama.</td><td>Mudah dipahami dan dijelaskan.</td><td>Jika data menumpuk pada nilai rendah, sebagian kelas bisa kosong.</td></tr>
+<tr><td>Kuantil (<em>quantile</em>)</td><td>Setiap kelas berisi jumlah unit wilayah yang sama.</td><td>Semua kelas terisi; cocok untuk peringkat.</td><td>Nilai yang hampir sama dapat masuk kelas berbeda.</td></tr>
+<tr><td>Jeda alami (<em>natural breaks</em>/Jenks)</td><td>Batas kelas diletakkan pada celah alami distribusi data.</td><td>Mengikuti pola pengelompokan data.</td><td>Batas kelas berubah antarwaktu sehingga sulit dibandingkan.</td></tr>
+<tr><td>Simpangan baku (<em>standard deviation</em>)</td><td>Kelas dihitung dari rata-rata ± kelipatan simpangan baku.</td><td>Menunjukkan wilayah di atas dan di bawah rata-rata.</td><td>Memerlukan pemahaman statistik; cocok untuk skema divergen.</td></tr>
+<tr><td>Batas kelas ditentukan (manual)</td><td>Batas mengikuti standar, ambang kebijakan, atau nilai acuan.</td><td>Mudah dikaitkan dengan keputusan atau standar.</td><td>Harus disertai alasan dan sumber ambang.</td></tr>
+</tbody>
+</table>
+<figure class="real-map">
+<svg viewBox="0 0 880 262" role="img" aria-label="Dua belas nilai yang sama dikelaskan dengan tiga metode berbeda" style="width:100%;height:auto;background:#fff;border:1px solid #d7e0e5">
+<g font-family="Arial,sans-serif" font-size="13" fill="#173746">
+<rect x="70" y="30" width="257" height="40" fill="#deebf7"/>
+<rect x="327" y="30" width="242" height="40" fill="#9ecae1"/>
+<rect x="568" y="30" width="242" height="40" fill="#3182bd"/>
+<circle cx="85" cy="50" r="6" fill="#173746"/>
+<circle cx="100" cy="50" r="6" fill="#173746"/>
+<circle cx="107" cy="50" r="6" fill="#173746"/>
+<circle cx="122" cy="50" r="6" fill="#173746"/>
+<circle cx="137" cy="50" r="6" fill="#173746"/>
+<circle cx="159" cy="50" r="6" fill="#173746"/>
+<circle cx="292" cy="50" r="6" fill="#173746"/>
+<circle cx="322" cy="50" r="6" fill="#173746"/>
+<circle cx="351" cy="50" r="6" fill="#173746"/>
+<circle cx="588" cy="50" r="6" fill="#173746"/>
+<circle cx="751" cy="50" r="6" fill="#173746"/>
+<circle cx="810" cy="50" r="6" fill="#173746"/>
+<text x="70" y="25" font-weight="700">Interval sama</text>
+<rect x="70" y="100" width="59" height="40" fill="#deebf7"/>
+<rect x="129" y="100" width="207" height="40" fill="#9ecae1"/>
+<rect x="336" y="100" width="474" height="40" fill="#3182bd"/>
+<circle cx="85" cy="120" r="6" fill="#173746"/>
+<circle cx="100" cy="120" r="6" fill="#173746"/>
+<circle cx="107" cy="120" r="6" fill="#173746"/>
+<circle cx="122" cy="120" r="6" fill="#173746"/>
+<circle cx="137" cy="120" r="6" fill="#173746"/>
+<circle cx="159" cy="120" r="6" fill="#173746"/>
+<circle cx="292" cy="120" r="6" fill="#173746"/>
+<circle cx="322" cy="120" r="6" fill="#173746"/>
+<circle cx="351" cy="120" r="6" fill="#173746"/>
+<circle cx="588" cy="120" r="6" fill="#173746"/>
+<circle cx="751" cy="120" r="6" fill="#173746"/>
+<circle cx="810" cy="120" r="6" fill="#173746"/>
+<text x="70" y="95" font-weight="700">Kuantil</text>
+<rect x="70" y="170" width="155" height="40" fill="#deebf7"/>
+<rect x="225" y="170" width="244" height="40" fill="#9ecae1"/>
+<rect x="470" y="170" width="340" height="40" fill="#3182bd"/>
+<circle cx="85" cy="190" r="6" fill="#173746"/>
+<circle cx="100" cy="190" r="6" fill="#173746"/>
+<circle cx="107" cy="190" r="6" fill="#173746"/>
+<circle cx="122" cy="190" r="6" fill="#173746"/>
+<circle cx="137" cy="190" r="6" fill="#173746"/>
+<circle cx="159" cy="190" r="6" fill="#173746"/>
+<circle cx="292" cy="190" r="6" fill="#173746"/>
+<circle cx="322" cy="190" r="6" fill="#173746"/>
+<circle cx="351" cy="190" r="6" fill="#173746"/>
+<circle cx="588" cy="190" r="6" fill="#173746"/>
+<circle cx="751" cy="190" r="6" fill="#173746"/>
+<circle cx="810" cy="190" r="6" fill="#173746"/>
+<text x="70" y="165" font-weight="700">Jeda alami</text>
+<line x1="70" y1="235" x2="810" y2="235" stroke="#173746"/>
+<text x="70" y="252" text-anchor="middle">0</text><text x="440" y="252" text-anchor="middle">50</text><text x="810" y="252" text-anchor="middle">100</text>
+</g>
+</svg>
+<figcaption>Data: 2, 4, 5, 7, 9, 12, 30, 34, 38, 70, 92, 100, dibagi menjadi tiga kelas.<ul class="pts"><li>Pada <strong>interval sama</strong>, delapan nilai masuk ke kelas terendah, sedangkan kelas tengah hanya berisi satu nilai.</li><li>Pada <strong>kuantil</strong>, setiap kelas berisi empat nilai, tetapi nilai 9 dan 12 dipisahkan dari nilai 7 padahal ketiganya berdekatan.</li><li>Pada <strong>jeda alami</strong>, batas kelas jatuh pada celah data sehingga terbentuk kelas 2–12, 30–38, dan 70–100.</li></ul></figcaption>
+</figure>
+<ul class="pts"><li>Data yang sama dapat menghasilkan <strong>pola peta yang sangat berbeda</strong> jika metode klasifikasinya diganti.</li><li>Oleh karena itu, legenda atau keterangan peta harus mencantumkan <strong>metode, jumlah kelas, batas kelas, satuan, tahun, dan sumber data</strong>.</li></ul>
+</section>
+
+<section class="lesson-section" id="warna">
+<h2>8. Skema warna dan legenda</h2>
+<table class="compare-table">
+<thead><tr><th>Skema</th><th>Digunakan untuk</th><th>Contoh</th></tr></thead>
+<tbody>
+<tr><td>Kualitatif (<em>qualitative</em>)</td><td>Kategori tanpa urutan (nominal). Corak warna (<em>hue</em>) berbeda dengan kecerahan (<em>lightness</em>) yang mirip.</td><td>Penggunaan lahan, satuan geologi</td></tr>
+<tr><td>Sekuensial (<em>sequential</em>)</td><td>Urutan nilai rendah ke tinggi (ordinal, interval, rasio). Satu corak warna dari terang ke gelap.</td><td>Kepadatan, persentase, indeks risiko</td></tr>
+<tr><td>Divergen (<em>diverging</em>)</td><td>Nilai yang menjauh ke dua arah dari titik tengah yang bermakna, misalnya nol atau rata-rata.</td><td>Perubahan negatif–positif, di bawah–di atas rata-rata</td></tr>
+</tbody>
+</table>
+<figure class="real-map">
+<svg viewBox="0 0 880 170" role="img" aria-label="Contoh skema warna kualitatif, sekuensial, dan divergen" style="width:100%;height:auto;background:#fff;border:1px solid #d7e0e5">
+<g font-family="Arial,sans-serif" font-size="14" fill="#173746">
+<text x="20" y="38" font-weight="700">Kualitatif</text><g transform="translate(160,15)"><rect x="0" y="0" width="56" height="34" fill="#66c2a5"/><rect x="60" y="0" width="56" height="34" fill="#fc8d62"/><rect x="120" y="0" width="56" height="34" fill="#8da0cb"/><rect x="180" y="0" width="56" height="34" fill="#e78ac3"/><rect x="240" y="0" width="56" height="34" fill="#a6d854"/></g><text x="480" y="38">kategori berbeda, kecerahan mirip</text>
+<text x="20" y="88" font-weight="700">Sekuensial</text><g transform="translate(160,65)"><rect x="0" y="0" width="56" height="34" fill="#eff3ff"/><rect x="60" y="0" width="56" height="34" fill="#bdd7e7"/><rect x="120" y="0" width="56" height="34" fill="#6baed6"/><rect x="180" y="0" width="56" height="34" fill="#3182bd"/><rect x="240" y="0" width="56" height="34" fill="#08519c"/></g><text x="480" y="88">rendah → tinggi, terang → gelap</text>
+<text x="20" y="138" font-weight="700">Divergen</text><g transform="translate(160,115)"><rect x="0" y="0" width="56" height="34" fill="#ca0020"/><rect x="60" y="0" width="56" height="34" fill="#f4a582"/><rect x="120" y="0" width="56" height="34" fill="#f7f7f7"/><rect x="180" y="0" width="56" height="34" fill="#92c5de"/><rect x="240" y="0" width="56" height="34" fill="#0571b0"/></g><text x="480" y="138">dua arah dari titik tengah</text>
+</g>
+</svg>
+<figcaption>Contoh skema warna dari ColorBrewer.</figcaption>
+</figure>
+<ul class="checklist">
+<li><strong>Judul legenda</strong><span>Menyebut variabel, satuan, dan tahun, misalnya "Kepadatan penduduk (jiwa/km²), 2024".</span></li>
+<li><strong>Batas kelas</strong><span>Ditulis tanpa celah dan tanpa tumpang tindih, misalnya 0–250; &gt;250–500; &gt;500–1.000.</span></li>
+<li><strong>Data tidak tersedia</strong><span>Diberi simbol tersendiri, misalnya abu-abu atau arsiran, dan dibedakan dari nilai nol.</span></li>
+<li><strong>Keterbacaan warna</strong><span>Skema diuji untuk cetak, layar, dan pembaca dengan buta warna.</span></li>
+</ul>
+</section>
+
+<section class="lesson-section" id="contoh">
+<h2>9. Contoh peta tematik Indonesia</h2>
+<p>Amati setiap peta: skala pengukuran datanya, metode yang dipakai, skema warnanya, dan kelengkapan legendanya.</p>
+<div class="map-pair">
+<figure>
+<a href="https://inarisk.bnpb.go.id/pdf/BUKU%20RBI%202023.pdf" target="_blank" rel="noopener">
+<img src="assets/thematic-id/bnpb-risiko-karhutla.webp" alt="Peta risiko kebakaran hutan dan lahan Indonesia">
+</a>
+<figcaption>
+<strong>Indeks risiko kebakaran hutan dan lahan.</strong> Warna berurutan menunjukkan kelas rendah hingga tinggi. Sumber: BNPB, Buku Peta Risiko Bencana Indonesia 2023.</figcaption>
+</figure>
+<figure>
+<a href="https://content.bmkg.go.id/wp-content/uploads/29.Dinat_Das_II_Okt_2024.pdf" target="_blank" rel="noopener">
+<img src="assets/thematic-id/bmkg-curah-sifat-hujan-september-2024.webp" alt="Peta curah hujan dan sifat hujan Indonesia">
+</a>
+<figcaption>
+<strong>Curah hujan dan sifat hujan.</strong> Dua variabel berbeda → <strong>dua legenda terpisah</strong>. Sumber: BMKG, Analisis Dinamika Atmosfer Dasarian II Oktober 2024.</figcaption>
+</figure>
+</div>
+<figure class="real-map">
+<a href="https://geologi.esdm.go.id/storage/publikasi/eLS94VCSoB948INlvolpYSSYlOr7A3Tt6vqH8LHP.pdf" target="_blank" rel="noopener">
+<img src="assets/thematic-id/esdm-patahan-aktif-bandung-barat.webp" alt="Peta patahan aktif Bandung Barat">
+</a>
+<figcaption>
+<strong>Peta patahan aktif Bandung Barat.</strong><ul class="pts"><li><strong>Warna area</strong> digunakan untuk membedakan satuan batuan.</li><li><strong>Simbol garis</strong> digunakan untuk menunjukkan struktur geologi atau patahan.</li><li><strong>Simbol titik</strong> digunakan untuk memberi informasi tambahan.</li></ul>Sumber: Pusat Survei Geologi, Atlas Patahan Aktif Volume 1, 2024.</figcaption>
+</figure>
+</section>
+
+<section class="lesson-section" id="kesalahan">
+<h2>10. Kesalahan interpretasi yang perlu dihindari</h2>
+<ul class="checklist">
+<li><strong>Jumlah absolut pada koroplet</strong><span>Wilayah luas tampak dominan walaupun kepadatan atau proporsinya rendah.</span></li>
+<li><strong>Batas kelas</strong><span>Selisih kecil di sekitar batas kelas dapat tampak sebagai perbedaan besar.</span></li>
+<li><strong>Masalah unit areal yang dapat diubah (MAUP)</strong><span><em>Modifiable Areal Unit Problem</em>: pola peta dapat berubah jika data yang sama disajikan dengan unit wilayah lain, misalnya per kecamatan dibandingkan per desa.</span></li>
+<li><strong>Kesesatan ekologis</strong><span><em>Ecological fallacy</em>: sifat rata-rata suatu wilayah tidak otomatis berlaku untuk setiap orang atau objek di dalam wilayah tersebut.</span></li>
+<li><strong>Data kosong</strong><span>Wilayah tanpa data harus dibedakan dari wilayah bernilai nol.</span></li>
+</ul>
+</section>
+
+<section class="lesson-section" id="tugas">
+<h2>11. Tugas 2: rancangan peta tematik (kelompok)</h2>
+<p>Tugas ini terdiri atas dua bagian. <strong>Bagian A</strong> dikerjakan <strong>mandiri</strong> sebagai pemanasan, yaitu menganalisis peta tematik yang kamu temukan sendiri. <strong>Bagian B</strong> dikerjakan <strong>berkelompok</strong> (3–4 orang), yaitu merancang peta tematik baru.</p>
+
+<h3>Bagian A. Analisis peta tematik pilihanmu</h3>
+<ol class="pts">
+<li>Cari <strong>satu peta tematik</strong> yang menyajikan data angka atau kelas dari <a href="album-peta.html"><strong>Album sumber peta</strong></a>, misalnya <a href="https://www.bps.go.id" target="_blank" rel="noopener">peta dalam publikasi BPS</a>, <a href="https://www.bmkg.go.id" target="_blank" rel="noopener">peta iklim BMKG</a>, <a href="https://inarisk.bnpb.go.id" target="_blank" rel="noopener">InaRISK BNPB</a>, atau <a href="https://earthobservatory.nasa.gov" target="_blank" rel="noopener">NASA Earth Observatory</a>.</li>
+<li>Tempelkan <strong>gambar peta beserta legendanya</strong> dan tulis <strong>identitas sumbernya</strong> (judul, lembaga, tahun, tautan, tanggal akses).</li>
+<li>Isi <strong>tabel analisis</strong> di bawah ini, lalu bandingkan hasilmu dengan <strong>contoh jawaban</strong> untuk peta curah hujan BMKG.</li>
+</ol>
+
+<div class="formula-box"><strong>Cara menentukan beberapa jawaban yang sering membingungkan</strong>
+<ul class="pts">
+<li><strong>Absolut atau relatif</strong>: periksa satuan di legenda; satuan "jiwa", "unit", atau "kejadian" menunjukkan <strong>jumlah absolut</strong>, sedangkan satuan "per km²", "%", "per 1.000 penduduk", atau "indeks" menunjukkan <strong>nilai relatif</strong> (bagian 4).</li>
+<li><strong>Koroplet atau isaritma</strong>: jika warna berubah tepat di garis batas wilayah, metodenya <strong>koroplet</strong>; jika warna berubah halus di dalam wilayah dan tidak mengikuti batas, metodenya <strong>isaritma</strong> (bagian 6).</li>
+<li><strong>Klasifikasi</strong>: tulis semua batas kelas dari legenda, lalu hitung lebar setiap kelas; jika lebarnya sama, metodenya <strong>interval sama</strong>, dan jika tidak sama, catat sebagai <strong>batas yang ditetapkan pembuat peta</strong> atau metode lain (bagian 7).</li>
+<li><strong>Skema warna</strong>: lihat apakah warna makin gelap ke satu arah (<strong>sekuensial</strong>), menggelap ke dua arah dari warna tengah yang terang (<strong>divergen</strong>), atau berbeda corak tanpa urutan (<strong>kualitatif</strong>) (bagian 8).</li>
+</ul></div>
+
+<table class="compare-table">
+<thead><tr><th>No.</th><th>Aspek</th><th>Pertanyaan yang harus dijawab</th><th>Jawaban dan bukti dari peta</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Variabel</td><td>Apa yang dipetakan, beserta satuan dan waktu datanya? Kutip dari judul atau legenda.</td><td>…</td></tr>
+<tr><td>2</td><td>Skala pengukuran</td><td>Apakah datanya nominal, ordinal, interval, atau rasio? Beri satu alasan.</td><td>…</td></tr>
+<tr><td>3</td><td>Absolut atau relatif</td><td>Apakah nilainya jumlah absolut atau nilai relatif? Jika relatif, tulis pembaginya.</td><td>…</td></tr>
+<tr><td>4</td><td>Metode pemetaan</td><td>Metode apa yang dipakai: koroplet, simbol proporsional, titik kepadatan, isaritma, atau lainnya? Apa buktinya di peta?</td><td>…</td></tr>
+<tr><td>5</td><td>Klasifikasi</td><td>Berapa jumlah kelasnya? Tulis batas setiap kelas. Apakah lebar kelasnya sama? Adakah batas yang tumpang tindih atau bercelah?</td><td>…</td></tr>
+<tr><td>6</td><td>Skema warna</td><td>Skema warnanya kualitatif, sekuensial, atau divergen? Apakah urutan warnanya sesuai dengan urutan nilai?</td><td>…</td></tr>
+<tr><td>7</td><td>Kelengkapan legenda</td><td>Centang yang ada: judul legenda, satuan, tahun atau waktu, batas kelas, keterangan data tidak tersedia, sumber data. Mana yang tidak ada?</td><td>…</td></tr>
+<tr><td>8</td><td>Usulan perbaikan</td><td>Tulis dua usulan dengan format <strong>komponen – tindakan – alasan</strong>.</td><td>…</td></tr>
+</tbody>
+</table>
+
+<h3>Contoh jawaban Bagian A: Peta Analisis Curah Hujan BMKG, September 2024</h3>
+<figure class="real-map">
+<a href="https://content.bmkg.go.id/wp-content/uploads/29.Dinat_Das_II_Okt_2024.pdf" target="_blank" rel="noopener">
+<img src="assets/thematic-id/bmkg-curah-sifat-hujan-september-2024.webp" alt="Peta analisis curah hujan dan sifat hujan bulanan Indonesia September 2024 dari BMKG" loading="lazy">
+</a>
+<figcaption>Contoh ini menganalisis <strong>peta kiri</strong> (curah hujan); peta kanan (sifat hujan) dipakai sebagai pembanding pada nomor 3. Sumber: BMKG, Analisis Dinamika Atmosfer Dasarian II Oktober 2024.</figcaption>
+</figure>
+<table class="compare-table">
+<thead><tr><th>No.</th><th>Aspek</th><th>Contoh jawaban</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Variabel</td><td>Curah hujan bulanan Indonesia pada <strong>September 2024</strong> dalam satuan <strong>mm</strong>, sesuai judul legenda "CURAH HUJAN (mm)".</td></tr>
+<tr><td>2</td><td>Skala pengukuran</td><td><strong>Rasio</strong>, karena 0 mm berarti tidak ada hujan sama sekali sehingga perbandingan kelipatan bermakna.</td></tr>
+<tr><td>3</td><td>Absolut atau relatif</td><td>Curah hujan dalam mm adalah <strong>tinggi air hujan di setiap tempat</strong>, bukan jumlah per wilayah, sehingga tidak dipengaruhi luas provinsi. Pembandingnya, peta kanan (sifat hujan), adalah <strong>nilai relatif</strong> dalam persen, yaitu curah hujan dibandingkan dengan curah hujan normalnya.</td></tr>
+<tr><td>4</td><td>Metode pemetaan</td><td><strong>Isaritma berwarna</strong>, karena warna berubah halus di dalam provinsi dan tidak mengikuti garis batas provinsi yang hitam. Peta tidak menjelaskan dari data apa dan dengan cara apa nilai di setiap tempat dihitung.</td></tr>
+<tr><td>5</td><td>Klasifikasi</td><td><strong>Sembilan kelas</strong>: 0–20, 20–50, 50–100, 100–150, 150–200, 200–300, 300–400, 400–500, dan &gt;500 mm. Lebar kelas <strong>tidak sama</strong> (20, 30, 50, 50, 50, 100, 100, 100), sehingga batasnya ditetapkan pembuat peta dan dikelompokkan menjadi rendah, menengah, tinggi, dan sangat tinggi. Batas kelas <strong>tumpang tindih</strong>, misalnya nilai 20 mm dapat masuk kelas 0–20 atau 20–50.</td></tr>
+<tr><td>6</td><td>Skema warna</td><td>Urutan corak warna dari <strong>cokelat (kering) ke hijau (basah)</strong> sesuai dengan urutan nilai. Namun, kedua ujungnya sama-sama gelap (cokelat tua dan hijau tua), sehingga urutan nilai tidak dapat dibaca dari gelap–terang saja.</td></tr>
+<tr><td>7</td><td>Kelengkapan legenda</td><td>Ada judul legenda, satuan (mm), waktu (September 2024, pada judul peta), batas kelas, keterangan batas provinsi dan luar negeri, skala grafis, dan arah utara. <strong>Tidak ada</strong> keterangan data tidak tersedia dan sumber data pengamatan. Kotak berisi angka "4792" di kanan bawah tidak diberi keterangan.</td></tr>
+<tr><td>8</td><td>Usulan perbaikan</td><td>(1) <strong>Batas kelas</strong> – tulis "0–20; &gt;20–50; &gt;50–100" dan seterusnya – agar setiap nilai hanya masuk satu kelas. (2) <strong>Legenda</strong> – tambahkan sumber data dan jumlah pos hujan – agar pembaca tahu dasar perhitungan peta.</td></tr>
+</tbody>
+</table>
+
+<h3>Bagian B. Rancangan peta tematik kelompok</h3>
+<p>Setiap kelompok merancang <strong>satu peta tematik per kecamatan</strong> untuk satu kabupaten/kota di Indonesia dengan data resmi, misalnya publikasi <a href="https://www.bps.go.id" target="_blank" rel="noopener">BPS</a> "Kabupaten/Kota dalam Angka" atau data <a href="https://inarisk.bnpb.go.id" target="_blank" rel="noopener">BNPB</a>.</p>
+<ol class="pts">
+<li>Tulis <strong>tujuan peta</strong> dalam satu pertanyaan yang ingin dijawab, misalnya "Kecamatan mana yang paling padat penduduknya?".</li>
+<li>Pilih <strong>satu variabel</strong> dan salin nilainya untuk <strong>semua kecamatan</strong> ke dalam tabel, lengkap dengan nama tabel sumber, halaman, dan tahun.</li>
+<li>Tentukan <strong>skala pengukuran</strong> variabel tersebut (bagian 2).</li>
+<li>Tentukan apakah data perlu <strong>dinormalisasi</strong>; jika ya, tulis rumusnya dan hitung nilainya untuk setiap kecamatan (bagian 4).</li>
+<li>Pilih <strong>metode pemetaan</strong> dan tulis satu alasan yang mengaitkannya dengan jenis data (bagian 5–6).</li>
+<li>Untuk data kuantitatif, buat <strong>dua klasifikasi</strong> (misalnya interval sama dan kuantil) dengan jumlah kelas yang sama, tulis batas kelas dan banyaknya kecamatan di setiap kelas, lalu pilih satu dengan alasan (bagian 7).</li>
+<li>Pilih <strong>skema warna</strong> dari <a href="https://colorbrewer2.org" target="_blank" rel="noopener">ColorBrewer</a>, catat nama skema dan kode warnanya, lalu susun <strong>legenda lengkap</strong> sesuai daftar periksa di bagian 8.</li>
+<li>Buat <strong>sketsa peta</strong> di kertas atau perangkat lunak yang memuat muka peta, judul, legenda, skala, arah utara, dan sumber data.</li>
+</ol>
+<table class="compare-table">
+<thead><tr><th>Langkah</th><th>Keputusan kelompok</th><th>Alasan (satu kalimat)</th></tr></thead>
+<tbody>
+<tr><td>Tujuan peta</td><td>…</td><td>…</td></tr>
+<tr><td>Variabel, satuan, tahun, sumber</td><td>…</td><td>…</td></tr>
+<tr><td>Skala pengukuran</td><td>…</td><td>…</td></tr>
+<tr><td>Normalisasi dan rumus</td><td>…</td><td>…</td></tr>
+<tr><td>Metode pemetaan</td><td>…</td><td>…</td></tr>
+<tr><td>Klasifikasi terpilih dan batas kelas</td><td>…</td><td>…</td></tr>
+<tr><td>Skema warna dan kode warna</td><td>…</td><td>…</td></tr>
+</tbody>
+</table>
+<p>Kumpulkan <strong>tiga berkas</strong>: sketsa peta, tabel data per kecamatan, dan tabel keputusan di atas sebagai lembar justifikasi (paling banyak satu halaman). Ketentuan pengumpulan disampaikan melalui eLOK.</p>
+
+<h3>Kriteria penilaian</h3>
+<table class="compare-table">
+<thead><tr><th>Kriteria</th><th>Baik</th><th>Perlu perbaikan</th></tr></thead>
+<tbody>
+<tr><td>Analisis peta (Bagian A)</td><td>Setiap jawaban menyebut bukti dari judul, legenda, atau muka peta.</td><td>Jawaban tanpa bukti atau hanya menyalin judul.</td></tr>
+<tr><td>Data</td><td>Data lengkap untuk semua kecamatan dengan sumber, tahun, dan satuan.</td><td>Sumber atau tahun data tidak ditulis.</td></tr>
+<tr><td>Kesesuaian metode</td><td>Nilai relatif disajikan dengan koroplet, atau jumlah absolut disajikan dengan simbol proporsional.</td><td>Jumlah absolut disajikan dengan koroplet.</td></tr>
+<tr><td>Klasifikasi dan legenda</td><td>Dua klasifikasi dibandingkan; batas kelas tidak tumpang tindih; legenda memuat variabel, satuan, dan tahun.</td><td>Hanya satu klasifikasi tanpa alasan, atau legenda tidak lengkap.</td></tr>
+</tbody>
+</table>
+</section>
+
+<section class="lesson-section" id="sumber">
+<h2>12. Sumber</h2>
+<ul class="source-list">
+<li>Kraak, M.-J., &amp; Ormeling, F. (2021). <em>Cartography: Visualization of Geospatial Data</em> (4th ed.). CRC Press — bab tentang pemetaan data kualitatif dan kuantitatif.</li>
+<li>Cauvin, C., Escobar, F., &amp; Serradj, A. (2013). <em>Thematic Cartography</em>. Wiley.</li>
+<li>Rabenhorst, T. D., &amp; McDermott, P. D. (1989). <em>Applied Cartography: Source Materials for Mapmaking</em>. Merrill.</li>
+<li><a href="https://colorbrewer2.org/learnmore/schemes_full.html" target="_blank" rel="noopener">ColorBrewer — skema warna kualitatif, sekuensial, dan divergen</a></li>
+<li><a href="https://www.esri.com/arcgis-blog/products/arcgis-online/mapping/thematic-mapping-101-how-to-ask-and-answer-questions-in-a-map" target="_blank" rel="noopener">Esri — Thematic Mapping 101</a></li>
+<li><a href="https://alg.manifoldapp.org/read/introduction-to-cartography/section/dfbe2998-9806-4a6d-976f-f563bd376354" target="_blank" rel="noopener">Introduction to Cartography — Thematic maps</a></li>
+</ul>
+</section>
+
+<footer>Kartografi (Teori) · Ni Putu Praja Chintya</footer>
+</main>
+</div>
+<script src="site.js?v=20261122c" defer></script>
+</body>
+</html>

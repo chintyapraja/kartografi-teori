@@ -1,0 +1,82 @@
+/* Satu kolom isi (tanpa panel "Pada halaman ini") dan daftar pertemuan yang rapat */
+.toc{display:none!important}
+.layout,.layout:has(.presentation-notes){grid-template-columns:minmax(0,1fr)!important;max-width:1180px!important}
+.sidebar{width:250px!important;padding:24px 18px!important}
+.layout,.layout:has(.presentation-notes){margin-left:250px!important}
+.brand{font-size:23px!important;margin-bottom:4px!important}
+.course-kind{font-size:13px!important}
+.course-staff{margin-top:12px!important;padding-top:10px!important;font-size:12.5px!important;line-height:1.45!important}
+.nav-heading{margin:16px 0 6px!important;font-size:11.5px!important}
+.sidebar nav.week-nav{margin-top:0!important}
+.sidebar .week-nav a{display:grid!important;grid-template-columns:2rem minmax(0,1fr)!important;gap:.3rem!important;align-items:baseline!important;padding:4px 6px!important;margin:0!important;min-height:0!important;font-size:13px!important;line-height:1.3!important;border-radius:4px}
+.sidebar .week-nav .week-number{text-align:right}
+.sidebar .week-nav .week-title{white-space:normal!important;overflow:visible!important;text-overflow:clip!important}
+.sidebar .week-nav a[aria-current="page"]{padding-left:3px!important}
+@media(min-width:1550px){.layout,.layout:has(.presentation-notes){margin-left:250px!important}}
+@media(max-width:1000px){.sidebar{position:static!important;width:auto!important;border-right:0}.layout,.layout:has(.presentation-notes){margin-left:0!important}.sidebar .week-nav{max-height:260px;overflow-y:auto}}
+@media(max-width:760px){.layout,.layout:has(.presentation-notes){padding:24px 16px 60px!important}}
+.sidebar .week-nav a span,.sidebar .week-nav .week-number,.sidebar .week-nav .week-title{padding:0!important;margin:0!important;font-size:13px!important;line-height:1.3!important;color:inherit}
+.sidebar .week-nav .week-number{color:var(--blue)!important}
+.sidebar .week-nav .week-title{color:#33454f!important}.sidebar .week-nav a[aria-current="page"] .week-title{color:#0b3d52!important}
+@media(max-width:760px){.presentation-notes table.compare-table{display:block;overflow-x:auto;max-width:100%}.presentation-notes figure,.presentation-notes svg{max-width:100%}}
+/* Alat pena */
+.pen-canvas{position:fixed;inset:0;z-index:900;pointer-events:none;touch-action:auto}
+.pen-canvas.pen-on{pointer-events:auto;touch-action:none;cursor:crosshair}
+.pen-bar{position:fixed;right:18px;bottom:18px;z-index:950;display:flex;align-items:center;gap:8px;padding:6px;background:#fff;border:1px solid #c9d5dc;border-radius:999px;box-shadow:0 6px 20px rgba(10,40,60,.18);font:600 14px/1 Inter,Arial,sans-serif}
+.pen-bar button{font:inherit;border:0;background:transparent;color:#173746;padding:8px 12px;border-radius:999px;cursor:pointer}
+.pen-bar button:hover{background:#eaf3f7}
+.pen-bar .pen-toggle[aria-pressed="true"]{background:#0b607c;color:#fff}
+.pen-tools{display:none;align-items:center;gap:6px}
+.pen-bar.open .pen-tools{display:flex}
+.pen-bar .pen-color{width:26px;height:26px;padding:0;border:2px solid #fff;box-shadow:0 0 0 1px #9fb2bd}
+.pen-bar .pen-color.selected{box-shadow:0 0 0 3px #0b607c}
+@media print{.pen-bar,.pen-canvas{display:none}}
+@media(max-width:620px){.pen-bar{right:10px;bottom:10px;flex-wrap:wrap;border-radius:14px;max-width:calc(100vw - 20px)}}
+/* Peta bertitik */
+.hotspot-map{position:relative;margin:26px 0 8px}
+.hotspot-map img{display:block;width:100%;height:auto;border:1px solid #d7e0e5}
+.hotspot{position:absolute;transform:translate(-50%,-50%);min-width:34px;height:34px;padding:0 8px;border-radius:999px;border:3px solid #fff;background:#c0392b;color:#fff;font:800 15px/28px Arial,sans-serif;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.35);z-index:2}
+.hotspot:hover,.hotspot.open{background:#0b607c;transform:translate(-50%,-50%) scale(1.12)}
+.hotspot-area{position:absolute;border:3px solid rgba(192,57,43,.85);pointer-events:none;z-index:1}
+.hotspot-pop{position:absolute;z-index:5;width:min(340px,70%);padding:14px 16px;background:#fff;border:1px solid #c9d5dc;border-left:5px solid #0b607c;border-radius:6px;box-shadow:0 10px 28px rgba(10,40,60,.25)}
+.hotspot-pop strong{display:block;font-size:16px;color:#0b3d52;margin-bottom:6px}
+.hotspot-pop p{margin:0;font-size:14.5px;line-height:1.5;color:#33454f}
+.hotspot-hint{font-size:14px;color:#5c6c77;margin:6px 0 24px}
+/* Kartu prinsip */
+.principle-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:22px 0 34px}
+.principle-cards article{border:1px solid #d7e0e5;background:#fff;padding:16px 18px;border-top:4px solid #0b607c}
+.principle-cards h3{margin:0 0 6px!important;font-size:17px!important}
+.principle-cards h3 span{display:inline-block;min-width:26px;color:#0b607c}
+.principle-cards p{margin:0 0 8px;font-size:15px;line-height:1.5}
+.principle-cards .ok,.principle-cards .no{display:block;padding:7px 10px;margin-top:6px;font-size:14.5px;line-height:1.45;border-radius:4px}
+.principle-cards .ok{background:#e9f5ef;border-left:4px solid #188055}
+.principle-cards .no{background:#f8eded;border-left:4px solid #9a4545}
+@media(max-width:760px){.principle-cards{grid-template-columns:1fr}}
+/* Poin ringkas */
+.pts{margin:8px 0 16px;padding-left:22px}
+.pts li{margin:5px 0;line-height:1.5}
+p.lead+.pts{font-size:19px;color:#405260;margin-top:-6px}
+.concept-card .pts,.decision-grid .pts{font-size:15px;margin:6px 0 0;padding-left:18px}
+figcaption .pts{margin:6px 0;padding-left:20px}
+.pts strong{display:inline!important;font-size:inherit!important;margin:0!important}
+.hotspot-pop ul{margin:0;padding-left:18px;font-size:14.5px;line-height:1.5;color:#33454f}
+.hotspot-pop li{margin:3px 0}
+.hotspot-pop li strong{display:inline;font-size:inherit;color:#0b3d52;margin:0}
+/* Album sumber peta */
+.album-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:22px 0}
+.album-card{border:1px solid #d7e0e5;background:#fff;display:flex;flex-direction:column}
+.album-thumb{display:block;height:190px;overflow:hidden;background:#f2f5f7;border-bottom:1px solid #d7e0e5}
+.album-thumb img{width:100%;height:100%;object-fit:cover;object-position:center;border:0;box-shadow:none;margin:0}
+.album-body{padding:14px 16px 16px;display:flex;flex-direction:column;flex:1}
+.album-body h3{margin:0 0 2px!important;font-size:17px!important}
+.album-org{margin:0 0 6px;font-size:13.5px;color:#5c6c77}
+.album-body .pts{font-size:14.5px;margin:4px 0 10px}
+.album-link{margin-top:auto;align-self:flex-start;font-weight:700;font-size:14px;color:#0b607c}
+@media(max-width:760px){.album-grid{grid-template-columns:1fr}}
+.side-extra{margin-top:10px}
+/* Contoh tahapan digitasi */
+.digit-steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:22px 0}
+.digit-steps figure{position:relative;margin:0}
+.digit-steps figcaption{font-size:14.5px;margin-top:6px}
+.digit-num{position:absolute;top:8px;left:8px;z-index:2;width:30px;height:30px;border-radius:50%;background:#0b607c;color:#fff;font:800 16px/30px Arial,sans-serif;text-align:center}
+@media(max-width:760px){.digit-steps{grid-template-columns:1fr}}

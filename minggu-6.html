@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Minggu 6 — Jenis dan Pembacaan Peta | Kartografi (Teori)</title>
+<meta name="description" content="Materi Kartografi Minggu 6: jenis peta, pembacaan peta tematik, peta topografi/RBI, legenda, simbol, koordinat, relief, kontur, bentuk lahan, dan interpretasi peta.">
+<link rel="stylesheet" href="style.css?v=20261018b"><link rel="stylesheet" href="visual-enhance.css?v=20260906b">
+<link rel="stylesheet" href="week9-16.css?v=20261018b">
+<link rel="stylesheet" href="compact.css?v=20261122g">
+<style>
+.big-tree,.concept-box{max-width:920px;margin:22px 0 38px;padding:22px;background:#f5f7f9;border:1px solid var(--line)}
+.tree-root{max-width:220px;margin:0 auto 20px;padding:13px;text-align:center;background:#075175;color:#fff;font-weight:800}
+.tree-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.tree-col{background:#fff;border-top:4px solid #075175;padding:15px}.tree-col h3{font-size:17px;margin:0 0 8px}.tree-col p,.tree-col li{font-size:14px;line-height:1.5}
+.flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:20px 0 34px}.flow span{padding:10px 13px;background:#f4f7f9;border:1px solid var(--line);font-weight:650}.flow b{color:#6b7b87}
+.map-figure{max-width:980px;margin:20px 0 34px}.map-figure img{display:block;width:100%;height:auto;border:1px solid var(--line);background:#fff}.map-figure figcaption{margin-top:10px;font-size:15px;line-height:1.55;color:#51636f}
+.map-link{display:block;position:relative;color:inherit;text-decoration:none}.map-link::after{content:"Buka lembar penuh ↗";position:absolute;right:14px;bottom:14px;padding:8px 11px;background:rgba(7,81,117,.94);color:#fff;font-size:13px;font-weight:750;border-radius:3px;box-shadow:0 2px 7px rgba(0,0,0,.18)}
+.map-link:hover img,.map-link:focus img{outline:4px solid rgba(7,81,117,.2);outline-offset:2px}
+.legend-figure{max-width:690px}.legend-figure img{max-height:820px;object-fit:contain;object-position:left top}
+.map-comparison{display:grid;gap:24px;max-width:980px;margin:20px 0 34px}.map-card{display:grid;grid-template-columns:minmax(0,2.2fr) minmax(230px,1fr);gap:22px;align-items:start;padding:18px;background:#f8fafb;border-top:4px solid #075175}.map-card h3{margin:0 0 8px}.map-card p{margin:0 0 10px}.map-card ul{margin:0;padding-left:19px}.map-card img{display:block;width:100%;height:auto;border:1px solid var(--line);background:#fff}
+.two-col,.three-col{display:grid;gap:18px;max-width:920px;margin:20px 0 34px}.two-col{grid-template-columns:1fr 1fr}.three-col{grid-template-columns:repeat(3,1fr)}
+.card-lite{border-top:3px solid #075175;padding:15px;background:#f8fafb}.card-lite h3{margin-top:0}.card-lite ul{padding-left:18px}
+.symbol-demo{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:20px 0 32px;max-width:850px}.symbol-demo div{text-align:center;padding:18px;border:1px solid var(--line);background:#fff}.dot{width:16px;height:16px;border-radius:50%;background:#075175;display:inline-block}.line-demo{width:90px;border-top:5px solid #075175;display:inline-block}.area-demo{width:70px;height:45px;background:#dceaf1;border:2px solid #075175;display:inline-block}
+.term-table{max-width:900px}.key li{margin:9px 0}
+.svg-box{max-width:900px;margin:18px 0 32px;padding:14px;border:1px solid var(--line);background:#fff}.svg-box svg{width:100%;height:auto;display:block}
+.exercise{max-width:900px;padding:18px;background:#f5f7f9;border-left:4px solid #075175;margin:18px 0}
+.reading-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:980px;margin:20px 0 32px}.reading-step{padding:15px;background:#f8fafb;border-top:3px solid #075175}.reading-step h3{font-size:17px;margin:0 0 8px}.reading-step p{margin:0;font-size:15px;line-height:1.55}.limit-box{max-width:980px;margin:18px 0 34px;padding:18px 20px;background:#fff8ed;border-left:4px solid #b06b36}.thematic-example{max-width:980px;margin:24px 0 40px}.thematic-example img{display:block;width:100%;height:auto;border:1px solid var(--line)}.thematic-example figcaption{margin-top:10px;font-size:15px;line-height:1.55;color:#51636f}
+@media(max-width:900px){.tree-grid,.three-col,.two-col,.symbol-demo,.map-card,.reading-grid{grid-template-columns:1fr}.flow{display:grid}.flow b{text-align:center;transform:rotate(90deg)}.map-link::after{right:9px;bottom:9px}}
+</style>
+</head>
+<body>
+<a class="skip" href="#materi">Langsung ke materi</a>
+<aside class="sidebar"><a class="brand" href="index.html">Kartografi<br>(Teori)</a><div class="course-kind">Bahan kuliah teori</div><div class="course-staff"><span>Ni Putu Praja Chintya</span><span>bersama Wahyu Marta Mutiarasari</span></div><div class="nav-heading">Pertemuan 1–16</div><nav class="week-nav" aria-label="Materi pertemuan 1 sampai 16"><a href="minggu-1.html" title="1. Pengertian dan konsep kartografi"><span class="week-number">1</span><span class="week-title">Pengertian dan konsep kartografi</span></a><a href="minggu-2.html" title="2. Klasifikasi peta dan lingkup kartografi"><span class="week-number">2</span><span class="week-title">Klasifikasi peta dan lingkup kartografi</span></a><a href="minggu-3.html" title="3. Komunikasi kartografis"><span class="week-number">3</span><span class="week-title">Komunikasi kartografis</span></a><a href="minggu-4.html" title="4. Komponen dan kelengkapan peta"><span class="week-number">4</span><span class="week-title">Komponen dan kelengkapan peta</span></a><a href="minggu-5.html" title="5. Proyeksi peta"><span class="week-number">5</span><span class="week-title">Proyeksi peta</span></a><a href="minggu-6.html" aria-current="page" title="6. Jenis dan pembacaan peta"><span class="week-number">6</span><span class="week-title">Jenis dan pembacaan peta</span></a><a href="minggu-7.html" title="7. Skala dan generalisasi"><span class="week-number">7</span><span class="week-title">Skala dan generalisasi</span></a><a href="latihan-uts.html" title="8. Ujian Tengah Semester"><span class="week-number">8</span><span class="week-title">Ujian Tengah Semester</span></a><a href="minggu-9.html" title="9. Penyajian relief"><span class="week-number">9</span><span class="week-title">Penyajian relief</span></a><a href="minggu-10.html" title="10. Tampilan peta 3D"><span class="week-number">10</span><span class="week-title">Tampilan peta 3D</span></a><a href="minggu-11.html" title="11. Variabel tampak dan simbol"><span class="week-number">11</span><span class="week-title">Variabel tampak dan simbol</span></a><a href="minggu-12.html" title="12. Pemetaan data kualitatif dan kuantitatif"><span class="week-number">12</span><span class="week-title">Pemetaan data kualitatif dan kuantitatif</span></a><a href="minggu-12a.html" title="12A. Digitalisasi peta"><span class="week-number">12A</span><span class="week-title">Digitalisasi peta</span></a><a href="minggu-13.html" title="13. Toponimi"><span class="week-number">13</span><span class="week-title">Toponimi</span></a><a href="minggu-14.html" title="14. Tata letak dan keseimbangan peta"><span class="week-number">14</span><span class="week-title">Tata letak dan keseimbangan peta</span></a><a href="minggu-15.html" title="15. Evaluasi peta terpadu"><span class="week-number">15</span><span class="week-title">Evaluasi peta terpadu</span></a><a href="minggu-16.html" title="16. Ujian Akhir Semester"><span class="week-number">16</span><span class="week-title">Ujian Akhir Semester</span></a></nav>
+<div class="nav-heading">Sumber belajar</div>
+<nav class="week-nav side-extra" aria-label="Sumber belajar"><a href="album-peta.html" title="Album sumber peta"><span class="week-number">A</span><span class="week-title">Album sumber peta</span></a></nav></aside>
+<div class="layout"><main id="materi" class="presentation-notes">
+<div class="eyebrow">Pertemuan 6 · CPMK1 · Daring</div>
+<h1>Jenis dan pembacaan peta</h1>
+<p class="lead">Pertemuan ini membahas cara membaca peta secara runtut.</p>
+<ul class="pts"><li>Bagian pertama membahas <strong>jenis peta</strong>, terutama perbedaan peta umum dan peta tematik.</li><li>Bagian kedua membahas <strong>cara membaca peta tematik</strong> melalui tema, variabel, satuan, dan legenda.</li><li>Bagian ketiga membahas <strong>cara membaca peta topografi</strong> dengan contoh lembar Peta Rupabumi Indonesia (RBI), mulai dari informasi tepi sampai garis kontur.</li><li>Hasil akhirnya adalah <strong>lembar interpretasi peta</strong> yang setiap jawabannya didukung bukti dari peta.</li></ul>
+
+<section class="lesson-section" id="tujuan"><h2>1. Capaian pembelajaran</h2>
+<p>Setelah mengikuti materi ini, mahasiswa diharapkan mampu:</p>
+<ul class="key"><li>menjelaskan dasar pengelompokan jenis peta;</li><li>membedakan peta umum dan peta tematik;</li><li>membaca tema, variabel, satuan, waktu, legenda, dan pola sebaran pada peta tematik;</li><li>menjelaskan pengertian Peta Rupabumi Indonesia (RBI) dan instansi penyelenggaranya;</li><li>membaca lembar RBI secara bertahap: informasi tepi, skala, legenda, arah utara, serta koordinat geografis dan UTM;</li><li>membaca selang kontur, kontur indeks, kemiringan lereng, bukit, lembah, dan punggungan dari pola kontur;</li><li>menyusun interpretasi sederhana berdasarkan pola dan hubungan antarobjek pada peta.</li></ul></section>
+
+<section class="lesson-section" id="klasifikasi"><h2>2. Dasar klasifikasi peta</h2>
+<p>Istilah “jenis peta” dapat membingungkan jika dasar pembagiannya tidak disebutkan.</p>
+<ul class="pts"><li>Peta dapat diklasifikasikan berdasarkan <strong>beberapa dasar yang berbeda</strong>, misalnya isi, skala, fungsi, dan cara penyajian.</li><li>Satu peta dapat masuk ke <strong>beberapa kategori sekaligus</strong> karena setiap kategori memakai dasar yang berbeda.</li></ul>
+<div class="big-tree"><div class="tree-root">PETA</div><div class="tree-grid">
+<div class="tree-col"><h3>Berdasarkan isi</h3><p>Apa yang menjadi isi utama?</p><ul><li>Peta umum</li><li>Peta tematik</li></ul></div>
+<div class="tree-col"><h3>Berdasarkan skala</h3><p>Seberapa besar pengecilan dari ukuran sebenarnya?</p><ul><li>Skala besar</li><li>Skala menengah</li><li>Skala kecil</li></ul></div>
+<div class="tree-col"><h3>Berdasarkan fungsi</h3><p>Untuk apa peta digunakan?</p><ul><li>Referensi</li><li>Navigasi</li><li>Perencanaan</li><li>Analisis</li></ul></div>
+<div class="tree-col"><h3>Berdasarkan penyajian</h3><p>Bagaimana informasi ditampilkan?</p><ul><li>Peta garis</li><li>Peta berbasis citra/foto</li><li>Peta digital/interaktif</li></ul></div>
+</div><p><strong>Contoh:</strong> satu lembar RBI 1:25.000 dapat dikelompokkan dengan keempat dasar tersebut.</p>
+<ul class="pts"><li>Menurut isinya, RBI termasuk <strong>peta umum</strong>.</li><li>Menurut skalanya, RBI 1:25.000 termasuk <strong>peta skala besar</strong> untuk tingkat wilayah.</li><li>Menurut fungsinya, RBI berfungsi sebagai <strong>peta referensi</strong> atau peta dasar.</li><li>Menurut penyajiannya, RBI merupakan <strong>peta garis</strong> yang memakai simbol titik, garis, dan area.</li></ul></div>
+</section>
+
+<section class="lesson-section" id="umum-tematik"><h2>3. Peta umum dan peta tematik</h2>
+<div class="two-col"><article class="card-lite"><h3>Peta umum (<em>general map / reference map</em>)</h3><ul class="pts"><li>Peta umum menampilkan <strong>berbagai unsur geografis sekaligus</strong> untuk memberi gambaran umum suatu wilayah.</li><li>Unsur yang dimuat antara lain jalan, sungai, permukiman, relief, penggunaan lahan, batas wilayah, dan nama geografis.</li><li>Contoh peta umum adalah <strong>peta RBI</strong> dan peta topografi.</li></ul></article>
+<article class="card-lite"><h3>Peta tematik (<em>thematic map</em>)</h3><ul class="pts"><li>Peta tematik <strong>menonjolkan satu tema</strong> atau fenomena tertentu.</li><li>Unsur dasar seperti batas wilayah dan sungai hanya digunakan sebagai <strong>konteks lokasi</strong>.</li><li>Contoh tema adalah kepadatan penduduk, curah hujan, bahaya banjir, geologi, dan tutupan lahan.</li></ul></article></div>
+<p class="plain-note"><strong>Kunci:</strong> peta umum menjawab banyak pertanyaan tentang suatu wilayah, sedangkan peta tematik sengaja memusatkan perhatian pada satu tema.</p></section>
+
+<section class="lesson-section" id="baca-tematik"><h2>4. Membaca peta tematik</h2>
+<p>Peta tematik tidak cukup dibaca dari warnanya saja. Pembacaan dilakukan dengan urutan berikut:</p>
+<div class="flow"><span>1. Tema</span><b>→</b><span>2. Wilayah & waktu</span><b>→</b><span>3. Variabel & satuan</span><b>→</b><span>4. Legenda</span><b>→</b><span>5. Pola sebaran</span><b>→</b><span>6. Batas interpretasi</span></div>
+
+<h3>Contoh Indonesia 1 · Risiko kebakaran hutan dan lahan</h3>
+<figure class="thematic-example"><a class="map-link" href="https://inarisk.bnpb.go.id/pdf/BUKU%20RBI%202023.pdf" target="_blank" rel="noopener"><img src="assets/thematic-id/bnpb-risiko-karhutla.webp" width="3072" height="1270" alt="Peta indeks risiko kebakaran hutan dan lahan Indonesia"></a><figcaption><strong>Peta indeks risiko kebakaran hutan dan lahan.</strong><ul class="pts"><li>Warna menunjukkan <strong>kelas indeks risiko</strong> pada wilayah Indonesia.</li><li>Batas administrasi dan nama wilayah membantu pembaca menentukan lokasi.</li></ul><span class="source-note" style="display:block;margin-top:8px">Sumber: Badan Nasional Penanggulangan Bencana, <em>Buku Peta Risiko Bencana Indonesia 2023</em>, hlm. 96–97.</span></figcaption></figure>
+
+<div class="reading-grid">
+<article class="reading-step"><h3>1 · Tema</h3><ul class="pts"><li>Tema peta adalah <strong>risiko kebakaran hutan dan lahan</strong>.</li><li>Tema ditentukan dari judul peta, bukan dari warna yang terlihat.</li></ul></article>
+<article class="reading-step"><h3>2 · Variabel</h3><ul class="pts"><li>Variabel yang dipetakan adalah <strong>indeks risiko</strong> dengan rentang 0–1.</li><li>Nilai tersebut bukan jumlah kejadian kebakaran.</li></ul></article>
+<article class="reading-step"><h3>3 · Cakupan wilayah</h3><ul class="pts"><li>Peta mencakup <strong>seluruh wilayah Indonesia</strong>.</li><li>Batas provinsi dan nama pulau digunakan sebagai informasi lokasi.</li></ul></article>
+<article class="reading-step"><h3>4 · Legenda</h3><ul class="pts"><li>Warna hijau menunjukkan <strong>kelas rendah</strong>.</li><li>Warna kuning hingga jingga menunjukkan <strong>kelas sedang</strong>.</li><li>Warna merah menunjukkan <strong>kelas tinggi</strong>.</li></ul></article>
+<article class="reading-step"><h3>5 · Pola sebaran</h3><ul class="pts"><li>Pembaca mengenali <strong>kelompok wilayah</strong> yang berisiko relatif tinggi, sedang, dan rendah.</li></ul></article>
+<article class="reading-step"><h3>6 · Batas interpretasi</h3><ul class="pts"><li>Peta risiko <strong>tidak menyatakan</strong> bahwa kebakaran sedang terjadi.</li><li>Peta ini juga tidak menunjukkan waktu terjadinya kebakaran.</li></ul></article>
+</div>
+<div class="limit-box"><strong>Ketepatan istilah:</strong> risiko (<em>risk</em>), bahaya (<em>hazard</em>), dan kejadian (<em>event</em>) adalah konsep yang berbeda. Kesimpulan harus memakai istilah yang sama dengan judul dan legenda peta.</div>
+
+<h3>Contoh Indonesia 2 · Curah hujan dan sifat hujan</h3>
+<figure class="thematic-example"><a class="map-link" href="https://content.bmkg.go.id/wp-content/uploads/29.Dinat_Das_II_Okt_2024.pdf" target="_blank" rel="noopener"><img src="assets/thematic-id/bmkg-curah-sifat-hujan-september-2024.webp" width="2000" height="1125" alt="Peta analisis curah hujan dan sifat hujan Indonesia September 2024"></a><figcaption><strong>Dua peta dengan wilayah dan periode yang sama, tetapi variabelnya berbeda.</strong><ul class="pts"><li>Peta kiri menunjukkan <strong>jumlah curah hujan bulanan</strong>.</li><li>Peta kanan menunjukkan <strong>sifat hujan</strong>, yaitu perbandingan curah hujan terhadap kondisi normal.</li></ul><span class="source-note" style="display:block;margin-top:8px">Sumber: Badan Meteorologi, Klimatologi, dan Geofisika, <em>Analisis Dinamika Atmosfer Dasarian II Oktober 2024</em>, hlm. 38.</span></figcaption></figure>
+<div class="two-col">
+<article class="card-lite"><h3>Curah hujan</h3><ul><li><strong>Variabel:</strong> jumlah hujan bulanan.</li><li><strong>Satuan:</strong> milimeter (mm).</li><li><strong>Pertanyaan:</strong> berapa banyak hujan yang tercatat?</li></ul></article>
+<article class="card-lite"><h3>Sifat hujan</h3><ul><li><strong>Variabel:</strong> perbandingan curah hujan terhadap nilai normal.</li><li><strong>Satuan:</strong> persen (%).</li><li><strong>Pertanyaan:</strong> apakah hujan berada di bawah, mendekati, atau di atas normal?</li></ul></article>
+</div>
+<p class="plain-note"><strong>Prinsip pembacaan:</strong> curah hujan yang tinggi tidak selalu berarti “atas normal”. Nilai pada peta kiri dan kelas pada peta kanan harus dibaca dengan legenda masing-masing.</p>
+
+<h3>Contoh Indonesia 3 · Patahan aktif Bandung Barat</h3>
+<figure class="thematic-example"><a class="map-link" href="https://geologi.esdm.go.id/storage/publikasi/eLS94VCSoB948INlvolpYSSYlOr7A3Tt6vqH8LHP.pdf" target="_blank" rel="noopener"><img src="assets/thematic-id/esdm-patahan-aktif-bandung-barat.webp" width="2282" height="1560" alt="Peta patahan aktif daerah Bandung Barat"></a><figcaption><strong>Peta patahan aktif daerah Bandung Barat.</strong><ul class="pts"><li>Tema geologi ditampilkan bersama <strong>relief dan unsur referensi</strong>.</li><li>Unsur referensi membantu pembaca mengenali posisi setiap objek geologi.</li></ul><span class="source-note" style="display:block;margin-top:8px">Sumber: Pusat Survei Geologi, Badan Geologi, <em>Atlas Patahan Aktif Volume 1</em>, 2024, hlm. 21.</span></figcaption></figure>
+<div class="three-col">
+<article class="card-lite"><h3>Garis</h3><p>Jejak dan jenis patahan menjadi unsur utama yang ditelusuri pada peta.</p></article>
+<article class="card-lite"><h3>Titik</h3><p>Lokasi data gempa memberikan informasi tambahan tentang aktivitas kegempaan.</p></article>
+<article class="card-lite"><h3>Area</h3><p>Warna area membedakan satuan batuan (litologi) di wilayah tersebut.</p></article>
+</div>
+<ul class="pts"><li><strong>Informasi dasar</strong> seperti relief, sungai, jalan, dan nama tempat membantu pembaca menentukan lokasi dan hubungan antarunsur.</li><li>Menurut <strong>prinsip hierarki visual</strong>, simbol tema utama harus paling mudah dikenali walaupun peta memuat banyak unsur.</li><li>Unsur lain pada peta tematik berfungsi sebagai <strong>konteks geografis</strong>.</li></ul>
+
+<h3>Perbandingan ketiga peta tematik</h3>
+<div class="table-wrap"><table class="term-table"><thead><tr><th>Contoh</th><th>Variabel utama</th><th>Bentuk simbol dominan</th><th>Pertanyaan yang dijawab</th></tr></thead><tbody>
+<tr><td>Risiko kebakaran hutan dan lahan</td><td>Indeks risiko 0–1</td><td>Warna area/permukaan</td><td>Wilayah mana yang tingkat risikonya relatif lebih tinggi?</td></tr>
+<tr><td>Curah hujan dan sifat hujan</td><td>Jumlah hujan (mm) dan perbandingan terhadap normal (%)</td><td>Warna area/permukaan</td><td>Berapa jumlah hujan dan bagaimana kondisinya terhadap normal?</td></tr>
+<tr><td>Patahan aktif Bandung Barat</td><td>Jejak patahan, satuan batuan, dan lokasi gempa</td><td>Titik, garis, dan area</td><td>Di mana jejak patahan berada dan unsur geologi apa yang menyertainya?</td></tr>
+</tbody></table></div>
+
+<details class="concept-box"><summary><strong>Pembanding internasional: jumlah dan kepadatan penduduk</strong></summary>
+<figure class="thematic-example"><a class="map-link" href="https://www2.census.gov/programs-surveys/popest/visualizations/2006/2006-population-estimates-maps/2006_population_size_and_density.pdf" target="_blank" rel="noopener"><img src="census.webp" width="2200" height="2847" alt="Perbandingan peta jumlah penduduk dan kepadatan penduduk Amerika Serikat tahun 2006"></a><figcaption><ul class="pts"><li>Peta atas menunjukkan <strong>jumlah penduduk</strong>, sedangkan peta bawah menunjukkan <strong>kepadatan penduduk</strong>.</li><li>Jumlah penduduk yang besar tidak selalu berarti kepadatan tinggi karena luas wilayah yang dibandingkan berbeda.</li></ul><span class="source-note" style="display:block;margin-top:8px">Sumber: U.S. Census Bureau, estimasi 1 Juli 2006.</span></figcaption></figure>
+</details></section>
+
+<section class="lesson-section" id="rbi"><h2>5. Peta topografi dan Peta Rupabumi Indonesia (RBI)</h2>
+<ul class="pts"><li><strong>Peta topografi</strong> (<em>topographic map</em>) adalah peta umum yang menunjukkan lokasi berbagai objek geografis sekaligus <strong>bentuk permukaan bumi</strong>.</li><li>Ciri khas peta topografi adalah penggunaan <strong>garis kontur</strong> (<em>contour line</em>) untuk menggambarkan tinggi dan bentuk medan.</li><li><strong>Peta Rupabumi Indonesia (RBI)</strong> adalah peta topografi resmi Indonesia yang menjadi peta dasar bagi peta-peta lain.</li><li>RBI diselenggarakan oleh <strong>Badan Informasi Geospasial (BIG)</strong>, yang sebelum tahun 2011 bernama BAKOSURTANAL.</li><li>Lembar RBI 1:25.000 disusun menurut <strong>SNI 6502.2:2010</strong>, dan setiap lembarnya mencakup <strong>7,5′ × 7,5′</strong> (7 menit 30 detik bujur × 7 menit 30 detik lintang).</li><li>Contoh lembar pada halaman ini adalah edisi tahun 2000 sehingga nama penerbit yang tercantum masih <strong>BAKOSURTANAL</strong>.</li></ul>
+<figure class="map-figure"><a class="map-link" href="assets/rbi/yoso-full.webp" target="_blank" rel="noopener"><img src="assets/rbi/yoso-map.webp" alt="Muka peta RBI Yosowilangun skala 1 banding 25.000" width="1900" height="1872" loading="eager"></a><figcaption><strong>RBI Yosowilangun.</strong><ul class="pts"><li>Satu lembar memuat jalan, sungai, permukiman, penggunaan lahan, batas, nama tempat, grid, dan relief.</li><li>Gambar dapat dibuka untuk melihat lembar lengkap beserta legenda dan informasi tepinya.</li></ul><span class="source-note" style="display:block;margin-top:8px">Sumber: Peta Rupabumi Digital Indonesia 1:25.000, Lembar 1607-541 Yosowilangun, BAKOSURTANAL, edisi I–2000.</span></figcaption></figure>
+<details class="concept-box"><summary><strong>Pembanding: peta topografi dari negara lain</strong></summary><figure class="map-figure"><a class="map-link" href="assets/rbi/knoxville-full.webp" target="_blank" rel="noopener"><img src="assets/rbi/knoxville-full.webp" alt="Peta topografi historis Knoxville Iowa tahun 1909" width="2200" height="2714" loading="lazy"></a><figcaption><ul class="pts"><li>Gambar ini adalah peta topografi historis Knoxville, Iowa, berskala 1:62.500.</li><li>Unsur dan gaya simbolnya berbeda dari RBI, tetapi relief tetap dibaca melalui garis kontur.</li></ul><span class="source-note" style="display:block;margin-top:8px">Sumber: U.S. Geological Survey, Knoxville Quadrangle, 1909.</span></figcaption></figure></details>
+<p class="source-note">Sebagai pembanding istilah internasional, USGS menjelaskan bahwa ciri khas peta topografi adalah garis kontur (<em>contour lines</em>) untuk menunjukkan bentuk permukaan bumi, disertai fitur seperti jalan, sungai, dan nama tempat. <a href="https://www.usgs.gov/faqs/what-a-topographic-map" target="_blank" rel="noopener">USGS — What is a topographic map?</a></p></section>
+
+<section class="lesson-section" id="cara-baca"><h2>6. Langkah membaca lembar RBI</h2>
+<p>Lembar RBI dibaca secara bertahap agar setiap unsur dipahami sebelum ditarik kesimpulan.</p>
+<div class="flow"><span>1. Informasi tepi</span><b>→</b><span>2. Skala</span><b>→</b><span>3. Legenda</span><b>→</b><span>4. Arah utara</span><b>→</b><span>5. Koordinat</span><b>→</b><span>6. Kontur & relief</span><b>→</b><span>7. Interpretasi</span></div>
+<ul class="pts"><li>Langkah 1–5 dibahas pada bagian ini dengan contoh <strong>RBI Yosowilangun</strong>.</li><li>Langkah 6 dibahas pada bagian 7 sampai 10, sedangkan langkah 7 dibahas pada bagian 12.</li></ul>
+
+<h3>Langkah 1 · Membaca informasi tepi</h3>
+<p><strong>Informasi tepi</strong> (<em>marginal information</em>) adalah keterangan di luar muka peta yang menjelaskan identitas dan cara membaca lembar.</p>
+<div class="two-col">
+<figure class="map-figure" style="margin:0"><a class="map-link" href="assets/rbi/yoso-full.webp" target="_blank" rel="noopener"><div style="position:relative;overflow:hidden;aspect-ratio:520/760;border:1px solid #d7e0e5;background:#fff"><img src="assets/rbi/yoso-full.webp" alt="Potongan informasi tepi RBI Yosowilangun: judul, skala, nomor lembar, petunjuk letak peta, diagram lokasi, proyeksi, datum, dan selang kontur" loading="lazy" style="position:absolute;max-width:none;width:576.92%;height:auto;left:-476.92%;top:0;border:0"></div></a><figcaption><strong>Bagian atas informasi tepi RBI Yosowilangun.</strong><ul class="pts"><li>Potongan ini diambil dari sudut kanan atas lembar peta.</li></ul></figcaption></figure>
+<div><ul class="pts"><li><strong>Judul dan skala</strong> menyatakan bahwa lembar ini adalah Peta Rupabumi Digital Indonesia 1:25.000.</li><li><strong>Nomor dan nama lembar</strong> adalah 1607-541 Yosowilangun, dengan edisi I–2000.</li><li><strong>Petunjuk letak peta</strong> menunjukkan lembar-lembar tetangga, misalnya Lumajang di sebelah barat dan Tanggul di sebelah timur.</li><li>Angka tepi petunjuk letak peta menunjukkan bahwa lembar ini mencakup <strong>113°15′–113°22′30″ BT</strong> dan <strong>8°07′30″–8°15′ LS</strong>.</li><li><strong>Diagram lokasi</strong> menunjukkan posisi lembar di Pulau Jawa bagian timur.</li><li><strong>Proyeksi</strong> yang digunakan adalah Transverse Mercator, dengan grid geografi dan grid UTM.</li><li><strong>Datum horizontal</strong> adalah DGN-95, sedangkan <strong>datum vertikal</strong> adalah muka laut di Tanjungpriok, Jakarta.</li><li><strong>Selang kontur</strong> tertulis 12,5 meter, dan nilai ini menjadi dasar pembacaan relief.</li></ul></div>
+</div>
+
+<h3>Langkah 2 · Membaca skala</h3>
+<ul class="pts"><li>Skala <strong>1:25.000</strong> berarti 1 cm pada peta mewakili 25.000 cm atau 250 m di lapangan.</li><li>Di bagian bawah lembar terdapat <strong>skala grafis</strong> (<em>bar scale</em>) untuk mengukur jarak secara langsung.</li><li>Perhitungan skala dibahas lebih lengkap pada <a href="minggu-7.html">Pertemuan 7</a>.</li></ul>
+
+<h3>Langkah 3 · Membaca legenda dan simbol</h3>
+<ul class="pts"><li><strong>Legenda</strong> (<em>legend</em>) adalah bagian peta yang menjelaskan arti setiap simbol.</li><li>Warna dan bentuk simbol tidak selalu bermakna sama pada setiap peta, sehingga maknanya harus diperiksa melalui legenda.</li></ul>
+<figure class="map-figure legend-figure" style="max-width:440px"><a class="map-link" href="assets/rbi/yoso-full.webp" target="_blank" rel="noopener"><img src="assets/rbi/yoso-legend.webp" alt="Legenda RBI Yosowilangun yang memuat simbol gedung, perhubungan, tumbuh-tumbuhan, relief, batas administrasi, dan perairan" width="900" height="2273" loading="lazy"></a><figcaption><strong>Legenda RBI Yosowilangun.</strong><ul class="pts"><li>Simbol dikelompokkan menurut jenis objek, yaitu gedung dan bangunan, perhubungan, tumbuh-tumbuhan, relief, batas administrasi, dan perairan.</li><li>Gambar terhubung dengan lembar lengkap sehingga penerapan simbol pada muka peta dapat diperiksa.</li></ul></figcaption></figure>
+<p>Simbol pada peta memakai tiga bentuk geometri dasar:</p>
+<div class="symbol-demo"><div><span class="dot"></span><h3>Titik (<em>point</em>)</h3><p>Simbol titik dipakai untuk objek yang diwakili satu lokasi, misalnya titik tinggi atau masjid.</p></div><div><span class="line-demo"></span><h3>Garis (<em>line</em>)</h3><p>Simbol garis dipakai untuk objek memanjang, misalnya jalan, sungai, batas, dan kontur.</p></div><div><span class="area-demo"></span><h3>Area (<em>polygon</em>)</h3><p>Simbol area dipakai untuk objek yang mempunyai luasan, misalnya danau, hutan, sawah, dan permukiman.</p></div></div>
+<p class="plain-note"><strong>Penting:</strong> ukuran simbol tidak selalu sama dengan ukuran fisik objek. Jalan dapat digambar lebih lebar daripada lebar sebenarnya agar tetap terlihat. Hal ini menjadi jembatan ke konsep generalisasi pada Pertemuan 7.</p>
+
+<h3>Langkah 4 · Menentukan arah utara</h3>
+<ul class="pts"><li>Lembar RBI memuat <strong>diagram arah utara</strong> di bagian kiri bawah.</li><li>Diagram tersebut membedakan <strong>utara sebenarnya</strong> (US, utara geografis), <strong>utara grid</strong> (UG, arah garis grid UTM), dan <strong>utara magnetis</strong> (UM, arah jarum kompas).</li><li>Batas lembar RBI mengikuti garis bujur dan lintang, sehingga utara sebenarnya mengarah ke <strong>bagian atas lembar</strong>.</li></ul>
+
+<h3>Langkah 5 · Membaca grid dan koordinat</h3>
+<ul class="pts"><li><strong>Koordinat</strong> (<em>coordinates</em>) adalah pasangan angka yang menyatakan posisi suatu titik.</li><li><strong>Grid</strong> adalah jaringan garis referensi pada peta yang membantu pembaca menentukan koordinat.</li><li>RBI memuat dua sistem sekaligus, yaitu <strong>koordinat geografis</strong> dan <strong>koordinat UTM</strong>.</li></ul>
+<div class="table-wrap"><table class="term-table"><thead><tr><th>Istilah</th><th>Pengertian</th><th>Contoh</th></tr></thead><tbody>
+<tr><td>Koordinat geografis (<em>geographic coordinates</em>)</td><td>Posisi dinyatakan dengan lintang dan bujur dalam derajat, menit, dan detik.</td><td>8°14′23″ LS, 113°18′44″ BT</td></tr>
+<tr><td>Gratikul (<em>graticule</em>)</td><td>Jaringan garis lintang (paralel) dan garis bujur (meridian) pada peta.</td><td>Tanda bujur dan lintang di tepi muka peta RBI</td></tr>
+<tr><td>Koordinat proyeksi (<em>projected coordinates</em>)</td><td>Posisi pada bidang datar setelah proyeksi, dinyatakan dalam meter.</td><td>Timur (<em>easting</em>) dan Utara (<em>northing</em>)</td></tr>
+<tr><td>Grid UTM (<em>UTM grid</em>)</td><td>Jaringan garis berjarak tetap dalam sistem Universal Transverse Mercator.</td><td>Garis grid tiap 1 km pada RBI 1:25.000</td></tr>
+</tbody></table></div>
+<figure class="map-figure" style="max-width:640px"><a class="map-link" href="assets/rbi/yoso-full.webp" target="_blank" rel="noopener"><div style="position:relative;overflow:hidden;aspect-ratio:520/528;border:1px solid #d7e0e5;background:#fff"><img src="assets/rbi/yoso-full.webp" alt="Petunjuk pembacaan koordinat geografi dan koordinat UTM pada RBI Yosowilangun" loading="lazy" style="position:absolute;max-width:none;width:576.92%;height:auto;left:-476.92%;top:-424.24%;border:0"></div></a><figcaption><strong>Petunjuk pembacaan koordinat pada RBI Yosowilangun.</strong><ul class="pts"><li>Kotak ini tercetak di kanan bawah lembar dan memakai lokasi Yosowilangun sebagai contoh titik.</li></ul></figcaption></figure>
+<div class="two-col">
+<article class="card-lite"><h3>Koordinat geografis titik contoh</h3><ul class="pts"><li>Pertama, baca <strong>garis bujur terdekat di sebelah kiri</strong> titik, yaitu 113°18′.</li><li>Kedua, perkirakan jarak dari garis tersebut ke titik dalam selang satu menit, yaitu <strong>44″</strong>.</li><li>Ketiga, baca <strong>garis lintang terdekat di sebelah atas</strong> titik, yaitu 8°14′.</li><li>Keempat, perkirakan jarak dari garis tersebut ke titik, yaitu <strong>23″</strong>.</li><li>Hasilnya adalah <strong>λ = 113°18′44″ BT</strong> dan <strong>φ = 8°14′23″ LS</strong>.</li></ul></article>
+<article class="card-lite"><h3>Koordinat UTM titik contoh</h3><ul class="pts"><li>Pertama, baca <strong>garis grid di sebelah kiri</strong> titik, yaitu <sup>07</sup>54.</li><li>Kedua, perkirakan posisi titik dalam persepuluhan kotak grid, yaitu <strong>7</strong>, sehingga diperoleh <sup>07</sup>547.</li><li>Ketiga, baca <strong>garis grid di sebelah bawah</strong> titik, yaitu <sup>90</sup>88.</li><li>Keempat, perkirakan posisi titik ke arah utara, yaitu <strong>5</strong>, sehingga diperoleh <sup>90</sup>885.</li><li>Hasilnya adalah <strong>T = 754.700 m</strong> dan <strong>U = 9.088.500 m</strong> pada zona UTM 49, dengan ketelitian pembacaan 0,1 km.</li></ul></article>
+</div>
+<ul class="pts"><li>Pada belahan bumi selatan, nilai lintang <strong>bertambah ke arah bawah</strong> peta, sehingga lintang dibaca dari garis di sebelah atas titik.</li><li>Garis grid UTM pada lembar ini berjarak <strong>1 km</strong>, sehingga satu persepuluh kotak grid sama dengan 100 m.</li><li>Pembahasan sistem proyeksi dan CRS tidak diulang di sini karena sudah dibahas pada <a href="minggu-5.html">Pertemuan 5</a>.</li></ul></section>
+
+<section class="lesson-section" id="kontur"><h2>7. Relief dan garis kontur</h2>
+<ul class="pts"><li><strong>Relief</strong> adalah variasi tinggi-rendah dan bentuk permukaan bumi, misalnya dataran, lereng, bukit, lembah, dan punggungan.</li><li>Peta dua dimensi tidak dapat menampilkan bentuk tiga dimensi secara langsung, sehingga relief digambarkan dengan <strong>garis kontur</strong> (<em>contour line</em>).</li><li>Garis kontur adalah garis yang <strong>menghubungkan titik-titik dengan ketinggian (elevasi) yang sama</strong>.</li><li>Garis kontur bersifat konseptual karena <strong>tidak terlihat secara fisik</strong> di lapangan.</li><li>Pada RBI, garis kontur digambar dengan warna cokelat.</li></ul>
+<figure class="real-map svg-box"><svg viewBox="0 55 880 260" role="img" aria-label="Bukit dipotong bidang datar pada ketinggian 100, 150, dan 200 meter; hasil potongan dilihat dari atas menjadi garis kontur" style="width:100%;height:auto;background:#fff">
+<path d="M80 260 Q240 -20 400 260 Z" fill="#e8f2f8" stroke="#0b607c" stroke-width="3"/>
+<g stroke="#b06b36" stroke-width="2.5" stroke-dasharray="7 5"><line x1="80" y1="230" x2="400" y2="230"/><line x1="80" y1="190" x2="400" y2="190"/><line x1="80" y1="150" x2="400" y2="150"/></g>
+<g font-family="Arial,sans-serif" font-size="15" fill="#173746" text-anchor="end"><text x="74" y="235">100 m</text><text x="74" y="195">150 m</text><text x="74" y="155">200 m</text></g>
+<path d="M425 165 H495" stroke="#667580" stroke-width="3"/><polygon points="505,165 489,156 489,174" fill="#667580"/>
+<g fill="none" stroke="#b06b36" stroke-width="3"><ellipse cx="680" cy="165" rx="142" ry="85"/><ellipse cx="680" cy="165" rx="113" ry="68"/><ellipse cx="680" cy="165" rx="71" ry="43"/></g>
+<g font-family="Arial,sans-serif" font-size="14" fill="#173746" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke"><text x="680" y="85">100</text><text x="680" y="102">150</text><text x="680" y="127">200</text></g>
+<g font-family="Arial,sans-serif" font-size="17" fill="#173746" text-anchor="middle"><text x="240" y="295">Bukit dilihat dari samping</text><text x="680" y="295">Garis kontur dilihat dari atas</text></g>
+</svg><figcaption><ul class="pts"><li>Bukit dipotong oleh bidang datar pada ketinggian <strong>100 m, 150 m, dan 200 m</strong> (ilustrasi).</li><li>Setiap garis potong yang dilihat dari atas menjadi <strong>satu garis kontur</strong> dengan satu nilai ketinggian.</li></ul></figcaption></figure>
+<p class="source-note">USGS mendefinisikan garis kontur (<em>contours</em>) sebagai garis yang menghubungkan titik-titik dengan elevasi sama. <a href="https://www.usgs.gov/ngp-standards-and-specifications/us-topo-map-symbol-guide" target="_blank" rel="noopener">USGS Map Symbol Guide</a>.</p></section>
+
+<section class="lesson-section" id="interval"><h2>8. Selang kontur dan kontur indeks</h2>
+<ul class="pts"><li><strong>Selang kontur</strong> (<em>contour interval</em>) adalah <strong>selisih ketinggian</strong> antara dua garis kontur yang berurutan.</li><li>Selang kontur disebut juga <strong>interval kontur</strong>, dan nilainya dibaca dari informasi tepi peta.</li><li>Selang kontur <strong>berbeda</strong> dari jarak mendatar antara dua garis kontur pada peta.</li><li><strong>Kontur indeks</strong> (<em>index contour</em>) adalah kontur yang digambar lebih tebal dan diberi angka ketinggian agar mudah dihitung.</li><li>Pada RBI 1:25.000, selang kontur adalah <strong>12,5 m</strong> dan kontur indeks dibuat <strong>setiap 50 m</strong>, sehingga setiap kontur keempat adalah kontur indeks.</li></ul>
+<div class="exercise"><strong>Contoh perhitungan pada RBI 1:25.000:</strong><ul class="pts"><li>Kontur indeks bernilai 100 m diikuti oleh kontur 112,5 m, 125 m, dan 137,5 m.</li><li>Kontur berikutnya bernilai 150 m dan kembali digambar sebagai kontur indeks.</li><li>Jika sebuah titik berada tiga garis di atas kontur indeks 1.650 m, ketinggiannya adalah 1.650 + 3 × 12,5 = <strong>1.687,5 m</strong> (ilustrasi).</li></ul></div>
+<ul class="pts"><li>Selang kontur biasanya <strong>tetap untuk satu lembar peta</strong>, kecuali informasi tepi menyatakan lain.</li><li>Selang kontur harus dibaca dari informasi peta dan <strong>tidak boleh ditebak</strong> dari jarak antargaris.</li></ul>
+<figure class="real-map" style="max-width:720px"><a class="map-link" href="assets/rbi/pupuan-full.webp" target="_blank" rel="noopener"><div style="position:relative;overflow:hidden;aspect-ratio:500/400;border:1px solid #d7e0e5;background:#fff"><img src="assets/rbi/pupuan-full.webp" alt="Potongan RBI Pupuan di sekitar Gunung Lesung yang menunjukkan kontur rapat, kontur indeks berlabel, dan titik tinggi" loading="lazy" style="position:absolute;max-width:none;max-height:none;width:600%;height:auto;left:-368%;top:-115%;border:0"></div></a><figcaption><strong>Contoh pembacaan kontur pada RBI Pupuan, sekitar G. Lesung.</strong><ul class="pts"><li>Garis cokelat yang lebih tebal dan berlabel, misalnya <strong>1650 dan 1700</strong>, adalah kontur indeks.</li><li>Di antara dua kontur indeks terdapat tiga kontur biasa dengan selang 12,5 m.</li><li>Angka kecil di samping titik hitam adalah <strong>titik tinggi</strong> (<em>spot height</em>) dalam meter.</li><li>Kontur yang sangat rapat di sekeliling G. Lesung menunjukkan <strong>lereng yang curam</strong>.</li></ul><span class="source-note" style="display:block;margin-top:8px">Sumber: Peta Rupabumi Digital Indonesia 1:25.000, Lembar 1707-613 Pupuan, BAKOSURTANAL, edisi I–2000.</span></figcaption></figure></section>
+
+<section class="lesson-section" id="lereng"><h2>9. Kontur rapat dan kontur renggang</h2>
+<div class="two-col"><article class="card-lite"><h3>Kontur rapat</h3><ul class="pts"><li>Perubahan ketinggian yang sama terjadi pada <strong>jarak mendatar yang pendek</strong>.</li><li>Kontur rapat menunjukkan <strong>lereng curam</strong>.</li></ul></article><article class="card-lite"><h3>Kontur renggang</h3><ul class="pts"><li>Perubahan ketinggian yang sama terjadi pada <strong>jarak mendatar yang panjang</strong>.</li><li>Kontur renggang menunjukkan <strong>lereng landai</strong>.</li></ul></article></div>
+<figure class="real-map svg-box"><svg viewBox="0 0 880 530" role="img" aria-label="Denah kontur dan penampang A-B: sisi barat kontur renggang dan lereng landai, sisi timur kontur rapat dan lereng curam" style="width:100%;height:auto;background:#fff">
+<rect x="60" y="20" width="760" height="230" fill="#f7faf6" stroke="#d7e0e5"/>
+<g stroke="#b06b36" fill="none"><g stroke-width="1.6"><line x1="181.7" y1="45" x2="181.7" y2="230"/><line x1="238.3" y1="45" x2="238.3" y2="230"/><line x1="294.8" y1="45" x2="294.8" y2="230"/><line x1="407.8" y1="45" x2="407.8" y2="230"/><line x1="464.3" y1="45" x2="464.3" y2="230"/><line x1="520.9" y1="45" x2="520.9" y2="230"/><line x1="630.4" y1="45" x2="630.4" y2="230"/><line x1="652.2" y1="45" x2="652.2" y2="230"/><line x1="673.9" y1="45" x2="673.9" y2="230"/><line x1="717.4" y1="45" x2="717.4" y2="230"/><line x1="739.1" y1="45" x2="739.1" y2="230"/><line x1="760.9" y1="45" x2="760.9" y2="230"/></g><g stroke-width="3.6"><line x1="125.2" y1="45" x2="125.2" y2="230"/><line x1="351.3" y1="45" x2="351.3" y2="230"/><line x1="577.4" y1="45" x2="577.4" y2="230"/><line x1="608.7" y1="45" x2="608.7" y2="230"/><line x1="695.7" y1="45" x2="695.7" y2="230"/><line x1="782.6" y1="45" x2="782.6" y2="230"/></g></g>
+<line x1="80" y1="140" x2="800" y2="140" stroke="#173746" stroke-width="1.5" stroke-dasharray="6 4"/>
+<g font-family="Arial,sans-serif" font-size="15" fill="#173746" font-weight="700" stroke="#fff" stroke-width="4" paint-order="stroke"><text x="70" y="145">A</text><text x="804" y="145">B</text></g>
+<g font-family="Arial,sans-serif" font-size="13" fill="#7a4520" text-anchor="middle" stroke="#f7faf6" stroke-width="4" paint-order="stroke"><text x="125.2" y="40">50</text><text x="351.3" y="40">100</text><text x="577.4" y="40">150</text><text x="695.7" y="40">100</text><text x="782.6" y="40">50</text></g>
+<line x1="60" y1="470" x2="820" y2="470" stroke="#9aa9b2"/>
+<path d="M80 470 L600 297.5 L800 470 Z" fill="#eef6fa" stroke="#0b607c" stroke-width="3"/>
+<g stroke="#b06b36" stroke-width="1.5" stroke-dasharray="5 4"><line x1="80" y1="455" x2="800" y2="455"/><line x1="80" y1="380" x2="800" y2="380"/><line x1="80" y1="305" x2="800" y2="305"/></g>
+<g font-family="Arial,sans-serif" font-size="13" fill="#7a4520" text-anchor="end"><text x="74" y="459">50 m</text><text x="74" y="384">100 m</text><text x="74" y="309">150 m</text></g>
+<g font-family="Arial,sans-serif" font-size="15" fill="#173746" font-weight="700"><text x="84" y="290">A</text><text x="790" y="290">B</text></g>
+<g font-family="Arial,sans-serif" font-size="16" fill="#173746" text-anchor="middle"><text x="330" y="498">Kontur renggang: lereng landai</text><text x="700" y="498">Kontur rapat: lereng curam</text><text x="440" y="270" font-size="14" fill="#526570">Penampang (profil) sepanjang garis A–B</text></g>
+<text x="440" y="522" font-family="Arial,sans-serif" font-size="13" fill="#526570" text-anchor="middle">Selang kontur 12,5 m; garis tebal adalah kontur indeks tiap 50 m (ilustrasi)</text>
+</svg><figcaption><ul class="pts"><li>Bagian atas adalah <strong>denah kontur</strong>, sedangkan bagian bawah adalah <strong>penampang</strong> medan sepanjang garis A–B.</li><li>Di sisi barat, kontur renggang menghasilkan <strong>lereng landai</strong> pada penampang.</li><li>Di sisi timur, kontur rapat menghasilkan <strong>lereng curam</strong> walaupun selang konturnya sama.</li></ul></figcaption></figure>
+<p class="plain-note"><strong>Kesalahan umum:</strong> kontur rapat tidak berarti tempat tersebut lebih tinggi. Kontur rapat berarti <strong>lereng lebih curam</strong>, sedangkan tinggi-rendahnya tempat dibaca dari nilai kontur.</p></section>
+
+<section class="lesson-section" id="bentuklahan"><h2>10. Bukit, lembah, punggungan, dan arah aliran sungai</h2>
+<div class="three-col"><article class="card-lite"><h3>Bukit (<em>hill</em>)</h3><ul class="pts"><li>Bukit ditunjukkan oleh <strong>kontur tertutup</strong> yang nilainya makin tinggi ke arah pusat.</li></ul></article><article class="card-lite"><h3>Lembah (<em>valley</em>)</h3><ul class="pts"><li>Lembah adalah bagian rendah yang memanjang.</li><li>Kontur yang memotong lembah membentuk <strong>huruf V</strong> yang ujungnya menunjuk ke arah <strong>hulu</strong> atau ketinggian yang lebih tinggi.</li></ul></article><article class="card-lite"><h3>Punggungan (<em>ridge</em>)</h3><ul class="pts"><li>Punggungan adalah bagian tinggi yang memanjang di antara dua lembah.</li><li>Kontur pada punggungan membentuk huruf V atau U yang ujungnya menunjuk ke arah <strong>ketinggian yang lebih rendah</strong>.</li></ul></article></div>
+<figure class="real-map svg-box"><svg viewBox="0 40 880 300" role="img" aria-label="Pola kontur bukit, lembah dengan arah aliran sungai, dan punggungan" style="width:100%;height:auto;background:#fff">
+<g fill="none" stroke="#b06b36" stroke-width="3"><ellipse cx="150" cy="160" rx="120" ry="85"/><ellipse cx="150" cy="160" rx="85" ry="60"/><ellipse cx="150" cy="160" rx="48" ry="34"/>
+<polyline points="320,250 440,190 560,250"/><polyline points="320,190 440,130 560,190"/><polyline points="320,130 440,70 560,130"/>
+<polyline points="610,70 730,130 850,70"/><polyline points="610,130 730,190 850,130"/><polyline points="610,190 730,250 850,190"/></g>
+<line x1="440" y1="60" x2="440" y2="262" stroke="#2f7fb5" stroke-width="3"/><polygon points="440,276 431,258 449,258" fill="#2f7fb5"/>
+<line x1="730" y1="60" x2="730" y2="262" stroke="#0b607c" stroke-width="2" stroke-dasharray="6 5"/>
+<polygon points="150,153 144,165 156,165" fill="#173746"/>
+<g font-family="Arial,sans-serif" font-size="14" fill="#7a4520" stroke="#fff" stroke-width="4" paint-order="stroke"><g text-anchor="middle"><text x="150" y="80">100</text><text x="150" y="105">150</text><text x="150" y="131">200</text></g>
+<text x="322" y="243">100</text><text x="322" y="183">150</text><text x="322" y="123">200</text>
+<text x="612" y="63">200</text><text x="612" y="123">150</text><text x="612" y="183">100</text></g>
+<g font-family="Arial,sans-serif" font-size="13" fill="#0b607c" stroke="#fff" stroke-width="4" paint-order="stroke"><text x="452" y="270">arah aliran</text><text x="742" y="270">garis punggungan</text></g>
+<g font-family="Arial,sans-serif" font-size="17" fill="#173746" text-anchor="middle" font-weight="700"><text x="150" y="300">Bukit</text><text x="440" y="300">Lembah</text><text x="730" y="300">Punggungan</text></g>
+<g font-family="Arial,sans-serif" font-size="14" fill="#526570" text-anchor="middle"><text x="150" y="322">Nilai naik ke arah pusat</text><text x="440" y="322">Ujung V menunjuk ke hulu</text><text x="730" y="322">Ujung V menunjuk ke bawah lereng</text></g>
+</svg><figcaption><ul class="pts"><li>Pada lembah, ujung V menunjuk ke kontur bernilai lebih tinggi, sedangkan sungai mengalir ke arah sebaliknya (ilustrasi).</li><li>Pada punggungan, ujung V menunjuk ke kontur bernilai lebih rendah.</li><li>Bentuk V pada lembah dan punggungan tampak serupa, sehingga keduanya hanya dapat dibedakan dari <strong>nilai konturnya</strong>.</li></ul></figcaption></figure>
+<h3>Menentukan arah aliran sungai</h3>
+<p>Air mengalir dari tempat yang lebih tinggi ke tempat yang lebih rendah. Arah aliran sungai pada peta topografi ditentukan dengan langkah berikut:</p>
+<ol><li>Kenali alur sungai pada peta.</li><li>Baca nilai kontur di sekitar alur sungai.</li><li>Amati bentuk V yang terbentuk ketika kontur memotong lembah.</li><li>Ingat bahwa ujung V menunjuk ke arah hulu atau ketinggian yang lebih tinggi.</li><li>Tetapkan arah aliran menuju kontur yang bernilai lebih rendah.</li></ol>
+<p class="plain-note">Arah aliran tidak ditentukan dari posisi atas-bawah pada halaman, tetapi dari nilai kontur dan bentuk kontur.</p></section>
+
+<section class="lesson-section" id="tiga-relief"><h2>11. Membandingkan tiga kondisi relief</h2>
+<ul class="pts"><li>Tiga lembar RBI 1:25.000 berikut memperlihatkan kondisi medan yang berbeda.</li><li>Setiap gambar dapat diklik untuk membuka lembar lengkap beserta legenda dan informasi tepinya.</li></ul>
+<div class="map-comparison">
+<article class="map-card"><a class="map-link" href="assets/rbi/yoso-full.webp" target="_blank" rel="noopener"><img src="assets/rbi/yoso-map.webp" alt="Muka peta RBI Yosowilangun" width="1900" height="1872" loading="lazy"></a><div><h3>Yosowilangun</h3><p><strong>Karakteristik peta</strong></p><ul><li>Kontur jarang, dan sebagian besar wilayah tidak memperlihatkan pola kontur yang rapat.</li><li>Lahan pertanian dan permukiman tersebar luas.</li><li>Jalan membentuk jaringan yang relatif teratur.</li></ul><p class="source-note">Lembar 1607-541 Yosowilangun.</p></div></article>
+<article class="map-card"><a class="map-link" href="assets/rbi/jumantono-full.webp" target="_blank" rel="noopener"><img src="assets/rbi/jumantono-map.webp" alt="Muka peta RBI Jumantono" width="1900" height="1855" loading="lazy"></a><div><h3>Jumantono</h3><p><strong>Karakteristik peta</strong></p><ul><li>Kontur lebih banyak dan membentuk medan bergelombang.</li><li>Lembah dan pola aliran sungai lebih mudah dikenali.</li><li>Permukiman dan jalan tampak mengikuti bentuk medan.</li></ul><p class="source-note">Lembar 1408-342 Jumantono.</p></div></article>
+<article class="map-card"><a class="map-link" href="assets/rbi/pupuan-full.webp" target="_blank" rel="noopener"><img src="assets/rbi/pupuan-map.webp" alt="Muka peta RBI Pupuan" width="1900" height="1855" loading="lazy"></a><div><h3>Pupuan</h3><p><strong>Karakteristik peta</strong></p><ul><li>Kontur sangat rapat pada banyak bagian peta.</li><li>Punggungan, lembah, dan kerucut gunung tampak jelas.</li><li>Jalan dan permukiman lebih terbatas pada bagian medan tertentu.</li></ul><p class="source-note">Lembar 1707-613 Pupuan.</p></div></article>
+</div>
+<ul class="pts"><li>Pernyataan di atas merupakan <strong>interpretasi visual</strong> dari contoh peta.</li><li>Hubungan antara penggunaan lahan, jalan, dan relief perlu diperiksa pada setiap peta dan <strong>tidak berlaku sebagai aturan umum</strong>.</li></ul></section>
+
+<section class="lesson-section" id="interpretasi"><h2>12. Dari membaca simbol ke interpretasi peta</h2>
+<ul class="pts"><li><strong>Interpretasi peta</strong> (<em>map interpretation</em>) adalah proses menarik informasi atau kesimpulan dari simbol, posisi, pola, dan hubungan antarobjek.</li><li>Kalimat interpretasi harus menyebut <strong>bukti visual</strong> dari peta, bukan hanya dugaan.</li></ul>
+<div class="flow"><span>Simbol</span><b>→</b><span>Objek</span><b>→</b><span>Pola</span><b>→</b><span>Hubungan</span><b>→</b><span>Interpretasi</span></div>
+<h3>Contoh</h3>
+<ul class="pts"><li>Pertama, simbol jalan dan area permukiman dikenali melalui legenda.</li><li>Kedua, pembaca mengamati bahwa area permukiman <strong>memanjang mengikuti jalan utama</strong>.</li><li>Ketiga, interpretasi disusun sebagai berikut: <em>“Pada bagian peta ini, pola permukiman tampak linear dan berkaitan dengan jaringan jalan.”</em></li></ul></section>
+
+<section class="lesson-section" id="kesalahan"><h2>13. Kesalahan umum saat membaca peta</h2>
+<ul class="key"><li>menafsirkan warna tanpa membaca legenda;</li><li>menganggap semua garis sebagai batas administrasi;</li><li>menganggap kontur rapat selalu berarti tempat yang tinggi;</li><li>menyamakan selang kontur dengan jarak antargaris kontur pada peta;</li><li>menentukan arah aliran sungai tanpa membaca nilai kontur;</li><li>membaca lintang dari garis di bawah titik pada wilayah lintang selatan;</li><li>mengabaikan skala, informasi tepi, dan koordinat;</li><li>menarik kesimpulan sebab-akibat hanya dari satu pola pada peta.</li></ul></section>
+
+<section class="lesson-section" id="ringkasan"><h2>14. Ringkasan</h2>
+<ul class="key"><li>Peta dapat diklasifikasikan dengan beberapa dasar, dan dasar klasifikasi harus dinyatakan dengan jelas.</li><li>Peta tematik dibaca melalui tema, waktu, wilayah, variabel, satuan, legenda, pola, dan batas interpretasi.</li><li>RBI adalah peta topografi resmi Indonesia yang diselenggarakan oleh BIG.</li><li>Lembar RBI dibaca mulai dari informasi tepi, skala, legenda, arah utara, dan koordinat sebelum relief ditafsirkan.</li><li>Garis kontur menghubungkan titik-titik yang ketinggiannya sama, dan selang kontur adalah beda tinggi antara dua kontur berurutan.</li><li>Pada RBI 1:25.000, selang kontur adalah 12,5 m dan kontur indeks dibuat setiap 50 m.</li><li>Kontur rapat menunjukkan lereng curam, sedangkan kontur renggang menunjukkan lereng landai.</li><li>Interpretasi peta bergerak dari simbol menuju pola, hubungan, dan kesimpulan yang didukung bukti.</li></ul>
+<p><a href="minggu-7.html"><strong>Lanjut ke Pertemuan 7: Skala dan generalisasi →</strong></a></p></section>
+
+<section class="lesson-section" id="latihan"><h2>15. Lembar interpretasi peta</h2>
+<p>Lembar ini dikerjakan secara <strong>mandiri</strong> dengan peta yang kamu cari sendiri. Contoh jawaban memakai peta pada materi ini, sehingga peta pilihanmu harus <strong>berbeda</strong> dari contoh.</p>
+<h3>Langkah kerja</h3>
+<ol class="pts">
+<li>Cari <strong>satu lembar peta topografi</strong> yang utuh, yaitu lengkap dengan informasi tepinya, dari <a href="https://tanahair.indonesia.go.id" target="_blank" rel="noopener">BIG Tanahair (RBI)</a>, <a href="https://ngmdb.usgs.gov/topoview/" target="_blank" rel="noopener">USGS TopoView</a>, atau <a href="https://map.geo.admin.ch" target="_blank" rel="noopener">swisstopo</a>.</li>
+<li>Cari <strong>satu peta tematik</strong> yang memiliki judul dan legenda dari <a href="https://inarisk.bnpb.go.id" target="_blank" rel="noopener">BNPB InaRISK</a>, <a href="https://www.bmkg.go.id" target="_blank" rel="noopener">BMKG</a>, atau <a href="https://geologi.esdm.go.id" target="_blank" rel="noopener">Badan Geologi</a>; sumber lain tersedia di <a href="album-peta.html"><strong>Album sumber peta</strong></a>.</li>
+<li>Tempelkan <strong>gambar kedua peta</strong> dan tulis <strong>identitas sumbernya</strong> (judul, lembaga, tahun, tautan, tanggal akses).</li>
+<li>Isi <strong>Tabel A</strong> untuk peta topografi dan <strong>Tabel B</strong> untuk peta tematik dengan menunjuk bagian peta yang menjadi bukti.</li>
+<li>Bandingkan hasilmu dengan <strong>contoh jawaban</strong> untuk RBI Yosowilangun dan peta curah hujan BMKG di bawahnya.</li>
+</ol>
+<div class="formula-box"><strong>Istilah yang dipakai dalam tabel</strong>
+<ul class="pts">
+<li><strong>Informasi tepi</strong> (<em>marginal information</em>) adalah semua keterangan di luar muka peta, misalnya judul, nomor lembar, skala, legenda, proyeksi, datum, dan diagram arah utara.</li>
+<li><strong>Selang kontur</strong> dibaca dari informasi tepi; jika tidak tertulis, hitung dengan rumus <strong>selang = (selisih nilai dua kontur indeks berurutan) ÷ (jumlah ruang antargaris di antara keduanya)</strong>, misalnya (150 − 100) ÷ 4 = 12,5 m.</li>
+<li><strong>Koordinat satu titik</strong> ditulis lengkap dengan sistemnya, misalnya "113°18′44″ BT, 8°14′23″ LS" atau "T 754.700 m, U 9.088.500 m, zona UTM 49".</li>
+<li><strong>Bentuk lahan</strong> (<em>landform</em>) adalah bentuk umum permukaan bumi, misalnya <strong>dataran</strong> (kontur sangat jarang, beda tinggi kecil), <strong>perbukitan</strong> (kontur tertutup kecil, beda tinggi puluhan sampai ratusan meter), atau <strong>pegunungan/gunung api</strong> (kontur rapat dan melingkar di sekitar puncak tinggi).</li>
+</ul></div>
+
+<h3>Tabel A · Peta topografi</h3>
+<table class="compare-table">
+<thead><tr><th>No.</th><th>Aspek</th><th>Pertanyaan yang harus dijawab</th><th>Jawaban dan bukti dari peta</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Identitas lembar</td><td>Tulis judul, nomor dan nama lembar, edisi atau tahun, serta lembaga penerbit.</td><td>…</td></tr>
+<tr><td>2</td><td>Skala</td><td>Tulis skala numerik, letak skala grafis, dan arti 1 cm pada peta dalam meter di lapangan.</td><td>…</td></tr>
+<tr><td>3</td><td>Informasi tepi</td><td>Sebutkan minimal lima komponen informasi tepi beserta letaknya, misalnya "proyeksi: kanan atas".</td><td>…</td></tr>
+<tr><td>4</td><td>Legenda dan simbol</td><td>Pilih tiga simbol dari legenda (satu titik, satu garis, satu area), lalu tunjuk tempat setiap simbol muncul di muka peta.</td><td>…</td></tr>
+<tr><td>5</td><td>Koordinat satu titik</td><td>Pilih satu objek bernama, lalu tulis koordinatnya beserta sistem koordinat dan garis acuan yang dipakai.</td><td>…</td></tr>
+<tr><td>6</td><td>Selang kontur</td><td>Tulis nilai selang kontur dan tempat nilai itu tertulis, atau tunjukkan perhitungannya.</td><td>…</td></tr>
+<tr><td>7</td><td>Rentang ketinggian</td><td>Tulis titik tinggi terendah dan tertinggi yang dapat kamu baca, beserta nama tempat di dekatnya.</td><td>…</td></tr>
+<tr><td>8</td><td>Bentuk lahan</td><td>Tentukan bentuk lahan utama (dataran, perbukitan, atau pegunungan) dengan bukti kerapatan kontur dan titik tinggi.</td><td>…</td></tr>
+<tr><td>9</td><td>Interpretasi</td><td>Tulis satu kalimat hubungan antara relief dan objek lain (permukiman, jalan, sawah, hutan) beserta buktinya.</td><td>…</td></tr>
+</tbody></table>
+
+<h3>Tabel B · Peta tematik</h3>
+<table class="compare-table">
+<thead><tr><th>No.</th><th>Aspek</th><th>Pertanyaan yang harus dijawab</th><th>Jawaban dan bukti dari peta</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Identitas peta</td><td>Tulis judul, lembaga, dan tanggal atau tahun terbit.</td><td>…</td></tr>
+<tr><td>2</td><td>Tema</td><td>Tulis tema peta berdasarkan judul, bukan berdasarkan warna.</td><td>…</td></tr>
+<tr><td>3</td><td>Variabel dan satuan</td><td>Besaran apa yang dipetakan dan apa satuannya (mm, %, jiwa/km², indeks tanpa satuan)?</td><td>…</td></tr>
+<tr><td>4</td><td>Wilayah dan waktu</td><td>Wilayah mana yang dicakup, dan periode waktu mana yang digambarkan?</td><td>…</td></tr>
+<tr><td>5</td><td>Legenda</td><td>Berapa jumlah kelas, berapa rentang nilainya, dan bagaimana warna berubah dari kelas terendah ke tertinggi?</td><td>…</td></tr>
+<tr><td>6</td><td>Skala, arah, dan koordinat</td><td>Apakah ada skala grafis, arah utara, dan gratikul? Tulis bentuk dan letaknya.</td><td>…</td></tr>
+<tr><td>7</td><td>Pola sebaran</td><td>Di wilayah mana kelas tertinggi dan kelas terendah paling banyak muncul?</td><td>…</td></tr>
+<tr><td>8</td><td>Batas interpretasi</td><td>Sebutkan satu hal yang <strong>tidak dapat</strong> disimpulkan dari peta ini dan alasannya.</td><td>…</td></tr>
+</tbody></table>
+
+<h3>Contoh jawaban Tabel A: RBI Yosowilangun</h3>
+<figure class="real-map"><a href="assets/rbi/yoso-full.webp" target="_blank" rel="noopener"><img src="assets/rbi/yoso-full.webp" alt="Lembar lengkap RBI Yosowilangun 1:25.000 dengan muka peta di kiri dan informasi tepi di kanan" loading="lazy"></a><figcaption>Sumber: Peta Rupabumi Digital Indonesia 1:25.000, Lembar 1607-541 Yosowilangun, BAKOSURTANAL, edisi I–2000. Klik gambar untuk membuka ukuran penuh.</figcaption></figure>
+<table class="compare-table">
+<thead><tr><th>No.</th><th>Aspek</th><th>Contoh jawaban</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Identitas lembar</td><td>Peta Rupabumi Digital Indonesia 1:25.000, Lembar 1607-541 Yosowilangun, edisi I–2000, diterbitkan oleh BAKOSURTANAL (sekarang BIG).</td></tr>
+<tr><td>2</td><td>Skala</td><td>Skala numerik 1:25.000 tertulis di kanan atas dan di bawah tengah; skala grafis 1–0–1–2 km ada di bawah tengah; 1 cm pada peta mewakili 250 m.</td></tr>
+<tr><td>3</td><td>Informasi tepi</td><td>Judul dan nomor lembar (kanan atas); petunjuk letak peta dan diagram lokasi (kanan atas); proyeksi Transverse Mercator, datum DGN-95, dan selang kontur (kanan atas); legenda "Keterangan" (kanan tengah); petunjuk pembacaan koordinat (kanan bawah); diagram arah utara (kiri bawah).</td></tr>
+<tr><td>4</td><td>Legenda dan simbol</td><td>Titik: titik tinggi berupa titik kecil berangka, misalnya "13" di Desa Kedungrejo. Garis: sungai berwarna biru, misalnya K. Bondoyudo di sebelah barat Desa Kedungrejo. Area: arsiran biru "sawah irigasi" yang mendominasi bagian barat dan selatan.</td></tr>
+<tr><td>5</td><td>Koordinat satu titik</td><td>Titik contoh Yosowilangun pada kotak petunjuk: 113°18′44″ BT dan 8°14′23″ LS, atau T 754.700 m dan U 9.088.500 m pada zona UTM 49; bujur dibaca dari garis 113°18′ di kiri titik dan lintang dari garis 8°14′ di atas titik.</td></tr>
+<tr><td>6</td><td>Selang kontur</td><td>12,5 meter, tertulis di kanan atas ("Selang kontur") dan di bawah tengah dekat skala.</td></tr>
+<tr><td>7</td><td>Rentang ketinggian</td><td>Titik tinggi di sekitar Yosowilangun bernilai sekitar 9–16 m, dan di Desa Rowokangkung sekitar 12–19 m.</td></tr>
+<tr><td>8</td><td>Bentuk lahan</td><td><strong>Dataran rendah</strong>, karena garis kontur sangat jarang dan semua titik tinggi yang terbaca kurang dari 20 m.</td></tr>
+<tr><td>9</td><td>Interpretasi</td><td>Pada dataran yang datar ini, sawah irigasi dan perkebunan tebu menempati lahan yang luas, sedangkan permukiman memanjang mengikuti jalan, misalnya dari Yosowilangun ke Krajan Dua.</td></tr>
+</tbody></table>
+
+<h3>Contoh jawaban Tabel B: peta curah hujan BMKG</h3>
+<figure class="real-map"><a href="assets/thematic-id/bmkg-curah-sifat-hujan-september-2024.webp" target="_blank" rel="noopener"><img src="assets/thematic-id/bmkg-curah-sifat-hujan-september-2024.webp" alt="Peta analisis curah hujan (kiri) dan sifat hujan (kanan) Indonesia September 2024 dari BMKG" loading="lazy"></a><figcaption>Contoh jawaban memakai <strong>peta kiri</strong> (curah hujan). Sumber: Badan Meteorologi, Klimatologi, dan Geofisika, <em>Analisis Dinamika Atmosfer Dasarian II Oktober 2024</em>, hlm. 38.</figcaption></figure>
+<table class="compare-table">
+<thead><tr><th>No.</th><th>Aspek</th><th>Contoh jawaban</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Identitas peta</td><td>Peta Analisis Curah Hujan September 2024 Indonesia, BMKG, diperbarui 1 Oktober 2024.</td></tr>
+<tr><td>2</td><td>Tema</td><td>Curah hujan bulanan.</td></tr>
+<tr><td>3</td><td>Variabel dan satuan</td><td>Jumlah curah hujan dalam satu bulan, dengan satuan milimeter (mm).</td></tr>
+<tr><td>4</td><td>Wilayah dan waktu</td><td>Seluruh Indonesia pada bulan September 2024.</td></tr>
+<tr><td>5</td><td>Legenda</td><td>Sembilan kelas dari 0–20 mm sampai lebih dari 500 mm, dikelompokkan menjadi rendah (0–100), menengah (100–300), tinggi (300–500), dan sangat tinggi (&gt;500); warna berubah dari cokelat tua, jingga, kuning, sampai hijau tua.</td></tr>
+<tr><td>6</td><td>Skala, arah, dan koordinat</td><td>Skala grafis 0–720 km dan mata angin ada di kotak kanan bawah; gratikul diberi label 100°–140° BT dan 5° LU–10° LS.</td></tr>
+<tr><td>7</td><td>Pola sebaran</td><td>Kelas rendah (cokelat–jingga) dominan di Jawa, Nusa Tenggara, dan sebagian besar Sulawesi; kelas tinggi (hijau) muncul setempat di Sumatra bagian utara, Kalimantan Barat, dan Papua.</td></tr>
+<tr><td>8</td><td>Batas interpretasi</td><td>Peta ini tidak menunjukkan apakah hujan di atas atau di bawah normal, karena hal itu adalah variabel peta sifat hujan di sebelah kanan.</td></tr>
+</tbody></table>
+
+<h3>Kriteria penilaian</h3>
+<table class="compare-table">
+<thead><tr><th>Kriteria</th><th>Baik</th><th>Perlu perbaikan</th></tr></thead>
+<tbody>
+<tr><td>Identitas peta</td><td>Gambar kedua peta dan sumbernya lengkap.</td><td>Gambar atau sumber peta tidak dicantumkan.</td></tr>
+<tr><td>Bukti</td><td>Setiap jawaban menunjuk letak pada peta, misalnya "kanan atas" atau "di sekitar Desa X".</td><td>Jawaban umum tanpa menunjuk bagian peta.</td></tr>
+<tr><td>Ketepatan angka</td><td>Skala, selang kontur, dan koordinat ditulis dengan satuan dan sistem yang benar.</td><td>Angka ditulis tanpa satuan atau tanpa sistem koordinat.</td></tr>
+<tr><td>Interpretasi</td><td>Kesimpulan didukung bukti dan menyebut batasnya.</td><td>Kesimpulan berupa dugaan yang tidak terlihat pada peta.</td></tr>
+</tbody></table></section>
+
+<section class="lesson-section" id="referensi"><h2>16. Referensi</h2><ol class="reference">
+<li>Peta Rupabumi Digital Indonesia 1:25.000: Lembar Yosowilangun 1607-541, Jumantono 1408-342, dan Pupuan 1707-613, digunakan sebagai contoh pembacaan dalam materi ini.</li>
+<li>Badan Standardisasi Nasional. (2010). <em>SNI 6502.2:2010 Spesifikasi penyajian peta rupa bumi – Bagian 2: Skala 1:25.000</em>.</li>
+<li><a href="https://inarisk.bnpb.go.id/pdf/BUKU%20RBI%202023.pdf" target="_blank" rel="noopener">Badan Nasional Penanggulangan Bencana — Buku Peta Risiko Bencana Indonesia 2023.</a></li>
+<li><a href="https://content.bmkg.go.id/wp-content/uploads/29.Dinat_Das_II_Okt_2024.pdf" target="_blank" rel="noopener">Badan Meteorologi, Klimatologi, dan Geofisika — Analisis Dinamika Atmosfer Dasarian II Oktober 2024.</a></li>
+<li><a href="https://geologi.esdm.go.id/storage/publikasi/eLS94VCSoB948INlvolpYSSYlOr7A3Tt6vqH8LHP.pdf" target="_blank" rel="noopener">Pusat Survei Geologi, Badan Geologi — Atlas Patahan Aktif Volume 1, 2024.</a></li>
+<li><a href="https://www2.census.gov/programs-surveys/popest/visualizations/2006/2006-population-estimates-maps/2006_population_size_and_density.pdf" target="_blank" rel="noopener">U.S. Census Bureau — Population Size and Density, 1 Juli 2006.</a></li>
+<li><a href="https://www.usgs.gov/faqs/what-a-topographic-map" target="_blank" rel="noopener">U.S. Geological Survey — What is a topographic map?</a></li>
+<li><a href="https://www.usgs.gov/ngp-standards-and-specifications/us-topo-map-symbol-guide" target="_blank" rel="noopener">U.S. Geological Survey — US Topo Map Symbol Guide</a></li>
+<li><a href="https://pubs.usgs.gov/publication/fs03501" target="_blank" rel="noopener">USGS — Finding Your Way with Map and Compass</a></li>
+</ol></section>
+
+<footer>Kartografi (Teori) · Ni Putu Praja Chintya<br>Contoh RBI digunakan untuk pembelajaran pembacaan peta. Referensi konsep tambahan dicantumkan pada bagian referensi.</footer>
+</main></div><script src="site.js?v=20261122c" defer></script>
+</body></html>
